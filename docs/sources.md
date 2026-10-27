@@ -7,7 +7,8 @@
 | กรมพัฒนาที่ดิน – Soil Survey Public<br><https://soilservice.ldd.go.th/soilsurveypublic/> | จุดสำรวจ (pH, OM, P, K, เนื้อดิน, พิกัด) | `scripts/fetch_ldd.py` ผ่าน `POST /SoilSurveyAPI/api/SP` ใช้เฉพาะ procedure สาธารณะแบบอ่านอย่างเดียว | ใช้งาน |
 | กรมพัฒนาที่ดิน – ผลวิเคราะห์ดิน (osd01) | ค่าตัวเลข pH, EC, OM, P, K | `scripts/fetch_osd.py` (รายละเอียดด้านล่าง) | ใช้งาน |
 | ISRIC WoSIS<br><https://www.isric.org/explore/wosis> | soil profile แยกชั้นความลึก + ผลแล็บ | `scripts/fetch_wosis.py` ผ่าน WFS (รายละเอียดด้านล่าง) | ใช้งาน |
-| Google Earth Engine – OpenLandMap, SoilGrids | ค่าที่จุดสำรวจ | `scripts/sample_gee.py` | ใช้งาน |
+| กรมพัฒนาที่ดิน – บัตรดินดี (osd02) | ผลวิเคราะห์รายตัวอย่าง ระดับตำบล | `scripts/fetch_dindee.py` ดาวน์โหลด CSV เมื่อ ETag เปลี่ยน | ใช้งาน |
+| Google Earth Engine – OpenLandMap, SoilGrids, FAO GSOCmap | ค่าที่จุดสำรวจ | `scripts/sample_gee.py` | ใช้งาน |
 
 ### Procedure ที่ใช้ (อ่านอย่างเดียว)
 
@@ -70,13 +71,20 @@ WFS: `https://maps.isric.org/mapserv?map=/map/wosis_latest.map` ชั้น `wo
 
 แนวทาง: สุ่มค่าที่จุดสำรวจด้วย `sampleRegions` ต้องใช้บัญชี GEE และ Cloud project
 
+### data.go.th — ผลการค้นหา (ต.ค. 2026)
+
+ค้นคำว่า "ดิน" ได้ 2,282 ชุด ส่วนใหญ่ไม่ใช่ข้อมูลดิน (ที่ดิน, การใช้ที่ดิน) ชุดที่เกี่ยวข้อง:
+- **osd02 บัตรดินดี** (LDD, CC BY) — ผลวิเคราะห์รายตัวอย่าง 13,855 แถว → นำเข้าแล้ว
+- ตาราง "ข้อมูลค่าวิเคราะห์ดินในแต่ละพื้นที่" / "ข้อมูลชุดดิน" ของสำนักงานจังหวัด — เป็นช่วง pH ตามคำบรรยายชุดดิน (เช่น "5.0-6.5") ไม่ใช่ค่าวัด แต่ละจังหวัดใช้รูปแบบต่างกัน → ยังไม่นำเข้า
+- ชุดของ LDD ที่เป็นแผนที่ (ldd_11_01, oss01, เขตความเหมาะสม) — CC BY-NC-ND → ให้เฉพาะลิงก์
+
 ## แหล่งที่จะเพิ่มในอนาคต
 
 | แหล่ง | ประเภท | หมายเหตุ |
 |---|---|---|
-| ISRIC SoilGrids 250 m | Raster | ค่าคุณสมบัติดินหลายความลึก |
 | FAO HWSD v2.0 | Raster ~1 km | หน่วยแผนที่ดินโลก |
-| FAO GSP (GSOCmap, GSASmap, GSNmap) | Raster | ไทยส่งข้อมูลระดับชาติ |
+| FAO GSP (GSASmap, GSNmap) | Raster | ยังไม่มีใน Earth Engine (GSOCmap ใช้แล้ว) |
 | LDD แผนที่กลุ่มชุดดิน / ชุดดิน | Polygon | ต้องตรวจช่องทางดาวน์โหลด/ขอข้อมูล |
-| data.go.th (ชุดข้อมูลของ LDD) | SHP/CSV | Open Government License |
+| data.go.th ตารางชุดดินรายจังหวัด | CSV/XLSX | ค่าบรรยายของชุดดิน ไม่ใช่ค่าวัด รูปแบบต่างกันทุกจังหวัด |
+| GISTDA ความชื้นในดินรายสัปดาห์ | API | ต้องใช้ API key, เป็นอนุกรมเวลา |
 | Agri-Map Online | แผนที่ความเหมาะสม | ตัวแปรร่วม |

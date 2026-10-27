@@ -1,0 +1,41 @@
+{
+ "source": "กรมพัฒนาที่ดิน – ข้อมูลบัตรดินดี (osd02)",
+ "source_url": "https://lddcatalog.ldd.go.th/dataset/osd02",
+ "license": "CC BY",
+ "updated_at": "2026-10-27T17:24:41+00:00",
+ "source_last_modified": "Mon, 17 Jun 2024 09:36:34 GMT",
+ "samples": 13855,
+ "provinces": 74,
+ "tambons": 1173,
+ "years": {
+  "2019": 19,
+  "2020": 5353,
+  "2021": 3081,
+  "2022": 2597,
+  "2023": 2579,
+  "2024": 216
+ },
+ "coordinates": "ไม่มี — ระดับตำบลเท่านั้น",
+ "notes": [
+  "date = วันที่ส่งข้อมูล (InquiryDate) ไม่ใช่วันเก็บตัวอย่าง",
+  "ช่วงค่าของ N ตรงกับเกณฑ์อินทรียวัตถุ (OM %) ของ LDD — ชื่อคอลัมน์คงตามต้นทาง"
+ ],
+ "qa": {
+  "date_invalid": {
+   "description": "แปลงวันที่ไม่ได้",
+   "samples": 10
+  },
+  "date_future": {
+   "description": "วันที่อยู่ในอนาคต",
+   "samples": 0
+  },
+  "not_analysed": {
+   "description": "มีบางค่าไม่ได้วิเคราะห์",
+   "samples": 1259
+  },
+  "unparsed_class": {
+   "description": "มีค่าที่แยกระดับ/ช่วงไม่ได้ (เก็บข้อความเดิม)",
+   "samples": 0
+  }
+ }
+}

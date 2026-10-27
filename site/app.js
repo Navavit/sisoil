@@ -160,6 +160,7 @@ function wosisPopup(s) {
     <table class="pop">
       <tr><td>${t("surveyYear")}</td><td><b>${esc(s.date || "–")}</b></td></tr>
       <tr><td>${t("dataset")}</td><td>${esc(s.dataset)} · ${esc(s.licence || "")}</td></tr>
+      ${s.ldd_match ? `<tr><td>LDD</td><td>${t("nearLdd")(s.ldd_match.id, s.ldd_match.distance_m)}</td></tr>` : ""}
       ${s.wrb_group || s.usda_order ? `<tr><td>WRB / USDA</td><td>${esc(s.wrb_group || "–")} / ${esc(s.usda_order || "–")}</td></tr>` : ""}
       ${(s.qa_flags || []).length ? `<tr><td>${t("qa")}</td><td class="flags">${s.qa_flags.map((f) => `<span>${esc(f)}</span>`).join(" ")}</td></tr>` : ""}
     </table>
@@ -169,10 +170,11 @@ function wosisPopup(s) {
 async function loadWosis() {
   wosisProfiles = await fetch("data/wosis/profiles.json").then((r) => r.json()).catch(() => []);
   wosisLayer.clearLayers();
-  wosisProfiles.filter((s) => s.lat != null).forEach((s) => L.circleMarker([s.lat, s.lon], {
+  // profile ที่ซ้ำกับอีก profile ใน WoSIS ไม่วางบนแผนที่ (ดู duplicate_of)
+  wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of).forEach((s) => L.circleMarker([s.lat, s.lon], {
     radius: 7, weight: 2, color: "#3a2a1a", fillOpacity: .9, fillColor: phColor(s.ph_h2o_0_30),
   }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }).addTo(wosisLayer));
-  $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
+  $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.filter((s) => !s.duplicate_of).length));
 }
 
 function render() {
@@ -244,7 +246,7 @@ function setLang(l) {
   renderStatic();
   render();
   if (osdSites.length) $("osd-info").textContent = t("osdInfo")(num(osdSites.length), $("osd-year").value);
-  if (wosisProfiles.length) $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
+  if (wosisProfiles.length) $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.filter((s) => !s.duplicate_of).length));
 }
 
 async function load() {

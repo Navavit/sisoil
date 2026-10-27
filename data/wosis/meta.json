@@ -3,10 +3,21 @@
  "source_url": "https://www.isric.org/explore/wosis",
  "api": "https://maps.isric.org/mapserv?map=/map/wosis_latest.map",
  "license": "ต่อชุดข้อมูล: Attribution 3.0 International (CC BY 3.0), Attribution 4.0 International (CC BY 4.0), CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, U.S. Public Domain",
- "updated_at": "2026-10-27T17:09:57+00:00",
+ "updated_at": "2026-10-27T17:13:48+00:00",
  "profiles": 451,
  "measurements": 13345,
  "profiles_with_coordinates": 451,
+ "unique_profiles": 415,
+ "dedup_rules": {
+  "cross_dataset_m": 100,
+  "same_dataset": "identical layers at same point",
+  "priority": [
+   "US-NCSS",
+   "WD-ISIS",
+   "WD-WISE"
+  ],
+  "ldd_near_m": 250
+ },
  "datasets": {
   "US-NCSS": 28,
   "WD-ISCN": 112,
@@ -119,6 +130,14 @@
   "no_lab_data": {
    "description": "ไม่มีผลแล็บในคุณสมบัติที่ดึง",
    "profiles": 1
+  },
+  "duplicate": {
+   "description": "profile เดียวกับอีก profile ใน WoSIS (ดู duplicate_of) — ไม่แสดงบนแผนที่ ไม่นับซ้ำ",
+   "profiles": 36
+  },
+  "near_ldd_point": {
+   "description": "อยู่ใกล้จุดสำรวจ LDD ในปีเดียวกัน อาจเป็นจุดเดียวกัน (ดู ldd_match)",
+   "profiles": 0
   }
  }
 }

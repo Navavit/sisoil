@@ -18,6 +18,7 @@ import csv
 import datetime as dt
 import hashlib
 import json
+import math
 import os
 import sys
 import time
@@ -50,9 +51,15 @@ QA_FLAGS = {
     "no_date": "ไม่ระบุปีที่สำรวจ",
     "value_out_of_range": "มีค่าเกินช่วงที่เป็นไปได้ (ไม่นำไปคำนวณค่าสรุป)",
     "no_lab_data": "ไม่มีผลแล็บในคุณสมบัติที่ดึง",
+    "duplicate": "profile เดียวกับอีก profile ใน WoSIS (ดู duplicate_of) — ไม่แสดงบนแผนที่ ไม่นับซ้ำ",
+    "near_ldd_point": "อยู่ใกล้จุดสำรวจ LDD ในปีเดียวกัน อาจเป็นจุดเดียวกัน (ดู ldd_match)",
 }
+# ลำดับความน่าเชื่อถือเมื่อ profile เดียวกันอยู่หลายชุด: แหล่งต้นฉบับก่อนชุดที่รวบรวมต่อ
+DATASET_PRIORITY = ["US-NCSS", "WD-ISIS", "WD-WISE"]
+DUP_M = 100        # ข้ามชุดข้อมูล: ห่างไม่เกินนี้ + ปีเดียวกัน + มีชั้นความลึกตรงกัน = profile เดียวกัน
+LDD_NEAR_M = 250   # เทียบ LDD: ห่างไม่เกินนี้ + ปีเดียวกัน (LDD แปลงจาก UTM คลาดได้หลายร้อยเมตร)
 P_COLUMNS = ["id", "code", "dataset", "date", "lat", "lon", "positional_uncertainty", "licence",
-             "wrb_group", "usda_order", "n_layers", *[f"{c}_0_{TOP}" for _, c, *_ in PROPS], "first_seen", "qa_flags"]
+             "wrb_group", "usda_order", "n_layers", "duplicate_of", "ldd_match_id", "ldd_match_m", *[f"{c}_0_{TOP}" for _, c, *_ in PROPS], "first_seen", "qa_flags"]
 L_COLUMNS = ["profile_id", "layer_id", "layer_name", "upper_depth", "lower_depth", "property", "value",
              "value_raw", "method", "dataset", "licence", "qa_flags"]
 
@@ -105,6 +112,82 @@ def weighted_top(layers, col):
         w = max(0, min(l, TOP) - max(u, 0))
         total, weight = total + v * w, weight + w
     return round(total / weight, 2) if weight else None
+
+
+def dist_m(a_lat, a_lon, b_lat, b_lon):
+    p1, p2 = math.radians(a_lat), math.radians(b_lat)
+    h = math.sin((p2 - p1) / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(math.radians(b_lon - a_lon) / 2) ** 2
+    return 2 * 6371000 * math.asin(math.sqrt(h))
+
+
+def same_year(a, b):
+    """ปีตรงกัน หรือฝั่งใดฝั่งหนึ่งไม่มีปี"""
+    return not a or not b or a[:4] == b[:4]
+
+
+def rank(s):
+    d = s["dataset"]
+    return (DATASET_PRIORITY.index(d) if d in DATASET_PRIORITY else len(DATASET_PRIORITY), s["id"])
+
+
+def find_duplicates(profiles):
+    """คืน {id ที่ซ้ำ: id ที่เก็บไว้}
+
+    (ก) ต่างชุดข้อมูล: ห่าง <= DUP_M, ปีเดียวกัน, มีช่วงความลึกตรงกันอย่างน้อย 1 ชั้น
+    (ข) ชุดเดียวกัน: พิกัดเดียวกัน (< 1 m) และค่าทุกชั้นเหมือนกันทุกตัว (นำเข้าซ้ำ)
+    """
+    parent, by_id = {}, {s["id"]: s for s in profiles}
+
+    def root(i):
+        while i in parent:
+            i = parent[i]
+        return i
+
+    def depths(s):
+        return {(ly["u"], ly["l"]) for ly in s["layers"]}
+
+    def values(s):
+        return [{k: v for k, v in ly.items() if k != "name"} for ly in s["layers"]]
+
+    pts = [s for s in profiles if s["lat"] is not None]
+    for i, a in enumerate(pts):
+        for b in pts[i + 1:]:
+            if abs(a["lat"] - b["lat"]) > 0.002 or abs(a["lon"] - b["lon"]) > 0.002:
+                continue
+            d = dist_m(a["lat"], a["lon"], b["lat"], b["lon"])
+            if a["dataset"] != b["dataset"]:
+                dup = d <= DUP_M and same_year(a["date"], b["date"]) and depths(a) & depths(b)
+            else:
+                dup = d < 1 and a["layers"] and values(a) == values(b)
+            if dup:
+                ra, rb = root(a["id"]), root(b["id"])
+                if ra != rb:
+                    keep, drop = sorted([ra, rb], key=lambda i: rank(by_id[i]))
+                    parent[drop] = keep
+    return {i: root(i) for i in parent}
+
+
+def ldd_matches(profiles):
+    """จุด LDD ที่ใกล้ที่สุดในปีเดียวกัน (ภายใน LDD_NEAR_M)"""
+    path = os.path.join(ROOT, "data", "ldd", "points.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        ldd = [p for p in json.load(f) if p.get("lat") is not None and "far_from_province" not in p.get("qa_flags", [])]
+    out = {}
+    for s in profiles:
+        if s["lat"] is None:
+            continue
+        best = None
+        for p in ldd:
+            if abs(p["lat"] - s["lat"]) > 0.005 or abs(p["lon"] - s["lon"]) > 0.005:
+                continue
+            d = dist_m(s["lat"], s["lon"], p["lat"], p["lon"])
+            if d <= LDD_NEAR_M and same_year(s["date"], p.get("date")) and (best is None or d < best[0]):
+                best = (d, p["id"])
+        if best:
+            out[s["id"]] = {"id": best[1], "distance_m": round(best[0])}
+    return out
 
 
 def sha(obj):
@@ -188,11 +271,22 @@ def main():
             flags.add("value_out_of_range")
         if not layers:
             flags.add("no_lab_data")
-        s["qa_flags"] = [f for f in QA_FLAGS if f in flags]
-        s["hash"] = sha({k: v for k, v in s.items() if k != "hash"})
-        s["first_seen"] = (old.get(pid) or {}).get("first_seen") or today
+        s["qa_flags"] = sorted(flags)
         profiles.append(s)
     profiles.sort(key=lambda s: s["id"])
+
+    dups, near = find_duplicates(profiles), ldd_matches(profiles)
+    for s in profiles:
+        flags = set(s["qa_flags"])
+        s["duplicate_of"] = dups.get(s["id"])
+        s["ldd_match"] = near.get(s["id"])
+        if s["duplicate_of"]:
+            flags.add("duplicate")
+        if s["ldd_match"]:
+            flags.add("near_ldd_point")
+        s["qa_flags"] = [f for f in QA_FLAGS if f in flags]
+        s["hash"] = sha({k: v for k, v in s.items() if k != "hash"})
+        s["first_seen"] = (old.get(s["id"]) or {}).get("first_seen") or today
 
     new_ids = {s["id"] for s in profiles}
     added = [s["id"] for s in profiles if s["id"] not in old]
@@ -204,7 +298,9 @@ def main():
         w = csv.DictWriter(f, fieldnames=P_COLUMNS, extrasaction="ignore")
         w.writeheader()
         for s in profiles:
-            w.writerow({**s, "qa_flags": ";".join(s["qa_flags"])})
+            m = s["ldd_match"] or {}
+            w.writerow({**s, "ldd_match_id": m.get("id"), "ldd_match_m": m.get("distance_m"),
+                        "qa_flags": ";".join(s["qa_flags"])})
     with open(os.path.join(OUT, "layers.csv"), "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=L_COLUMNS)
         w.writeheader()
@@ -219,6 +315,9 @@ def main():
         "license": "ต่อชุดข้อมูล: " + ", ".join(sorted({m["licence"] for m in measurements if m["licence"]})),
         "updated_at": now.isoformat(), "profiles": len(profiles), "measurements": len(measurements),
         "profiles_with_coordinates": sum(1 for s in profiles if s["lat"] is not None),
+        "unique_profiles": sum(1 for s in profiles if not s["duplicate_of"]),
+        "dedup_rules": {"cross_dataset_m": DUP_M, "same_dataset": "identical layers at same point",
+                        "priority": DATASET_PRIORITY, "ldd_near_m": LDD_NEAR_M},
         "datasets": {d: sum(1 for s in profiles if s["dataset"] == d) for d in sorted({s["dataset"] for s in profiles})},
         "excluded_datasets": excluded,
         "properties": {c: {"wfs_layer": l, "unit": u, "range": list(r)} for l, c, u, r in PROPS},

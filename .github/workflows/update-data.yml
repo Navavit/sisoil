@@ -66,6 +66,11 @@ jobs:
         continue-on-error: true
         run: python scripts/fetch_wosis.py
 
+      - name: ดึงข้อมูลบัตรดินดี (osd02)
+        id: dindee
+        continue-on-error: true
+        run: python scripts/fetch_dindee.py
+
       # Google Earth Engine: ใช้ Workload Identity Federation ถ้าตั้ง vars.GCP_WIF_PROVIDER (ไม่มีไฟล์ key)
       # ไม่เช่นนั้นใช้ secret EE_SERVICE_ACCOUNT_KEY ถ้ามี ถ้าไม่มีทั้งคู่ = ข้าม
       - name: ยืนยันตัวตน Google Cloud (Workload Identity Federation)
@@ -104,6 +109,7 @@ jobs:
           steps.fetch.outputs.changed == 'true'
           || (steps.osd.outputs.osd_added != '' && steps.osd.outputs.osd_added != '0')
           || (steps.wosis.outputs.wosis_added != '' && steps.wosis.outputs.wosis_added != '0')
+          || (steps.dindee.outputs.dindee_added != '' && steps.dindee.outputs.dindee_added != '0')
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -121,6 +127,7 @@ jobs:
           | รายละเอียดคงค้าง | ${{ steps.fetch.outputs.details_pending }} |
           | ผลวิเคราะห์ดิน: เพิ่ม / ทั้งหมด | ${{ steps.osd.outputs.osd_added }} / ${{ steps.osd.outputs.osd_total }} |
           | WoSIS profile: เพิ่ม / ทั้งหมด | ${{ steps.wosis.outputs.wosis_added }} / ${{ steps.wosis.outputs.wosis_total }} |
+          | บัตรดินดี: เพิ่ม / ทั้งหมด | ${{ steps.dindee.outputs.dindee_added }} / ${{ steps.dindee.outputs.dindee_total }} |
 
           รายละเอียด: \`data/changes/$(date -u +%Y-%m-%d).json\`
           EOF

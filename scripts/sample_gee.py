@@ -4,6 +4,7 @@
 ชั้นข้อมูล (raster คงที่ ไม่ต้องดึงซ้ำ — สุ่มเฉพาะจุดที่ยังไม่เคยสุ่ม):
   OpenLandMap v02 (CC BY-SA 4.0): pH(H2O), อินทรีย์คาร์บอน, ดินเหนียว, ทราย, ชั้นเนื้อดิน USDA
   SoilGrids 2.0 (CC BY 4.0):      pH(H2O), SOC, clay, sand ที่ 0–5 cm
+  FAO GSOCmap v1.5 (CC BY):       SOC stock 0–30 cm (t/ha, ~1 km) ผ่าน GEE community catalog
 
 ผลลัพธ์: data/gee/covariates.csv (key = source + id)
 
@@ -39,6 +40,7 @@ LAYERS = [
     ("sg_soc_g_kg_0_5cm", "projects/soilgrids-isric/soc_mean", "soc_0-5cm_mean", 0.1),
     ("sg_clay_pct_0_5cm", "projects/soilgrids-isric/clay_mean", "clay_0-5cm_mean", 0.1),
     ("sg_sand_pct_0_5cm", "projects/soilgrids-isric/sand_mean", "sand_0-5cm_mean", 0.1),
+    ("gsoc_t_ha_0_30cm", "projects/sat-io/open-datasets/FAO/GSOCMAP1-5-0", "b1", 1),
 ]
 COLUMNS = ["source", "id", "lat", "lon", *[c for c, *_ in LAYERS]]
 
@@ -97,7 +99,7 @@ def points():
     p = os.path.join(ROOT, "data", "wosis", "profiles.json")
     if os.path.exists(p):
         for r in json.load(open(p, encoding="utf-8")):
-            if r.get("lat") is not None and "outside_thailand" not in r.get("qa_flags", []):
+            if r.get("lat") is not None and not {"outside_thailand", "duplicate"} & set(r.get("qa_flags", [])):
                 out.append(("wosis", str(r["id"]), r["lat"], r["lon"]))
     return out
 
@@ -114,10 +116,11 @@ def main():
             for row in csv.DictReader(f):
                 done[(row["source"], row["id"])] = row
 
-    # จุดเดียวกันพิกัดเปลี่ยน (เช่น แก้โซน UTM) ต้องสุ่มใหม่
+    # จุดเดียวกันพิกัดเปลี่ยน (เช่น แก้โซน UTM) หรือยังไม่มีชั้นที่เพิ่มใหม่ ต้องสุ่มใหม่
     todo = [p for p in points()
             if (p[0], p[1]) not in done
-            or (float(done[(p[0], p[1])]["lat"]), float(done[(p[0], p[1])]["lon"])) != (round(p[2], 6), round(p[3], 6))]
+            or (float(done[(p[0], p[1])]["lat"]), float(done[(p[0], p[1])]["lon"])) != (round(p[2], 6), round(p[3], 6))
+            or any(done[(p[0], p[1])].get(c) in (None, "") for c, *_ in LAYERS)]
     todo = todo[: args.max_points]
     print(f"Points to sample: {len(todo)} (already done: {len(done)})")
     if not todo:
