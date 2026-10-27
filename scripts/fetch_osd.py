@@ -7,7 +7,8 @@ API:   https://osd101.ldd.go.th/api/data.php
 ข้อจำกัดของ API ที่พบ:
   - คืนได้สูงสุด 1,000 แถวต่อคำขอ (1 แถว = 1 ค่าวัด)
   - startdate/enddate ใช้ได้ (dd/mm/yyyy พ.ศ.) แต่ parameterID ถูกละเลย
-  - provinceName ใช้ร่วมกับช่วงวันที่ไม่ได้ ถ้าวันเดียวเกิน 1,000 แถวจะดึงไม่ครบ (บันทึกเป็น capped)
+  - provinceName ใช้ร่วมกับช่วงวันที่ไม่ได้ แต่ page=2,3,... ใช้ได้ (ลำดับแถวไม่คงที่ แต่รวมทุกหน้าแล้วได้ชุดเดิม)
+    จึงแตกเป็นรายวัน แล้ววันที่เกิน 1,000 แถวดึงต่อทีละหน้าจนหมด
   - ไม่มีรหัสตัวอย่าง และถ้าที่เดียวกันมีหลายตัวอย่างในวันเดียว แถวจะสลับกัน
     จับคู่ pH กับ OM ของตัวอย่างเดียวกันไม่ได้ จึงไม่สร้าง "ตัวอย่าง" ขึ้นเอง
 
@@ -15,7 +16,7 @@ API:   https://osd101.ldd.go.th/api/data.php
   measurements_<ปี>.csv.gz  ค่าวัดทีละแถวตามต้นทาง (ไม่รวม ไม่เดา)
   sites_<ปี>.json           สรุปต่อ "ที่ตั้ง+วันที่": จำนวน, ค่ากลาง, ต่ำสุด, สูงสุด ของแต่ละค่า (ใช้บนเว็บ)
   sites.csv                 sites ทุกปี
-  state.json                เดือนที่ดึงแล้ว / วันที่ถูกจำกัด 1,000 แถว
+  state.json                เดือนที่ดึงแล้ว / วันที่ยังดึงไม่ครบ (capped_days จะถูกดึงใหม่ทุกรอบ)
   meta.json, changelog.json
 
 วิธีไม่ดึงซ้ำ:
@@ -45,6 +46,7 @@ OUT = os.path.join(ROOT, "data", "osd")
 CAP = 1000
 FIRST_MONTH = (2013, 1)   # ข้อมูลเก่าสุดที่พบ (พ.ศ. 2556)
 RECHECK_DAYS = 60         # ช่วงล่าสุดที่ดึงซ้ำทุกรอบ
+MAX_PAGES = 50            # ต่อวัน (50,000 แถว)
 FUTURE_DAYS = 120         # API มีวันที่ในอนาคต ดึงล่วงหน้าไว้ด้วยแล้วติดธง
 
 TH_MONTHS = {m: i for i, m in enumerate(
@@ -72,8 +74,9 @@ def be(d):
     return f"{d.day:02d}/{d.month:02d}/{d.year + 543}"
 
 
-def call(start, end, delay, retries=5):
-    q = urllib.parse.urlencode({"startdate": be(start), "enddate": be(end), "max": CAP})
+def call(start, end, delay, page=1, retries=5):
+    q = urllib.parse.urlencode({"startdate": be(start), "enddate": be(end), "max": CAP,
+                                **({"page": page} if page > 1 else {})})
     for attempt in range(retries):
         try:
             req = urllib.request.Request(f"{API}?{q}", headers={"User-Agent": "thai-soil-db/1.0 (open-data mirror)"})
@@ -195,12 +198,20 @@ def month_range(y, m):
 
 
 def fetch_window(start, end, delay, state):
-    """ดึงช่วงวันที่ ถ้าเต็ม 1,000 แถวให้แตกเป็นรายวัน"""
+    """ดึงช่วงวันที่ ถ้าเต็ม 1,000 แถวให้แตกเป็นรายวัน วันเดียวที่เต็มดึงหน้าถัดไปจนหมด"""
     rows = call(start, end, delay)
     if len(rows) < CAP:
         return rows
     if start == end:
-        state["capped_days"][start.isoformat()] = len(rows)
+        page, last = 1, rows
+        while len(last) == CAP and page < MAX_PAGES:
+            page += 1
+            last = call(start, end, delay, page)
+            rows += last
+        if len(last) == CAP:
+            state["capped_days"][start.isoformat()] = len(rows)
+        else:
+            state["capped_days"].pop(start.isoformat(), None)
         return rows
     out, d = [], start
     while d <= end:
@@ -273,6 +284,9 @@ def main():
     windows = [(month_range(y, m), f"{y:04d}-{m:02d}") for y, m in todo]
     # 2) ช่วงล่าสุด + อนาคต: ดึงซ้ำทุกรอบ
     windows.append(((recheck_from.replace(day=1), today + dt.timedelta(days=FUTURE_DAYS)), None))
+    # 3) วันที่เคยดึงไม่ครบ (ก่อนรองรับ page หรือยังเกิน MAX_PAGES) ดึงใหม่
+    windows += [((d, d), None) for d in map(dt.date.fromisoformat, state["capped_days"])
+                if d < recheck_from.replace(day=1)]
     print(f"Backfill months: {len(todo)} | recent window: {windows[-1][0][0]}..{windows[-1][0][1]}")
 
     fetched = {}

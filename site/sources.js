@@ -25,7 +25,7 @@ const SOURCES = [
     access: { th: "JSON API osd101.ldd.go.th/api/data.php", en: "JSON API osd101.ldd.go.th/api/data.php" },
     license: { th: "CC BY", en: "CC BY" },
     update: { th: "รายวัน (ที่ต้นทาง)", en: "Daily (at source)" },
-    note: { th: "จำกัด 1,000 แถวต่อคำขอ, วันที่เป็น พ.ศ. ภาษาไทย", en: "1,000 rows per request; Thai Buddhist-era dates" },
+    note: { th: "จำกัด 1,000 แถวต่อคำขอ (ดึงต่อด้วย page), วันที่เป็น พ.ศ. ภาษาไทย", en: "1,000 rows per request (paged); Thai Buddhist-era dates" },
   },
   {
     id: "ldd-dindee",
