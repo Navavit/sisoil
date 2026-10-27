@@ -188,13 +188,13 @@ function renderTable(rows) {
   const withCoord = rows.filter((p) => p.lat != null).length;
   $("count").textContent = t("count")(num(rows.length), num(withCoord));
   $("rows").innerHTML = rows.slice(0, TABLE_LIMIT).map((p) => `
-    <tr class="${p.lat != null ? "clickable" : ""}" data-id="${p.id}">
+    <tr class="${markers.has(p.id) ? "clickable" : ""}" data-id="${p.id}">
       <td class="num">${p.id}</td><td>${day(p.date)}</td><td class="muted">${day(p.first_seen)}</td>
       <td>${esc(p.location)}</td>
       <td><i class="dot" style="background:${PH_COLOR[p.ph] || "#9e9e9e"}"></i> ${esc(val(p.ph))}</td>
       <td>${esc(val(p.om))}</td><td>${esc(val(p.p))}</td><td>${esc(val(p.k))}</td>
       <td>${esc(p.texture_field || "")}</td>
-      <td class="num">${p.lat != null ? `${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}${p.coord_source === "utm" ? "*" : ""}` : "–"}</td>
+      <td class="num">${p.lat != null ? `${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}${p.coord_source === "utm" ? "*" : ""}${markers.has(p.id) ? "" : ` <span title="${esc(t("qaFlags").far_from_province)}">⚑</span>`}` : "–"}</td>
     </tr>`).join("");
   $("more").textContent = rows.length > TABLE_LIMIT ? t("more")(num(TABLE_LIMIT), num(rows.length)) : "";
 }
@@ -258,7 +258,8 @@ async function load() {
   // ชื่อจังหวัดจากรายละเอียด หรือส่วนท้ายของ location
   points = pts.map((p) => ({ ...p, provinceName: p.province || (p.location || "").split(",").pop().trim() }));
   for (const p of points) {
-    if (p.lat == null) continue;
+    // พิกัดที่รู้ว่าผิดที่ (เช่น ตกทะเล) ไม่วางบนแผนที่ แต่ยังอยู่ในตาราง
+    if (p.lat == null || (p.qa_flags || []).includes("far_from_province")) continue;
     const mk = L.circleMarker([p.lat, p.lon], {
       radius: 6, weight: 1, color: "#00000055", fillOpacity: .9,
       fillColor: PH_COLOR[p.ph] || "#9e9e9e", dashArray: p.coord_source === "utm" ? "2 2" : null,
