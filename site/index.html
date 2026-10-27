@@ -40,8 +40,8 @@
       <b data-i18n="stdTitle"></b>
       <p data-i18n="stdIntro"></p>
       <dl>
-        <dt data-i18n="layerOsd"></dt><dd data-i18n="stdOsd"></dd>
         <dt data-i18n="layerWosis"></dt><dd data-i18n="stdWosis"></dd>
+        <dt data-i18n="layerOsd"></dt><dd data-i18n="stdOsd"></dd>
         <dt data-i18n="layerLdd"></dt><dd data-i18n="stdLdd"></dd>
         <dt data-i18n="stdDindeeTerm"></dt><dd data-i18n="stdDindee"></dd>
         <dt data-i18n="stdMapsTerm"></dt><dd data-i18n="stdMaps"></dd>
@@ -70,13 +70,13 @@
       <p class="muted small" data-i18n="layersNote"></p>
 
       <div class="layer">
+        <label class="check"><input id="l-wosis" type="checkbox" checked> <b data-i18n="layerWosis"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
+        <p class="muted small" id="wosis-info"></p>
+      </div>
+      <div class="layer">
         <label class="check"><input id="l-osd" type="checkbox" checked> <b data-i18n="layerOsd"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
         <label><span data-i18n="osdYear"></span><select id="osd-year"></select></label>
         <p class="muted small" id="osd-info"></p>
-      </div>
-      <div class="layer">
-        <label class="check"><input id="l-wosis" type="checkbox" checked> <b data-i18n="layerWosis"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
-        <p class="muted small" id="wosis-info"></p>
       </div>
       <div class="layer">
         <label class="check"><input id="l-ldd" type="checkbox"> <b data-i18n="layerLdd"></b> <span class="badge badge-planned" data-i18n="classesOnly"></span></label>

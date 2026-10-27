@@ -245,9 +245,9 @@ function renderCheck() {
       · <a href="https://www.google.com/maps?q=${lat},${lon}" target="_blank" rel="noopener">Google Maps</a></p>
     <div class="check-grid">
       <div class="card"><h3>${t("checkMeasured")}</h3>
+        <h4>${t("layerWosis")}</h4>${wosisHtml}
         <h4>${t("layerOsd")}</h4>${osdHtml}
         <h4>${t("layerLdd")}</h4>${lddHtml}
-        <h4>${t("layerWosis")}</h4>${wosisHtml}
       </div>
       <div class="card"><h3>${t("checkModel")}</h3>
         <h4>SoilGrids 250 m <span class="muted small">(ISRIC, CC BY 4.0)</span></h4>${sgHtml}${geeHtml}

@@ -154,6 +154,7 @@ async function initOsd() {
 
 // ---------- ชั้น soil profile (WoSIS) ----------
 const wosisLayer = L.layerGroup();
+map.createPane("wosis").style.zIndex = 650;   // อยู่เหนือกลุ่มจุดของชั้นอื่น
 let wosisProfiles = [];
 const WOSIS_COLS = [["ph_h2o", "pH"], ["orgc_g_kg", "OC g/kg"], ["clay_pct", "Clay %"], ["sand_pct", "Sand %"], ["cec_cmol_kg", "CEC"]];
 
@@ -179,7 +180,7 @@ async function loadWosis() {
   // profile ที่ซ้ำกับอีก profile ใน WoSIS ไม่วางบนแผนที่ (ดู duplicate_of)
   wosisProfiles = wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of && confident(s.qa_flags));
   wosisProfiles.forEach((s) => L.circleMarker([s.lat, s.lon], {
-    radius: 7, weight: 2, color: "#3a2a1a", fillOpacity: .9, fillColor: phColor(s.ph_h2o_0_30),
+    radius: 7, weight: 2, color: "#3a2a1a", fillOpacity: .9, fillColor: phColor(s.ph_h2o_0_30), pane: "wosis",
   }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }).addTo(wosisLayer));
   $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
 }
@@ -217,9 +218,9 @@ function renderStatic() {
 
   const hiddenLdd = points.length - shown.length;
   const items = [
+    [num(wosisMeta?.unique_profiles ?? 0), t("statWosis")],
     [num(osdMeta?.sites_on_map ?? 0), t("statOsd")(num(osdMeta?.sites ?? 0))],
     [num(osdMeta?.measurements ?? 0), t("statMeasurements")],
-    [num(wosisMeta?.unique_profiles ?? 0), t("statWosis")],
     [num(shown.length), t("statLdd")(num(points.length))],
     [num((osdMeta ? osdMeta.sites - (osdMeta.sites_on_map ?? osdMeta.sites) : 0) + hiddenLdd), t("statHidden")],
   ];
@@ -287,14 +288,14 @@ async function load() {
   renderStatic();
   render();
   await initOsd();
-  // แหล่งที่เป็นค่าวัดจริงเปิดไว้ก่อน
-  if ($("l-osd").checked && $("osd-year").value) {
-    await loadOsdYear($("osd-year").value);
-    map.addLayer(osdLayer);
-  }
+  // แหล่งที่เป็นค่าวัดจริงเปิดไว้ก่อน (WoSIS เชื่อถือได้มากที่สุด)
   if ($("l-wosis").checked) {
     await loadWosis();
     map.addLayer(wosisLayer);
+  }
+  if ($("l-osd").checked && $("osd-year").value) {
+    await loadOsdYear($("osd-year").value);
+    map.addLayer(osdLayer);
   }
 }
 
