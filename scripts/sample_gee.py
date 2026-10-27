@@ -10,7 +10,8 @@
 ยืนยันตัวตน:
   ในเครื่อง:      earthengine authenticate  แล้วตั้ง EE_PROJECT=<cloud project id>
   ในเครื่อง (service account): ใส่ EE_PROJECT และ EE_KEY_FILE=<path ไฟล์ JSON> ใน .env (ดู .env.example)
-  GitHub Actions: secret EE_SERVICE_ACCOUNT_KEY (JSON ของ service account) + EE_PROJECT
+  GitHub Actions: Workload Identity Federation (ไม่มีไฟล์ key ดู docs/gee-github-actions.md) + EE_PROJECT
+                  หรือ secret EE_SERVICE_ACCOUNT_KEY (JSON ของ service account)
 ต้องติดตั้ง: pip install earthengine-api
 """
 import argparse
@@ -67,6 +68,12 @@ def init():
         info = json.loads(key)
         creds = ee.ServiceAccountCredentials(info["client_email"], key_data=key)
         ee.Initialize(creds, project=project or info.get("project_id"))
+    elif os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
+        # credential ชั่วคราวจาก google-github-actions/auth (Workload Identity Federation)
+        import google.auth
+        creds, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/earthengine",
+                                               "https://www.googleapis.com/auth/cloud-platform"])
+        ee.Initialize(creds, project=project)
     else:
         ee.Initialize(project=project)
 
@@ -84,10 +91,15 @@ def points():
         for r in json.load(open(p, encoding="utf-8")):
             if r.get("lat") is not None and "far_from_province" not in r.get("qa_flags", []):
                 out.append(("ldd", str(r["id"]), r["lat"], r["lon"]))
-    for f in glob.glob(os.path.join(ROOT, "data", "osd", "samples_*.json")):
+    for f in glob.glob(os.path.join(ROOT, "data", "osd", "sites_*.json")):
         for r in json.load(open(f, encoding="utf-8")):
             if r.get("lat") is not None and "outside_thailand" not in r.get("qa_flags", []):
                 out.append(("osd", r["id"], r["lat"], r["lon"]))
+    p = os.path.join(ROOT, "data", "wosis", "profiles.json")
+    if os.path.exists(p):
+        for r in json.load(open(p, encoding="utf-8")):
+            if r.get("lat") is not None and "outside_thailand" not in r.get("qa_flags", []):
+                out.append(("wosis", str(r["id"]), r["lat"], r["lon"]))
     return out
 
 

@@ -6,6 +6,7 @@
 |---|---|---|
 | กรมพัฒนาที่ดิน – Soil Survey Public | จุดสำรวจดิน (ระดับ pH/OM/P/K, เนื้อดิน) | ไม่ระบุ © LDD |
 | กรมพัฒนาที่ดิน – การตรวจวิเคราะห์ดิน (osd01) | ผลวิเคราะห์ดินเป็นตัวเลข (pH, EC, OM, P, K) | CC BY |
+| ISRIC – WoSIS | soil profile แยกชั้นความลึก ผลแล็บ (pH, OC, N, เนื้อดิน, CEC, BD) | CC BY / CC0 / PD ต่อชุดข้อมูล |
 | Google Earth Engine – OpenLandMap, SoilGrids | ค่าคุณสมบัติดินที่จุดสำรวจ (ใช้เทียบ) | CC BY-SA / CC BY |
 
 รายชื่อแหล่งทั้งหมด (รวมที่กำลังจะเพิ่ม) อยู่ที่ [docs/sources.md](docs/sources.md) และหน้า **แหล่งข้อมูล** บนเว็บไซต์
@@ -44,6 +45,7 @@ flowchart LR
 ├── scripts/
 │   ├── fetch_ldd.py        # จุดสำรวจดิน LDD (Python stdlib ล้วน)
 │   ├── fetch_osd.py        # ผลวิเคราะห์ดิน LDD (Python stdlib ล้วน)
+│   ├── fetch_wosis.py      # soil profile จาก ISRIC WoSIS (Python stdlib ล้วน)
 │   └── sample_gee.py       # สุ่มค่าจาก Google Earth Engine (ต้องใช้ earthengine-api)
 ├── data/                   # ข้อมูลที่ระบบสร้าง (อย่าแก้ด้วยมือ)
 │   ├── meta.json           # สรุปการอัปเดตล่าสุด
@@ -55,11 +57,13 @@ flowchart LR
 │   │   ├── points.csv
 │   │   └── state.json      # จำนวนจุดรายจังหวัด (ใช้ตรวจก่อนดึง)
 │   ├── osd/                # ผลวิเคราะห์ดิน: sites_<ปี>.json, sites.csv, measurements_<ปี>.csv.gz, state.json
+│   ├── wosis/              # profiles.json, profiles.csv, layers.csv
 │   └── gee/                # covariates.csv (ค่าจาก GEE ที่แต่ละจุด)
 ├── site/                   # เว็บไซต์สองภาษา (HTML/CSS/JS + Leaflet, i18n.js)
 ├── docs/
 │   ├── architecture.md     # flowchart + ER diagram
 │   ├── data-cleaning.md    # วิธีทำความสะอาดข้อมูล
+│   ├── gee-github-actions.md # ตั้งค่า GEE บน Actions แบบไม่ใช้ไฟล์ key
 │   └── sources.md          # รายชื่อแหล่งข้อมูลดินแบบเปิด
 └── notebooks/              # Jupyter สำหรับวิเคราะห์ (เก็บในเครื่อง ไม่ขึ้น GitHub)
 ```
@@ -80,6 +84,9 @@ mkdir -p _site && cp -r site/* _site/ && cp -r data _site/ && python3 -m http.se
 # ผลวิเคราะห์ดิน (ย้อนหลังทีละไม่เกิน N เดือนต่อรอบ)
 python3 scripts/fetch_osd.py --max-months 24
 
+# soil profile จาก WoSIS
+python3 scripts/fetch_wosis.py
+
 # Google Earth Engine — ใส่ EE_PROJECT และ EE_KEY_FILE ใน .env (คัดลอกจาก .env.example)
 # หรือไม่ใช้ key: earthengine authenticate แล้วใส่แค่ EE_PROJECT
 pip install earthengine-api && python3 scripts/sample_gee.py
@@ -97,11 +104,11 @@ pip install -r notebooks/requirements.txt && jupyter lab notebooks/
 
 ## ตั้งค่า Google Earth Engine บน GitHub Actions
 
-1. สร้าง service account ใน Cloud project ที่ลงทะเบียน Earth Engine แล้ว และให้สิทธิ์ใช้ Earth Engine
-2. **Settings → Secrets → Actions** เพิ่ม `EE_SERVICE_ACCOUNT_KEY` (เนื้อหาไฟล์ JSON key)
-3. **Settings → Variables → Actions** เพิ่ม `EE_PROJECT` (project id)
+แนะนำ **Workload Identity Federation** (ไม่มีไฟล์ key เก็บไว้ที่ใด) ทำตาม [docs/gee-github-actions.md](docs/gee-github-actions.md)
+แล้วใส่ Variables `GCP_WIF_PROVIDER`, `GCP_SERVICE_ACCOUNT`, `EE_PROJECT`
 
-ถ้าไม่ตั้งค่า ขั้นตอน GEE จะถูกข้าม
+ทางเลือกเดิม: secret `EE_SERVICE_ACCOUNT_KEY` (JSON ของ service account) + variable `EE_PROJECT`
+ถ้าไม่ตั้งค่าใดเลย ขั้นตอน GEE จะถูกข้าม (รัน `scripts/sample_gee.py` ในเครื่องแล้ว push แทนได้)
 
 ## ข้อควรทราบ
 

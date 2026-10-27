@@ -146,6 +146,35 @@ async function initOsd() {
   $("l-osd").disabled = $("osd-year").disabled = !years.length;
 }
 
+// ---------- ชั้น soil profile (WoSIS) ----------
+const wosisLayer = L.layerGroup();
+let wosisProfiles = [];
+const WOSIS_COLS = [["ph_h2o", "pH"], ["orgc_g_kg", "OC g/kg"], ["clay_pct", "Clay %"], ["sand_pct", "Sand %"], ["cec_cmol_kg", "CEC"]];
+
+function wosisPopup(s) {
+  const head = WOSIS_COLS.map(([, l]) => `<th>${l}</th>`).join("");
+  const cell = (v) => `<td class="num">${v ?? "–"}</td>`;
+  const rows = s.layers.map((ly) => `<tr><td>${ly.u ?? "?"}–${ly.l ?? "?"}${ly.name ? ` <span class="muted">${esc(ly.name)}</span>` : ""}</td>${WOSIS_COLS.map(([k]) => cell(ly[k])).join("")}</tr>`).join("");
+  const top = `<tr><td><b>${t("topsoil")}</b></td>${WOSIS_COLS.map(([k]) => cell(s[k + "_0_30"])).join("")}</tr>`;
+  return `<b>${t("wosisProfile")}</b> ${esc(s.code || s.id)}
+    <table class="pop">
+      <tr><td>${t("surveyYear")}</td><td><b>${esc(s.date || "–")}</b></td></tr>
+      <tr><td>${t("dataset")}</td><td>${esc(s.dataset)} · ${esc(s.licence || "")}</td></tr>
+      ${s.wrb_group || s.usda_order ? `<tr><td>WRB / USDA</td><td>${esc(s.wrb_group || "–")} / ${esc(s.usda_order || "–")}</td></tr>` : ""}
+      ${(s.qa_flags || []).length ? `<tr><td>${t("qa")}</td><td class="flags">${s.qa_flags.map((f) => `<span>${esc(f)}</span>`).join(" ")}</td></tr>` : ""}
+    </table>
+    ${s.layers.length ? `<table class="pop depth"><tr><th>${t("depth")}</th>${head}</tr>${top}${rows}</table>` : ""}`;
+}
+
+async function loadWosis() {
+  wosisProfiles = await fetch("data/wosis/profiles.json").then((r) => r.json()).catch(() => []);
+  wosisLayer.clearLayers();
+  wosisProfiles.filter((s) => s.lat != null).forEach((s) => L.circleMarker([s.lat, s.lon], {
+    radius: 7, weight: 2, color: "#3a2a1a", fillOpacity: .9, fillColor: phColor(s.ph_h2o_0_30),
+  }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }).addTo(wosisLayer));
+  $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
+}
+
 function render() {
   const rows = filtered();
   cluster.clearLayers();
@@ -215,6 +244,7 @@ function setLang(l) {
   renderStatic();
   render();
   if (osdSites.length) $("osd-info").textContent = t("osdInfo")(num(osdSites.length), $("osd-year").value);
+  if (wosisProfiles.length) $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
 }
 
 async function load() {
@@ -263,6 +293,14 @@ $("l-osd").addEventListener("change", async () => {
   }
 });
 $("osd-year").addEventListener("change", () => loadOsdYear($("osd-year").value));
+$("l-wosis").addEventListener("change", async () => {
+  if ($("l-wosis").checked) {
+    if (!wosisProfiles.length) await loadWosis();
+    map.addLayer(wosisLayer);
+  } else {
+    map.removeLayer(wosisLayer);
+  }
+});
 
 renderStatic();
 load().catch((err) => {

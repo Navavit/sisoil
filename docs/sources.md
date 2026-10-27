@@ -5,6 +5,9 @@
 | แหล่ง | ประเภท | วิธีดึง | สถานะ |
 |---|---|---|---|
 | กรมพัฒนาที่ดิน – Soil Survey Public<br><https://soilservice.ldd.go.th/soilsurveypublic/> | จุดสำรวจ (pH, OM, P, K, เนื้อดิน, พิกัด) | `scripts/fetch_ldd.py` ผ่าน `POST /SoilSurveyAPI/api/SP` ใช้เฉพาะ procedure สาธารณะแบบอ่านอย่างเดียว | ใช้งาน |
+| กรมพัฒนาที่ดิน – ผลวิเคราะห์ดิน (osd01) | ค่าตัวเลข pH, EC, OM, P, K | `scripts/fetch_osd.py` (รายละเอียดด้านล่าง) | ใช้งาน |
+| ISRIC WoSIS<br><https://www.isric.org/explore/wosis> | soil profile แยกชั้นความลึก + ผลแล็บ | `scripts/fetch_wosis.py` ผ่าน WFS (รายละเอียดด้านล่าง) | ใช้งาน |
+| Google Earth Engine – OpenLandMap, SoilGrids | ค่าที่จุดสำรวจ | `scripts/sample_gee.py` | ใช้งาน |
 
 ### Procedure ที่ใช้ (อ่านอย่างเดียว)
 
@@ -17,7 +20,7 @@
 
 รหัสพื้นที่: `p` + รหัสจังหวัด (เช่น `p40`) หรือ `a` + รหัสอำเภอ (เช่น `a4001`)
 
-## สำรวจแล้ว — รอเพิ่มเข้าระบบ
+## รายละเอียดแหล่งข้อมูล
 
 ### LDD Catalog (CKAN) — <https://lddcatalog.ldd.go.th/group/soil>
 
@@ -44,6 +47,17 @@ API: `https://lddcatalog.ldd.go.th/api/3/action/package_search?fq=groups:soil`
 - พิกัดมีทศนิยม 3 ตำแหน่ง (ประมาณ ±100 m) ชื่อพารามิเตอร์มี HTML (`<sup>`)
 - ไม่มีรหัสตัวอย่าง ต้องสร้าง key จาก (lat, lon, date, district)
 
+### ISRIC WoSIS — soil profile
+
+WFS: `https://maps.isric.org/mapserv?map=/map/wosis_latest.map` ชั้น `wosis_latest_profiles` และชั้นละคุณสมบัติ (`phaq`, `phkc`, `orgc`, `nitkjd`, `clay`, `silt`, `sand`, `cecph7`, `bdfiod`, `elco25`) กรองด้วย `country_name = Thailand`, ขอผลเป็น GeoJSON
+
+ผลทดสอบ (ต.ค. 2026):
+- 451 profile ในไทย: WD-WISE 277, WD-ISCN 112, US-NCSS 28, WD-Mangroves 20, WD-ISIS 12, WD-NWAFU-SCS 2
+- สัญญาอนุญาตระบุ **ต่อแถว** (`licence`): CC BY 3.0/4.0, CC0, U.S. Public Domain — สคริปต์ตัดชุดที่เป็น NC/ND ออกอัตโนมัติ (ตอนนี้ไม่มี)
+- 216 profile ไม่มีปีที่สำรวจ, ทุก profile มีพิกัด (ความคลาดเคลื่อนระบุใน `positional_uncertainty`)
+- `value_avg` คือค่าเฉลี่ยเมื่อชั้นเดียวมีหลายค่า, วิธีวิเคราะห์อยู่ใน `method_options`
+- ยังไม่ได้ตัดซ้ำกับ LDD (profile ใน WISE บางส่วนมาจาก LDD เดิม)
+
 ### Google Earth Engine (ตัวแปรร่วม / เทียบค่า)
 
 | Asset | เนื้อหา |
@@ -60,7 +74,6 @@ API: `https://lddcatalog.ldd.go.th/api/3/action/package_search?fq=groups:soil`
 
 | แหล่ง | ประเภท | หมายเหตุ |
 |---|---|---|
-| ISRIC WoSIS | จุด profile + ผลแล็บ | CC-BY, มี WFS/GraphQL |
 | ISRIC SoilGrids 250 m | Raster | ค่าคุณสมบัติดินหลายความลึก |
 | FAO HWSD v2.0 | Raster ~1 km | หน่วยแผนที่ดินโลก |
 | FAO GSP (GSOCmap, GSASmap, GSNmap) | Raster | ไทยส่งข้อมูลระดับชาติ |

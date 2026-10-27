@@ -25,3 +25,4 @@ secrets/
 *-key.json
 *_key.json
 gee-*.json
+gha-creds-*.json
