@@ -25,6 +25,8 @@ import time
 import urllib.parse
 import urllib.request
 
+import admin
+
 WFS = "https://maps.isric.org/mapserv?map=/map/wosis_latest.map"
 SOURCE_URL = "https://www.isric.org/explore/wosis"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,6 +55,7 @@ QA_FLAGS = {
     "no_lab_data": "ไม่มีผลแล็บในคุณสมบัติที่ดึง",
     "duplicate": "profile เดียวกับอีก profile ใน WoSIS (ดู duplicate_of) — ไม่แสดงบนแผนที่ ไม่นับซ้ำ",
     "near_ldd_point": "อยู่ใกล้จุดสำรวจ LDD ในปีเดียวกัน อาจเป็นจุดเดียวกัน (ดู ldd_match)",
+    "shared_coords": "พิกัดซ้ำกับ profile อื่นหรือแหล่งอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
 }
 # ลำดับความน่าเชื่อถือเมื่อ profile เดียวกันอยู่หลายชุด: แหล่งต้นฉบับก่อนชุดที่รวบรวมต่อ
 DATASET_PRIORITY = ["US-NCSS", "WD-ISIS", "WD-WISE"]
@@ -276,6 +279,7 @@ def main():
     profiles.sort(key=lambda s: s["id"])
 
     dups, near = find_duplicates(profiles), ldd_matches(profiles)
+    shared = admin.shared_coords("wosis", [s for s in profiles if not dups.get(s["id"])])
     for s in profiles:
         flags = set(s["qa_flags"])
         s["duplicate_of"] = dups.get(s["id"])
@@ -284,6 +288,8 @@ def main():
             flags.add("duplicate")
         if s["ldd_match"]:
             flags.add("near_ldd_point")
+        if not s["duplicate_of"] and s["lat"] is not None and admin.coord_key(s["lat"], s["lon"]) in shared:
+            flags.add("shared_coords")
         s["qa_flags"] = [f for f in QA_FLAGS if f in flags]
         s["hash"] = sha({k: v for k, v in s.items() if k != "hash"})
         s["first_seen"] = (old.get(s["id"]) or {}).get("first_seen") or today

@@ -161,7 +161,7 @@ QA_FLAGS = {
     "ph_unknown": "pH เป็น Other หรือว่าง",
     "nutrient_unknown": "OM/P/K อย่างน้อยหนึ่งค่าเป็น Other หรือว่าง",
     "duplicate": "พิกัดและวันที่ซ้ำกับจุดอื่น (ไม่แสดงบนแผนที่)",
-    "shared_coords": "พิกัดเดียวกับจุดอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
+    "shared_coords": "พิกัดซ้ำกับจุดอื่นหรือแหล่งอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
 }
 
 
@@ -172,11 +172,7 @@ def quality_flags(records, province_names, today):
     """
     records = list(records)
     seen = {}
-    per_coord = {}
-    for r in records:
-        if r["lat"] is not None:
-            k = (round(r["lat"], 5), round(r["lon"], 5))
-            per_coord[k] = per_coord.get(k, 0) + 1
+    shared = admin.shared_coords("ldd", records)
     for r in sorted(records, key=lambda x: x["id"]):
         f = []
         if r["lat"] is None:
@@ -201,7 +197,7 @@ def quality_flags(records, province_names, today):
             if key in seen:
                 f.append("duplicate")
             seen.setdefault(key, r["id"])
-            if per_coord[key[:2]] > 1:
+            if key[:2] in shared:
                 f.append("shared_coords")
         loc = (r.get("location") or "").strip()
         if not loc and not (r.get("subdistrict") or r.get("district")):

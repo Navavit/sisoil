@@ -50,7 +50,7 @@ const map = L.map("map", { preferCanvas: true }).setView([13.2, 101], 6);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18, attribution: "&copy; OpenStreetMap contributors",
 }).addTo(map);
-const cluster = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 50 });
+const cluster = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 50, iconCreateFunction: (c) => clusterIcon(c) });
 map.addLayer(cluster);
 
 function popup(p) {
@@ -110,7 +110,7 @@ function qaMatch(flags, q) {
 }
 
 // ---------- ชั้นผลวิเคราะห์ดิน (osd) ----------
-const osdLayer = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 40 });
+const osdLayer = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 40, iconCreateFunction: (c) => clusterIcon(c) });
 let osdMeta = null;
 let wosisMeta = null;
 let osdSites = [];
@@ -118,6 +118,87 @@ const OSD_PARAMS = [["ph", "pH", ""], ["ec_ds_m", "EC", "dS/m"], ["om_pct", "OM"
 
 function phColor(v) {
   return v == null ? "#9e9e9e" : PH_STOPS.find(([max]) => v < max)[1];
+}
+
+// ---------- ระบายสีจุดตามค่าที่เลือก ----------
+const NO_DATA = "#b8b2a7";
+const SEQ = ["#ffffcc", "#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#0c2c84"];
+const SALT = ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#8c2d04", "#4a1500"];
+const TEX = ["#fff7ec", "#fdd49e", "#fc8d59", "#d7301f", "#990000", "#4d0000"];
+// bins = ค่าขอบบนของแต่ละช่วง; แหล่งที่ไม่มีค่านี้คืน null (แสดงเป็นสีจาง)
+const COLOR_VARS = {
+  ph: { unit: "", osd: (s) => s.ph, wosis: (s) => s.ph_h2o_0_30, ldd: "ph" },
+  ec: { unit: "dS/m", bins: [0.2, 0.5, 1, 2, 4], colors: SALT, osd: (s) => s.ec_ds_m, wosis: (s) => s.ec_ds_m_0_30 },
+  om: { unit: "%", bins: [0.5, 1, 1.5, 2.5, 3.5, 4.5], colors: SEQ, osd: (s) => s.om_pct,
+    wosis: (s) => (s.orgc_g_kg_0_30 == null ? null : s.orgc_g_kg_0_30 * 0.1724), ldd: "om" },   // OM ≈ OC × 1.724
+  n: { unit: "g/kg", bins: [0.5, 1, 1.5, 2, 3], colors: SEQ, wosis: (s) => s.n_g_kg_0_30 },
+  p: { unit: "mg/kg", bins: [3, 6, 10, 15, 25, 45], colors: SEQ, osd: (s) => s.p_mg_kg, ldd: "p" },
+  k: { unit: "mg/kg", bins: [30, 60, 90, 120, 200], colors: SEQ, osd: (s) => s.k_mg_kg, ldd: "k" },
+  clay: { unit: "%", bins: [10, 20, 30, 40, 60], colors: TEX, wosis: (s) => s.clay_pct_0_30 },
+  silt: { unit: "%", bins: [10, 20, 30, 40, 60], colors: TEX, wosis: (s) => s.silt_pct_0_30 },
+  sand: { unit: "%", bins: [20, 40, 60, 70, 85], colors: TEX, wosis: (s) => s.sand_pct_0_30 },
+  cec: { unit: "cmol/kg", bins: [5, 10, 15, 20, 30], colors: SEQ, wosis: (s) => s.cec_cmol_kg_0_30 },
+};
+const LEVEL_COLORS = { "ต่ำมาก": SEQ[0], "ต่ำ": SEQ[2], "ปานกลาง": SEQ[3], "สูง": SEQ[5], "สูงมาก": SEQ[6] };
+let colorVar = "ph";
+
+function colorFor(source, rec) {
+  const def = COLOR_VARS[colorVar];
+  if (source === "ldd") {   // จุดสำรวจภาคสนามมีแค่ระดับ
+    if (!def.ldd) return null;
+    return (def.ldd === "ph" ? PH_COLOR[rec.ph] : LEVEL_COLORS[rec[def.ldd]]) || null;
+  }
+  const v = def[source]?.(rec);
+  if (v == null) return null;
+  if (colorVar === "ph") return phColor(v);
+  const i = def.bins.findIndex((b) => v < b);
+  return def.colors[i < 0 ? def.bins.length : i];
+}
+function styleFor(source, rec) {
+  const c = colorFor(source, rec);
+  return { fillColor: c || NO_DATA, fillOpacity: c ? .92 : .25, opacity: c ? 1 : .25 };
+}
+// สีของกลุ่มจุด = สีที่พบมากที่สุดในกลุ่ม (ไม่นับจุดที่ไม่มีค่า)
+function clusterIcon(c) {
+  const counts = {};
+  for (const m of c.getAllChildMarkers()) {
+    const f = m.options.fillColor;
+    if (f !== NO_DATA) counts[f] = (counts[f] || 0) + 1;
+  }
+  const color = Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] || NO_DATA;
+  const n = c.getChildCount(), size = n < 10 ? 30 : n < 100 ? 36 : 42;
+  return L.divIcon({ html: `<div style="background:${color}"><span>${n}</span></div>`, className: "pt-cluster", iconSize: [size, size] });
+}
+function restyle() {
+  for (const m of markers.values()) m.setStyle(styleFor("ldd", m.rec));
+  osdLayer.eachLayer((m) => m.setStyle(styleFor("osd", m.rec)));
+  wosisLayer.eachLayer((m) => m.setStyle(styleFor("wosis", m.rec)));
+  cluster.refreshClusters();
+  osdLayer.refreshClusters();
+  renderLegend();
+}
+function renderLegend() {
+  const def = COLOR_VARS[colorVar];
+  const sel = $("color-by"), cur = colorVar;
+  sel.innerHTML = Object.keys(COLOR_VARS).map((k) => `<option value="${k}">${esc(t("vars")[k])}</option>`).join("");
+  sel.value = cur;
+  let items;
+  if (colorVar === "ph") {
+    items = PH_STOPS.map(([max, c, l], i) => {
+      const lo = i ? PH_STOPS[i - 1][0] : null;
+      const range = lo == null ? `< ${max}` : max > 14 ? `≥ ${lo}` : `${lo}–${(max - 0.1).toFixed(1)}`;
+      return [c, `pH ${range} ${val(l)}`];
+    });
+  } else {
+    items = def.colors.slice(0, def.bins.length + 1).map((c, i) => {
+      const lo = def.bins[i - 1], hi = def.bins[i];
+      return [c, `${lo == null ? `< ${hi}` : hi == null ? `≥ ${lo}` : `${lo}–${hi}`} ${def.unit}`];
+    });
+  }
+  const sources = ["wosis", "osd", "ldd"].filter((s) => def[s]).map((s) => t({ wosis: "layerWosis", osd: "layerOsd", ldd: "layerLdd" }[s]));
+  $("legend").innerHTML = items.map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("") +
+    `<li><i style="background:${NO_DATA};opacity:.5"></i>${esc(t("noValue"))}</li>` +
+    `<li class="muted small">${esc(t("varSources")(sources.join(", ")))}${colorVar === "om" ? ` · ${esc(t("omNote"))}` : ""}</li>`;
 }
 
 function osdPopup(s) {
@@ -140,9 +221,9 @@ function osdPopup(s) {
 async function loadOsdYear(year) {
   osdLayer.clearLayers();
   osdSites = (await fetch(`data/osd/sites_${year}.json`).then((r) => r.json()).catch(() => [])).filter((s) => confident(s.qa_flags));
-  osdLayer.addLayers(osdSites.filter((s) => s.lat != null).map((s) => L.circleMarker([s.lat, s.lon], {
-    radius: 5, weight: 1.5, color: "#ffffff", fillOpacity: .95, fillColor: phColor(s.ph),
-  }).bindPopup(() => osdPopup(s))));
+  osdLayer.addLayers(osdSites.filter((s) => s.lat != null).map((s) => Object.assign(L.circleMarker([s.lat, s.lon], {
+    radius: 5, weight: 1.5, color: "#ffffff", ...styleFor("osd", s),
+  }).bindPopup(() => osdPopup(s)), { rec: s })));
   $("osd-info").textContent = t("osdInfo")(num(osdSites.length), year);
 }
 
@@ -179,9 +260,9 @@ async function loadWosis() {
   wosisLayer.clearLayers();
   // profile ที่ซ้ำกับอีก profile ใน WoSIS ไม่วางบนแผนที่ (ดู duplicate_of)
   wosisProfiles = wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of && confident(s.qa_flags));
-  wosisProfiles.forEach((s) => L.circleMarker([s.lat, s.lon], {
-    radius: 7, weight: 2, color: "#3a2a1a", fillOpacity: .9, fillColor: phColor(s.ph_h2o_0_30), pane: "wosis",
-  }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }).addTo(wosisLayer));
+  wosisProfiles.forEach((s) => Object.assign(L.circleMarker([s.lat, s.lon], {
+    radius: 7, weight: 2, color: "#3a2a1a", pane: "wosis", ...styleFor("wosis", s),
+  }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }), { rec: s }).addTo(wosisLayer));
   $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
 }
 
@@ -239,11 +320,7 @@ function renderStatic() {
     `<option value="_coords">${t("qaGoodCoords")}</option>` +
     Object.keys(t("qaFlags")).filter((f) => counts[f]).map((f) => `<option value="${f}">⚑ ${esc(t("qaFlags")[f])} (${num(counts[f])})</option>`).join("");
   qaSel.value = qaCur;
-  $("legend").innerHTML = PH_STOPS.map(([max, c, l], i) => {
-    const lo = i ? PH_STOPS[i - 1][0] : null;
-    const range = lo == null ? `< ${max}` : max > 14 ? `≥ ${lo}` : `${lo}–${(max - 0.1).toFixed(1)}`;
-    return `<li><i style="background:${c}"></i>pH ${range} ${esc(val(l))}</li>`;
-  }).join("") + `<li class="muted small">${t("legendNote")}</li>`;
+  renderLegend();
 
   $("log").innerHTML = [...log].reverse().map((e) => `
     <tr><td>${day(e.date)}</td><td class="num">${num(e.total)}</td><td class="num">+${num(e.added)}</td>
@@ -279,10 +356,9 @@ async function load() {
   points = pts.map((p) => ({ ...p, provinceName: p.province || (p.location || "").split(",").pop().trim() }));
   shown = points.filter((p) => confident(p.qa_flags));
   for (const p of shown) {
-    const mk = L.circleMarker([p.lat, p.lon], {
-      radius: 6, weight: 1, color: "#00000055", fillOpacity: .9,
-      fillColor: PH_COLOR[p.ph] || "#9e9e9e", dashArray: p.coord_source === "utm" ? "2 2" : null,
-    }).bindPopup(() => popup(p));
+    const mk = Object.assign(L.circleMarker([p.lat, p.lon], {
+      radius: 6, weight: 1, color: "#00000055", ...styleFor("ldd", p), dashArray: p.coord_source === "utm" ? "2 2" : null,
+    }).bindPopup(() => popup(p)), { rec: p });
     markers.set(p.id, mk);
   }
   renderStatic();
@@ -313,6 +389,7 @@ $("rows").addEventListener("click", (e) => {
 });
 document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
 $("l-ldd").addEventListener("change", render);
+$("color-by").addEventListener("change", () => { colorVar = $("color-by").value; restyle(); });
 $("l-osd").addEventListener("change", async () => {
   if ($("l-osd").checked) {
     if (!osdSites.length) await loadOsdYear($("osd-year").value);

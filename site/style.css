@@ -196,3 +196,12 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .ramp-labels { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); }
 #raster-legend img { max-height: 160px; }
 #raster-legend p { margin: 4px 0; font-size: .78rem; color: var(--muted); }
+/* กลุ่มจุด: สีตามค่าที่เลือก */
+.pt-cluster div {
+  width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center;
+  border: 2px solid #ffffff; box-shadow: 0 0 0 1px rgba(0,0,0,.35);
+}
+.pt-cluster span {
+  font: 600 12px/1 "IBM Plex Sans Thai", system-ui, sans-serif; color: #1b1b1b;
+  background: rgba(255,255,255,.8); border-radius: 8px; padding: 2px 5px;
+}

@@ -72,7 +72,7 @@ QA_FLAGS = {
     "value_out_of_range": "มีค่าเกินช่วงที่เป็นไปได้ (ไม่นำไปคำนวณค่าสรุป)",
     "incomplete": "มีพารามิเตอร์ไม่ครบ 5 ค่า",
     "multi_sample": "ที่เดียวกันวันเดียวกันมีหลายตัวอย่าง (ค่าเป็นค่ากลาง)",
-    "shared_coords": "พิกัดเดียวกันถูกใช้กับหลายวันที่/หลายตัวอย่าง อาจเป็นพิกัดสำนักงาน (ไม่แสดงบนแผนที่)",
+    "shared_coords": "พิกัดซ้ำกับแถวอื่นหรือแหล่งอื่น (เช่น พิกัดสำนักงาน) ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
 }
 M_COLUMNS = ["id", "site_id", "date", "lat", "lon", *PLACE, "param", "value", "value_text", "first_seen", "qa_flags"]
 
@@ -217,12 +217,9 @@ def build_sites(measurements, today):
             flags.add("date_future")
         s["qa_flags"] = flags
         sites.append(s)
-    per_coord = {}
+    shared = admin.shared_coords("osd", sites)
     for s in sites:
-        if s["lat"] is not None:
-            per_coord[(s["lat"], s["lon"])] = per_coord.get((s["lat"], s["lon"]), 0) + 1
-    for s in sites:
-        if s["lat"] is not None and per_coord[(s["lat"], s["lon"])] > 1:
+        if s["lat"] is not None and admin.coord_key(s["lat"], s["lon"]) in shared:
             s["qa_flags"].add("shared_coords")
         s["qa_flags"] = [f for f in QA_FLAGS if f in s["qa_flags"]]
     return sites

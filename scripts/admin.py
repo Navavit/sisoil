@@ -6,6 +6,7 @@
   province_code(name)         -> รหัสจังหวัดจากชื่อไทยหรืออังกฤษ
 ขอบเขตถูกย่อรูปไว้ ~50–100 m จึงควรเผื่อระยะ (TOL_KM) ก่อนตัดสินว่าอยู่นอกพื้นที่
 """
+import glob
 import json
 import math
 import os
@@ -21,6 +22,43 @@ HIDE_ON_MAP = {"no_coords", "outside_thailand", "off_land", "far_from_province",
 
 def confident(flags):
     return not HIDE_ON_MAP.intersection(flags or ())
+
+
+def coord_key(lat, lon):
+    """พิกัดปัด 5 ตำแหน่ง (~1 m) ใช้ตัดสินว่าพิกัดซ้ำ"""
+    return (round(lat, 5), round(lon, 5))
+
+
+def _source_coords(source):
+    """พิกัดทุกแถวของแหล่งข้อมูล (จากไฟล์ที่บันทึกไว้ล่าสุด)"""
+    data = os.path.join(ROOT, "data")
+    if source == "ldd":
+        paths, skip = [os.path.join(data, "ldd", "points.json")], None
+    elif source == "osd":
+        paths, skip = sorted(glob.glob(os.path.join(data, "osd", "sites_*.json"))), None
+    else:
+        paths, skip = [os.path.join(data, "wosis", "profiles.json")], "duplicate_of"
+    out = []
+    for path in paths:
+        if os.path.exists(path):
+            with open(path, encoding="utf-8") as f:
+                out += [coord_key(r["lat"], r["lon"]) for r in json.load(f)
+                        if r.get("lat") is not None and r.get("lon") is not None and not (skip and r.get(skip))]
+    return out
+
+
+def shared_coords(source, records):
+    """พิกัดที่ใช้ซ้ำ: มากกว่าหนึ่งแถวในแหล่งเดียวกัน หรือตรงกับพิกัดของแหล่งอื่น (ldd, osd, wosis)
+
+    records = แถวของแหล่งนี้ที่ยังอยู่ในหน่วยความจำ (ค่าล่าสุด) ส่วนแหล่งอื่นอ่านจากไฟล์
+    """
+    own = {}
+    for r in records:
+        if r.get("lat") is not None and r.get("lon") is not None:
+            k = coord_key(r["lat"], r["lon"])
+            own[k] = own.get(k, 0) + 1
+    others = {k for s in ("ldd", "osd", "wosis") if s != source for k in _source_coords(s)}
+    return {k for k, n in own.items() if n > 1 or k in others}
 
 
 BAND = 0.02   # ความสูงของแถบที่ใช้จัดกลุ่มเส้นขอบ (องศา)
