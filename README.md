@@ -47,6 +47,9 @@ flowchart LR
 │   ├── fetch_osd.py        # ผลวิเคราะห์ดิน LDD (Python stdlib ล้วน)
 │   ├── fetch_wosis.py      # soil profile จาก ISRIC WoSIS (Python stdlib ล้วน)
 │   ├── fetch_dindee.py     # ข้อมูลบัตรดินดี LDD (Python stdlib ล้วน)
+│   ├── build_rasters.py    # ส่งออกแผนที่ดินจาก GEE เป็นภาพทั้งประเทศ (data/ref/rasters)
+│   ├── build_boundaries.py # ย่อขอบเขตจังหวัด/อำเภอ/ตำบลจาก COD-AB (data/ref/boundaries)
+│   ├── admin.py            # หาจังหวัด/อำเภอ/ตำบลจากพิกัด ใช้ตรวจคุณภาพพิกัด
 │   ├── build_web.py        # แบ่งข้อมูลเป็นกริด 0.5° สำหรับฟังก์ชันตรวจดินบนเว็บ (สร้างตอน deploy)
 │   └── sample_gee.py       # สุ่มค่าจาก Google Earth Engine (ต้องใช้ earthengine-api)
 ├── data/                   # ข้อมูลที่ระบบสร้าง (อย่าแก้ด้วยมือ)

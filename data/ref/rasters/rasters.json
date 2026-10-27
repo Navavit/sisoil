@@ -1,0 +1,122 @@
+[
+ {
+  "id": "olm_ph",
+  "file": "olm_ph.png",
+  "bounds": [
+   [
+    5.6,
+    97.3
+   ],
+   [
+    20.5,
+    105.7
+   ]
+  ],
+  "min": 4.0,
+  "max": 8.5,
+  "palette": [
+   "#b30000",
+   "#d7301f",
+   "#ef6548",
+   "#fc8d59",
+   "#fdbb84",
+   "#9ccc65",
+   "#6baed6",
+   "#3182bd",
+   "#08519c"
+  ],
+  "unit": "pH",
+  "th": "pH ดินผิว (OpenLandMap 250 m)",
+  "en": "Topsoil pH (OpenLandMap 250 m)",
+  "source": "OpenLandMap / OpenGeoHub",
+  "license": "CC BY-SA 4.0",
+  "asset": "OpenLandMap/SOL/SOL_PH-H2O_USDA-4C1A2A_M/v02"
+ },
+ {
+  "id": "olm_oc",
+  "file": "olm_oc.png",
+  "bounds": [
+   [
+    5.6,
+    97.3
+   ],
+   [
+    20.5,
+    105.7
+   ]
+  ],
+  "min": 0,
+  "max": 40,
+  "palette": [
+   "#fff7bc",
+   "#fec44f",
+   "#d95f0e",
+   "#8c510a",
+   "#3d2203"
+  ],
+  "unit": "g/kg",
+  "th": "อินทรีย์คาร์บอนในดินผิว (OpenLandMap)",
+  "en": "Topsoil organic carbon (OpenLandMap)",
+  "source": "OpenLandMap / OpenGeoHub",
+  "license": "CC BY-SA 4.0",
+  "asset": "OpenLandMap/SOL/SOL_ORGANIC-CARBON_USDA-6A1C_M/v02"
+ },
+ {
+  "id": "olm_clay",
+  "file": "olm_clay.png",
+  "bounds": [
+   [
+    5.6,
+    97.3
+   ],
+   [
+    20.5,
+    105.7
+   ]
+  ],
+  "min": 0,
+  "max": 60,
+  "palette": [
+   "#ffffd4",
+   "#fed98e",
+   "#fe9929",
+   "#cc4c02",
+   "#662506"
+  ],
+  "unit": "%",
+  "th": "ดินเหนียวในดินผิว (OpenLandMap)",
+  "en": "Topsoil clay (OpenLandMap)",
+  "source": "OpenLandMap / OpenGeoHub",
+  "license": "CC BY-SA 4.0",
+  "asset": "OpenLandMap/SOL/SOL_CLAY-WFRACTION_USDA-3A1A1A_M/v02"
+ },
+ {
+  "id": "gsoc",
+  "file": "gsoc.png",
+  "bounds": [
+   [
+    5.6,
+    97.3
+   ],
+   [
+    20.5,
+    105.7
+   ]
+  ],
+  "min": 0,
+  "max": 120,
+  "palette": [
+   "#f7fcb9",
+   "#addd8e",
+   "#41ab5d",
+   "#006837",
+   "#00331a"
+  ],
+  "unit": "t/ha",
+  "th": "คาร์บอนสะสมในดิน 0–30 cm (FAO GSOCmap 1 km)",
+  "en": "Soil organic carbon stock 0–30 cm (FAO GSOCmap 1 km)",
+  "source": "FAO Global Soil Partnership",
+  "license": "CC BY",
+  "asset": "projects/sat-io/open-datasets/FAO/GSOCMAP1-5-0"
+ }
+]

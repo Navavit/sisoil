@@ -104,7 +104,62 @@ const landCover = new LandCoverLayer("", {
   opacity: .65, maxZoom: 18, attribution: "Land cover © Impact Observatory, Microsoft, Esri (CC BY 4.0)",
 });
 
+// ---------- แผนที่ดิน (raster): SoilGrids ผ่าน WMS ของ ISRIC, อื่น ๆ เป็นภาพจาก Earth Engine (build_rasters.py) ----------
+// [id, map, layer, ชื่อ th, ชื่อ en, คำอธิบายหน่วยของแถบสี th, en]
+const SOILGRIDS = [
+  ["sg_ph", "phh2o", "phh2o_0-5cm_mean", "pH ดินผิว 0–5 cm (SoilGrids 250 m)", "Topsoil pH 0–5 cm (SoilGrids 250 m)", "ค่าในแถบสี ÷ 10 = pH", "legend value ÷ 10 = pH"],
+  ["sg_soc", "soc", "soc_0-5cm_mean", "อินทรีย์คาร์บอน 0–5 cm (SoilGrids)", "Organic carbon 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 10 = g/kg", "legend value ÷ 10 = g/kg"],
+  ["sg_clay", "clay", "clay_0-5cm_mean", "ดินเหนียว 0–5 cm (SoilGrids)", "Clay 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 10 = %", "legend value ÷ 10 = %"],
+  ["sg_n", "nitrogen", "nitrogen_0-5cm_mean", "ไนโตรเจน 0–5 cm (SoilGrids)", "Nitrogen 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 100 = g/kg", "legend value ÷ 100 = g/kg"],
+  ["sg_cec", "cec", "cec_0-5cm_mean", "CEC 0–5 cm (SoilGrids)", "CEC 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 10 = cmol/kg", "legend value ÷ 10 = cmol/kg"],
+];
+const SG_WMS = "https://maps.isric.org/mapserv?map=/map/";
+let rasterMeta = [];
+let rasterLayer = null;
+
+async function initRasters() {
+  rasterMeta = await fetch("data/ref/rasters/rasters.json").then((r) => r.json()).catch(() => []);
+  fillRasterSelect();
+}
+function fillRasterSelect() {
+  const sel = $("raster"), cur = sel.value;
+  sel.innerHTML = `<option value="">${t("rasterNone")}</option>` +
+    SOILGRIDS.map((r) => `<option value="${r[0]}">${esc(lang === "en" ? r[4] : r[3])}</option>`).join("") +
+    rasterMeta.map((r) => `<option value="${r.id}">${esc(lang === "en" ? r.en : r.th)}</option>`).join("");
+  sel.value = cur;
+  rasterLegend();
+}
+function rasterLegend() {
+  const id = $("raster").value, sg = SOILGRIDS.find((r) => r[0] === id), im = rasterMeta.find((r) => r.id === id);
+  $("raster-legend").innerHTML = sg
+    ? `<img alt="" src="${SG_WMS}${sg[1]}.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&LAYER=${sg[2]}&FORMAT=image/png&SLD_VERSION=1.1.0"><p>${esc(lang === "en" ? sg[6] : sg[5])}</p>
+       <p>ISRIC SoilGrids 2.0 · CC BY 4.0 · ${t("rasterEstimate")}</p>`
+    : im ? `<div class="ramp" style="background:linear-gradient(to right,${im.palette.join(",")})"></div>
+       <div class="ramp-labels"><span>${im.min}</span><span>${im.unit}</span><span>${im.max}+</span></div>
+       <p>${esc(im.source)} · ${esc(im.license)} · ${t("rasterEstimate")}</p>` : "";
+}
+function setRaster() {
+  if (rasterLayer) map.removeLayer(rasterLayer);
+  rasterLayer = null;
+  const id = $("raster").value, opacity = +$("raster-opacity").value;
+  const sg = SOILGRIDS.find((r) => r[0] === id), im = rasterMeta.find((r) => r.id === id);
+  if (sg) {
+    rasterLayer = L.tileLayer.wms(`${SG_WMS}${sg[1]}.map`, {
+      layers: sg[2], format: "image/png", transparent: true, version: "1.3.0", opacity, pane: "rasters",
+      attribution: "SoilGrids © ISRIC (CC BY 4.0)",
+    });
+  } else if (im) {
+    rasterLayer = L.imageOverlay(`data/ref/rasters/${im.file}`, im.bounds, { opacity, pane: "rasters", attribution: `${im.source} (${im.license})` });
+  }
+  if (rasterLayer) map.addLayer(rasterLayer);
+  $("raster-opts").hidden = !rasterLayer;
+  rasterLegend();
+}
+$("raster").addEventListener("change", setRaster);
+$("raster-opacity").addEventListener("input", () => rasterLayer?.setOpacity(+$("raster-opacity").value));
+
 function renderAreasStatic() {
+  if (rasterMeta.length || $("raster").options.length) fillRasterSelect();
   $("lc-legend").innerHTML = LC_CLASSES.map(([c, k]) => `<li><i style="background:${c};border-radius:2px"></i>${esc(t(k))}</li>`).join("");
   if ($("l-admin").checked && map.getZoom() < ADMIN_MIN_ZOOM) $("admin-info").textContent = t("adminZoom");
 }
@@ -128,7 +183,9 @@ $("l-lc").addEventListener("change", () => {
 $("lc-year").addEventListener("change", () => landCover.redraw());
 // เส้นขอบเขตอยู่ใต้จุดข้อมูล (SVG ของตัวเอง เพราะ canvas หลักของแผนที่อยู่ใน overlayPane)
 map.createPane("areas").style.zIndex = 350;
+map.createPane("rasters").style.zIndex = 300;   // แผนที่ดินอยู่ใต้เส้นขอบเขตและจุด
 const areaRenderer = L.svg({ pane: "areas" });
 for (const l of [provinceLayer, amphoeLayer, tambonLayer]) Object.assign(l.options, { pane: "areas", renderer: areaRenderer });
 renderAreasStatic();
+initRasters();
 if ($("l-prov").checked) showProvinces();

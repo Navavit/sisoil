@@ -36,6 +36,18 @@
         <a class="cta" href="#check" id="intro-check" data-i18n="step2Button"></a></div></li>
       <li><span class="num-badge">3</span><div><b data-i18n="step3Title"></b><p data-i18n="step3Text"></p></div></li>
     </ol>
+    <div class="standards">
+      <b data-i18n="stdTitle"></b>
+      <p data-i18n="stdIntro"></p>
+      <dl>
+        <dt data-i18n="layerOsd"></dt><dd data-i18n="stdOsd"></dd>
+        <dt data-i18n="layerWosis"></dt><dd data-i18n="stdWosis"></dd>
+        <dt data-i18n="layerLdd"></dt><dd data-i18n="stdLdd"></dd>
+        <dt data-i18n="stdDindeeTerm"></dt><dd data-i18n="stdDindee"></dd>
+        <dt data-i18n="stdMapsTerm"></dt><dd data-i18n="stdMaps"></dd>
+      </dl>
+      <p data-i18n="stdHow"></p>
+    </div>
     <details class="glossary">
       <summary data-i18n="glossaryTitle"></summary>
       <dl>
@@ -90,6 +102,11 @@
       <label class="check"><input id="l-prov" type="checkbox" checked> <span data-i18n="layerProvince"></span></label>
       <label class="check"><input id="l-admin" type="checkbox"> <span data-i18n="layerAdmin"></span></label>
       <p class="muted small" id="admin-info"></p>
+      <label><span data-i18n="rasterLayer"></span><select id="raster"></select></label>
+      <div id="raster-opts" hidden>
+        <div id="raster-legend"></div>
+        <label><span data-i18n="opacity"></span><input id="raster-opacity" type="range" min="0.2" max="1" step="0.1" value="0.7"></label>
+      </div>
       <label class="check"><input id="l-lc" type="checkbox"> <span data-i18n="layerLandcover"></span></label>
       <div id="lc-opts" hidden>
         <label><span data-i18n="lcYear"></span><select id="lc-year"></select></label>
