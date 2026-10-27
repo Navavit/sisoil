@@ -1,0 +1,27 @@
+# งานวิเคราะห์ส่วนตัว (Jupyter) — ไม่ขึ้น GitHub
+notebooks/
+.ipynb_checkpoints/
+
+# ไฟล์ต้นฉบับที่สัญญาอนุญาตไม่ให้เผยแพร่ต่อ (CC BY-NC-ND) — เก็บในเครื่องเท่านั้น
+raw/
+
+# ไฟล์ชั่วคราว / cache
+cache/
+tmp/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# ระบบปฏิบัติการ / editor
+.DS_Store
+.vscode/
+.idea/
+
+# กุญแจ / credentials — ห้ามขึ้น GitHub เด็ดขาด (เก็บไว้นอกโปรเจกต์ดีที่สุด)
+secrets/
+*service-account*.json
+*-key.json
+*_key.json
+gee-*.json

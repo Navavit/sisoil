@@ -1,0 +1,110 @@
+name: ตรวจข้อมูลใหม่ (LDD)
+
+on:
+  schedule:
+    - cron: "0 2 1 * *"   # วันที่ 1 ของทุกเดือน 09:00 น. เวลาไทย
+  workflow_dispatch:
+    inputs:
+      max_details:
+        description: "จำนวนรายละเอียดจุดสูงสุดที่ดึงในรอบนี้"
+        default: "2000"
+      full:
+        description: "ดึงรายการทุกจังหวัดใหม่ (ตรวจจับการแก้ไขข้อมูล)"
+        type: boolean
+        default: false
+      provinces:
+        description: "รหัสจังหวัดคั่นด้วยจุลภาค (ว่าง = ทั้งหมด)"
+        default: ""
+      osd_max_months:
+        description: "ผลวิเคราะห์ดิน: จำนวนเดือนย้อนหลังที่ดึงในรอบนี้"
+        default: "24"
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    outputs:
+      changed: ${{ steps.fetch.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: ดึงข้อมูล (ตรวจจำนวนก่อน ดึงเฉพาะส่วนที่เปลี่ยน)
+        id: fetch
+        env:
+          MAX_DETAILS: ${{ inputs.max_details || '2000' }}
+          FULL_REFRESH: ${{ inputs.full && 'true' || 'false' }}
+        run: |
+          # รอบเดือนมกราคม = ตรวจแบบเต็มปีละครั้ง
+          if [ "$(date -u +%m)" = "01" ] && [ "${{ github.event_name }}" = "schedule" ]; then export FULL_REFRESH=true; fi
+          python scripts/fetch_ldd.py ${{ inputs.provinces && format('--provinces {0}', inputs.provinces) || '' }}
+
+      - name: ดึงผลวิเคราะห์ดิน (osd101)
+        id: osd
+        continue-on-error: true   # แหล่งหนึ่งล่มไม่ควรทำให้อีกแหล่งไม่ถูกบันทึก
+        env:
+          OSD_MAX_MONTHS: ${{ inputs.osd_max_months || '24' }}
+        run: python scripts/fetch_osd.py
+
+      - name: สุ่มค่าจาก Google Earth Engine (เฉพาะจุดใหม่)
+        if: env.EE_KEY != ''
+        continue-on-error: true
+        env:
+          EE_KEY: ${{ secrets.EE_SERVICE_ACCOUNT_KEY }}
+          EE_SERVICE_ACCOUNT_KEY: ${{ secrets.EE_SERVICE_ACCOUNT_KEY }}
+          EE_PROJECT: ${{ vars.EE_PROJECT }}
+        run: |
+          pip install --quiet earthengine-api
+          python scripts/sample_gee.py
+
+      - name: Commit ข้อมูล
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "ไม่มีการเปลี่ยนแปลง"
+          else
+            git commit -m "data: อัปเดตข้อมูล LDD $(date -u +%Y-%m-%d) (+${{ steps.fetch.outputs.added }} / -${{ steps.fetch.outputs.removed }} / ~${{ steps.fetch.outputs.modified }})"
+            git push
+          fi
+
+      - name: แจ้งเตือนผ่าน Issue เมื่อมีข้อมูลใหม่
+        if: steps.fetch.outputs.changed == 'true' || (steps.osd.outputs.osd_added != '' && steps.osd.outputs.osd_added != '0')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "พบข้อมูลสำรวจดินใหม่ $(date -u +%Y-%m-%d)" \
+            --body "$(cat <<EOF
+          ระบบตรวจพบการเปลี่ยนแปลงจาก LDD Soil Survey Public
+
+          | รายการ | จำนวน |
+          |---|---|
+          | จุดทั้งหมด | ${{ steps.fetch.outputs.total }} |
+          | เพิ่ม | ${{ steps.fetch.outputs.added }} |
+          | ลบ | ${{ steps.fetch.outputs.removed }} |
+          | แก้ไข | ${{ steps.fetch.outputs.modified }} |
+          | รายละเอียดคงค้าง | ${{ steps.fetch.outputs.details_pending }} |
+          | ผลวิเคราะห์ดิน: เพิ่ม / ทั้งหมด | ${{ steps.osd.outputs.osd_added }} / ${{ steps.osd.outputs.osd_total }} |
+
+          รายละเอียด: \`data/changes/$(date -u +%Y-%m-%d).json\`
+          EOF
+          )"
+
+  deploy:
+    needs: update
+    uses: ./.github/workflows/pages.yml

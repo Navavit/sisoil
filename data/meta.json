@@ -1,0 +1,71 @@
+{
+ "source": "กรมพัฒนาที่ดิน (Land Development Department) – Soil Survey Public",
+ "source_url": "https://soilservice.ldd.go.th/soilsurveypublic/",
+ "updated_at": "2026-10-27T15:58:45+00:00",
+ "total": 902,
+ "with_coordinates": 863,
+ "provinces": 1,
+ "details_pending": 899,
+ "last_change": {
+  "date": "2026-10-27",
+  "total": 902,
+  "added": 0,
+  "removed": 0,
+  "modified": 117,
+  "details_pending": 899
+ },
+ "qa": {
+  "no_coords": {
+   "description": "ไม่มีพิกัดที่ใช้ได้",
+   "count": 39
+  },
+  "utm_converted": {
+   "description": "พิกัดแปลงจาก UTM",
+   "count": 630
+  },
+  "utm_zone_fixed": {
+   "description": "โซน UTM ที่ระบุไม่ตรงกับค่าพิกัด",
+   "count": 630
+  },
+  "ldd_coords_fixed": {
+   "description": "lat/lon จาก LDD ผิดโซน แก้แล้ว (ค่าเดิมอยู่ใน orig_lat/orig_lon)",
+   "count": 117
+  },
+  "far_from_province": {
+   "description": "พิกัดห่างจากจังหวัดที่ระบุเกิน ~150 km",
+   "count": 4
+  },
+  "province_mismatch": {
+   "description": "จังหวัดใน location ไม่ตรงกับจังหวัดที่ค้นหา",
+   "count": 0
+  },
+  "no_location": {
+   "description": "ไม่มีชื่อตำแหน่ง",
+   "count": 695
+  },
+  "date_missing": {
+   "description": "ไม่มีวันที่หรือรูปแบบผิด",
+   "count": 0
+  },
+  "date_future": {
+   "description": "วันที่สำรวจอยู่ในอนาคต",
+   "count": 0
+  },
+  "date_too_old": {
+   "description": "วันที่สำรวจก่อนปี 1960",
+   "count": 18
+  },
+  "ph_unknown": {
+   "description": "pH เป็น Other หรือว่าง",
+   "count": 28
+  },
+  "nutrient_unknown": {
+   "description": "OM/P/K อย่างน้อยหนึ่งค่าเป็น Other หรือว่าง",
+   "count": 831
+  },
+  "duplicate": {
+   "description": "พิกัดและวันที่ซ้ำกับจุดอื่น",
+   "count": 31
+  }
+ }
+}

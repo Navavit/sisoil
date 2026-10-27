@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thai Soil Survey DB</title>
+  <meta name="description" content="Map and database of soil survey points in Thailand from Land Development Department open data, updated monthly. แผนที่และฐานข้อมูลจุดสำรวจดินของประเทศไทย">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1 data-i18n="title"></h1>
+      <p class="sub"><span data-i18n="source"></span> <a href="https://soilservice.ldd.go.th/soilsurveypublic/" target="_blank" rel="noopener" data-i18n="sourceName"></a> · <span data-i18n="updated"></span> <span id="updated">–</span></p>
+    </div>
+    <nav class="downloads">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="th">ไทย</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="sources.html" class="ghost" data-i18n="sourcesLink"></a>
+      <a href="data/ldd/points.csv" download>CSV</a>
+      <a href="data/ldd/points.geojson" download>GeoJSON</a>
+      <a href="data/ldd/points.json" download>JSON</a>
+    </nav>
+  </header>
+
+  <section class="stats" id="stats"></section>
+
+  <main class="layout">
+    <aside class="filters">
+      <h2 data-i18n="filters"></h2>
+      <label><span data-i18n="province"></span><select id="f-province"><option value="" data-i18n="all"></option></select></label>
+      <label><span data-i18n="ph"></span><select id="f-ph"><option value="" data-i18n="all"></option></select></label>
+      <label><span data-i18n="om"></span><select id="f-om"><option value="" data-i18n="all"></option></select></label>
+      <label><span data-i18n="p"></span><select id="f-p"><option value="" data-i18n="all"></option></select></label>
+      <label><span data-i18n="k"></span><select id="f-k"><option value="" data-i18n="all"></option></select></label>
+      <div class="row">
+        <label><span data-i18n="yearFrom"></span><input id="f-from" type="number" min="1990" max="2100" placeholder="CE"></label>
+        <label><span data-i18n="yearTo"></span><input id="f-to" type="number" min="1990" max="2100" placeholder="CE"></label>
+      </div>
+      <label><span data-i18n="qa"></span><select id="f-qa"></select></label>
+      <label class="check"><input id="f-new" type="checkbox"> <span data-i18n="onlyNew"></span></label>
+      <button id="f-reset" type="button" data-i18n="reset"></button>
+      <h3 data-i18n="layers"></h3>
+      <label class="check"><input id="l-ldd" type="checkbox" checked> <span data-i18n="layerLdd"></span></label>
+      <label class="check"><input id="l-osd" type="checkbox"> <span data-i18n="layerOsd"></span></label>
+      <label><span data-i18n="osdYear"></span><select id="osd-year"></select></label>
+      <p class="muted small" id="osd-info"></p>
+      <h3 data-i18n="legend"></h3>
+      <ul class="legend" id="legend"></ul>
+    </aside>
+    <div id="map"></div>
+  </main>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2><span data-i18n="list"></span> <span id="count" class="muted"></span></h2>
+      <input id="q" type="search" data-i18n-placeholder="search">
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>ID</th><th data-i18n="surveyDate"></th><th data-i18n="firstSeen"></th><th data-i18n="location"></th>
+          <th>pH</th><th>OM</th><th>P</th><th>K</th><th data-i18n="texture"></th><th data-i18n="coords"></th>
+        </tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <p class="muted small" id="more"></p>
+  </section>
+
+  <section class="panel">
+    <h2 data-i18n="history"></h2>
+    <p class="muted small" data-i18n="historyNote"></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th data-i18n="runDate"></th><th data-i18n="total"></th><th data-i18n="added"></th>
+          <th data-i18n="removed"></th><th data-i18n="modified"></th><th data-i18n="pending"></th>
+        </tr></thead>
+        <tbody id="log"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel small">
+    <h2 data-i18n="aboutDates"></h2>
+    <ul class="dates-help">
+      <li><b data-i18n="surveyDate"></b> — <span data-i18n="surveyDateHelp"></span></li>
+      <li><b data-i18n="firstSeen"></b> — <span data-i18n="firstSeenHelp"></span></li>
+      <li><b data-i18n="lastSeen"></b> — <span data-i18n="lastSeenHelp"></span></li>
+      <li><b data-i18n="detailFetched"></b> — <span data-i18n="detailFetchedHelp"></span></li>
+    </ul>
+  </section>
+
+  <footer class="muted small"><span data-i18n="footer"></span> · <a href="sources.html" data-i18n="sourcesLink"></a></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

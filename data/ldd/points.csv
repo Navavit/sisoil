@@ -1,0 +1,903 @@
+﻿id,lat,lon,date,first_seen,last_seen,detail_fetched_at,province_code,province,district,subdistrict,location,utm_zone,utm_x,utm_y,coord_source,orig_lat,orig_lon,ph,om,p,k,texture_field,texture_lab,qa_flags
+153,,,2011-01-30,2026-10-27,2026-10-27,,40,,,,"BAN PHAI, BAN PHAI, KHON KAEN",48,,,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;nutrient_unknown
+1004,16.680954172645375,102.86516522343872,2011-03-13,2026-10-27,2026-10-27,,40,,,,"NONG KUNG, NAM PHONG, KHON KAEN",48,272336.0,1845479.0,ldd,,,กรดจัด,ต่ำ,ปานกลาง,ต่ำ,,,
+1025,15.854316830468274,102.55886525335335,2011-04-08,2026-10-27,2026-10-27,,40,,,,"PHEK YAI, PHON, KHON KAEN",48,238563.0,1754343.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,ปานกลาง,,,
+1704,16.555009576998188,102.12496163798106,2011-04-08,2026-10-27,2026-10-27,,40,,,,"NONG PHAI, CHUM PHAE, KHON KAEN",48,193150.0,1832524.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+3299,16.16450815468893,102.48613101267323,2014-03-19,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231185.0,1788775.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+3863,16.1670935989224,102.48630393828873,2014-04-23,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231207.0,1789061.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+5145,16.166704665023985,102.47405542269438,2014-06-04,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229896.0,1789034.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+5986,16.167347314486282,102.47264526142847,2014-08-05,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229746.0,1789107.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+5987,16.165726846825628,102.47690920363726,2014-08-05,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,230200.0,1788922.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+5996,16.161383988096826,102.47478662545954,2014-08-07,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229967.0,1788444.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6025,16.165411257546513,102.47010893566932,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229472.0,1788896.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6026,16.16875447364763,102.4648883313321,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228918.0,1789273.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+6027,16.18521407398646,102.47948459379766,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,230502.0,1791076.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6028,16.18760695799918,102.47789315605115,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,230335.0,1791343.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6029,16.187411395728624,102.47359575319766,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229875.0,1791327.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+6030,16.18737573484981,102.4698384895084,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229473.0,1791328.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6031,16.19168038289512,102.46874600478924,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229362.0,1791806.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+6032,16.1919038688681,102.47158487293324,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229666.0,1791827.0,ldd,,,Other,Other,Other,Other,,,ph_unknown;nutrient_unknown
+6033,16.189002530094577,102.46839691171132,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229321.0,1791510.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6034,16.19198235055045,102.46604065343598,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229073.0,1791843.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+6035,16.192629593392784,102.46350849142455,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228803.0,1791918.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+6036,16.19575784786474,102.46072956086962,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228510.0,1792268.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6037,16.1885243969105,102.45936391816012,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228354.0,1791469.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6038,16.18705582858267,102.45816754787027,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228224.0,1791308.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+6039,16.183841035960366,102.45899388859756,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228308.0,1790951.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6040,16.182102594808764,102.46621352288918,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229078.0,1790749.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6041,16.181278710340912,102.45924166885193,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228331.0,1790667.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+6042,16.17577564534714,102.46133101463782,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,228547.0,1790055.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+6043,16.179117008103884,102.46581230622826,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229031.0,1790419.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+6045,16.162453561400113,102.48501672686562,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231063.0,1788549.0,ldd,,,กรดจัด,ต่ำ,ต่ำ,ต่ำ,,,
+6046,16.158878369491124,102.48976314378992,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231566.0,1788147.0,ldd,,,กรดจัด,ต่ำ,ต่ำ,ต่ำ,,,
+6048,16.158389343987363,102.49195635268293,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231800.0,1788090.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+6049,16.160920820953415,102.49291514290749,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231906.0,1788369.0,ldd,,,กรดจัดมาก,ต่ำ,ต่ำ,ต่ำ,,,
+6050,16.16366618575732,102.48902973992173,2014-08-13,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,231494.0,1788678.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+6348,16.1919038688681,102.47158487293324,2014-09-10,2026-10-27,2026-10-27,,40,,,,"NA KHA, MANCHA KHIRI, KHON KAEN",48,229666.0,1791827.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+7314,16.652909976444075,101.9007578153286,2011-05-13,2026-10-27,2026-10-27,,40,,,,,47,809440.0,1843405.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7318,16.648732218990425,102.65600996143763,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,890098.0,1844266.0,ldd,,,เป็นกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7320,16.661074933692728,101.91093253926833,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,810513.0,1844325.0,ldd,,,กรดจัด,Other,Other,Other,,,no_location;nutrient_unknown
+7334,16.655031406901443,101.91303314918031,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,810747.0,1843659.0,ldd,,,กรดจัด,Other,Other,Other,,,no_location;nutrient_unknown
+7348,16.672167138224292,101.91775187802244,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,811223.0,1845564.0,ldd,,,กรดจัด,Other,Other,Other,,,no_location;nutrient_unknown
+7352,16.68949195253693,101.91609418721184,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,811018.0,1847480.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7353,16.665742318321005,101.88973753492279,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,808243.0,1844809.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7359,16.665193293458266,101.87793472934142,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,806984.0,1844730.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7361,16.666716509040874,101.85923949604211,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,804986.0,1844870.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7362,16.67654668155486,101.8667027369378,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,805767.0,1845970.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7364,16.68333742907153,101.87256605049423,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,806382.0,1846731.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7365,16.69135398745099,101.86687676272885,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,805762.0,1847610.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7366,16.68254316254933,101.86472156995433,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,805546.0,1846631.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7367,16.689893607783922,101.85951861340321,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,804979.0,1847437.0,ldd,,,กรดจัด,Other,Other,Other,,,no_location;nutrient_unknown
+7368,16.665641918505955,101.85727490113418,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,804778.0,1844748.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7369,16.671442830533614,101.84719599807947,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,803693.0,1845375.0,ldd,,,เป็นกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7370,16.676922568302558,101.84929146559291,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,803908.0,1845985.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7372,16.7016351229033,101.8462847004826,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,803548.0,1848717.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7381,16.705681082552548,101.84757222159101,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,803679.0,1849167.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7383,16.680100528708056,101.82762067102703,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,801590.0,1846304.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7389,16.673907,101.819585,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,800742.0,1845606.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7403,16.65430232233334,101.8102009562803,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,799771.0,1843421.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7406,16.652858019138456,101.8616285148327,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,805263.0,1843339.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7439,16.659824639505704,101.84032581738666,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,802978.0,1844078.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7441,16.739910233590177,101.92155597754609,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,811519.0,1853072.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7448,16.730138658026114,101.916533963398,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,810999.0,1851982.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7449,16.73441852535114,101.91208211015496,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,810517.0,1852449.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7450,16.741126607563263,101.92492958361164,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,811877.0,1853212.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7458,16.69498087165229,101.97763955311174,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,817578.0,1848185.0,ldd,,,เป็นกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7459,16.70584261934252,101.97769559396437,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,817566.0,1849388.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7460,16.7099653622734,102.52874532588253,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,876384.0,1850806.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7461,16.709168739975002,101.9548287487328,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,815120.0,1849720.0,ldd,,,เป็นกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7462,16.70558316442447,101.9371490583074,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,813239.0,1849295.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7463,16.692415224115834,101.94493949265646,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,814092.0,1847849.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7464,16.72402053512307,101.94486235280304,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,814032.0,1851349.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7465,16.73476470539714,101.93099874253538,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,812535.0,1852517.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7466,16.753939999991637,101.91473151411557,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,810768.0,1854615.0,ldd,,,เป็นกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7467,16.76900463440217,101.9228251084745,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,811607.0,1856296.0,ldd,,,Other,Other,Other,Other,,,no_location;ph_unknown;nutrient_unknown
+7468,16.756158005566892,101.89639519371676,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,808808.0,1854832.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7478,16.755687280652538,101.87713671919137,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,806754.0,1854750.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7479,16.697369072065168,101.9929668857512,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,819210.0,1848474.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+7480,16.700589,102.009297,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,181037.0,1848827.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7487,16.711933,102.026389,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,182880.0,1850056.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7490,16.719705,102.036229,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,183943.0,1850901.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+7493,16.72723,102.024577,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,182712.0,1851753.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7495,16.732861,102.034329,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,183762.0,1852361.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7500,16.743392,102.0289,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,183200.0,1853536.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7502,16.749263,102.03968,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,184360.0,1854169.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7505,16.767017,102.039171,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,184335.0,1856136.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7511,16.758674,102.043611,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,184795.0,1855205.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7513,16.75841,102.062407,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,186800.0,1855146.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7515,16.758945,102.076485,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,188303.0,1855183.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7517,16.761668,102.085132,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,189230.0,1855471.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7546,16.774274,102.085155,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,189253.0,1856867.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7548,16.747744,102.075569,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,188187.0,1853944.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7556,16.735480121415748,102.08508095011723,2011-01-01,2026-10-27,2026-10-27,,40,,,,,48,189182.0,1852571.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+7559,16.695365,102.087995,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,189428.0,1848124.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7565,16.689664,102.066064,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,187078.0,1847527.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7566,16.69339,102.062672,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,186722.0,1847945.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7567,16.696752,102.031852,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,183438.0,1848366.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7568,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,กรดปานกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+7569,16.715854,102.065636,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,187075.0,1850428.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7571,16.708106,102.080925,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,188694.0,1849546.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7573,16.700642,102.088899,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,189533.0,1848707.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7574,16.800603,102.083085,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,189075.0,1859786.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7575,16.871768,102.088831,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,189804.0,1867658.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+7578,16.863106,102.072177,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,188014.0,1866725.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7579,16.86845,102.065155,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,187274.0,1867328.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7582,16.857742,102.062686,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,186993.0,1866146.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7584,16.853509,102.04967,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,185598.0,1865698.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7591,16.845434,102.041319,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,184694.0,1864817.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7593,16.842077,102.05717,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,186379.0,1864420.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7597,16.83391,102.070104,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,187745.0,1863495.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7599,16.808726,102.07201,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,187907.0,1860703.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7601,16.812105,102.065199,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,187186.0,1861088.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7603,15.807966,102.64979,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248248.0,1749101.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7621,15.818024,102.660927,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249454.0,1750201.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7624,15.79519,102.676491,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251094.0,1747655.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7630,15.803456,102.685728,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252094.0,1748559.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7632,15.813618,102.700002,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253636.0,1749667.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7634,15.790283,102.701805,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253801.0,1747082.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7645,15.798019,102.722674,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256047.0,1747914.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7647,15.815946,102.730639,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256922.0,1749889.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7649,15.820252,102.743348,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258289.0,1750351.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7651,15.816577,102.754885,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259521.0,1749931.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7655,15.836216,102.756358,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259702.0,1752103.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7656,15.829357,102.736257,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257540.0,1751367.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7657,15.839044,102.744194,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258402.0,1752430.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7658,15.842636,102.673793,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250863.0,1752910.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7659,15.850812,102.689015,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,252504.0,1753797.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7660,15.844267,102.691955,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252811.0,1753069.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7661,15.836233,102.690049,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252597.0,1752182.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7663,15.847871,102.705484,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254265.0,1753452.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7681,15.839201,102.717761,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255570.0,1752478.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7684,15.849,102.737242,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257669.0,1753540.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7703,15.856068,102.761048,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260228.0,1754295.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7718,15.867563,102.760436,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260176.0,1755568.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7723,15.88204,102.756402,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259761.0,1757175.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7750,15.848915,102.761314,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260248.0,1753503.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7752,15.873208,102.767244,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260912.0,1756185.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+7754,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+7755,15.905568,102.728945,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256848.0,1759811.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7757,15.930309,102.730282,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257021.0,1762548.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7761,15.937124,102.714295,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255317.0,1763321.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7762,15.917875,102.713775,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255238.0,1761191.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7767,15.902477,102.704119,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254185.0,1759498.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7769,15.919882,102.67749,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251354.0,1761456.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7770,15.82978,102.651964,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248508.0,1751513.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7777,15.831663,102.661554,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249538.0,1751710.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7778,15.865397,102.660773,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249496.0,1755445.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7787,15.878321,102.661203,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249558.0,1756875.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7789,15.876606,102.672237,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250738.0,1756672.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7791,15.882861,102.705555,2021-01-01,2026-10-27,2026-10-27,,40,,,,,47,254315.0,1757325.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7793,15.915421,102.74846,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258950.0,1760879.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7794,15.900237,102.778419,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262141.0,1759164.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7796,15.89286,102.784111,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262742.0,1758341.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7800,15.94146,102.792309,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263677.0,1763711.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7802,15.965335,102.789236,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263376.0,1766357.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7805,15.978682,102.772036,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261550.0,1767854.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7807,15.982186,102.763171,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260605.0,1768252.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7809,15.949467,102.741048,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258197.0,1764656.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7813,15.953744,102.719952,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255943.0,1765154.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7826,15.953744,102.719952,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255943.0,1765154.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;nutrient_unknown
+7832,15.924627,102.659304,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249412.0,1762003.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7836,15.946474,102.662954,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249830.0,1764417.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7839,15.964103,102.667456,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250334.0,1766363.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7848,15.970369,102.689656,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252719.0,1767030.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7863,15.985154,102.677625,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251449.0,1768681.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7865,15.986766,102.692167,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253008.0,1768842.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7867,15.978719,102.728953,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256937.0,1767908.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7894,15.964783,102.819258,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266590.0,1766262.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7895,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267819.0,176710.0,,,,เป็นกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+7904,15.9525,102.281318,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,208962.0,1765580.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7906,15.942381,102.846721,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,269505.0,1763752.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+7909,15.942381,102.846721,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269505.0,1763752.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7910,15.923681,102.878901,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272930.0,1761647.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7911,15.925135,102.887038,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273803.0,1761799.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7915,15.951196,102.878266,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272893.0,1764693.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7917,15.766988,102.721127,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255844.0,1744481.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7924,15.805705,102.770356,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261166.0,1748710.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7927,15.814306,102.786163,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262870.0,1749644.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7929,15.80497,102.787655,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263019.0,1748609.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7930,15.825549,102.780348,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262260.0,1750895.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7940,15.839256,102.765527,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260688.0,1752429.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7941,15.880236,102.779507,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262234.0,1756949.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7946,15.887387,102.866996,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271614.0,1757643.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7947,15.887387,102.866996,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271614.0,1757643.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;nutrient_unknown
+7949,15.898278,102.899642,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275123.0,1758813.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7951,15.907371,102.885197,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273586.0,1759835.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7952,15.879912,102.917608,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,277027.0,1756761.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7967,15.863951,102.904106,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275563.0,1755009.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7970,15.867691,102.89378,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274461.0,1755434.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+7977,15.859751,102.869098,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271808.0,1754582.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8069,15.772115,102.657741,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249056.0,1745123.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8085,15.76309,102.650214,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248238.0,1744133.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8091,15.744338,102.663946,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249687.0,1742041.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8111,15.733379,102.664761,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249761.0,1740827.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8114,15.735972,102.685962,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252037.0,1741089.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8116,15.747252,102.689845,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252467.0,1742333.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8124,15.773655,102.687764,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252276.0,1745258.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8128,15.785656,102.67201,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250602.0,1746605.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8133,15.757158,102.715089,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255185.0,1743400.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8138,15.740157,102.711846,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254817.0,1741522.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8147,15.699739,102.706805,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254228.0,1737054.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8160,15.705146,102.716724,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255298.0,1737641.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8163,15.697411,102.720923,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255739.0,1736780.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8171,15.691851,102.726599,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256341.0,1736158.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8172,15.673444,102.734179,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257132.0,1734112.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8174,15.779792,102.707651,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254415.0,1745914.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8176,15.777642,102.733445,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257177.0,1745646.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8227,15.785726,102.743749,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258291.0,1746529.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8243,15.792999,102.774423,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261587.0,1747299.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8244,15.789179,102.789599,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263209.0,1746859.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8245,15.798659,102.803204,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264678.0,1747893.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8246,15.81685,102.816138,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266085.0,1749892.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8247,15.847481,102.82812,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267404.0,1753269.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8248,15.890297,102.815469,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266098.0,1758022.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8264,15.857156,102.843334,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269045.0,1754323.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8265,15.842324,102.852807,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270043.0,1752671.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8266,15.821683,102.85225,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269960.0,1750387.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8267,15.830013,102.872378,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272126.0,1751287.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8268,15.808314,102.892212,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274227.0,1748864.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8271,15.802015,102.928691,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,278129.0,1748128.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8272,15.765051,102.728603,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256643.0,1744258.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8273,15.747019,102.732983,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257091.0,1742257.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8274,15.72412,102.735932,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257380.0,1739719.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8275,15.718249,102.751798,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259074.0,1739051.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8276,15.725202,102.768194,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260840.0,1739802.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8278,15.717347,102.77937,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262029.0,1738920.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8279,15.706228,102.752256,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259109.0,1737720.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8280,15.687737,102.757812,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259683.0,1735667.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8281,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,,,,,กรดจัด,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+8282,15.680624,102.788609,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262977.0,1734845.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8283,15.649388,102.792833,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263394.0,1731383.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8284,15.642498,102.81039,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265269.0,1730601.0,utm,,,กรดรุนแรงมากที่สุด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8286,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,268457.0,1330661.0,,,,ด่างปานกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+8287,15.653758,102.854386,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270000.0,1731799.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8288,15.66397,102.86754,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271422.0,1732915.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8289,15.680859,102.857582,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270373.0,1734795.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8290,15.677318,102.837493,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,268215.0,1734425.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8291,15.673102,102.804282,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264649.0,1733995.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8293,15.704215,102.790537,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263211.0,1737454.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8294,15.761844,102.739862,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257846.0,1743890.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8295,15.770662,102.748618,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258795.0,1744856.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8297,15.764021,102.7732,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261422.0,1744093.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8309,15.759508,102.782429,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262406.0,1743583.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8312,15.765727,102.796963,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263971.0,1744255.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8314,15.781749,102.816113,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266042.0,1746007.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8317,15.784327,102.828179,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267338.0,1746279.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8318,15.766555,102.820008,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266442.0,1744321.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8319,15.746771,102.81215,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265577.0,1742140.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8320,15.738789,102.813513,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265714.0,1741255.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8321,15.73805,102.839138,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,268460.0,1741145.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8322,15.721767,102.841707,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,268717.0,1739340.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8323,15.711478,102.832712,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267741.0,1738211.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+8332,15.69604,102.827549,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267170.0,1736508.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8333,15.686359,102.828062,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267214.0,1735436.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8334,15.69604,102.827549,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267170.0,1736508.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;ph_unknown;nutrient_unknown
+8335,15.70687,102.86855,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271578.0,1737662.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8336,15.693163,102.86664,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271358.0,1736147.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8337,15.727762,102.865972,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271325.0,1739977.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8338,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+8339,15.751772,102.845299,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269136.0,1742657.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8341,15.763715,102.844203,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269032.0,1743980.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8342,15.763583,102.861941,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270933.0,1743946.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8343,16.47458,102.376865,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,219936.0,1823251.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8344,16.459674,102.377309,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,219962.0,1821600.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8345,16.476382,102.352849,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,217373.0,1823484.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8346,16.468935,102.348841,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,216934.0,1822665.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8347,16.489838,102.34983,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,217070.0,1824978.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8348,16.485605,102.341518,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,216176.0,1824521.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8349,16.493198,102.309577,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,212775.0,1825407.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8350,16.478826,102.334066,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,215370.0,1823781.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+8351,16.477137,102.288373,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,210486.0,1823659.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8352,16.490128,102.362791,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,218455.0,1824992.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8353,16.503357,102.324209,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,214353.0,1826511.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8354,16.510226,102.299306,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,211703.0,1827307.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8355,16.502366,102.288658,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,210554.0,1826452.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8356,16.472099,102.289866,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,210638.0,1823099.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8357,16.457217,102.289343,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,210560.0,1821452.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8358,16.473959,102.277317,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209300.0,1823323.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8359,16.479416,102.247082,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,206078.0,1823971.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8360,16.506782,102.267178,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,208266.0,1826972.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8361,16.511037,102.261042,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,207617.0,1827452.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8362,16.527638,102.253655,2001-01-01,2026-10-27,2026-10-27,,40,,,,,47,206853.0,1829301.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8363,16.546759,102.246212,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,206087.0,1831429.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8364,16.551834,102.241383,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,205579.0,1831998.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8365,16.574587,102.245788,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,206084.0,1834511.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8366,16.53376,102.275562,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209202.0,1829947.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8367,16.543781,102.271844,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,208820.0,1831062.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8368,16.537909,102.259305,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,207472.0,1830430.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8369,16.552597,102.280222,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209728.0,1832026.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8370,16.558539,102.277395,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209435.0,1832688.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8371,16.575146,102.275204,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209226.0,1834530.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8378,16.574026,102.304364,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,212338.0,1834364.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8381,16.564926,102.315119,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,213473.0,1833341.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8383,16.555434,102.290708,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,210852.0,1832325.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8384,16.541401,102.314621,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,213385.0,1830737.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8386,16.526023,102.29873,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,211665.0,1829057.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8387,16.511036,102.315191,2016-01-01,2026-10-27,2026-10-27,,40,,,,,47,213401.0,1827374.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8389,16.526455,102.320305,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,213970.0,1829074.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8392,16.536853,102.328926,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,214906.0,1830213.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8393,16.500112,102.36024,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,218197.0,1826101.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8394,16.510737,102.344808,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,216564.0,1827299.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8395,16.524632,102.359383,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,218141.0,1828817.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8396,16.529651,102.344202,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,216527.0,1829394.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8397,16.545797,102.355368,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,217743.0,1831166.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8398,16.556671,102.366738,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,218973.0,1832354.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8399,16.616219,102.376822,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,220136.0,1838933.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8400,16.604507,102.344262,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,216643.0,1837682.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8401,16.610912,102.329608,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,215088.0,1838412.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8402,16.598935,101.454327,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,121590.0,1838536.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8403,16.589962,102.276251,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209360.0,1836169.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8404,16.601016,102.273463,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,209079.0,1837397.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8405,16.500014,102.381128,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,220428.0,1826061.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8406,16.514914,102.380197,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,220350.0,1827712.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8407,16.95462,102.785803,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264208.0,1875864.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8408,16.983075,102.749326,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260358.0,1879058.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8409,17.008885,102.736352,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259009.0,1881931.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8410,16.991641,102.729189,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258224.0,1880031.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8411,16.991145,102.713085,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256508.0,1879996.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8465,16.789828,102.846817,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270509.0,1857551.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8468,16.735428,102.922252,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,278489.0,1851444.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8470,16.720981,102.919567,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,278186.0,1849848.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8471,16.747047,101.987084,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,178744.0,1854008.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8472,16.76188,102.921168,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,278404.0,1854373.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8478,16.78491,102.916734,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,277958.0,1856927.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+8479,16.798397,102.916549,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,277954.0,1858420.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8484,16.816206,102.958201,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,282415.0,1860345.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8485,16.785213,102.948797,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,281377.0,1856925.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8487,16.731172,103.083829,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295716.0,1850800.0,utm,16.731172053335065,97.083828805848,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8488,16.750307,103.084566,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295815.0,1852917.0,utm,16.75030712171281,97.08456583375154,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8489,16.774513,103.0874,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296143.0,1855593.0,utm,16.774512502892414,97.0873998471215,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8490,16.821546,103.071402,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294488.0,1860815.0,utm,16.821546383153212,97.07140230277481,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8491,16.807674,103.089516,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296404.0,1859261.0,utm,16.807674422868597,97.08951609654191,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;ph_unknown;nutrient_unknown
+8492,16.827847,103.070804,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294431.0,1861513.0,utm,16.827847480779756,97.07080377850826,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8493,16.87273,103.091444,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296679.0,1866459.0,utm,16.87272977155059,97.0914437798394,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8494,16.887599,103.091125,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296661.0,1868105.0,utm,16.887599167406325,97.09112541539085,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8495,16.679922,103.086684,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295966.0,1845125.0,utm,16.679921655478182,97.08668379942871,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8511,16.664413,103.092162,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296534.0,1843403.0,utm,16.66441287189908,97.09216229750223,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8512,16.655821,103.095219,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296851.0,1842449.0,utm,16.655820986777588,97.09521877259235,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8513,16.640819,103.09981,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297325.0,1840784.0,utm,16.64081872221727,97.0998096824863,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8514,16.64948,103.089564,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296241.0,1841753.0,utm,16.649480152335613,97.08956390059282,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8515,16.655208,103.084624,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295720.0,1842392.0,utm,16.655208330044083,97.08462360982818,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8516,16.628299,103.073738,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294530.0,1839425.0,utm,16.628298948362854,97.07373829765639,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8517,16.618225,103.082564,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295461.0,1838301.0,utm,16.618224616090757,97.08256366205856,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8518,16.608174,103.081267,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295312.0,1837190.0,utm,16.608174069701164,97.0812671563307,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8519,16.592872,103.099429,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297234.0,1835478.0,utm,16.59287182155256,97.0994287312341,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;ph_unknown;nutrient_unknown
+8520,16.592182,103.084321,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295621.0,1835417.0,utm,16.592182049182608,97.08432128003615,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8521,16.590854,103.082367,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295411.0,1835272.0,utm,16.590853869977984,97.08236670203429,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8522,16.581627,103.07827,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294964.0,1834255.0,utm,16.581626828491817,97.07826989749692,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8524,16.569882,103.074498,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294549.0,1832959.0,utm,16.569881805305776,97.07449829271283,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8525,16.541016,103.080724,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295183.0,1829758.0,utm,16.541016124982043,97.08072410789178,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8526,16.515115,103.067511,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,293745.0,1826905.0,utm,16.515115481628676,97.06751111083017,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8527,16.514857,103.077639,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294826.0,1826866.0,utm,16.514856554552445,97.0776387942907,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8528,16.554428,103.077116,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294812.0,1831246.0,utm,16.55442793823164,97.07711572360614,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8529,16.525284,103.077667,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,294840.0,1828020.0,utm,16.525283981454294,97.07766676290689,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8530,16.695939,103.035327,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290505.0,1846951.0,utm,16.695939213851204,97.0353265628725,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8531,16.69104,103.039867,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290984.0,1846404.0,utm,16.691039942842828,97.03986719273063,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8532,16.667694,103.042936,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291286.0,1843817.0,utm,16.667694420839002,97.04293595793042,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8533,16.650602,103.052848,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,292325.0,1841915.0,utm,16.650602385418402,97.05284808493614,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8535,16.661073,103.027837,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289668.0,1843100.0,utm,16.661072891840497,97.02783719102383,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8536,16.644906,103.026559,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289514.0,1841312.0,utm,16.644905534072798,97.02655931688575,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8537,16.637669,103.026662,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289517.0,1840511.0,utm,16.63766918930828,97.02666150150542,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8538,16.625355,103.03436,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,290325.0,1839140.0,utm,16.625354734981556,97.03435970189113,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;date_too_old;nutrient_unknown
+8539,11.231108312703785,97.08229447933086,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290631.0,1242216.0,ldd,,,เป็นกลาง,Other,Other,Other,,,far_from_province;no_location;nutrient_unknown
+8541,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,,,,,เป็นกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+8543,16.6254,103.03629,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290531.0,1839143.0,utm,16.625400104922953,97.03628979161682,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8559,16.63031,103.061694,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,293247.0,1839660.0,utm,16.630310187674382,97.06169394117856,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8565,16.640179,103.091156,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296401.0,1840722.0,utm,16.640179067209132,97.09115569486964,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8566,16.595764,103.065208,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,293585.0,1835833.0,utm,16.595763926497167,97.06520775493088,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8567,16.594341,103.037786,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290657.0,1835704.0,utm,16.594341418714677,97.03778610801217,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8568,16.533725,103.043814,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291235.0,1828989.0,utm,16.53372489607763,97.0438141396588,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8569,16.71781,103.031146,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290083.0,1849376.0,utm,16.717810120811382,97.03114603053189,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;ph_unknown;nutrient_unknown
+8570,16.735396,103.025761,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289528.0,1851328.0,utm,16.73539560871679,97.02576125737919,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8571,16.748982,103.025509,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289516.0,1852832.0,utm,16.748982238058254,97.02550870106035,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8572,16.753609,103.026502,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289627.0,1853343.0,utm,16.753608764521243,97.02650192638691,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8573,16.779853,103.029973,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290026.0,1856244.0,utm,16.779853277151517,97.02997339314406,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8574,16.789309,103.034256,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290493.0,1857286.0,utm,16.789308960648277,97.03425616967066,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8575,16.805033,103.092094,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,296676.0,1858966.0,utm,16.805032879511668,97.0920940864374,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8576,16.798132,103.046153,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291771.0,1858250.0,utm,16.798132285808745,97.0461530829841,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8577,16.824944,103.040859,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291236.0,1861223.0,utm,16.82494384835733,97.04085934477693,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8578,16.863158,103.04695,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291927.0,1865446.0,utm,16.863157856221836,97.04694984142866,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8579,16.821958,103.022484,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289274.0,1860912.0,utm,16.821957857931068,97.0224840851445,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8580,16.834015,103.034199,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290536.0,1862234.0,utm,16.83401485522787,97.03419877207045,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8584,16.847271,103.044711,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291671.0,1863690.0,utm,16.847270586578766,97.04471103678422,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8585,16.861437,103.034178,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290564.0,1865269.0,utm,16.86143657284314,97.03417820672703,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8586,16.86343,103.033876,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290534.0,1865490.0,utm,16.863430458721353,97.03387609155841,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;ph_unknown;nutrient_unknown
+8587,16.86343,103.033876,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290534.0,1865490.0,utm,16.863430458721353,97.03387609155841,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;duplicate;no_location;ph_unknown;nutrient_unknown
+8649,16.803797,103.027212,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289758.0,1858897.0,utm,16.80379733530955,97.02721244616362,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8650,16.810263,102.996903,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,286534.0,1859645.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8651,16.816929,102.994891,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,286327.0,1860385.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8715,16.827432,102.995306,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,286383.0,1861547.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8717,16.836445,102.996787,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,286551.0,1862543.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+8718,16.840793,102.990568,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,285893.0,1863031.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8719,16.840383,102.98651,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,285460.0,1862990.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8722,16.834015,103.034199,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290536.0,1862234.0,utm,16.83401485522787,97.03419877207045,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;duplicate;no_location;nutrient_unknown
+8723,16.853987,102.84658,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270561.0,1864653.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8724,16.846025,102.833405,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269147.0,1863787.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8725,16.843068,102.836544,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269478.0,1863456.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8727,16.849566,102.808757,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266524.0,1864208.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8732,16.844841,102.8011,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265702.0,1863694.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8736,16.83418,102.807836,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266407.0,1862506.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8737,16.819619,102.821577,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267854.0,1860878.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8738,16.858014,102.774406,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262873.0,1865184.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8739,16.884985,102.751646,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260481.0,1868197.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8740,16.88914,102.733591,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258562.0,1868679.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8741,16.875967,102.681799,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253025.0,1867285.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8754,16.871185,102.662446,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250956.0,1866780.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8755,16.870643,102.658437,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250528.0,1866725.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8756,16.871052,102.649182,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249542.0,1866782.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8757,16.85707,102.665978,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251314.0,1865213.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8758,16.841358,102.656969,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250333.0,1863485.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8759,16.821726,102.633087,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,247761.0,1861342.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8760,16.644315,102.677295,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252245.0,1841647.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8761,16.641258,102.669732,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251434.0,1841318.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8762,16.644721,102.663599,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250784.0,1841709.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+8763,16.645049,102.653419,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,249698.0,1841758.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8765,16.63928,102.686716,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253244.0,1841078.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8766,16.638703,102.687632,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253341.0,1841013.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8771,16.61053,102.713229,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256037.0,1837863.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8775,16.590198,102.726745,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257454.0,1835596.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8776,16.565313,102.695788,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254118.0,1832879.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8781,16.527106,102.688123,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253251.0,1828659.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8782,16.515489,102.680835,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252458.0,1827382.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8783,16.521687,102.671181,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251435.0,1828080.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8784,16.533093,102.661988,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250468.0,1829354.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8786,16.538114,102.654641,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249690.0,1829919.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8787,16.556708,102.646071,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248799.0,1831988.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8788,16.567056,102.636073,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,247745.0,1833146.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8789,16.57117,102.61268,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,245253.0,1833631.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8790,16.575264,102.600303,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,243937.0,1834100.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8791,16.849539,102.806149,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266246.0,1864208.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8792,16.821747,102.634963,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,247961.0,1861342.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8793,16.586954,102.566154,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,240307.0,1835438.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8794,16.746484,103.101043,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297568.0,1852477.0,utm,16.746483816678218,97.10104334617913,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8795,16.745718,103.097384,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297177.0,1852396.0,utm,16.745718220513623,97.09738422333905,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8797,16.78705,103.103548,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297878.0,1856964.0,utm,16.787049592952464,97.10354831762474,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8798,16.790384,103.145191,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,302321.0,1857291.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8799,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,1859421.0,,,,กรดปานกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+8800,16.824192,103.156843,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,303598.0,1861021.0,utm,16.82419189022564,97.15684291235924,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8802,16.837783,103.163045,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,304273.0,1862519.0,utm,16.83778306619875,97.16304465680467,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8803,16.840815,103.168645,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,304873.0,1862849.0,utm,16.84081491652656,97.16864506333977,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8804,16.826432,103.148762,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,302739.0,1861277.0,utm,16.826432393785392,97.14876210980283,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8805,16.829887,103.14309,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,302138.0,1861665.0,utm,16.829887063558314,97.14308988192808,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8806,16.834374,103.143647,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,302202.0,1862161.0,utm,16.834373813833235,97.14364661435873,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8807,16.840207,103.14724,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,302591.0,1862803.0,utm,16.840207202377794,97.14723959528786,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8808,16.828695,103.136149,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,301397.0,1861540.0,utm,16.828694741258495,97.13614940552962,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8809,16.834701,103.142818,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,302114.0,1862198.0,utm,16.834700641306412,97.1428177812441,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8810,17.723396,103.127147,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,301399.0,1960572.0,utm,17.72339642463567,97.12714650043443,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;far_from_province;no_location;nutrient_unknown
+8811,16.810429,103.133673,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,301114.0,1859521.0,utm,16.810429201880172,97.13367311601334,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8812,16.805989,103.129289,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,300642.0,1859034.0,utm,16.805988983448078,97.12928877198497,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8813,16.796984,103.11389,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,298991.0,1858053.0,utm,16.79698439773382,97.11388998135698,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8814,16.798069,103.120793,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,299728.0,1858166.0,utm,16.798068585031583,97.12079265287117,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;date_too_old;nutrient_unknown
+8815,16.804195,103.120817,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,299737.0,1858844.0,utm,16.804194974382007,97.1208167587934,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8816,16.785318,103.121612,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,299802.0,1856754.0,utm,16.785317719143865,97.12161222514781,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8818,16.819949,103.136254,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,301399.0,1860572.0,utm,16.819949133537666,97.13625369616254,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8824,16.779568,103.133196,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,301031.0,1856106.0,utm,16.77956793652022,97.13319624104,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8825,16.777854,103.155527,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,303410.0,1855894.0,utm,16.77785354994249,97.15552697132209,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8826,16.948559,103.153729,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,303395.0,1874788.0,utm,16.948558722304593,97.15372927691654,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8827,16.773569,103.165435,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,304462.0,1855410.0,utm,16.77356868819355,97.1654354688691,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8828,16.788052,103.165334,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,304466.0,1857013.0,utm,16.78805225899637,97.16533394893878,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8829,16.800946,103.164244,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,304363.0,1858441.0,utm,16.800945719076964,97.16424383830191,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;date_too_old;nutrient_unknown
+8830,16.801545,103.171705,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,305159.0,1858500.0,utm,16.80154528245768,97.17170521626355,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8831,16.806195,103.177364,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,305767.0,1859009.0,utm,16.806194767657214,97.17736437500609,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8832,16.804603,103.100269,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297547.0,1858910.0,utm,16.804602560925264,97.10026894756656,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8833,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,,,,,กรดปานกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+8835,16.812575,103.106512,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,298221.0,1859786.0,utm,16.81257530236117,97.1065124059834,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8837,16.821582,103.110222,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,298626.0,1860779.0,utm,16.82158177918291,97.11022249269476,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8846,16.803526,103.107015,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,298265.0,1858784.0,utm,16.803526276944517,97.10701496557326,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+8847,16.694909,102.713493,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256172.0,1847203.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8848,16.706153,102.725554,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257473.0,1848433.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8849,16.723846,102.713692,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256230.0,1850406.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8856,16.713589,102.710102,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255834.0,1849275.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8857,16.707478,102.704822,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255263.0,1848605.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8858,16.726881,102.707131,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255534.0,1850750.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8859,16.73662,102.688601,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253570.0,1851851.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8860,16.754539,102.681784,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252866.0,1853843.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8867,16.748387,102.673795,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252006.0,1853172.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8868,16.745115,102.6664,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,251213.0,1852819.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8869,16.74413,102.659249,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250449.0,1852719.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8870,16.720841,102.67112,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251685.0,1850126.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8871,16.720309,102.664021,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250927.0,1850076.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8872,16.714579,102.664616,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250983.0,1849441.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8873,16.725169,102.651269,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249573.0,1850630.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8877,16.718552,102.646128,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249016.0,1849904.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8878,16.731105,102.712508,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256113.0,1851211.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8879,16.721985,102.762379,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261421.0,1850141.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8881,16.719489,102.756333,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260773.0,1849872.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8883,16.724179,102.763881,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261584.0,1850382.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8884,16.733339,102.762237,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261420.0,1851398.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8885,16.732722,102.766969,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261924.0,1851324.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8887,16.694185,102.755447,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260647.0,1847072.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8888,16.687138,102.762091,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261347.0,1846284.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8889,16.692261,102.76804,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261988.0,1846844.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8890,16.694109,102.764325,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261594.0,1847053.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8891,16.650882,102.762719,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261369.0,1842270.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8896,16.671746,102.758962,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260994.0,1844584.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8897,16.634887,102.750619,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,260058.0,1840514.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+8898,16.621576,102.741077,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259023.0,1839052.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8899,16.602306,102.736018,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258459.0,1836925.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8901,16.591293,102.736025,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258446.0,1835706.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8902,16.584465,102.73529,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,258359.0,1834951.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+8904,16.57293,102.73624,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258446.0,1833673.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8905,16.595679,102.742241,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259115.0,1836184.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8906,16.610185,102.752004,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260175.0,1837778.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8907,16.603602,102.747236,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259658.0,1837055.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8908,16.597819,102.766397,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261696.0,1836392.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8909,16.669514,102.801857,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265568.0,1844286.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8911,16.675302,102.792297,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264555.0,1844938.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8913,16.678421,102.792458,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264576.0,1845283.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8914,16.677796,102.780449,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263294.0,1845228.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8915,16.674241,102.782617,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263521.0,1844832.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8916,16.678636,102.776305,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262853.0,1845326.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8917,16.672382,102.768514,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262014.0,1844643.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8918,16.726218,102.67293,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251885.0,1850719.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8919,16.730149,102.677879,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252418.0,1851148.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8920,16.732107,102.686518,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253342.0,1851354.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8921,16.727829,102.687666,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253459.0,1850879.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8922,16.724624,102.683786,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253041.0,1850529.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8923,16.726255,102.679436,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252579.0,1850715.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8924,16.739437,102.691698,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253904.0,1852159.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8925,16.741559,102.692423,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253984.0,1852393.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8926,16.745743,102.691754,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253918.0,1852857.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8927,16.732597,102.669056,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251480.0,1851430.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8928,16.735038,102.666045,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251162.0,1851704.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8930,16.748226,102.719261,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256855.0,1853098.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8931,16.751831,102.662005,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250753.0,1853568.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8932,16.753976,102.666339,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251218.0,1853800.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8933,16.758088,102.66808,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251409.0,1854253.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8934,16.760223,102.667547,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251355.0,1854490.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8935,16.653049,102.784455,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263691.0,1842484.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+8936,16.653049,102.784455,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263691.0,1842484.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;nutrient_unknown
+8937,16.645382,102.783887,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,263621.0,1841636.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+8938,16.637853,102.783552,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,263576.0,1840803.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+9016,16.637742,102.797759,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265092.0,1840774.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9017,16.638500473852798,100.54485345786414,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,664768.0,1840201.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,far_from_province;no_location;nutrient_unknown
+9018,16.633298,102.791072,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264373.0,1840290.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9033,16.633341,102.787474,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263989.0,1840299.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9036,16.633105,102.782247,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263431.0,1840279.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9042,16.634285,102.778532,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263036.0,1840414.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9046,16.644102,102.748984,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259895.0,1841536.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9053,16.647594,102.748569,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259855.0,1841923.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9054,16.646134,102.75225,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260246.0,1841757.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9058,16.639604,102.744848,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259448.0,1841043.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9059,16.636071,102.743109,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259258.0,1840654.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9060,16.632523,102.743366,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259281.0,1840261.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9061,16.612591,102.7109,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255791.0,1838094.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9062,16.620192,102.709545,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255656.0,1838937.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9063,16.618651,102.704213,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255085.0,1838773.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9064,16.619365,102.705039,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255174.0,1838851.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9065,16.534713,102.701256,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254663.0,1829485.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9066,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,,,,,กรดจัด,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9067,16.629373,102.695934,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254215.0,1839970.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9068,16.632086,102.691291,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253723.0,1840276.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9069,16.637222,102.687669,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253343.0,1840849.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9070,16.641331,102.683571,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252911.0,1841309.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9071,16.827064,102.628378,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,247266.0,1861939.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9076,16.825161,102.630953,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,247538.0,1861725.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+9078,16.825055,102.641403,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248652.0,1861700.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9079,16.816425,102.639521,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248440.0,1860747.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9136,16.832745,102.649458,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249521.0,1862541.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9137,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,1861281.0,249990.0,,,,เป็นกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9139,16.81346,102.662283,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250863.0,1860390.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9140,16.811959,102.667722,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,251441.0,1860217.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9144,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,กรดปานกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9149,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254993.0,1259112.0,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9150,16.831498,102.686074,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253423.0,1862357.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9151,16.831996,102.67651,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252404.0,1862424.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9152,16.832048,102.671538,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,251874.0,1862436.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9153,16.836549,102.669363,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251648.0,1862937.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9154,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250979.0,,,,,เป็นกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9155,16.837922,102.655904,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,250215.0,1863106.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9156,16.842083,102.650103,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249602.0,1863574.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9157,16.842071,102.641952,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248733.0,1863583.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9158,16.845346,102.634491,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,247942.0,1863955.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9159,16.913253,102.73213,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258437.0,1871350.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9160,16.928433,102.728363,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258055.0,1873035.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9161,16.979866,102.805465,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266334.0,1878635.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9162,16.98238,102.797334,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,265471.0,1878923.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9163,16.984093,102.791973,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264902.0,1879119.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9164,16.981482,102.786136,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264277.0,1878837.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9165,16.990534,102.785363,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264206.0,1879840.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9166,16.982834,102.775915,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,263190.0,1878999.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9167,16.984015,102.771526,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262724.0,1879135.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9168,16.984918,102.766606,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,262201.0,1879241.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9169,16.983818,102.76185,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261693.0,1879125.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9170,16.983955,102.749691,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260398.0,1879155.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9171,16.983252,102.746545,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260062.0,1879081.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9172,16.970857,102.72943,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258223.0,1877730.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9173,16.985358,102.719887,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257225.0,1879347.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9174,16.989512,102.714908,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256700.0,1879813.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9175,16.989741,102.713553,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256556.0,1879840.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+9176,16.98463,102.729931,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258294.0,1879254.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9177,16.922807,102.728627,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258076.0,1872412.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9179,16.938682,102.728822,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258117.0,1874169.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9180,16.931183,102.728743,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258099.0,1873339.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9181,16.942554,102.722055,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257401.0,1874606.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9182,16.94903,102.713079,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256453.0,1875334.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9183,16.944051,102.715373,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256691.0,1874780.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9184,16.955768,102.7561,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261045.0,1876027.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9185,16.880769,102.786816,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,264224.0,1867688.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9186,16.722859,103.030935,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290066.0,1849935.0,utm,16.722858846729284,97.03093481498406,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9187,16.775292,103.014151,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288334.0,1855756.0,utm,16.775292139312693,97.01415134251893,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9188,16.781036,103.001721,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,287015.0,1856405.0,utm,16.781035723263436,97.00172064292354,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9189,16.776582,103.015779,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288509.0,1855897.0,utm,16.776581790292738,97.01577925360641,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9190,16.779305,103.014297,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288354.0,1856200.0,utm,16.779305170515983,97.01429722968415,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9191,16.783496,103.014104,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288338.0,1856664.0,utm,16.783495630308426,97.0141036167003,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9192,16.791355,103.014904,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288432.0,1857533.0,utm,16.79135492125437,97.01490359248649,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9193,16.803159,103.0219,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289191.0,1858832.0,utm,16.803159027180172,97.02190043754584,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9194,16.804763,103.017681,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288743.0,1859014.0,utm,16.80476281261769,97.01768143033637,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9195,16.811274,103.018261,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,288812.0,1859734.0,utm,16.81127373187811,97.01826103693797,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9196,16.822549,103.023838,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289419.0,1860976.0,utm,16.82254913832773,97.02383822578018,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9197,16.831156,103.029078,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,289987.0,1861923.0,utm,16.83115581641078,97.02907773950756,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9198,16.834166,103.033981,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290513.0,1862251.0,utm,16.834166373518496,97.03398142601283,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9199,16.848882,103.034664,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290602.0,1863879.0,utm,16.848882273296198,97.03466449128854,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9200,16.854281,103.033248,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,290457.0,1864478.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9201,16.858551,103.034809,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290628.0,1864949.0,utm,16.858551344206543,97.03480854961913,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9202,16.861595,103.034674,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290617.0,1865286.0,utm,16.861594922811655,97.03467387856301,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9203,16.870512,103.036449,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,290816.0,1866271.0,utm,16.870511623624235,97.03644902396519,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9204,16.73821,102.877852,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273757.0,1851802.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9205,16.74756,102.87953,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273947.0,1852835.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9206,16.751935,102.879735,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273974.0,1853319.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9207,16.751676,102.893213,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275411.0,1853275.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9208,16.762549,102.87957,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273969.0,1854494.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9209,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,273969.0,185449.0,,,,เป็นกลาง,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9210,16.770686,102.874857,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273476.0,1855400.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+9212,16.775791,102.878411,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273861.0,1855961.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9221,16.773157,102.885867,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274653.0,1855661.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9222,16.776965,102.881905,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274235.0,1856087.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9254,16.782582,102.880792,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274123.0,1856710.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9255,16.787388,102.882474,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274308.0,1857240.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9256,16.785729,102.884603,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274533.0,1857054.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9257,16.787485,102.604554,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,244673.0,1857588.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9258,16.789205,102.888757,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274980.0,1857434.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9259,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275158.0,858028.0,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9260,16.80354,102.896421,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275814.0,1859012.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9261,16.811264,102.90429,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,276662.0,1859858.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+9262,16.819704,102.896552,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275847.0,1860801.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9263,16.796275,102.862951,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272237.0,1858246.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9264,16.698948,102.868331,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272695.0,1847467.0,utm,,,กรดจัดมาก,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9265,16.774021,102.85492,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271354.0,1855792.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9266,16.781211,102.856574,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271539.0,1856586.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9267,16.785278,102.860158,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271926.0,1857032.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9268,16.788065,102.862302,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,272158.0,1857338.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+9269,16.791045,102.854381,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,271317.0,1857677.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9270,16.790505,102.838218,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,269593.0,1857636.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9271,16.840178,102.890491,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275225.0,1863074.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9272,16.828294,102.891898,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,275361.0,1861757.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9273,16.822818,102.88739,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274874.0,1861156.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9274,16.824746,102.878964,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273978.0,1861379.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9275,16.818678,102.881076,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,274196.0,1860705.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9276,16.810785,102.87789,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,273847.0,1859835.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9277,16.808027,102.849829,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,270852.0,1859562.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9278,16.762381,102.8659,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272511.0,1854491.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+9279,16.762381,102.8659,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272511.0,1854491.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;nutrient_unknown
+9280,16.815,102.867826,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,272779.0,1860313.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9281,16.598586,102.632437,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,247398.0,1836641.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9282,16.599965,102.628213,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,246949.0,1836799.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9283,16.559203,102.639821,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248135.0,1832272.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9284,16.589015,102.644704,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,248695.0,1835566.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9285,16.583145,102.653731,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,249651.0,1834905.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9286,16.629179,102.802139,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265549.0,1839821.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9287,16.63083,102.806225,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265987.0,1839999.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9288,16.804746,102.750831,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,260293.0,1859316.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9289,16.806224,102.748056,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259999.0,1859483.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9290,16.81398,102.735349,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258654.0,1860357.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9291,16.822709,102.724065,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257462.0,1861337.0,utm,,,กรดรุนแรงมากที่สุด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9292,16.807446666498077,100.46090949678461,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,655676.0,1858828.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,far_from_province;no_location;nutrient_unknown
+9293,16.812688,102.714908,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256473.0,1860239.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9294,16.812783,102.722673,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257301.0,1860240.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9295,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9296,16.800736,102.73364,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258455.0,1858893.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9297,16.803484,102.728093,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257867.0,1859204.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9298,16.77474,102.746327,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259775.0,1856000.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9299,16.765353,102.72893,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257908.0,1854982.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9300,16.775723,102.724775,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257478.0,1856135.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9301,16.786124,102.731581,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,258217.0,1857278.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9302,,,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,,1838951.0,,,,กรดเล็กน้อย,Other,Other,Other,,,no_coords;no_location;nutrient_unknown
+9303,16.606567,102.764966,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261554.0,1837362.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9304,16.603298,102.760863,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,261112.0,1837005.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9305,16.591175,102.749264,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259859.0,1835677.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9306,16.581654,102.746864,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,259591.0,1834626.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9307,16.578487,102.692793,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253815.0,1834341.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9310,16.578706,102.692978,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,253835.0,1834365.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9311,16.57416,102.683871,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252857.0,1833873.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9312,16.5675,102.678761,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,252303.0,1833142.0,utm,,,กรดปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9313,16.580672,102.670781,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,251468.0,1834610.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9314,16.584178,102.700913,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254689.0,1834961.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9315,16.603572,102.696719,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,254266.0,1837113.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9316,16.600952,102.722871,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,257054.0,1836791.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9317,16.625624,102.709827,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255693.0,1839538.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9318,16.638682,102.713467,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256098.0,1840979.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9319,16.639815,102.721194,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,256924.0,1841095.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9320,16.656378,102.708478,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255588.0,1842944.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9321,16.649127,102.70624,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255340.0,1842144.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9322,16.643416,102.706092,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255317.0,1841512.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9323,16.6591,102.707892,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,255529.0,1843246.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9324,16.679669,102.813008,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266770.0,1845397.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9325,16.654951,102.803636,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,265740.0,1842672.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9326,16.656272,102.812383,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,266675.0,1842808.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9327,16.657763,102.817521,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,267225.0,1842967.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9328,16.778018,102.990535,1957-01-01,2026-10-27,2026-10-27,,40,,,,,47,285819.0,1856083.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;date_too_old;nutrient_unknown
+9329,16.783432,102.988884,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,285649.0,1856684.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+9330,16.792632,102.983581,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,285094.0,1857708.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+9331,16.792632,102.983581,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,285094.0,1857708.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;nutrient_unknown
+9332,16.789657,102.972292,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,283887.0,1857391.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9334,16.797803,102.979306,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,284644.0,1858285.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9335,16.802965,102.981512,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,284885.0,1858854.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9336,16.806067,102.980878,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,284821.0,1859198.0,utm,,,กรดจัด,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9337,16.808315,102.981624,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,284903.0,1859446.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9338,16.810051,102.97806,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,284525.0,1859642.0,utm,,,ด่างเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9339,16.814875,102.974341,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,284134.0,1860180.0,utm,,,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9340,16.829167,102.969648,2011-01-01,2026-10-27,2026-10-27,,40,,,,,,283650.0,1861767.0,utm,,,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9341,16.822864,102.967239,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,283386.0,1861072.0,utm,,,ด่างปานกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9342,16.876168,103.110431,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,298706.0,1866820.0,utm,16.876167546593102,97.11043105391354,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9343,16.874109,102.599665,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,244268.0,1867184.0,utm,,,ด่างเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;nutrient_unknown
+9344,16.861438,103.101438,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,297732.0,1865199.0,utm,16.861437855922556,97.10143795739693,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9345,16.870321,103.045844,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,291817.0,1866240.0,utm,16.870321320647903,97.0458440272501,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9346,16.839893,103.084483,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295902.0,1862832.0,utm,16.839893269961557,97.0844831547966,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9347,16.833508,103.081902,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295620.0,1862128.0,utm,16.833508210124208,97.08190164765095,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9348,16.828329,103.084553,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295897.0,1861552.0,utm,16.82832852454143,97.08455255131454,เป็นกลาง,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9349,16.817889,103.084123,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295840.0,1860397.0,utm,16.817888548470908,97.0841227366587,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9350,16.800777,103.084285,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295839.0,1858503.0,utm,16.800776861225454,97.08428520779853,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+9351,16.785488,103.083276,2011-01-01,2026-10-27,2026-10-27,,40,,,,,47,295715.0,1856812.0,utm,16.785488443074513,97.08327550041776,กรดเล็กน้อย,Other,Other,Other,,,utm_converted;utm_zone_fixed;ldd_coords_fixed;no_location;nutrient_unknown
+12374,15.923111,102.497775,2019-12-23,2026-10-27,2026-10-27,,40,,,,"KHON CHIM, WAENG YAI, KHON KAEN",48,232108.0,1762036.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+12375,15.928853,102.47654,2019-12-23,2026-10-27,2026-10-27,,40,,,,"KHON CHIM, WAENG YAI, KHON KAEN",48,229841.0,1762699.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+12376,15.909431,102.475709,2019-12-23,2026-10-27,2026-10-27,,40,,,,"MAI NA PHIANG, WAENG YAI, KHON KAEN",48,229726.0,1760550.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+12377,15.838306,102.518745,2019-12-23,2026-10-27,2026-10-27,,40,,,,"PHEK YAI, PHON, KHON KAEN",48,234243.0,1752621.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+12378,15.900978,102.618223,2019-12-24,2026-10-27,2026-10-27,,40,,,,"NONG WAENG NANG BAO, PHON, KHON KAEN",48,244982.0,1759435.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+12379,15.912669,102.544934,2019-12-24,2026-10-27,2026-10-27,,40,,,,"KHON CHIM, WAENG YAI, KHON KAEN",48,237146.0,1760820.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+12380,15.783042,102.379602,2019-12-24,2026-10-27,2026-10-27,,40,,,,"LAHAN NA, WAENG NOI, KHON KAEN",48,219255.0,1746684.0,ldd,,,เป็นกลาง,ต่ำ,สูง,ต่ำ,,,
+12552,16.726226388753922,101.9948882966358,2018-04-20,2026-10-27,2026-10-27,,40,,,,,47,819367.0,1851673.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,no_location;nutrient_unknown
+12553,16.717894429393954,101.99660402632152,2018-04-20,2026-10-27,2026-10-27,,40,,,,"NA NONG THUM, CHUM PHAE, KHON KAEN",47,819564.0,1850753.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+12554,16.862866652935715,102.21706347106321,2018-04-19,2026-10-27,2026-10-27,,40,,,,"KUT THAT, NONG NA KHAM, KHON KAEN",48,203463.0,1866475.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+12555,16.65302649214392,102.3992289816597,2018-04-19,2026-10-27,2026-10-27,,40,,,,"NONG KUNG THANASAN, PHU WIANG, KHON KAEN",48,222581.0,1842977.0,ldd,,,Other,Other,Other,Other,,,ph_unknown;nutrient_unknown
+12556,16.758372402534317,102.07879951674974,2018-04-19,2026-10-27,2026-10-27,,40,,,,"BAN MAI, SI CHOMPHU, KHON KAEN",48,188549.0,1855116.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,nutrient_unknown
+16681,16.772051873081153,102.81799309171039,2002-11-15,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267414.0,1855617.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+16781,16.772255271457052,102.81928489484099,2002-11-16,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267552.0,1855638.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+16790,16.772061702733605,102.81977474358524,2002-11-16,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267604.0,1855616.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+16849,16.77284649324816,102.82051601400943,2002-11-15,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267684.0,1855702.0,ldd,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,ต่ำ,,,
+16888,16.771356991617914,102.8223335091812,2002-11-16,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267876.0,1855535.0,ldd,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,ต่ำ,,,
+16896,16.770355676986267,102.82675240951518,2002-11-17,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,268346.0,1855419.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+17135,16.19459669157639,102.5581705922336,2002-11-14,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,238932.0,1792013.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,Other,,,nutrient_unknown
+17137,16.772061702733605,102.81977474358524,2002-11-16,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267604.0,1855616.0,ldd,,,Other,Other,Other,Other,,,duplicate;ph_unknown;nutrient_unknown
+17225,16.470846,102.840655,2009-07-17,2026-10-27,2026-10-27,,40,,,,"NON SILA, NON SILA, KHON KAEN",47,269471.0,1822251.0,utm,,,กรดจัดมาก,ต่ำ,ต่ำ,Other,,,utm_converted;utm_zone_fixed;nutrient_unknown
+17267,,,2009-11-05,2026-10-27,2026-10-27,,40,,,,"KUT NAM SAI, NAM PHONG, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,ต่ำ,,,no_coords
+17268,,,2009-11-06,2026-10-27,2026-10-27,,40,,,,"KUT NAM SAI, NAM PHONG, KHON KAEN",48,,,,,,เป็นกลาง,ต่ำ,ปานกลาง,ต่ำ,,,no_coords
+17269,,,2009-11-05,2026-10-27,2026-10-27,,40,,,,"SA-AT, NAM PHONG, KHON KAEN",48,,,,,,เป็นกลาง,ต่ำ,สูง,ต่ำ,,,no_coords
+17270,,,2009-01-09,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,,,,,,กรดปานกลาง,ต่ำ,สูง,ต่ำ,,,no_coords
+17271,,,2009-12-11,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,,,,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17278,16.19459669157639,102.5581705922336,2002-11-14,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,238932.0,1792013.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,Other,,,duplicate;nutrient_unknown
+17279,16.772051873081153,102.81799309171039,2002-11-15,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267414.0,1855617.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,duplicate
+17322,16.19459669157639,102.5581705922336,2002-11-14,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,238932.0,1792013.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,Other,,,duplicate;nutrient_unknown
+17323,16.772051873081153,102.81799309171039,2002-11-15,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267414.0,1855617.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,duplicate
+17345,16.297359286926074,102.69741231556661,2007-07-07,2026-10-27,2026-10-27,,40,,,,"BAN TON, PHRA YUEN, KHON KAEN",48,253954.0,1803216.0,ldd,,,กรดจัดมาก,ต่ำ,ต่ำ,ต่ำ,,,
+17346,16.415725371419597,102.9047770518991,2007-07-08,2026-10-27,2026-10-27,,40,,,,"PHRA LAP, MUEANG KHON KAEN, KHON KAEN",48,276256.0,1816078.0,ldd,,,กรดปานกลาง,ปานกลาง,ต่ำ,ปานกลาง,,,
+17370,,,2009-11-05,2026-10-27,2026-10-27,,40,,,,"SA-AT, NAM PHONG, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,สูง,,,no_coords
+17371,,,2009-11-05,2026-10-27,2026-10-27,,40,,,,"SA-AT, NAM PHONG, KHON KAEN",48,,,,,,เป็นกลาง,ต่ำ,ต่ำ,ปานกลาง,,,no_coords
+17372,,,2009-01-09,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,,,,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17373,,,2009-01-09,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,ต่ำ,,,no_coords
+17374,,,2009-12-11,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17375,,,2009-12-11,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17397,16.415725371419597,102.9047770518991,2007-07-08,2026-10-27,2026-10-27,,40,,,,"PHRA LAP, MUEANG KHON KAEN, KHON KAEN",48,276256.0,1816078.0,ldd,,,กรดปานกลาง,ปานกลาง,ต่ำ,ปานกลาง,,,duplicate
+17398,16.31292061806233,102.64786569906707,2004-04-18,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PHRA YUEN, KHON KAEN",48,248677.0,1804999.0,ldd,,,ด่างปานกลาง,ต่ำ,ปานกลาง,ต่ำ,,,
+17399,16.31351811695923,102.64798016994207,2004-04-19,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PHRA YUEN, KHON KAEN",48,248690.0,1805065.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+17400,16.314043772789876,102.6481329180082,2004-04-19,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PHRA YUEN, KHON KAEN",48,248707.0,1805123.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+17402,,,2009-11-05,2026-10-27,2026-10-27,,40,,,,"KUT NAM SAI, NAM PHONG, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,ต่ำ,,,no_coords
+17403,,,2009-11-05,2026-10-27,2026-10-27,,40,,,,"KUT NAM SAI, NAM PHONG, KHON KAEN",48,,,,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17406,16.314533194435523,102.64827674494873,2004-04-19,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PHRA YUEN, KHON KAEN",48,248723.0,1805177.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,
+17407,16.31504,102.648392,2004-04-19,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PHRA YUEN, KHON KAEN",47,248736.0,1805233.0,utm,,,กรดจัดมาก,ต่ำ,ต่ำ,ต่ำ,,,utm_converted;utm_zone_fixed
+17426,16.68709080050889,102.8040748012673,2009-06-17,2026-10-27,2026-10-27,,40,,,,"MUANG WAN, NAM PHONG, KHON KAEN",48,265826.0,1846229.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,ต่ำ,,,
+17429,16.674374313637916,102.80017094833352,2009-07-18,2026-10-27,2026-10-27,,40,,,,,48,265394.0,1844826.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,no_location
+17437,16.470846,102.840655,2009-07-17,2026-10-27,2026-10-27,,40,,,,"NON SILA, NON SILA, KHON KAEN",47,269471.0,1822251.0,utm,,,กรดจัดมาก,ต่ำ,ต่ำ,Other,,,utm_converted;utm_zone_fixed;duplicate;nutrient_unknown
+17438,16.297359286926074,102.69741231556661,2007-07-07,2026-10-27,2026-10-27,,40,,,,"BAN TON, PHRA YUEN, KHON KAEN",48,253954.0,1803216.0,ldd,,,กรดจัดมาก,ต่ำ,ต่ำ,ต่ำ,,,duplicate
+17442,16.19459669157639,102.5581705922336,2002-11-14,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,238932.0,1792013.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,Other,,,duplicate;nutrient_unknown
+17443,16.772051873081153,102.81799309171039,2002-11-15,2026-10-27,2026-10-27,,40,,,,"NAM PHONG, NAM PHONG, KHON KAEN",48,267414.0,1855617.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,duplicate
+17450,16.470846,102.840655,2009-07-17,2026-10-27,2026-10-27,,40,,,,"NON SILA, NON SILA, KHON KAEN",47,269471.0,1822251.0,utm,,,กรดจัดมาก,ต่ำ,ต่ำ,Other,,,utm_converted;utm_zone_fixed;duplicate;nutrient_unknown
+17474,16.470846,102.840655,2009-07-17,2026-10-27,2026-10-27,,40,,,,"NON SILA, NON SILA, KHON KAEN",47,269471.0,1822251.0,utm,,,กรดจัดมาก,ต่ำ,ต่ำ,Other,,,utm_converted;utm_zone_fixed;duplicate;nutrient_unknown
+17500,,,2009-11-06,2026-10-27,2026-10-27,,40,,,,"KUT NAM SAI, NAM PHONG, KHON KAEN",48,,,,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17501,,,2009-11-06,2026-10-27,2026-10-27,,40,,,,"KUT NAM SAI, NAM PHONG, KHON KAEN",48,,,,,,เป็นกลาง,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17525,,,1996-07-27,2026-10-27,2026-10-27,,40,,,,"KHAO SUAN KWANG, KHAO SUAN KWANG, KHON KAEN",,733666.0,,,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17527,16.070223230474383,102.67634104898605,2004-12-17,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251417.0,1778099.0,ldd,,,กรดเล็กน้อย,ปานกลาง,ต่ำ,สูง,,,
+17529,16.07033740777401,102.6768722881911,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251474.0,1778111.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,สูง,,,
+17530,,,1996-07-28,2026-10-27,2026-10-27,,40,,,,"SA-AT, NAM PHONG, KHON KAEN",,681555.0,,,,,กรดเล็กน้อย,ต่ำ,ต่ำ,ต่ำ,,,no_coords
+17534,16.070497052502823,102.67743103000265,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251534.0,1778128.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,
+17535,16.07064816996279,102.67803658826891,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251599.0,1778144.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,
+17536,16.070744987112224,102.67863343458207,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251663.0,1778154.0,ldd,,,กรดปานกลาง,ปานกลาง,ต่ำ,สูง,,,
+17537,16.070867685233367,102.67911786183117,2004-12-17,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251715.0,1778167.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,สูง,,,
+17572,16.070223230474383,102.67634104898605,2004-12-17,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251417.0,1778099.0,ldd,,,กรดเล็กน้อย,ปานกลาง,ต่ำ,สูง,,,duplicate
+17573,16.07033740777401,102.6768722881911,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251474.0,1778111.0,ldd,,,กรดปานกลาง,ต่ำ,ต่ำ,สูง,,,duplicate
+17574,16.070497052502823,102.67743103000265,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251534.0,1778128.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,duplicate
+17575,16.070744987112224,102.67863343458207,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251663.0,1778154.0,ldd,,,กรดปานกลาง,ปานกลาง,ต่ำ,สูง,,,duplicate
+17576,16.070867685233367,102.67911786183117,2004-12-17,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251715.0,1778167.0,ldd,,,กรดเล็กน้อย,ต่ำ,ต่ำ,สูง,,,duplicate
+17577,16.07064816996279,102.67803658826891,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251599.0,1778144.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,duplicate
+17585,16.07064816996279,102.67803658826891,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251599.0,1778144.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,duplicate
+17620,16.070497052502823,102.67743103000265,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251534.0,1778128.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,duplicate
+17621,16.07064816996279,102.67803658826891,2004-12-18,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,251599.0,1778144.0,ldd,,,เป็นกลาง,ต่ำ,ต่ำ,สูง,,,duplicate
+17622,16.31292061806233,102.64786569906707,2004-04-18,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PHRA YUEN, KHON KAEN",48,248677.0,1804999.0,ldd,,,ด่างปานกลาง,ต่ำ,ปานกลาง,ต่ำ,,,duplicate
+18044,16.444367,102.671151,2004-04-18,2026-10-27,2026-10-27,,40,,,,,,251333.0,1819521.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;no_location;ph_unknown;nutrient_unknown
+18083,16.33126936783283,102.74306504950019,2008-03-25,2026-10-27,2026-10-27,,40,,,,"NONG WAENG, PHRA YUEN, KHON KAEN",48,258876.0,1806915.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+18084,16.332208007053918,102.74297942846846,2008-03-26,2026-10-27,2026-10-27,,40,,,,"NONG WAENG, PHRA YUEN, KHON KAEN",48,258868.0,1807019.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+18085,16.3325416301939,102.74291946298625,2008-03-25,2026-10-27,2026-10-27,,40,,,,"NONG WAENG, PHRA YUEN, KHON KAEN",48,258862.0,1807056.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+18086,16.333056315300826,102.74289484293975,2008-03-27,2026-10-27,2026-10-27,,40,,,,"NONG WAENG, PHRA YUEN, KHON KAEN",48,258860.0,1807113.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+18087,16.333381205651587,102.74286304528113,2008-03-26,2026-10-27,2026-10-27,,40,,,,"NONG WAENG, PHRA YUEN, KHON KAEN",48,258857.0,1807149.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+18150,,,1957-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,Other,Other,Other,Other,,,no_coords;no_location;date_too_old;ph_unknown;nutrient_unknown
+18151,,,1957-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,Other,Other,Other,Other,,,no_coords;no_location;date_too_old;ph_unknown;nutrient_unknown
+18237,16.444367,102.671151,2004-04-18,2026-10-27,2026-10-27,,40,,,,,,251333.0,1819521.0,utm,,,Other,Other,Other,Other,,,utm_converted;utm_zone_fixed;duplicate;no_location;ph_unknown;nutrient_unknown
+19069,15.66772535831222,102.76934174308332,2022-01-13,2026-10-27,2026-10-27,,40,,,,"DONG KHENG, NONG SONG HONG, KHON KAEN",48,260896.0,1733439.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+19070,15.675076371776624,102.85852808065303,2022-01-13,2026-10-27,2026-10-27,,40,,,,"TAKUA PA, NONG SONG HONG, KHON KAEN",48,270468.0,1734154.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+19075,15.744088238817541,102.75975075652002,2022-01-13,2026-10-27,2026-10-27,,40,,,,"NONG SONG HONG, NONG SONG HONG, KHON KAEN",48,259957.0,1741902.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+19076,15.74559449719532,102.85099918800537,2022-01-13,2026-10-27,2026-10-27,,40,,,,"NONG PHAI LOM, NONG SONG HONG, KHON KAEN",48,269740.0,1741967.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+19080,15.744782697107752,102.58458833094897,2022-01-26,2026-10-27,2026-10-27,,40,,,,,48,241180.0,1742186.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,no_location;nutrient_unknown
+19084,15.77206444312085,102.69704662705551,2022-01-13,2026-10-27,2026-10-27,,40,,,,"HAN CHOT, NONG SONG HONG, KHON KAEN",48,253269.0,1745071.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+19085,15.780286236054248,102.64814033186745,2022-01-13,2026-10-27,2026-10-27,,40,,,,"MUEANG PHON, PHON, KHON KAEN",48,248037.0,1746039.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+19107,16.0162183354966,102.39258614386391,2022-01-13,2026-10-27,2026-10-27,,40,,,,"PHO CHAI, KHOK PHO CHAI, KHON KAEN",48,220969.0,1772482.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+19114,16.01943908847165,102.74112171157391,2022-01-12,2026-10-27,2026-10-27,,40,,,,,48,258289.0,1772401.0,ldd,,,ด่างจัด,Other,Other,Other,,,no_location;nutrient_unknown
+19122,16.007083415944777,102.42826659923277,2022-01-13,2026-10-27,2026-10-27,,40,,,,"PHO CHAI, KHOK PHO CHAI, KHON KAEN",48,224777.0,1771423.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+19123,16.02892260052615,102.6459660490749,2022-01-12,2026-10-27,2026-10-27,,40,,,,"PUEAI YAI, NON SILA, KHON KAEN",48,248114.0,1773564.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,nutrient_unknown
+19124,16.042707695932222,102.3805197044183,2022-01-13,2026-10-27,2026-10-27,,40,,,,"PHO CHAI, KHOK PHO CHAI, KHON KAEN",48,219714.0,1775431.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+19125,16.061690903296718,102.61436741272489,2022-01-12,2026-10-27,2026-10-27,,40,,,,"CHONNABOT, CHONNABOT, KHON KAEN",48,244773.0,1777230.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+19126,16.111969578791538,102.65652958944321,2022-01-12,2026-10-27,2026-10-27,,40,,,,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,249349.0,1782744.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,nutrient_unknown
+19127,16.145733193000527,102.5485183368479,2022-01-12,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,237835.0,1786616.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+19128,16.22200917140924,102.70263835495564,2022-01-12,2026-10-27,2026-10-27,,40,,,,"KHOK SAMRAN, BAN HAET, KHON KAEN",48,254419.0,1794869.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+19142,16.28025651632468,102.63102736780301,2022-01-11,2026-10-27,2026-10-27,,40,,,,"THA SALA, MANCHA KHIRI, KHON KAEN",48,246835.0,1801404.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+19146,16.27972893281281,102.70193002957991,2022-01-11,2026-10-27,2026-10-27,,40,,,,"PHRA BU, PHRA YUEN, KHON KAEN",48,254415.0,1801259.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+19149,16.2780449132798,102.76652533895903,2022-01-12,2026-10-27,2026-10-27,,40,,,,"NON SOMBUN, BAN HAET, KHON KAEN",48,261319.0,1800996.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+19159,16.35805269405794,102.87745992625402,1957-01-01,2026-10-27,2026-10-27,,40,,,,"DON HAN, MUEANG KHON KAEN, KHON KAEN",48,273271.0,1809725.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,date_too_old;nutrient_unknown
+19160,16.364322693009516,102.78964199799461,2022-01-11,2026-10-27,2026-10-27,,40,,,,,48,263894.0,1810519.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,no_location;nutrient_unknown
+19163,16.37637993213375,102.73997302632864,1957-01-01,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,258601.0,1811912.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,date_too_old;nutrient_unknown
+19164,16.385151986026106,102.65336399657015,2022-01-11,2026-10-27,2026-10-27,,40,,,,"BAN LAO, BAN FANG, KHON KAEN",48,249357.0,1812988.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+19165,16.402095226058947,102.70617966848546,2022-01-13,2026-10-27,2026-10-27,,40,,,,"BAN WA, MUEANG KHON KAEN, KHON KAEN",48,255022.0,1814799.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+19168,16.436578487520286,102.7462422893314,2022-01-11,2026-10-27,2026-10-27,,40,,,,"BAN PET, MUEANG KHON KAEN, KHON KAEN",48,259345.0,1818568.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+19169,16.480447089578472,103.00982290177006,2022-01-11,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,287548.0,1823128.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+19376,,,1957-01-01,2026-10-27,2026-10-27,,40,,,,,,,,,,,Other,Other,Other,Other,,,no_coords;no_location;date_too_old;ph_unknown;nutrient_unknown
+19479,16.219932016028057,102.45492262159394,2021-08-06,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,227922.0,1794952.0,ldd,,,กรดเล็กน้อย,ต่ำ,ปานกลาง,ต่ำ,,,
+19725,16.219413230083674,102.45685517695634,2021-08-06,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,228128.0,1794892.0,ldd,,,ด่างเล็กน้อย,ต่ำ,ต่ำ,ปานกลาง,,,
+19744,16.219289257098662,102.45706244627961,2021-08-06,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,228150.0,1794878.0,ldd,,,กรดปานกลาง,ต่ำ,ปานกลาง,ต่ำ,,,
+20833,15.468448450592483,102.45254389167232,2023-08-21,2026-10-27,2026-10-27,,40,,,,"WANG SAENG, CHONNABOT, KHON KAEN",48,226657.0,1711761.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+20834,16.27125134638008,102.4726656526482,2023-08-20,2026-10-27,2026-10-27,,40,,,,"KHAM KHAEN, MANCHA KHIRI, KHON KAEN",48,229890.0,1800610.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+20835,16.275847341296604,102.50065296353458,2023-08-20,2026-10-27,2026-10-27,,40,,,,"KHAM KHAEN, MANCHA KHIRI, KHON KAEN",48,232889.0,1801082.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+20836,16.220836079498408,102.43175361947632,2023-08-20,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,225445.0,1795083.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+20837,16.00106477741707,102.44391108963967,2023-08-21,2026-10-27,2026-10-27,,40,,,,"WANG SAENG, CHONNABOT, KHON KAEN",48,226444.0,1770736.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+20838,16.038299224711842,102.4599973218842,2023-08-21,2026-10-27,2026-10-27,,40,,,,"WANG SAENG, CHONNABOT, KHON KAEN",48,228217.0,1774837.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+20839,16.254325700649627,102.49638080852577,2023-08-20,2026-10-27,2026-10-27,,40,,,,"KHAM KHAEN, MANCHA KHIRI, KHON KAEN",48,232403.0,1798705.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+20841,16.19837051806211,102.44209369014483,2023-08-20,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,226520.0,1792582.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+20843,16.199210107017507,102.42486406697606,2023-08-20,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,224678.0,1792698.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+20844,16.21735301227377,102.4082682219554,2023-08-20,2026-10-27,2026-10-27,,40,,,,"NA NGAM, MANCHA KHIRI, KHON KAEN",48,222928.0,1794729.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+21709,16.579796,102.017688,2019-04-25,2026-10-27,2026-10-27,,40,,,,"NON SA-AT, CHUM PHAE, KHON KAEN",48,181733.0,1835436.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+22773,16.4197,102.7535,2024-02-08,2026-10-27,2026-10-27,,40,,,,"BAN PET, MUEANG KHON KAEN, KHON KAEN",48,260101.0,1816689.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+22774,16.334,102.7772,2024-02-08,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,262527.0,1807179.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+22776,16.3574,102.8746,2024-02-08,2026-10-27,2026-10-27,,40,,,,"DON HAN, MUEANG KHON KAEN, KHON KAEN",48,272964.0,1809657.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+23112,16.1492,102.5615,2024-02-08,2026-10-27,2026-10-27,,40,,,,"SUAN MON, MANCHA KHIRI, KHON KAEN",48,239224.0,1786983.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+24108,16.0088,102.3864,2024-02-08,2026-10-27,2026-10-27,,40,,,,"PHO CHAI, KHOK PHO CHAI, KHON KAEN",48,220297.0,1771666.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+25812,15.9422,102.8847,2024-02-08,2026-10-27,2026-10-27,,40,,,,"KHAM POM, PUEAI NOI, KHON KAEN",48,273570.0,1763689.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+25813,15.7575,102.6489,2024-02-08,2026-10-27,2026-10-27,,40,,,,"NONG WAENG SOK PHRA, PHON, KHON KAEN",48,248090.0,1743520.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+25814,15.7554,102.4137,2024-02-08,2026-10-27,2026-10-27,,40,,,,"THANG KHWANG, WAENG NOI, KHON KAEN",48,222871.0,1743576.0,ldd,,,Other,Other,Other,Other,,,ph_unknown;nutrient_unknown
+25882,16.5697,102.0857,2018-02-20,2026-10-27,2026-10-27,,40,,,,"NONG PHAI, CHUM PHAE, KHON KAEN",48,188977.0,1834207.0,ldd,,,กรดจัดมาก,Other,ต่ำ,สูง,,,nutrient_unknown
+26114,16.387,102.6707,2018-02-18,2026-10-27,2026-10-27,,40,,,,"BAN LAO, BAN FANG, KHON KAEN",48,251207.0,1813169.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26115,16.5927,103.016,2018-03-14,2026-10-27,2026-10-27,,40,,,,"KRANUAN, SAM SUNG, KHON KAEN",48,288328.0,1835544.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26116,16.346,102.7592,2018-02-18,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,260623.0,1808523.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26177,16.3639,102.8724,2018-02-18,2026-10-27,2026-10-27,,40,,,,"DON HAN, MUEANG KHON KAEN, KHON KAEN",48,272735.0,1810375.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26185,16.37,102.743,2018-02-18,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,258921.0,1811197.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26194,16.6987,102.4569,2025-12-22,2026-10-27,2026-10-27,,40,,,,"THUNG CHOMPHU, PHU WIANG, KHON KAEN",48,228803.0,1847953.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26196,16.5643,102.3136,2018-02-16,2026-10-27,2026-10-27,,40,,,,"NON SA-AT, NONG RUEA, KHON KAEN",48,213310.0,1833277.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+26692,16.48,103.0037,2026-03-09,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,286889.0,1823080.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+26705,16.4801,102.9957,2025-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,286036.0,1823104.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,nutrient_unknown
+26706,16.4736,102.9672,2026-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,282986.0,1822419.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26707,16.4791,102.9517,2026-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,281337.0,1823038.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26708,16.4887,102.9379,2026-02-17,2026-10-27,2026-10-27,,40,,,,"NONG TUM, MUEANG KHON KAEN, KHON KAEN",48,279875.0,1824122.0,ldd,,,ด่างจัด,Other,Other,Other,,,nutrient_unknown
+26709,16.4656,102.9478,2026-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,280907.0,1821550.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+26710,16.453,102.9406,2026-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,280123.0,1820168.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+26711,16.4573,102.9231,2026-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,278260.6107,1820659.3491,ldd,,,ด่างปานกลาง,Other,Other,Other,,,nutrient_unknown
+26712,16.4696,102.9105,2026-02-17,2026-10-27,2026-10-27,,40,,,,"KHOK SI, MUEANG KHON KAEN, KHON KAEN",48,276928.0,1822035.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26713,16.4778,102.7648,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DAENG YAI, MUEANG KHON KAEN, KHON KAEN",48,261374.0,1823111.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26714,16.4748,102.751,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DAENG YAI, MUEANG KHON KAEN, KHON KAEN",48,259905.0,1822793.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26715,16.472,102.7449,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DAENG YAI, MUEANG KHON KAEN, KHON KAEN",48,259247.0,1822490.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26716,16.473,102.7359,2026-03-18,2026-10-27,2026-10-27,,40,,,,"DAENG YAI, MUEANG KHON KAEN, KHON KAEN",48,258287.0,1822609.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26717,16.4771,102.7263,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DAENG YAI, MUEANG KHON KAEN, KHON KAEN",48,257260.0,1823082.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26718,16.3611,102.7292,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,257429.0,1810235.0,ldd,,,เป็นกลาง,Other,Other,Other,,,nutrient_unknown
+26719,16.3543,102.7337,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,257899.0,1809477.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26720,16.3494,102.7546,2026-02-18,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,260132.0,1808907.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26721,16.3493,102.7732,2026-02-19,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,262115.0,1808877.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26723,16.3491,102.7776,2026-02-19,2026-10-27,2026-10-27,,40,,,,"DON CHANG, MUEANG KHON KAEN, KHON KAEN",48,262585.0,1808844.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+26724,16.3618,102.8315,2026-02-19,2026-10-27,2026-10-27,,40,,,,"THA PHRA, MUEANG KHON KAEN, KHON KAEN",48,268367.0,1810196.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26726,16.3323,102.8406,2026-02-19,2026-10-27,2026-10-27,,40,,,,"THA PHRA, MUEANG KHON KAEN, KHON KAEN",48,269304.0,1806914.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+26728,16.3387,102.8467,2026-02-19,2026-10-27,2026-10-27,,40,,,,"THA PHRA, MUEANG KHON KAEN, KHON KAEN",48,269958.0,1807619.0,ldd,,,ด่างปานกลาง,Other,Other,Other,,,nutrient_unknown
+26729,16.3258,102.8916,2026-02-19,2026-10-27,2026-10-27,,40,,,,"DON HAN, MUEANG KHON KAEN, KHON KAEN",48,274740.0,1806138.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+26730,16.3145,102.8873,2026-02-19,2026-10-27,2026-10-27,,40,,,,"DON HAN, MUEANG KHON KAEN, KHON KAEN",48,274270.0,1804893.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26862,15.9308,102.5072,2026-03-13,2026-10-27,2026-10-27,,40,,,,"KHON CHIM, WAENG YAI, KHON KAEN",48,233123.0,1762876.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+26892,16.1407,102.6327,2026-03-13,2026-10-27,2026-10-27,,40,,,,"SI BUN RUEANG, CHONNABOT, KHON KAEN",48,246839.0,1785958.0,ldd,,,กรดจัด,Other,Other,Other,,,nutrient_unknown
+26911,16.7207,102.9792,2026-03-12,2026-10-27,2026-10-27,,40,,,,"BUA NGOEN, NAM PHONG, KHON KAEN",48,284547.0,1849753.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+26914,16.6871,102.4118,2026-03-11,2026-10-27,2026-10-27,,40,,,,"BAN RUEA, PHU WIANG, KHON KAEN",48,223975.0,1846733.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+26915,16.5181,102.747,2026-03-11,2026-10-27,2026-10-27,,40,,,,"DAENG YAI, MUEANG KHON KAEN, KHON KAEN",48,259523.0,1827590.0,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+26980,16.6542,102.7387,2026-03-10,2026-10-27,2026-10-27,,40,,,,"MUANG WAN, NAM PHONG, KHON KAEN",48,258808.0,1842664.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+26981,16.693,101.9398,2026-03-11,2026-10-27,2026-10-27,,40,,,,"HUAI MUANG, PHU PHA MAN, KHON KAEN",47,813545.0,1847905.0,ldd,,,ด่างเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+27288,16.6448,102.072,2026-03-11,2026-10-27,2026-10-27,,40,,,,"WANG HIN LAT, CHUM PHAE, KHON KAEN",48,187636.0,1842553.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+27289,16.6524,102.1237,2026-03-11,2026-10-27,2026-10-27,,40,,,,"NA CHAN, SI CHOMPHU, KHON KAEN",48,193172.0,1843313.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+27290,16.69,103.0838,2026-03-12,2026-10-27,2026-10-27,,40,,,,"NONG KO, KRANUAN, KHON KAEN",48,295673.0,1846247.0,ldd,,,กรดเล็กน้อย,Other,Other,Other,,,nutrient_unknown
+27291,16.6886,103.0929,2026-03-12,2026-10-27,2026-10-27,,40,,,,"NONG KO, KRANUAN, KHON KAEN",48,296641.0,1846083.0,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+27292,15.8213,102.4377,2026-03-13,2026-10-27,2026-10-27,,40,,,,"WAENG NOI, WAENG NOI, KHON KAEN",48,225536.0,1750838.0,ldd,,,กรดรุนแรงมาก,Other,Other,Other,,,nutrient_unknown
+28274,16.4688,102.8431,2026-06-22,2026-10-27,2026-10-27,,40,,,,"NAI MUEANG, MUEANG KHON KAEN, KHON KAEN",48,269728.9504,1822023.2676,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+28275,16.4696,102.8408,2026-06-22,2026-10-27,2026-10-27,,40,,,,"NAI MUEANG, MUEANG KHON KAEN, KHON KAEN",48,269490.0018,1822112.8292,ldd,,,กรดปานกลาง,Other,Other,Other,,,nutrient_unknown
+28276,16.4683,102.8381,2026-06-22,2026-10-27,2026-10-27,,40,,,,"NAI MUEANG, MUEANG KHON KAEN, KHON KAEN",48,269193.55,1821969.2137,ldd,,,กรดจัดมาก,Other,Other,Other,,,nutrient_unknown
+28277,16.0651,102.6545,2026-06-23,2026-10-27,2026-10-27,2026-10-27,40,KHON KAEN,BAN PHAI,MUEANG PHIA,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,249076.2259,1777556.5717,ldd,,,กรดจัดมาก,Other,Other,Other,sl,,nutrient_unknown
+28281,16.0572,102.6558,2026-06-23,2026-10-27,2026-10-27,2026-10-27,40,KHON KAEN,BAN PHAI,MUEANG PHIA,"MUEANG PHIA, BAN PHAI, KHON KAEN",48,249203.4589,1776682.9704,ldd,,,กรดปานกลาง,Other,Other,Other,sl,,nutrient_unknown
+28282,16.0423,102.6521,2026-06-23,2026-10-27,2026-10-27,2026-10-27,40,KHON KAEN,NON SILA,PUEAI YAI,"PUEAI YAI, NON SILA, KHON KAEN",48,248791.1338,1775033.5486,ldd,,,กรดปานกลาง,Other,Other,Other,sl,,nutrient_unknown

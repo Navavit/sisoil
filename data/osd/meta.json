@@ -1,0 +1,51 @@
+{
+ "source": "กรมพัฒนาที่ดิน – การตรวจวิเคราะห์ดิน (osd01)",
+ "source_url": "https://lddcatalog.ldd.go.th/dataset/osd01",
+ "license": "CC BY",
+ "updated_at": "2026-10-27T16:12:28+00:00",
+ "measurements": 38548,
+ "sites": 4728,
+ "sites_with_coordinates": 4697,
+ "years": [
+  "2026"
+ ],
+ "backfill": {
+  "months_done": 2,
+  "months_total": 164
+ },
+ "capped_days": 15,
+ "qa": {
+  "no_coords": {
+   "description": "ไม่มีพิกัด หรือพิกัดเป็น 0",
+   "sites": 31
+  },
+  "outside_thailand": {
+   "description": "พิกัดอยู่นอกประเทศไทย",
+   "sites": 0
+  },
+  "date_invalid": {
+   "description": "แปลงวันที่ไม่ได้",
+   "sites": 0
+  },
+  "date_future": {
+   "description": "วันที่อยู่ในอนาคต",
+   "sites": 3
+  },
+  "value_non_numeric": {
+   "description": "มีค่าที่ไม่ใช่ตัวเลข (เก็บข้อความเดิมไว้)",
+   "sites": 0
+  },
+  "value_out_of_range": {
+   "description": "มีค่าเกินช่วงที่เป็นไปได้ (ไม่นำไปคำนวณค่าสรุป)",
+   "sites": 2
+  },
+  "incomplete": {
+   "description": "มีพารามิเตอร์ไม่ครบ 5 ค่า",
+   "sites": 2127
+  },
+  "multi_sample": {
+   "description": "ที่เดียวกันวันเดียวกันมีหลายตัวอย่าง (ค่าเป็นค่ากลาง)",
+   "sites": 954
+  }
+ }
+}
