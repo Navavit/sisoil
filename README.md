@@ -12,8 +12,7 @@
 
 รายชื่อแหล่งทั้งหมด (รวมที่กำลังจะเพิ่ม) อยู่ที่ [docs/sources.md](docs/sources.md) และหน้า **แหล่งข้อมูล** บนเว็บไซต์
 
-- 🌐 **เว็บไซต์**: <https://navavit.github.io/thai-soil-db/> มีทั้งภาษาไทยและอังกฤษ (`?lang=en`) ประกอบด้วยแผนที่ ตัวกรอง ตาราง และดาวน์โหลด
-- 📥 **ดาวน์โหลด**: [`points.csv`](data/ldd/points.csv) · [`points.geojson`](data/ldd/points.geojson) · [`points.json`](data/ldd/points.json)
+- 🌐 **เว็บไซต์**: <https://navavit.github.io/thai-soil-db/> มีทั้งภาษาไทยและอังกฤษ (`?lang=en`) ประกอบด้วยแผนที่ชั้นข้อมูลดิน ขอบเขตปกครอง การใช้ที่ดิน และการตรวจดินจากพิกัด
 - 🔄 **อัปเดต**: GitHub Actions รันวันที่ 1 ของทุกเดือน และเปิด Issue แจ้งเตือนเมื่อพบข้อมูลใหม่
 
 ## การไหลของข้อมูล

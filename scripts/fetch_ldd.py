@@ -21,10 +21,12 @@ import hashlib
 import json
 import math
 import os
-import statistics
+import socket
 import sys
 import time
 import urllib.request
+
+import admin
 
 API = "https://soilservice.ldd.go.th/SoilSurveyAPI/api/SP"
 SOURCE_URL = "https://soilservice.ldd.go.th/soilsurveypublic/"
@@ -44,8 +46,13 @@ DETAIL_FIELDS = {
 CSV_COLUMNS = [
     "id", "lat", "lon", "date", "first_seen", "last_seen", "detail_fetched_at", "province_code", "province", "district",
     "subdistrict", "location", "utm_zone", "utm_x", "utm_y", "coord_source", "orig_lat", "orig_lon", "ph", "om", "p",
-    "k", "texture_field", "texture_lab", "qa_flags",
+    "k", "texture_field", "texture_lab", "adm_tambon", "qa_flags",
 ]
+
+
+# soilservice.ldd.go.th ประกาศ IPv6 แต่บางเครือข่ายต่อไม่ได้ ทำให้ทุกคำขอรอจนหมดเวลาก่อนเปลี่ยนเป็น IPv4
+_getaddrinfo = socket.getaddrinfo
+socket.getaddrinfo = lambda *a, **k: sorted(_getaddrinfo(*a, **k), key=lambda r: r[0] != socket.AF_INET)
 
 
 def call(sp, criteria, retries=4, delay=1.0):
@@ -97,49 +104,40 @@ def in_thailand(lat, lon):
     return 5 <= lat <= 21 and 97 <= lon <= 106
 
 
-FAR_DEG = 1.4  # ห่างจากค่ากลางจังหวัดเกินนี้ (~150 km) ถือว่าผิดที่
+UTM_MAX_KM = 50  # ผลแปลง UTM ที่ห่างจากจังหวัดเกินนี้ ไม่ใช้
 
 
 def fill_from_utm(records):
-    """เติม/แก้พิกัดจาก UTM
+    """เติม/แก้พิกัดจาก UTM โดยเทียบกับขอบเขตจังหวัด (scripts/admin.py)
 
     - จุดที่ไม่มี lat/lon: แปลงจาก UTM
-    - จุดที่ LDD ให้ lat/lon มาแต่ห่างจากจังหวัดผิดปกติ: LDD แปลงด้วยโซนผิด
+    - จุดที่ LDD ให้ lat/lon มาแต่อยู่นอกจังหวัดที่ระบุ: LDD อาจแปลงด้วยโซนผิด
       (เช่น ระบุ 47 แต่ค่า X เป็นโซน 48) ถ้าแปลงด้วยอีกโซนแล้วอยู่ในจังหวัด ให้แก้
       และเก็บค่าเดิมไว้ใน orig_lat/orig_lon
-    โซนที่ระบุไว้ไม่น่าเชื่อถือ จึงลองทั้ง 47 และ 48 แล้วเลือกผลที่ใกล้ค่ากลางจังหวัดที่สุด
+    โซนที่ระบุไว้ไม่น่าเชื่อถือ จึงลองทั้ง 47 และ 48 แล้วเลือกผลที่ใกล้จังหวัดที่สุด
     """
-    records = list(records)
-    centres = {}
-    for r in records:
-        if r.get("coord_source") == "ldd":
-            centres.setdefault(r["province_code"], []).append((r["lat"], r["lon"]))
-    centres = {k: (statistics.median(p[0] for p in v), statistics.median(p[1] for p in v))
-               for k, v in centres.items()}
     for r in records:
         if not r["utm_x"] or not r["utm_y"]:
             continue
-        c = centres.get(r["province_code"])
         if r["lat"] is not None:
-            if r.get("coord_source") != "ldd" or not c or \
-                    math.hypot(r["lat"] - c[0], r["lon"] - c[1]) <= FAR_DEG:
+            if r.get("coord_source") != "ldd" or (admin.dist_km(r["province_code"], r["lat"], r["lon"]) or 0) <= admin.TOL_KM:
                 continue
         stated = int(r["utm_zone"]) if str(r["utm_zone"] or "").isdigit() else None
         cands = []
         for z in (47, 48):
             lat, lon = utm_to_latlon(r["utm_x"], r["utm_y"], z)
             if in_thailand(lat, lon):
-                dist = math.hypot(lat - c[0], lon - c[1]) if c else (0 if z == stated else 1)
-                cands.append((dist, z, lat, lon))
+                dist = admin.dist_km(r["province_code"], lat, lon)
+                cands.append((dist if dist is not None else (0 if z == stated else 1), z, lat, lon))
         if not cands:
             continue
         dist, z, lat, lon = min(cands)
         if r["lat"] is not None:  # แก้พิกัด LDD เฉพาะเมื่อผลใหม่อยู่ในจังหวัดจริง
-            if dist > FAR_DEG:
+            if dist > admin.TOL_KM:
                 continue
             r["orig_lat"], r["orig_lon"] = r["lat"], r["lon"]
             r["ldd_coords_fixed"] = True
-        elif dist > 2.5:  # ไกลจากจังหวัดเกิน ~250 km ถือว่าไม่น่าเชื่อถือ
+        elif dist > UTM_MAX_KM:
             continue
         r["lat"], r["lon"] = round(lat, 6), round(lon, 6)
         r["coord_source"] = "utm"
@@ -152,28 +150,33 @@ QA_FLAGS = {
     "utm_converted": "พิกัดแปลงจาก UTM",
     "utm_zone_fixed": "โซน UTM ที่ระบุไม่ตรงกับค่าพิกัด",
     "ldd_coords_fixed": "lat/lon จาก LDD ผิดโซน แก้แล้ว (ค่าเดิมอยู่ใน orig_lat/orig_lon)",
-    "far_from_province": "พิกัดห่างจากจังหวัดที่ระบุเกิน ~150 km",
+    "far_from_province": "พิกัดอยู่นอกขอบเขตจังหวัดที่ระบุเกิน 1 km (ไม่แสดงบนแผนที่)",
+    "off_land": "พิกัดไม่อยู่บนบก (ห่างฝั่งเกิน 1 km, ไม่แสดงบนแผนที่)",
+    "amphoe_mismatch": "พิกัดอยู่คนละอำเภอกับที่ระบุ",
     "province_mismatch": "จังหวัดใน location ไม่ตรงกับจังหวัดที่ค้นหา",
-    "no_location": "ไม่มีชื่อตำแหน่ง",
+    "no_location": "ไม่มีชื่อตำแหน่งและไม่มีตำบล/อำเภอ (ไม่แสดงบนแผนที่)",
     "date_missing": "ไม่มีวันที่หรือรูปแบบผิด",
     "date_future": "วันที่สำรวจอยู่ในอนาคต",
     "date_too_old": "วันที่สำรวจก่อนปี 1960",
     "ph_unknown": "pH เป็น Other หรือว่าง",
     "nutrient_unknown": "OM/P/K อย่างน้อยหนึ่งค่าเป็น Other หรือว่าง",
-    "duplicate": "พิกัดและวันที่ซ้ำกับจุดอื่น",
+    "duplicate": "พิกัดและวันที่ซ้ำกับจุดอื่น (ไม่แสดงบนแผนที่)",
+    "shared_coords": "พิกัดเดียวกับจุดอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
 }
 
 
 def quality_flags(records, province_names, today):
-    """ติดธงคุณภาพข้อมูลให้แต่ละจุด ไม่ลบหรือแก้ค่าต้นฉบับ"""
+    """ติดธงคุณภาพข้อมูลให้แต่ละจุด ไม่ลบหรือแก้ค่าต้นฉบับ
+
+    ตำแหน่งตรวจกับขอบเขตจังหวัด/อำเภอ (admin.py) และเก็บรหัสตำบลที่พิกัดตกจริงไว้ใน adm_tambon
+    """
     records = list(records)
-    centres = {}
-    for r in records:
-        if r.get("coord_source") == "ldd":
-            centres.setdefault(r["province_code"], []).append((r["lat"], r["lon"]))
-    centres = {k: (statistics.median(p[0] for p in v), statistics.median(p[1] for p in v))
-               for k, v in centres.items() if len(v) >= 5}
     seen = {}
+    per_coord = {}
+    for r in records:
+        if r["lat"] is not None:
+            k = (round(r["lat"], 5), round(r["lon"], 5))
+            per_coord[k] = per_coord.get(k, 0) + 1
     for r in sorted(records, key=lambda x: x["id"]):
         f = []
         if r["lat"] is None:
@@ -185,15 +188,23 @@ def quality_flags(records, province_names, today):
                 f.append("utm_zone_fixed")
             if r.get("ldd_coords_fixed"):
                 f.append("ldd_coords_fixed")
-            c = centres.get(r["province_code"])
-            if c and math.hypot(r["lat"] - c[0], r["lon"] - c[1]) > FAR_DEG:
+            where = admin.locate(r["lat"], r["lon"])
+            r["adm_tambon"] = where and where["tambon"]
+            if where is None and admin.nearest_province(r["lat"], r["lon"])[0] > admin.TOL_KM:
+                f.append("off_land")
+            elif (where is None or where["province"] != r["province_code"]) and \
+                    (admin.dist_km(r["province_code"], r["lat"], r["lon"]) or 0) > admin.TOL_KM:
                 f.append("far_from_province")
+            elif where and admin.name_matches(where["amphoe"], r.get("district")) is False:
+                f.append("amphoe_mismatch")
             key = (round(r["lat"], 5), round(r["lon"], 5), r["date"])
             if key in seen:
                 f.append("duplicate")
             seen.setdefault(key, r["id"])
+            if per_coord[key[:2]] > 1:
+                f.append("shared_coords")
         loc = (r.get("location") or "").strip()
-        if not loc:
+        if not loc and not (r.get("subdistrict") or r.get("district")):
             f.append("no_location")
         elif province_names.get(r["province_code"]) and \
                 loc.split(",")[-1].strip().upper() != province_names[r["province_code"]].upper():

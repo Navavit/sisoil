@@ -1,5 +1,5 @@
 // ตรวจดินจากพิกัด: ค่าวัดจริงใกล้เคียง (LDD, ผลวิเคราะห์ดิน, WoSIS), ค่าประมาณจากแผนที่ดินโลก, บัตรดินดีของตำบล
-// ใช้ตัวแปรร่วมจาก app.js: map, t, esc, num, day, val, phColor, $
+// ใช้ตัวแปรร่วมจาก app.js: map, t, esc, num, day, val, phColor, $ และ areaAt จาก areas.js
 const PH_CLASSES = [
   [3.5, "กรดรุนแรงที่สุด"], [4.5, "กรดรุนแรงมาก"], [5.1, "กรดจัดมาก"], [5.6, "กรดจัด"], [6.1, "กรดปานกลาง"],
   [6.6, "กรดเล็กน้อย"], [7.4, "เป็นกลาง"], [7.9, "ด่างเล็กน้อย"], [8.5, "ด่างปานกลาง"], [9.1, "ด่างจัด"], [99, "ด่างจัดมาก"],
@@ -88,21 +88,14 @@ async function soilGrids(lat, lon) {
   return out;
 }
 
-async function placeName(lat, lon) {
-  const r = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14&accept-language=th&lat=${lat}&lon=${lon}`);
-  return r.ok ? (await r.json()).address || {} : {};
-}
-
-// จับคู่ที่อยู่จาก OSM กับตำบลในบัตรดินดี (ตำบล → อำเภอ → จังหวัด)
-function matchDindee(addr) {
-  if (!dindee) return null;
-  const clean = (s) => (s || "").replace(/^(จังหวัด|อำเภอ|เขต|ตำบล|แขวง|เทศบาลตำบล|เทศบาลเมือง|เทศบาลนคร)\s*/, "").trim();
-  const prov = clean(addr.province || addr.state || (addr.city === "กรุงเทพมหานคร" ? "กรุงเทพมหานคร" : ""));
-  const amp = clean(addr.county || addr.city_district || addr.district);
-  const tambonNames = [addr.suburb, addr.quarter, addr.subdistrict, addr.municipality, addr.town, addr.village, addr.hamlet].map(clean).filter(Boolean);
+// จับคู่ตำบลจากขอบเขต (areaAt) กับตำบลในบัตรดินดี (ตำบล → อำเภอ → จังหวัด)
+function matchDindee(area) {
+  if (!dindee || !area) return null;
+  const clean = (s) => (s || "").replace(/^(เมือง)/, "").replace(/\s/g, "");
+  const prov = clean(area.province.th), amp = clean(area.amphoe?.th), tambon = clean(area.tambon?.th);
   const keys = Object.keys(dindee);
-  const pick = (pred) => keys.filter((k) => pred(k.split("|")));
-  let level = "tambon", hit = pick(([p, a, tb]) => p === prov && a === amp && tambonNames.includes(tb));
+  const pick = (pred) => keys.filter((k) => pred(k.split("|").map(clean)));
+  let level = "tambon", hit = tambon ? pick(([p, a, x]) => p === prov && a === amp && x === tambon) : [];
   if (!hit.length) { level = "amphoe"; hit = pick(([p, a]) => p === prov && a === amp); }
   if (!hit.length) { level = "province"; hit = pick(([p]) => p === prov); }
   if (!hit.length) return null;
@@ -145,7 +138,7 @@ async function checkAt(lat, lon) {
   renderCheck();
   pin.bindPopup(() => pinPopup()).openPopup();
 
-  placeName(lat, lon).then((a) => { state.place = a; }).catch(() => { state.place = {}; })
+  areaAt(lat, lon).then((a) => { state.place = a || {}; }).catch(() => { state.place = {}; })
     .finally(() => { if (state === checkState) renderCheck(); });
   soilGrids(lat, lon).then((sg) => { state.sg = sg; }).catch((e) => { state.sgError = e.message; })
     .finally(() => { if (state === checkState) { renderCheck(); pin.setPopupContent(pinPopup()); } });
@@ -195,7 +188,8 @@ function renderCheck() {
   const { lat, lon, radius, place, sg, sgError } = checkState;
   const s = summary();
   $("check-msg").textContent = "";
-  const placeText = place ? [place.village, place.suburb || place.municipality || place.town, place.county || place.city_district, place.province || place.state].filter(Boolean).join(", ") : t("checkLoading");
+  const placeText = !place ? t("checkLoading") : place.province
+    ? [place.tambon, place.amphoe, place.province].map(areaName).filter(Boolean).join(", ") : t("checkOffLand");
 
   // 1) ค่าวัดจริงใกล้เคียง
   const osdCols = [["ph", 5, 1], ["ec", 6, 2], ["om", 7, 1], ["p", 8, 0], ["k", 9, 0]];
@@ -235,7 +229,7 @@ function renderCheck() {
   const geeHtml = geeRows ? `<p class="small muted">${t("checkGee")(km(g.d))}</p><table class="mini">${geeRows}</table>` : "";
 
   // 3) บัตรดินดี
-  const dd = place ? matchDindee(place) : null;
+  const dd = place?.province ? matchDindee(place) : null;
   const ddHtml = !place ? `<p class="muted">${t("checkLoading")}</p>` : dd ? `
     <p>${t("checkDindeeAt")(esc(dd.name), t("checkLevel")[dd.level], num(dd.n))}${dd.from ? ` <span class="muted">(${day(dd.from)} – ${day(dd.to)})</span>` : ""}</p>
     ${bar(dd.ph)}

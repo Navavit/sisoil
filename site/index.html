@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thai Soil Survey DB</title>
-  <meta name="description" content="Map and database of soil survey points in Thailand from Land Development Department open data, updated monthly. แผนที่และฐานข้อมูลจุดสำรวจดินของประเทศไทย">
+  <title>Thai Soil Database</title>
+  <meta name="description" content="Open soil data for Thailand: measured soil analyses, soil profiles and survey points on one map, with a soil check for any location. ฐานข้อมูลดินไทยจากแหล่งข้อมูลเปิด">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -16,7 +16,7 @@
   <header class="top">
     <div>
       <h1 data-i18n="title"></h1>
-      <p class="sub"><span data-i18n="source"></span> <a href="https://soilservice.ldd.go.th/soilsurveypublic/" target="_blank" rel="noopener" data-i18n="sourceName"></a> · <span data-i18n="updated"></span> <span id="updated">–</span></p>
+      <p class="sub"><span data-i18n="subtitle"></span> · <span data-i18n="updated"></span> <span id="updated">–</span></p>
     </div>
     <nav class="downloads">
       <div class="lang" role="group" aria-label="Language">
@@ -24,9 +24,6 @@
         <button type="button" data-lang="en">EN</button>
       </div>
       <a href="sources.html" class="ghost" data-i18n="sourcesLink"></a>
-      <a href="data/ldd/points.csv" download>CSV</a>
-      <a href="data/ldd/points.geojson" download>GeoJSON</a>
-      <a href="data/ldd/points.json" download>JSON</a>
     </nav>
   </header>
 
@@ -34,26 +31,49 @@
 
   <main class="layout">
     <aside class="filters">
-      <h2 data-i18n="filters"></h2>
-      <label><span data-i18n="province"></span><select id="f-province"><option value="" data-i18n="all"></option></select></label>
-      <label><span data-i18n="ph"></span><select id="f-ph"><option value="" data-i18n="all"></option></select></label>
-      <label><span data-i18n="om"></span><select id="f-om"><option value="" data-i18n="all"></option></select></label>
-      <label><span data-i18n="p"></span><select id="f-p"><option value="" data-i18n="all"></option></select></label>
-      <label><span data-i18n="k"></span><select id="f-k"><option value="" data-i18n="all"></option></select></label>
-      <div class="row">
-        <label><span data-i18n="yearFrom"></span><input id="f-from" type="number" min="1990" max="2100" placeholder="CE"></label>
-        <label><span data-i18n="yearTo"></span><input id="f-to" type="number" min="1990" max="2100" placeholder="CE"></label>
+      <h2 data-i18n="layers"></h2>
+      <p class="muted small" data-i18n="layersNote"></p>
+
+      <div class="layer">
+        <label class="check"><input id="l-osd" type="checkbox" checked> <b data-i18n="layerOsd"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
+        <label><span data-i18n="osdYear"></span><select id="osd-year"></select></label>
+        <p class="muted small" id="osd-info"></p>
       </div>
-      <label><span data-i18n="qa"></span><select id="f-qa"></select></label>
-      <label class="check"><input id="f-new" type="checkbox"> <span data-i18n="onlyNew"></span></label>
-      <button id="f-reset" type="button" data-i18n="reset"></button>
-      <h3 data-i18n="layers"></h3>
-      <label class="check"><input id="l-ldd" type="checkbox" checked> <span data-i18n="layerLdd"></span></label>
-      <label class="check"><input id="l-osd" type="checkbox"> <span data-i18n="layerOsd"></span></label>
-      <label><span data-i18n="osdYear"></span><select id="osd-year"></select></label>
-      <p class="muted small" id="osd-info"></p>
-      <label class="check"><input id="l-wosis" type="checkbox"> <span data-i18n="layerWosis"></span></label>
-      <p class="muted small" id="wosis-info"></p>
+      <div class="layer">
+        <label class="check"><input id="l-wosis" type="checkbox" checked> <b data-i18n="layerWosis"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
+        <p class="muted small" id="wosis-info"></p>
+      </div>
+      <div class="layer">
+        <label class="check"><input id="l-ldd" type="checkbox"> <b data-i18n="layerLdd"></b> <span class="badge badge-planned" data-i18n="classesOnly"></span></label>
+        <p class="muted small" id="ldd-info"></p>
+        <details>
+          <summary data-i18n="filters"></summary>
+          <label><span data-i18n="province"></span><select id="f-province"><option value="" data-i18n="all"></option></select></label>
+          <label><span data-i18n="ph"></span><select id="f-ph"><option value="" data-i18n="all"></option></select></label>
+          <label><span data-i18n="om"></span><select id="f-om"><option value="" data-i18n="all"></option></select></label>
+          <label><span data-i18n="p"></span><select id="f-p"><option value="" data-i18n="all"></option></select></label>
+          <label><span data-i18n="k"></span><select id="f-k"><option value="" data-i18n="all"></option></select></label>
+          <div class="row">
+            <label><span data-i18n="yearFrom"></span><input id="f-from" type="number" min="1990" max="2100" placeholder="CE"></label>
+            <label><span data-i18n="yearTo"></span><input id="f-to" type="number" min="1990" max="2100" placeholder="CE"></label>
+          </div>
+          <label><span data-i18n="qa"></span><select id="f-qa"></select></label>
+          <label class="check"><input id="f-new" type="checkbox"> <span data-i18n="onlyNew"></span></label>
+          <button id="f-reset" type="button" data-i18n="reset"></button>
+        </details>
+      </div>
+
+      <h3 data-i18n="areaLayers"></h3>
+      <label class="check"><input id="l-prov" type="checkbox" checked> <span data-i18n="layerProvince"></span></label>
+      <label class="check"><input id="l-admin" type="checkbox"> <span data-i18n="layerAdmin"></span></label>
+      <p class="muted small" id="admin-info"></p>
+      <label class="check"><input id="l-lc" type="checkbox"> <span data-i18n="layerLandcover"></span></label>
+      <div id="lc-opts" hidden>
+        <label><span data-i18n="lcYear"></span><select id="lc-year"></select></label>
+        <ul class="legend" id="lc-legend"></ul>
+        <p class="muted small" data-i18n="lcNote"></p>
+      </div>
+
       <h3 data-i18n="legend"></h3>
       <ul class="legend" id="legend"></ul>
     </aside>
@@ -82,6 +102,7 @@
       <h2><span data-i18n="list"></span> <span id="count" class="muted"></span></h2>
       <input id="q" type="search" data-i18n-placeholder="search">
     </div>
+    <p class="muted small" id="hidden-note"></p>
     <div class="table-wrap">
       <table>
         <thead><tr>
@@ -109,18 +130,6 @@
   </section>
 
   <section class="panel small">
-    <h2 data-i18n="downloadsTitle"></h2>
-    <ul class="dl-list">
-      <li><b data-i18n="layerLdd"></b> — <a href="data/ldd/points.csv" download>CSV</a> · <a href="data/ldd/points.geojson" download>GeoJSON</a> · <a href="data/ldd/points.json" download>JSON</a></li>
-      <li><b data-i18n="layerOsd"></b> — <a href="data/osd/sites.csv" download data-i18n="dlOsdSites"></a> · <span data-i18n="dlOsdMeasurements"></span> <span id="dl-osd-years"></span></li>
-      <li><b data-i18n="layerWosis"></b> — <a href="data/wosis/profiles.csv" download>profiles.csv</a> · <a href="data/wosis/layers.csv" download>layers.csv</a></li>
-      <li><b data-i18n="checkDindee"></b> — <a href="data/dindee/samples.csv" download>samples.csv</a> · <a href="data/dindee/by_tambon.csv" download>by_tambon.csv</a></li>
-      <li><b data-i18n="dlGee"></b> — <a href="data/gee/covariates.csv" download>covariates.csv</a></li>
-    </ul>
-    <p class="muted" data-i18n="dlNote"></p>
-  </section>
-
-  <section class="panel small">
     <h2 data-i18n="aboutDates"></h2>
     <ul class="dates-help">
       <li><b data-i18n="surveyDate"></b> — <span data-i18n="surveyDateHelp"></span></li>
@@ -136,6 +145,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+  <script src="areas.js"></script>
   <script src="check.js"></script>
 </body>
 </html>

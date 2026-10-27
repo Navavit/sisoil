@@ -153,3 +153,11 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
   background: #ffffff; color: #22201c; font: 500 13px/1.2 "IBM Plex Sans Thai", system-ui, sans-serif;
 }
 .map-pick[aria-pressed="true"] { background: #8a5a2b; color: #ffffff; }
+
+/* ชั้นข้อมูล */
+.layer { border-bottom: 1px solid var(--border); padding: 8px 0 6px; }
+.layer label.check { flex-wrap: wrap; }
+.layer .badge { margin-left: auto; }
+.layer details { margin-top: 4px; }
+.layer summary { cursor: pointer; font-size: .85rem; color: var(--accent); margin-bottom: 8px; }
+.filters h2 + p { margin-top: 0; }

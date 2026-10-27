@@ -2,6 +2,7 @@
 """สร้างไฟล์ย่อสำหรับเว็บ (ฟังก์ชันตรวจดินจากพิกัด) จากข้อมูลใน data/
 
 ไม่ดึงข้อมูลใหม่ อ่านเฉพาะไฟล์ที่มีอยู่ แล้วแบ่งเป็นช่องกริด 0.5° ให้เว็บโหลดเฉพาะบริเวณที่เลือก
+ใช้เฉพาะข้อมูลที่มั่นใจตำแหน่ง (admin.confident) ข้อมูลอื่นยังอยู่ในไฟล์ต้นทาง
 สร้างตอน deploy (ไม่ commit) — data/web/ อยู่ใน .gitignore
 
 data/web/grid/<i>_<j>.json   i = floor(lat*2), j = floor(lon*2)
@@ -20,6 +21,8 @@ import math
 import os
 import shutil
 import statistics
+
+import admin
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -55,7 +58,7 @@ def main():
     grid = collections.defaultdict(lambda: {"ldd": [], "osd": [], "wosis": [], "gee": []})
 
     for p in load(os.path.join(DATA, "ldd", "points.json"), []):
-        if p.get("lat") is None or "far_from_province" in p.get("qa_flags", []):
+        if p.get("lat") is None or not admin.confident(p.get("qa_flags")):
             continue
         grid[cell(p["lat"], p["lon"])]["ldd"].append(
             [p["id"], p["lat"], p["lon"], p.get("date"), p.get("ph"), p.get("om"), p.get("p"), p.get("k"),
@@ -64,7 +67,7 @@ def main():
     osd = collections.defaultdict(list)
     for f in glob.glob(os.path.join(DATA, "osd", "sites_*.json")):
         for s in load(f, []):
-            if s.get("lat") is not None and "outside_thailand" not in s.get("qa_flags", []):
+            if s.get("lat") is not None and admin.confident(s.get("qa_flags")):
                 osd[(round(s["lat"], 5), round(s["lon"], 5))].append(s)
     for (lat, lon), ss in osd.items():
         dates = sorted(s["date"] for s in ss if s.get("date"))
@@ -73,7 +76,7 @@ def main():
         grid[cell(lat, lon)]["osd"].append([lat, lon, dates[0] if dates else None, dates[-1] if dates else None, len(ss), *med])
 
     for s in load(os.path.join(DATA, "wosis", "profiles.json"), []):
-        if s.get("lat") is None or s.get("duplicate_of") or "outside_thailand" in s.get("qa_flags", []):
+        if s.get("lat") is None or s.get("duplicate_of") or not admin.confident(s.get("qa_flags")):
             continue
         grid[cell(s["lat"], s["lon"])]["wosis"].append(
             [s["id"], s.get("code"), s["lat"], s["lon"], s.get("date"), *[s.get(c) for c in WOSIS_COLS]])

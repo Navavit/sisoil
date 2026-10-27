@@ -32,7 +32,7 @@ flowchart TD
 
     F1 & F3 --> G[git commit → main]
     G --> P[pages.yml<br/>Deploy GitHub Pages]
-    P --> W[เว็บไซต์<br/>แผนที่ · ตัวกรอง · ดาวน์โหลด]
+    P --> W[เว็บไซต์<br/>แผนที่ · ตรวจดินจากพิกัด]
 
     F1 -. "ใช้ในเครื่อง (ไม่ขึ้น GitHub)" .-> NB[notebooks/<br/>Jupyter วิเคราะห์ซ้ำได้]
 ```

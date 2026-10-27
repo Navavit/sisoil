@@ -8,12 +8,21 @@ const PH_ORDER = [
 const PH_COLOR = Object.fromEntries(PH_ORDER);
 const LEVEL_ORDER = ["ต่ำมาก", "ต่ำ", "ปานกลาง", "สูง", "สูงมาก", "Other"];
 const TABLE_LIMIT = 300;
+// ข้อมูลที่ไม่มั่นใจตำแหน่ง ไม่แสดงบนเว็บ (ยังเก็บไว้ในข้อมูลหลังบ้าน) — ต้องตรงกับ HIDE_ON_MAP ใน scripts/admin.py
+const HIDE_ON_MAP = ["no_coords", "outside_thailand", "off_land", "far_from_province", "no_location", "duplicate",
+  "shared_coords", "multi_sample", "amphoe_mismatch", "date_future"];
+const confident = (flags) => !(flags || []).some((f) => HIDE_ON_MAP.includes(f));
+// สี pH ตามค่าจริง: [ค่าบน, สี, ระดับ]
+const PH_STOPS = [[4.5, "#b30000", "กรดรุนแรงมาก"], [5.1, "#d7301f", "กรดจัดมาก"], [5.6, "#ef6548", "กรดจัด"],
+  [6.1, "#fc8d59", "กรดปานกลาง"], [6.6, "#fdbb84", "กรดเล็กน้อย"], [7.4, "#9ccc65", "เป็นกลาง"],
+  [7.9, "#6baed6", "ด่างเล็กน้อย"], [8.5, "#3182bd", "ด่างปานกลาง"], [99, "#08519c", "ด่างจัด"]];
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 let lang = pickLang();
 let points = [];
+let shown = [];   // จุด LDD ที่มั่นใจตำแหน่ง
 let meta = {};
 let log = [];
 const markers = new Map();
@@ -79,7 +88,7 @@ function filtered() {
     qa: $("f-qa").value, onlyNew: $("f-new").checked, q: $("q").value.trim().toUpperCase(),
   };
   const latestRun = log.length ? log[log.length - 1].date : null;
-  return points.filter((p) => {
+  return shown.filter((p) => {
     const y = +(p.date || "").slice(0, 4);
     return (!f.province || p.provinceName === f.province)
       && (!f.ph || p.ph === f.ph) && (!f.om || p.om === f.om)
@@ -103,14 +112,12 @@ function qaMatch(flags, q) {
 // ---------- ชั้นผลวิเคราะห์ดิน (osd) ----------
 const osdLayer = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 40 });
 let osdMeta = null;
+let wosisMeta = null;
 let osdSites = [];
 const OSD_PARAMS = [["ph", "pH", ""], ["ec_ds_m", "EC", "dS/m"], ["om_pct", "OM", "%"], ["p_mg_kg", "P", "mg/kg"], ["k_mg_kg", "K", "mg/kg"]];
 
 function phColor(v) {
-  if (v == null) return "#9e9e9e";
-  const stops = [[4.5, "#b30000"], [5.0, "#d7301f"], [5.5, "#ef6548"], [6.0, "#fc8d59"], [6.5, "#fdbb84"],
-    [7.3, "#9ccc65"], [7.8, "#6baed6"], [8.4, "#3182bd"], [99, "#08519c"]];
-  return stops.find(([max]) => v < max)[1];
+  return v == null ? "#9e9e9e" : PH_STOPS.find(([max]) => v < max)[1];
 }
 
 function osdPopup(s) {
@@ -132,7 +139,7 @@ function osdPopup(s) {
 
 async function loadOsdYear(year) {
   osdLayer.clearLayers();
-  osdSites = await fetch(`data/osd/sites_${year}.json`).then((r) => r.json()).catch(() => []);
+  osdSites = (await fetch(`data/osd/sites_${year}.json`).then((r) => r.json()).catch(() => [])).filter((s) => confident(s.qa_flags));
   osdLayer.addLayers(osdSites.filter((s) => s.lat != null).map((s) => L.circleMarker([s.lat, s.lon], {
     radius: 5, weight: 1.5, color: "#ffffff", fillOpacity: .95, fillColor: phColor(s.ph),
   }).bindPopup(() => osdPopup(s))));
@@ -140,10 +147,8 @@ async function loadOsdYear(year) {
 }
 
 async function initOsd() {
-  osdMeta = await fetch("data/osd/meta.json").then((r) => r.json()).catch(() => null);
   const years = osdMeta?.years || [];
   $("osd-year").innerHTML = [...years].reverse().map((y) => `<option>${y}</option>`).join("");
-  $("dl-osd-years").innerHTML = years.map((y) => `<a href="data/osd/measurements_${y}.csv.gz" download>${y}</a>`).join(" ");
   $("l-osd").disabled = $("osd-year").disabled = !years.length;
 }
 
@@ -172,10 +177,11 @@ async function loadWosis() {
   wosisProfiles = await fetch("data/wosis/profiles.json").then((r) => r.json()).catch(() => []);
   wosisLayer.clearLayers();
   // profile ที่ซ้ำกับอีก profile ใน WoSIS ไม่วางบนแผนที่ (ดู duplicate_of)
-  wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of).forEach((s) => L.circleMarker([s.lat, s.lon], {
+  wosisProfiles = wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of && confident(s.qa_flags));
+  wosisProfiles.forEach((s) => L.circleMarker([s.lat, s.lon], {
     radius: 7, weight: 2, color: "#3a2a1a", fillOpacity: .9, fillColor: phColor(s.ph_h2o_0_30),
   }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }).addTo(wosisLayer));
-  $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.filter((s) => !s.duplicate_of).length));
+  $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
 }
 
 function render() {
@@ -209,31 +215,34 @@ function renderStatic() {
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
   document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
 
-  const years = points.map((p) => +(p.date || "").slice(0, 4)).filter(Boolean);
-  const range = years.length ? `${Math.min(...years)}–${Math.max(...years)}` : "–";
+  const hiddenLdd = points.length - shown.length;
   const items = [
-    [num(meta.total), t("statTotal")],
-    [num(points.filter((p) => p.lat != null).length), t("statCoord")],
-    [num(points.filter((p) => p.coord_source === "utm").length), t("statUtm")],
-    [num(meta.provinces), t("statProv")],
-    [range, t("statRange")],
-    [num(points.filter((p) => (p.qa_flags || []).length).length), t("statFlagged")],
-    [num(meta.details_pending), t("statPending")],
+    [num(osdMeta?.sites_on_map ?? 0), t("statOsd")(num(osdMeta?.sites ?? 0))],
+    [num(osdMeta?.measurements ?? 0), t("statMeasurements")],
+    [num(wosisMeta?.unique_profiles ?? 0), t("statWosis")],
+    [num(shown.length), t("statLdd")(num(points.length))],
+    [num((osdMeta ? osdMeta.sites - (osdMeta.sites_on_map ?? osdMeta.sites) : 0) + hiddenLdd), t("statHidden")],
   ];
   $("stats").innerHTML = items.map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
-  $("updated").textContent = day(meta.updated_at);
+  $("ldd-info").textContent = t("lddInfo")(num(shown.length), num(points.length));
+  $("hidden-note").textContent = hiddenLdd ? t("hiddenNote")(num(hiddenLdd)) : "";
+  $("updated").textContent = day([meta.updated_at, osdMeta?.updated_at].filter(Boolean).sort().pop());
 
-  fillSelect("f-province", new Set(points.map((p) => p.provinceName).filter(Boolean)), null, (v) => v);
-  fillSelect("f-ph", new Set(points.map((p) => p.ph).filter(Boolean)), PH_ORDER.map((x) => x[0]));
-  for (const k of ["om", "p", "k"]) fillSelect(`f-${k}`, new Set(points.map((p) => p[k]).filter(Boolean)), LEVEL_ORDER);
+  fillSelect("f-province", new Set(shown.map((p) => p.provinceName).filter(Boolean)), null, (v) => v);
+  fillSelect("f-ph", new Set(shown.map((p) => p.ph).filter(Boolean)), PH_ORDER.map((x) => x[0]));
+  for (const k of ["om", "p", "k"]) fillSelect(`f-${k}`, new Set(shown.map((p) => p[k]).filter(Boolean)), LEVEL_ORDER);
   const qaSel = $("f-qa"), qaCur = qaSel.value;
   const counts = {};
-  points.forEach((p) => (p.qa_flags || []).forEach((f) => { counts[f] = (counts[f] || 0) + 1; }));
+  shown.forEach((p) => (p.qa_flags || []).forEach((f) => { counts[f] = (counts[f] || 0) + 1; }));
   qaSel.innerHTML = `<option value="">${t("qaAll")}</option><option value="_clean">${t("qaClean")}</option>` +
     `<option value="_coords">${t("qaGoodCoords")}</option>` +
     Object.keys(t("qaFlags")).filter((f) => counts[f]).map((f) => `<option value="${f}">⚑ ${esc(t("qaFlags")[f])} (${num(counts[f])})</option>`).join("");
   qaSel.value = qaCur;
-  $("legend").innerHTML = PH_ORDER.map(([l, c]) => `<li><i style="background:${c}"></i>${esc(val(l))}</li>`).join("");
+  $("legend").innerHTML = PH_STOPS.map(([max, c, l], i) => {
+    const lo = i ? PH_STOPS[i - 1][0] : null;
+    const range = lo == null ? `< ${max}` : max > 14 ? `≥ ${lo}` : `${lo}–${(max - 0.1).toFixed(1)}`;
+    return `<li><i style="background:${c}"></i>pH ${range} ${esc(val(l))}</li>`;
+  }).join("") + `<li class="muted small">${t("legendNote")}</li>`;
 
   $("log").innerHTML = [...log].reverse().map((e) => `
     <tr><td>${day(e.date)}</td><td class="num">${num(e.total)}</td><td class="num">+${num(e.added)}</td>
@@ -247,24 +256,28 @@ function setLang(l) {
   renderStatic();
   render();
   if (osdSites.length) $("osd-info").textContent = t("osdInfo")(num(osdSites.length), $("osd-year").value);
-  if (wosisProfiles.length) $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.filter((s) => !s.duplicate_of).length));
+  if (wosisProfiles.length) $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
   renderCheck();
   labelPick();
+  renderAreasStatic();
 }
 
 async function load() {
-  const [pts, m, lg] = await Promise.all([
+  const [pts, m, lg, om, wm] = await Promise.all([
     fetch("data/ldd/points.json").then((r) => r.json()),
     fetch("data/meta.json").then((r) => r.json()),
     fetch("data/changelog.json").then((r) => r.json()).catch(() => []),
+    fetch("data/osd/meta.json").then((r) => r.json()).catch(() => null),
+    fetch("data/wosis/meta.json").then((r) => r.json()).catch(() => null),
   ]);
   meta = m;
   log = lg;
+  osdMeta = om;
+  wosisMeta = wm;
   // ชื่อจังหวัดจากรายละเอียด หรือส่วนท้ายของ location
   points = pts.map((p) => ({ ...p, provinceName: p.province || (p.location || "").split(",").pop().trim() }));
-  for (const p of points) {
-    // พิกัดที่รู้ว่าผิดที่ (เช่น ตกทะเล) ไม่วางบนแผนที่ แต่ยังอยู่ในตาราง
-    if (p.lat == null || (p.qa_flags || []).includes("far_from_province")) continue;
+  shown = points.filter((p) => confident(p.qa_flags));
+  for (const p of shown) {
     const mk = L.circleMarker([p.lat, p.lon], {
       radius: 6, weight: 1, color: "#00000055", fillOpacity: .9,
       fillColor: PH_COLOR[p.ph] || "#9e9e9e", dashArray: p.coord_source === "utm" ? "2 2" : null,
@@ -274,6 +287,15 @@ async function load() {
   renderStatic();
   render();
   await initOsd();
+  // แหล่งที่เป็นค่าวัดจริงเปิดไว้ก่อน
+  if ($("l-osd").checked && $("osd-year").value) {
+    await loadOsdYear($("osd-year").value);
+    map.addLayer(osdLayer);
+  }
+  if ($("l-wosis").checked) {
+    await loadWosis();
+    map.addLayer(wosisLayer);
+  }
 }
 
 for (const id of ["f-province", "f-ph", "f-om", "f-p", "f-k", "f-from", "f-to", "f-qa", "f-new"]) $(id).addEventListener("change", render);

@@ -39,6 +39,8 @@ import time
 import urllib.parse
 import urllib.request
 
+import admin
+
 API = "https://osd101.ldd.go.th/api/data.php"
 SOURCE_URL = "https://lddcatalog.ldd.go.th/dataset/osd01"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -60,12 +62,17 @@ PLACE = ("province", "amphur", "district", "village", "address")
 QA_FLAGS = {
     "no_coords": "ไม่มีพิกัด หรือพิกัดเป็น 0",
     "outside_thailand": "พิกัดอยู่นอกประเทศไทย",
+    "off_land": "พิกัดไม่อยู่บนบก (ห่างฝั่งเกิน 1 km, ไม่แสดงบนแผนที่)",
+    "far_from_province": "พิกัดอยู่นอกขอบเขตจังหวัดที่ระบุเกิน 1 km (ไม่แสดงบนแผนที่)",
+    "amphoe_mismatch": "พิกัดอยู่คนละอำเภอกับที่ระบุ",
+    "no_location": "ไม่มีชื่อจังหวัด/อำเภอ/ตำบล (ไม่แสดงบนแผนที่)",
     "date_invalid": "แปลงวันที่ไม่ได้",
     "date_future": "วันที่อยู่ในอนาคต",
     "value_non_numeric": "มีค่าที่ไม่ใช่ตัวเลข (เก็บข้อความเดิมไว้)",
     "value_out_of_range": "มีค่าเกินช่วงที่เป็นไปได้ (ไม่นำไปคำนวณค่าสรุป)",
     "incomplete": "มีพารามิเตอร์ไม่ครบ 5 ค่า",
     "multi_sample": "ที่เดียวกันวันเดียวกันมีหลายตัวอย่าง (ค่าเป็นค่ากลาง)",
+    "shared_coords": "พิกัดเดียวกันถูกใช้กับหลายวันที่/หลายตัวอย่าง อาจเป็นพิกัดสำนักงาน (ไม่แสดงบนแผนที่)",
 }
 M_COLUMNS = ["id", "site_id", "date", "lat", "lon", *PLACE, "param", "value", "value_text", "first_seen", "qa_flags"]
 
@@ -152,12 +159,29 @@ def to_measurements(rows):
     return out
 
 
+def place_flags(s, located):
+    """ตรวจพิกัดกับขอบเขตจังหวัด/อำเภอ และเก็บรหัสตำบลที่พิกัดตกจริง (adm_tambon)"""
+    key = (s["lat"], s["lon"])
+    if key not in located:
+        located[key] = admin.locate(*key)
+    where = located[key]
+    s["adm_tambon"] = where and where["tambon"]
+    code = admin.province_code(s["province"])
+    if where is None:
+        return {"off_land"} if admin.nearest_province(*key)[0] > admin.TOL_KM else set()
+    if code and where["province"] != code and (admin.dist_km(code, *key) or 0) > admin.TOL_KM:
+        return {"far_from_province"}
+    if code and admin.name_matches(where["amphoe"], s["amphur"]) is False:
+        return {"amphoe_mismatch"}
+    return set()
+
+
 def build_sites(measurements, today):
     """สรุปค่าวัดต่อ ที่ตั้ง+วันที่"""
     groups = {}
     for m in measurements:
         groups.setdefault(m["site_id"], []).append(m)
-    sites = []
+    sites, located = [], {}
     for sid, ms in groups.items():
         m0 = ms[0]
         s = {"id": sid, "date": m0["date"], "lat": m0["lat"], "lon": m0["lon"],
@@ -183,12 +207,24 @@ def build_sites(measurements, today):
             flags.add("no_coords")
         elif not (5 <= s["lat"] <= 21 and 97 <= s["lon"] <= 106):
             flags.add("outside_thailand")
+        else:
+            flags.update(place_flags(s, located))
+        if not (s["province"] or s["amphur"] or s["district"]):
+            flags.add("no_location")
         if s["date"] is None:
             flags.add("date_invalid")
         elif s["date"] > today:
             flags.add("date_future")
-        s["qa_flags"] = [f for f in QA_FLAGS if f in flags]
+        s["qa_flags"] = flags
         sites.append(s)
+    per_coord = {}
+    for s in sites:
+        if s["lat"] is not None:
+            per_coord[(s["lat"], s["lon"])] = per_coord.get((s["lat"], s["lon"]), 0) + 1
+    for s in sites:
+        if s["lat"] is not None and per_coord[(s["lat"], s["lon"])] > 1:
+            s["qa_flags"].add("shared_coords")
+        s["qa_flags"] = [f for f in QA_FLAGS if f in s["qa_flags"]]
     return sites
 
 
@@ -315,7 +351,7 @@ def main():
     for yr, ss in sites_by_year.items():
         write_json(os.path.join(OUT, f"sites_{yr}.json"), sorted(ss, key=lambda s: (s["date"] or "", s["id"])), compact=True)
     cols = ["id", "date", "lat", "lon", *PLACE, "n_samples",
-            *[c for p in PARAMS.values() for c in (p, p + "_n", p + "_min", p + "_max")], "first_seen", "qa_flags"]
+            *[c for p in PARAMS.values() for c in (p, p + "_n", p + "_min", p + "_max")], "first_seen", "adm_tambon", "qa_flags"]
     with open(os.path.join(OUT, "sites.csv"), "w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         w.writeheader()
@@ -333,6 +369,7 @@ def main():
         "source": "กรมพัฒนาที่ดิน – การตรวจวิเคราะห์ดิน (osd01)", "source_url": SOURCE_URL, "license": "CC BY",
         "updated_at": now.isoformat(), "measurements": len(merged), "sites": len(sites),
         "sites_with_coordinates": sum(1 for s in sites if s["lat"] is not None),
+        "sites_on_map": sum(1 for s in sites if admin.confident(s["qa_flags"])),
         "years": sorted(y for y in sites_by_year if y != "0000"),
         "backfill": {"months_done": len(state["months_done"]), "months_total": months_total},
         "capped_days": len(state["capped_days"]),
