@@ -7,7 +7,7 @@
   <meta name="description" content="All data sources used by the Thai Soil Survey Database, with licences and update schedules.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=dev">
 </head>
 <body>
   <header class="top">
@@ -34,8 +34,8 @@
 
   <footer class="muted small" data-i18n="footer"></footer>
 
-  <script src="i18n.js"></script>
-  <script src="sources.js"></script>
+  <script src="i18n.js?v=dev"></script>
+  <script src="sources.js?v=dev"></script>
   <script>
     let lang = (() => {
       const q = new URLSearchParams(location.search).get("lang");

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=dev">
 </head>
 <body>
   <header class="top">
@@ -108,6 +108,7 @@
         <label><span data-i18n="opacity"></span><input id="raster-opacity" type="range" min="0.2" max="1" step="0.1" value="0.7"></label>
       </div>
       <label class="check"><input id="l-lc" type="checkbox"> <span data-i18n="layerLandcover"></span></label>
+      <p class="muted small" id="lc-status"></p>
       <div id="lc-opts" hidden>
         <label><span data-i18n="lcYear"></span><select id="lc-year"></select></label>
         <ul class="legend" id="lc-legend"></ul>
@@ -183,9 +184,9 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
-  <script src="i18n.js"></script>
-  <script src="app.js"></script>
-  <script src="areas.js"></script>
-  <script src="check.js"></script>
+  <script src="i18n.js?v=dev"></script>
+  <script src="app.js?v=dev"></script>
+  <script src="areas.js?v=dev"></script>
+  <script src="check.js?v=dev"></script>
 </body>
 </html>

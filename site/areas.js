@@ -12,7 +12,7 @@ const LC_YEARS = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];
 let provinceData = null;
 const provinceFiles = new Map();
 const provinceLayer = L.geoJSON(null, {
-  interactive: false, style: { color: "#5b4636", weight: 1.6, fill: false, opacity: .8 },
+  interactive: false, style: { color: "#3d2b1f", weight: 2, fill: false, opacity: .9 },
 });
 const amphoeLayer = L.geoJSON(null, { interactive: false, style: { color: "#5b4636", weight: 1, dashArray: "4 3", fill: false, opacity: .7 } });
 const tambonLayer = L.geoJSON(null, { interactive: false, style: { color: "#7a6a5a", weight: .8, dashArray: "2 3", fill: false, opacity: .9 } });
@@ -181,6 +181,12 @@ $("l-lc").addEventListener("change", () => {
   if ($("l-lc").checked) map.addLayer(landCover); else map.removeLayer(landCover);
 });
 $("lc-year").addEventListener("change", () => landCover.redraw());
+// สถานะการโหลดภาพการใช้ที่ดิน (บริการภายนอก อาจช้า)
+let lcErrors = 0;
+landCover.on("loading", () => { lcErrors = 0; $("lc-status").textContent = t("loadingLayer"); });
+landCover.on("tileerror", () => { lcErrors++; });
+landCover.on("load", () => { $("lc-status").textContent = lcErrors ? t("layerError") : ""; });
+landCover.on("remove", () => { $("lc-status").textContent = ""; });
 // เส้นขอบเขตอยู่ใต้จุดข้อมูล (SVG ของตัวเอง เพราะ canvas หลักของแผนที่อยู่ใน overlayPane)
 map.createPane("areas").style.zIndex = 350;
 map.createPane("rasters").style.zIndex = 300;   // แผนที่ดินอยู่ใต้เส้นขอบเขตและจุด
