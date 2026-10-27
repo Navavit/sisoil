@@ -161,3 +161,25 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .layer details { margin-top: 4px; }
 .layer summary { cursor: pointer; font-size: .85rem; color: var(--accent); margin-bottom: 8px; }
 .filters h2 + p { margin-top: 0; }
+
+/* intro สำหรับผู้ใช้ทั่วไป */
+.intro { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 14px; }
+.intro .lead { font-size: 1.05rem; margin: 0 0 12px; max-width: 70ch; }
+.steps { list-style: none; padding: 0; margin: 0 0 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px; }
+.steps li { display: flex; gap: 10px; align-items: flex-start; }
+.steps p { margin: 2px 0 6px; font-size: .9rem; color: var(--muted); }
+.num-badge {
+  flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--accent-ink); font-weight: 600;
+}
+.ph-scale { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; font-size: .82rem; }
+.ph-scale i { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.cta {
+  display: inline-block; padding: 6px 14px; border-radius: 8px; text-decoration: none;
+  background: var(--accent); color: var(--accent-ink); font-weight: 500; font-size: .9rem;
+}
+.glossary { margin: 4px 0 8px; font-size: .9rem; }
+.glossary summary { cursor: pointer; color: var(--accent); font-weight: 500; }
+.glossary dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 8px 0 0; }
+.glossary dt { font-weight: 600; }
+.glossary dd { margin: 0; color: var(--muted); }

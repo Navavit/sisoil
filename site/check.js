@@ -293,6 +293,7 @@ map.on("click", (e) => {
   $("check").scrollIntoView({ behavior: "smooth", block: "start" });
 });
 $("check-pick").addEventListener("click", () => setPicking(!picking));
+$("intro-check").addEventListener("click", (e) => { e.preventDefault(); setPicking(true); });
 $("check-go").addEventListener("click", () => {
   // รับ "lat, lon" ที่วางรวมในช่องเดียวได้
   const parts = $("check-lat").value.split(/[,\s]+/).filter(Boolean);
