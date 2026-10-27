@@ -1,18 +1,18 @@
 {
  "source": "กรมพัฒนาที่ดิน (Land Development Department) – Soil Survey Public",
  "source_url": "https://soilservice.ldd.go.th/soilsurveypublic/",
- "updated_at": "2026-10-27T15:58:45+00:00",
+ "updated_at": "2026-10-27T16:56:01+00:00",
  "total": 902,
  "with_coordinates": 863,
  "provinces": 1,
- "details_pending": 899,
+ "details_pending": 849,
  "last_change": {
   "date": "2026-10-27",
   "total": 902,
   "added": 0,
   "removed": 0,
-  "modified": 117,
-  "details_pending": 899
+  "modified": 0,
+  "details_pending": 849
  },
  "qa": {
   "no_coords": {

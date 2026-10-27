@@ -3,7 +3,7 @@
  "source_url": "https://www.isric.org/explore/wosis",
  "api": "https://maps.isric.org/mapserv?map=/map/wosis_latest.map",
  "license": "ต่อชุดข้อมูล: Attribution 3.0 International (CC BY 3.0), Attribution 4.0 International (CC BY 4.0), CC0 1.0 Universal (CC0 1.0) Public Domain Dedication, U.S. Public Domain",
- "updated_at": "2026-10-27T16:37:31+00:00",
+ "updated_at": "2026-10-27T17:09:57+00:00",
  "profiles": 451,
  "measurements": 13345,
  "profiles_with_coordinates": 451,
