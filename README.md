@@ -63,52 +63,18 @@ flowchart LR
 ├── docs/
 │   ├── architecture.md     # flowchart + ER diagram
 │   ├── data-cleaning.md    # วิธีทำความสะอาดข้อมูล
-│   ├── gee-github-actions.md # ตั้งค่า GEE บน Actions แบบไม่ใช้ไฟล์ key
 │   └── sources.md          # รายชื่อแหล่งข้อมูลดินแบบเปิด
 └── notebooks/              # Jupyter สำหรับวิเคราะห์ (เก็บในเครื่อง ไม่ขึ้น GitHub)
 ```
 
-## ใช้งานในเครื่อง
+## หลักการทำงาน
 
-```bash
-# ดึงข้อมูล (ตรวจจำนวนก่อน ดึงเฉพาะส่วนที่เปลี่ยน)
-python3 scripts/fetch_ldd.py
-
-# เฉพาะบางจังหวัด / จำกัดจำนวนรายละเอียด / บังคับดึงใหม่ทั้งหมด
-python3 scripts/fetch_ldd.py --provinces 40,30 --max-details 500
-python3 scripts/fetch_ldd.py --full
-
-# เปิดเว็บไซต์ในเครื่อง
-mkdir -p _site && cp -r site/* _site/ && cp -r data _site/ && python3 -m http.server -d _site 8000
-
-# ผลวิเคราะห์ดิน (ย้อนหลังทีละไม่เกิน N เดือนต่อรอบ)
-python3 scripts/fetch_osd.py --max-months 24
-
-# soil profile จาก WoSIS
-python3 scripts/fetch_wosis.py
-
-# Google Earth Engine — ใส่ EE_PROJECT และ EE_KEY_FILE ใน .env (คัดลอกจาก .env.example)
-# หรือไม่ใช้ key: earthengine authenticate แล้วใส่แค่ EE_PROJECT
-pip install earthengine-api && python3 scripts/sample_gee.py
-
-# วิเคราะห์ด้วย Jupyter
-pip install -r notebooks/requirements.txt && jupyter lab notebooks/
-```
-
-## สั่งอัปเดตเอง
-
-ไปที่แท็บ **Actions → ตรวจข้อมูลใหม่ (LDD) → Run workflow** แล้วตั้งค่าได้ดังนี้
-- `max_details` — จำนวนจุดที่ดึงรายละเอียดต่อรอบ (ค่าเริ่มต้น 2000 เพื่อไม่ให้เซิร์ฟเวอร์ LDD รับภาระหนัก)
-- `full` — ดึงรายการทุกจังหวัดใหม่ เพื่อจับการแก้ไขข้อมูล
-- `provinces` — เฉพาะรหัสจังหวัดที่ระบุ
-
-## ตั้งค่า Google Earth Engine บน GitHub Actions
-
-แนะนำ **Workload Identity Federation** (ไม่มีไฟล์ key เก็บไว้ที่ใด) ทำตาม [docs/gee-github-actions.md](docs/gee-github-actions.md)
-แล้วใส่ Variables `GCP_WIF_PROVIDER`, `GCP_SERVICE_ACCOUNT`, `EE_PROJECT`
-
-ทางเลือกเดิม: secret `EE_SERVICE_ACCOUNT_KEY` (JSON ของ service account) + variable `EE_PROJECT`
-ถ้าไม่ตั้งค่าใดเลย ขั้นตอน GEE จะถูกข้าม (รัน `scripts/sample_gee.py` ในเครื่องแล้ว push แทนได้)
+- **ตรวจก่อนดึง** — นับจำนวนจุดที่ต้นทางก่อน ดึงเฉพาะส่วนที่เปลี่ยน เพื่อไม่ให้เซิร์ฟเวอร์ต้นทางรับภาระหนัก
+- **ค่อย ๆ ดึงย้อนหลัง** — ข้อมูลเก่าที่มีจำนวนมากถูกดึงทีละส่วนในแต่ละรอบ จนครบ
+- **ไม่แก้ค่าต้นฉบับ** — ข้อมูลที่ผิดปกติถูกติดธงคุณภาพ (`qa_flags`) แทนการลบหรือแก้
+- **บันทึกทุกการเปลี่ยนแปลง** — แต่ละรอบเทียบกับรอบก่อน แล้วเก็บรายการเพิ่ม/ลบ/แก้ไข
+- **เคารพสัญญาอนุญาต** — เผยแพร่เฉพาะข้อมูลที่สัญญาอนุญาตให้เผยแพร่ต่อ ชุดที่ห้ามดัดแปลง (ND) ให้เฉพาะลิงก์
+- **อัปเดตอัตโนมัติ** — GitHub Actions รันทุกเดือน แจ้งเตือนผ่าน Issue และ deploy เว็บไซต์ใหม่
 
 ## ข้อควรทราบ
 

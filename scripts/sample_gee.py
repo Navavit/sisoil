@@ -9,9 +9,8 @@
 
 ยืนยันตัวตน:
   ในเครื่อง:      earthengine authenticate  แล้วตั้ง EE_PROJECT=<cloud project id>
-  ในเครื่อง (service account): ใส่ EE_PROJECT และ EE_KEY_FILE=<path ไฟล์ JSON> ใน .env (ดู .env.example)
-  GitHub Actions: Workload Identity Federation (ไม่มีไฟล์ key ดู docs/gee-github-actions.md) + EE_PROJECT
-                  หรือ secret EE_SERVICE_ACCOUNT_KEY (JSON ของ service account)
+  ในเครื่อง (service account): EE_PROJECT และ EE_KEY_FILE ใน .env
+  GitHub Actions: service account (secret) หรือ Workload Identity Federation + EE_PROJECT
 ต้องติดตั้ง: pip install earthengine-api
 """
 import argparse

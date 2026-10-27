@@ -26,3 +26,7 @@ secrets/
 *_key.json
 gee-*.json
 gha-creds-*.json
+
+# เอกสารตั้งค่าส่วนตัว — เก็บในเครื่อง ไม่ขึ้น GitHub
+.env.example
+docs/gee-github-actions.md
