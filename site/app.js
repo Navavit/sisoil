@@ -143,6 +143,7 @@ async function initOsd() {
   osdMeta = await fetch("data/osd/meta.json").then((r) => r.json()).catch(() => null);
   const years = osdMeta?.years || [];
   $("osd-year").innerHTML = [...years].reverse().map((y) => `<option>${y}</option>`).join("");
+  $("dl-osd-years").innerHTML = years.map((y) => `<a href="data/osd/measurements_${y}.csv.gz" download>${y}</a>`).join(" ");
   $("l-osd").disabled = $("osd-year").disabled = !years.length;
 }
 
@@ -247,6 +248,8 @@ function setLang(l) {
   render();
   if (osdSites.length) $("osd-info").textContent = t("osdInfo")(num(osdSites.length), $("osd-year").value);
   if (wosisProfiles.length) $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.filter((s) => !s.duplicate_of).length));
+  renderCheck();
+  labelPick();
 }
 
 async function load() {

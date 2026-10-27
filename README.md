@@ -48,6 +48,7 @@ flowchart LR
 │   ├── fetch_osd.py        # ผลวิเคราะห์ดิน LDD (Python stdlib ล้วน)
 │   ├── fetch_wosis.py      # soil profile จาก ISRIC WoSIS (Python stdlib ล้วน)
 │   ├── fetch_dindee.py     # ข้อมูลบัตรดินดี LDD (Python stdlib ล้วน)
+│   ├── build_web.py        # แบ่งข้อมูลเป็นกริด 0.5° สำหรับฟังก์ชันตรวจดินบนเว็บ (สร้างตอน deploy)
 │   └── sample_gee.py       # สุ่มค่าจาก Google Earth Engine (ต้องใช้ earthengine-api)
 ├── data/                   # ข้อมูลที่ระบบสร้าง (อย่าแก้ด้วยมือ)
 │   ├── meta.json           # สรุปการอัปเดตล่าสุด
@@ -61,7 +62,8 @@ flowchart LR
 │   ├── osd/                # ผลวิเคราะห์ดิน: sites_<ปี>.json, sites.csv, measurements_<ปี>.csv.gz, state.json
 │   ├── wosis/              # profiles.json, profiles.csv, layers.csv
 │   ├── dindee/             # samples.csv, by_tambon.csv
-│   └── gee/                # covariates.csv (ค่าจาก GEE ที่แต่ละจุด)
+│   ├── gee/                # covariates.csv (ค่าจาก GEE ที่แต่ละจุด)
+│   └── web/                # (ไม่ commit) ไฟล์กริดที่ build_web.py สร้างตอน deploy
 ├── site/                   # เว็บไซต์สองภาษา (HTML/CSS/JS + Leaflet, i18n.js)
 ├── docs/
 │   ├── architecture.md     # flowchart + ER diagram
@@ -77,6 +79,7 @@ flowchart LR
 - **ไม่แก้ค่าต้นฉบับ** — ข้อมูลที่ผิดปกติถูกติดธงคุณภาพ (`qa_flags`) แทนการลบหรือแก้
 - **บันทึกทุกการเปลี่ยนแปลง** — แต่ละรอบเทียบกับรอบก่อน แล้วเก็บรายการเพิ่ม/ลบ/แก้ไข
 - **เคารพสัญญาอนุญาต** — เผยแพร่เฉพาะข้อมูลที่สัญญาอนุญาตให้เผยแพร่ต่อ ชุดที่ห้ามดัดแปลง (ND) ให้เฉพาะลิงก์
+- **ตรวจดินจากพิกัด** — เว็บรวมค่าวัดจริงที่อยู่ใกล้ (จากไฟล์กริดที่โหลดเฉพาะบริเวณ) ค่าประมาณจาก SoilGrids ที่จุดนั้น และบัตรดินดีของตำบล (หาชื่อตำบลจาก OpenStreetMap) ทั้งหมดทำงานในเบราว์เซอร์ ไม่มีเซิร์ฟเวอร์ของตัวเอง
 - **อัปเดตอัตโนมัติ** — GitHub Actions รันทุกเดือน แจ้งเตือนผ่าน Issue และ deploy เว็บไซต์ใหม่
 
 ## ข้อควรทราบ

@@ -27,6 +27,9 @@ jobs:
         with:
           ref: main   # ให้ได้ข้อมูลล่าสุดที่เพิ่ง commit จาก update-data
 
+      - name: สร้างไฟล์สำหรับฟังก์ชันตรวจดินจากพิกัด
+        run: python3 scripts/build_web.py
+
       - name: รวมเว็บกับข้อมูล
         run: |
           mkdir -p _site

@@ -6,7 +6,7 @@
   SoilGrids 2.0 (CC BY 4.0):      pH(H2O), SOC, clay, sand ที่ 0–5 cm
   FAO GSOCmap v1.5 (CC BY):       SOC stock 0–30 cm (t/ha, ~1 km) ผ่าน GEE community catalog
 
-ผลลัพธ์: data/gee/covariates.csv (key = source + id)
+ผลลัพธ์: data/gee/covariates.csv (key = source + id; osd ใช้พิกัดเป็น id เพราะที่เดียวกันวิเคราะห์ได้หลายวัน)
 
 ยืนยันตัวตน:
   ในเครื่อง:      earthengine authenticate  แล้วตั้ง EE_PROJECT=<cloud project id>
@@ -84,6 +84,10 @@ def stack():
     return ee.Image.cat(imgs)
 
 
+def osd_id(lat, lon):
+    return f"{lat:.5f},{lon:.5f}"
+
+
 def points():
     """จุดที่มีพิกัดจากทุกแหล่ง"""
     out = []
@@ -92,10 +96,12 @@ def points():
         for r in json.load(open(p, encoding="utf-8")):
             if r.get("lat") is not None and "far_from_province" not in r.get("qa_flags", []):
                 out.append(("ldd", str(r["id"]), r["lat"], r["lon"]))
+    osd = {}
     for f in glob.glob(os.path.join(ROOT, "data", "osd", "sites_*.json")):
         for r in json.load(open(f, encoding="utf-8")):
             if r.get("lat") is not None and "outside_thailand" not in r.get("qa_flags", []):
-                out.append(("osd", r["id"], r["lat"], r["lon"]))
+                osd[osd_id(r["lat"], r["lon"])] = (r["lat"], r["lon"])
+    out += [("osd", k, lat, lon) for k, (lat, lon) in osd.items()]
     p = os.path.join(ROOT, "data", "wosis", "profiles.json")
     if os.path.exists(p):
         for r in json.load(open(p, encoding="utf-8")):
@@ -114,12 +120,14 @@ def main():
     if os.path.exists(OUT_CSV):
         with open(OUT_CSV, encoding="utf-8") as f:
             for row in csv.DictReader(f):
+                if row["source"] == "osd" and "," not in row["id"]:
+                    row["id"] = osd_id(float(row["lat"]), float(row["lon"]))   # แถวเก่าที่ใช้ id ของ site
                 done[(row["source"], row["id"])] = row
 
     # จุดเดียวกันพิกัดเปลี่ยน (เช่น แก้โซน UTM) หรือยังไม่มีชั้นที่เพิ่มใหม่ ต้องสุ่มใหม่
     todo = [p for p in points()
             if (p[0], p[1]) not in done
-            or (float(done[(p[0], p[1])]["lat"]), float(done[(p[0], p[1])]["lon"])) != (round(p[2], 6), round(p[3], 6))
+            or abs(float(done[(p[0], p[1])]["lat"]) - p[2]) > 1e-5 or abs(float(done[(p[0], p[1])]["lon"]) - p[3]) > 1e-5
             or any(done[(p[0], p[1])].get(c) in (None, "") for c, *_ in LAYERS)]
     todo = todo[: args.max_points]
     print(f"Points to sample: {len(todo)} (already done: {len(done)})")

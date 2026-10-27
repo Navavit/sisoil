@@ -39,7 +39,7 @@ h3 { font-size: .95rem; margin: 16px 0 6px; }
 
 .top { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; padding: 20px 0 12px; }
 .sub { margin: 4px 0 0; color: var(--muted); }
-.downloads { display: flex; gap: 8px; }
+.downloads { display: flex; flex-wrap: wrap; gap: 8px; }
 .downloads a {
   padding: 6px 12px; border-radius: 8px; text-decoration: none;
   background: var(--accent); color: var(--accent-ink); font-weight: 500;
@@ -117,3 +117,39 @@ footer { margin-top: 18px; }
 .badge-used { background: #d9f0d3; color: #1f5a1a; }
 .badge-planned { background: #f5e6c8; color: #6b4a12; }
 .badge-basemap { background: #e3e8f0; color: #2b3a55; }
+
+/* ตรวจดินจากพิกัด */
+.check-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; margin-bottom: 4px; }
+.check-form button { width: auto; padding: 7px 12px; }
+.check-form button[aria-pressed="true"], .check-form button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.check-form label { font-size: .85rem; color: var(--muted); }
+.check-form input, .check-form select {
+  display: block; margin-top: 3px; padding: 6px 8px; width: 150px; max-width: 100%;
+  border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--text); font: inherit;
+}
+.check-head { margin: 4px 0 10px; }
+.check-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; }
+.check-grid .card { background: var(--bg); }
+.check-grid h3 { margin: 0 0 6px; }
+.check-grid h3 + h4, .check-grid h4 { font-size: .88rem; margin: 12px 0 4px; color: var(--muted); font-weight: 600; }
+.check-grid .card > h3:not(:first-child) { margin-top: 16px; }
+.check-grid p { margin: 2px 0 6px; font-size: .88rem; }
+table.mini { font-size: .82rem; margin-bottom: 4px; }
+table.mini th, table.mini td { padding: 3px 6px; }
+table.mini td.num, table.mini th { text-align: right; }
+table.mini th:first-child, table.mini td:first-child { text-align: left; }
+.bar { display: flex; height: 12px; border-radius: 6px; overflow: hidden; margin: 4px 0 6px; border: 1px solid var(--border); }
+.bar i { display: block; height: 100%; }
+.dl-list { margin: 0 0 6px; padding-left: 18px; }
+.dl-list li { margin: 2px 0; }
+@media (max-width: 800px) {
+  .check-grid { grid-template-columns: 1fr; }
+  .check-form input, .check-form select { width: 130px; }
+}
+.check-grid { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
+.check-grid .card { min-width: 0; overflow-x: auto; }
+.map-pick {
+  width: auto; padding: 6px 10px; border: 2px solid rgba(0,0,0,.2); border-radius: 6px;
+  background: #ffffff; color: #22201c; font: 500 13px/1.2 "IBM Plex Sans Thai", system-ui, sans-serif;
+}
+.map-pick[aria-pressed="true"] { background: #8a5a2b; color: #ffffff; }

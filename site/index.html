@@ -60,6 +60,23 @@
     <div id="map"></div>
   </main>
 
+  <section class="panel" id="check">
+    <h2 data-i18n="checkTitle"></h2>
+    <p class="muted small" data-i18n="checkIntro"></p>
+    <div class="check-form">
+      <button type="button" id="check-pick" aria-pressed="false" data-i18n="checkPick"></button>
+      <button type="button" id="check-me" data-i18n="checkMe"></button>
+      <label><span data-i18n="checkLat"></span><input id="check-lat" inputmode="decimal" placeholder="16.68 หรือ 16.68, 102.86"></label>
+      <label><span data-i18n="checkLon"></span><input id="check-lon" inputmode="decimal" placeholder="102.86"></label>
+      <label><span data-i18n="checkRadius"></span><select id="check-radius">
+        <option value="2">2 km</option><option value="5" selected>5 km</option><option value="10">10 km</option><option value="25">25 km</option>
+      </select></label>
+      <button type="button" id="check-go" class="primary" data-i18n="checkGo"></button>
+    </div>
+    <p class="muted small" id="check-msg" aria-live="polite"></p>
+    <div id="check-result"></div>
+  </section>
+
   <section class="panel">
     <div class="panel-head">
       <h2><span data-i18n="list"></span> <span id="count" class="muted"></span></h2>
@@ -92,6 +109,18 @@
   </section>
 
   <section class="panel small">
+    <h2 data-i18n="downloadsTitle"></h2>
+    <ul class="dl-list">
+      <li><b data-i18n="layerLdd"></b> — <a href="data/ldd/points.csv" download>CSV</a> · <a href="data/ldd/points.geojson" download>GeoJSON</a> · <a href="data/ldd/points.json" download>JSON</a></li>
+      <li><b data-i18n="layerOsd"></b> — <a href="data/osd/sites.csv" download data-i18n="dlOsdSites"></a> · <span data-i18n="dlOsdMeasurements"></span> <span id="dl-osd-years"></span></li>
+      <li><b data-i18n="layerWosis"></b> — <a href="data/wosis/profiles.csv" download>profiles.csv</a> · <a href="data/wosis/layers.csv" download>layers.csv</a></li>
+      <li><b data-i18n="checkDindee"></b> — <a href="data/dindee/samples.csv" download>samples.csv</a> · <a href="data/dindee/by_tambon.csv" download>by_tambon.csv</a></li>
+      <li><b data-i18n="dlGee"></b> — <a href="data/gee/covariates.csv" download>covariates.csv</a></li>
+    </ul>
+    <p class="muted" data-i18n="dlNote"></p>
+  </section>
+
+  <section class="panel small">
     <h2 data-i18n="aboutDates"></h2>
     <ul class="dates-help">
       <li><b data-i18n="surveyDate"></b> — <span data-i18n="surveyDateHelp"></span></li>
@@ -107,5 +136,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+  <script src="check.js"></script>
 </body>
 </html>
