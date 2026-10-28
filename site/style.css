@@ -252,3 +252,4 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .layer-row label.check input { margin-top: 4px; }
 .map-legend { max-height: min(420px, 62vh); }
 .row-label[hidden] { display: none !important; }
+.dates-help ul { margin: 2px 0 4px; padding-left: 18px; }
