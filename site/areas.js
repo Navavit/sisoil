@@ -153,7 +153,7 @@ function sgSld(sg) {
     "</ColorMap></RasterSymbolizer></Rule></FeatureTypeStyle></UserStyle></NamedLayer></StyledLayerDescriptor>";
 }
 const scaleList = (key) => `<ul class="legend">${scaleItems(key).map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("")}</ul>` +
-  (refNote(key) ? `<p>${refNote(key)}</p>` : "");
+  (refNote(key) ? `<p>${refNote(key)}</p>` : "") + `<p>${paletteNote(key)}</p>`;
 
 function rasterLegend() {
   const id = $("raster").value, sg = SOILGRIDS.find((r) => r[0] === id), im = rasterMeta.find((r) => r.id === id);

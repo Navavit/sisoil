@@ -28,7 +28,7 @@ def load_scales():
     """ช่วงชั้นและสีจาก site/scales.js (ชุดเดียวกับสีจุดบนเว็บ)"""
     with open(os.path.join(ROOT, "site", "scales.js"), encoding="utf-8") as f:
         text = f.read()
-    return json.loads(text[text.index("const SCALES =") + len("const SCALES ="):].strip().rstrip(";"))
+    return json.loads(text[text.index("\nconst SCALES =") + len("\nconst SCALES ="):].strip().rstrip(";"))
 
 
 # (id, asset, band, ตัวคูณจากค่าดิบเป็นหน่วยของช่วงชั้น, ช่วงชั้นใน scales.js, ชื่อ th, ชื่อ en, แหล่ง, สัญญาอนุญาต)

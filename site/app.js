@@ -130,6 +130,8 @@ function scaleItems(key) {
 const FERT_REF = "http://oss101.ldd.go.th/osr_data%26service/OSR_PDF/TB_SSK_Distribute/D_SSK567.pdf";
 const refNote = (key) => (SCALES[key].ref === "fert"
   ? `${esc(t("fertRef"))} <a href="${FERT_REF}" target="_blank" rel="noopener">${esc(t("fertRefLink"))}</a>` : "");
+// อ้างอิงชุดสี (ColorBrewer)
+const paletteNote = (key) => `${esc(t("paletteRef"))}: <a href="https://colorbrewer2.org/" target="_blank" rel="noopener">${esc(SCALES[key].palette)}</a> (Harrower & Brewer, 2003)`;
 
 // ---------- ระบายสีจุดตามค่าที่เลือก ----------
 const NO_DATA = "#b8b2a7";
@@ -204,7 +206,8 @@ function renderLegend() {
   $("legend").innerHTML = items.map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("") +
     `<li><i style="background:${NO_DATA};opacity:.5"></i>${esc(t("noValue"))}</li>` +
     `<li class="muted small">${esc(t("varSources")(sources.join(", ")))}${colorVar === "om" ? ` · ${esc(t("omNote"))}` : ""}</li>` +
-    (refNote(colorVar) ? `<li class="muted small">${refNote(colorVar)}</li>` : "");
+    (refNote(colorVar) ? `<li class="muted small">${refNote(colorVar)}</li>` : "") +
+    `<li class="muted small">${paletteNote(colorVar)}</li>`;
 }
 
 function osdPopup(s) {
