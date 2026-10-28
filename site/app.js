@@ -159,9 +159,21 @@ function colorFor(source, rec) {
   }
   return scaleColor(colorVar, def[source]?.(rec));
 }
+// ขอบจุด: เมื่อเปิดแผนที่ดิน raster (สีชุดเดียวกัน) ใช้ขอบเข้มให้จุดไม่กลืนกับพื้นหลัง
+const OUTLINE = { osd: "#ffffff", wosis: "#3a2a1a", ldd: "#00000055" };
+const OUTLINE_ON_RASTER = { osd: "#1b1b1b", wosis: "#000000", ldd: "#1b1b1b" };
 function styleFor(source, rec) {
   const c = colorFor(source, rec);
-  return { fillColor: c || NO_DATA, fillOpacity: c ? .92 : .25, opacity: c ? 1 : .25 };
+  const onRaster = typeof rasterLayer !== "undefined" && rasterLayer;
+  return { fillColor: c || NO_DATA, fillOpacity: c ? .92 : .25, opacity: c ? 1 : .25,
+    color: (onRaster ? OUTLINE_ON_RASTER : OUTLINE)[source] };
+}
+// เปลี่ยนค่าที่ใช้ระบายสีจุด; ถ้าไม่ได้มาจากการเลือก raster ให้ raster เปลี่ยนตาม (syncRaster ใน areas.js)
+function setColorVar(v, fromRaster) {
+  colorVar = v;
+  $("color-by").value = v;
+  restyle();
+  if (!fromRaster) syncRaster(v);
 }
 // สีของกลุ่มจุด = สีที่พบมากที่สุดในกลุ่ม (ไม่นับจุดที่ไม่มีค่า)
 function clusterIcon(c) {
@@ -216,7 +228,7 @@ async function loadOsdYear(year) {
   osdLayer.clearLayers();
   osdSites = (await fetch(`data/osd/sites_${year}.json`).then((r) => r.json()).catch(() => [])).filter((s) => confident(s.qa_flags));
   osdLayer.addLayers(osdSites.filter((s) => s.lat != null).map((s) => Object.assign(L.circleMarker([s.lat, s.lon], {
-    radius: 5, weight: 1.5, color: "#ffffff", ...styleFor("osd", s),
+    radius: 5, weight: 1.5, ...styleFor("osd", s),
   }).bindPopup(() => osdPopup(s)), { rec: s })));
   $("osd-info").textContent = t("osdInfo")(num(osdSites.length), year);
 }
@@ -255,7 +267,7 @@ async function loadWosis() {
   // profile ที่ซ้ำกับอีก profile ใน WoSIS ไม่วางบนแผนที่ (ดู duplicate_of)
   wosisProfiles = wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of && confident(s.qa_flags));
   wosisProfiles.forEach((s) => Object.assign(L.circleMarker([s.lat, s.lon], {
-    radius: 7, weight: 2, color: "#3a2a1a", pane: "wosis", ...styleFor("wosis", s),
+    radius: 7, weight: 2, pane: "wosis", ...styleFor("wosis", s),
   }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }), { rec: s }).addTo(wosisLayer));
   $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
 }
@@ -351,7 +363,7 @@ async function load() {
   shown = points.filter((p) => confident(p.qa_flags));
   for (const p of shown) {
     const mk = Object.assign(L.circleMarker([p.lat, p.lon], {
-      radius: 6, weight: 1, color: "#00000055", ...styleFor("ldd", p), dashArray: p.coord_source === "utm" ? "2 2" : null,
+      radius: 6, weight: 1, ...styleFor("ldd", p), dashArray: p.coord_source === "utm" ? "2 2" : null,
     }).bindPopup(() => popup(p)), { rec: p });
     markers.set(p.id, mk);
   }
@@ -383,7 +395,7 @@ $("rows").addEventListener("click", (e) => {
 });
 document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
 $("l-ldd").addEventListener("change", render);
-$("color-by").addEventListener("change", () => { colorVar = $("color-by").value; restyle(); });
+$("color-by").addEventListener("change", () => setColorVar($("color-by").value));
 $("l-osd").addEventListener("change", async () => {
   if ($("l-osd").checked) {
     if (!osdSites.length) await loadOsdYear($("osd-year").value);
