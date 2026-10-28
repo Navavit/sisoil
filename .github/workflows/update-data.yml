@@ -1,4 +1,4 @@
-name: ตรวจข้อมูลใหม่ (LDD)
+name: ตรวจข้อมูลใหม่ทุกแหล่ง
 
 on:
   schedule:
@@ -71,6 +71,11 @@ jobs:
         continue-on-error: true
         run: python scripts/fetch_dindee.py
 
+      - name: ตรวจฉบับใหม่ของขอบเขตปกครองและชุดข้อมูล LDD ที่ให้เฉพาะลิงก์ (ดู metadata เท่านั้น)
+        id: static
+        continue-on-error: true
+        run: python scripts/check_static_sources.py
+
       # Google Earth Engine: ใช้ Workload Identity Federation ถ้าตั้ง vars.GCP_WIF_PROVIDER (ไม่มีไฟล์ key)
       # ไม่เช่นนั้นใช้ secret EE_SERVICE_ACCOUNT_KEY ถ้ามี ถ้าไม่มีทั้งคู่ = ข้าม
       - name: ยืนยันตัวตน Google Cloud (Workload Identity Federation)
@@ -100,7 +105,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "ไม่มีการเปลี่ยนแปลง"
           else
-            git commit -m "data: อัปเดตข้อมูล LDD $(date -u +%Y-%m-%d) (+${{ steps.fetch.outputs.added }} / -${{ steps.fetch.outputs.removed }} / ~${{ steps.fetch.outputs.modified }})"
+            git commit -m "data: อัปเดตข้อมูล $(date -u +%Y-%m-%d) (+${{ steps.fetch.outputs.added }} / -${{ steps.fetch.outputs.removed }} / ~${{ steps.fetch.outputs.modified }})"
             git push
           fi
 
@@ -132,6 +137,16 @@ jobs:
           รายละเอียด: \`data/changes/$(date -u +%Y-%m-%d).json\`
           EOF
           )"
+
+      - name: แจ้งเตือนเมื่อแหล่งที่ไม่ได้ดึงประจำมีฉบับใหม่
+        if: steps.static.outputs.static_changed != '' && steps.static.outputs.static_changed != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUMMARY: ${{ steps.static.outputs.static_summary }}
+        run: |
+          gh issue create \
+            --title "แหล่งข้อมูลอ้างอิงมีฉบับใหม่ $(date -u +%Y-%m-%d)" \
+            --body "$(printf 'ระบบตรวจพบว่าชุดข้อมูลต่อไปนี้ถูกแก้ไขที่ต้นทาง (ตรวจจาก metadata ไม่ได้ดาวน์โหลด)\n\n%s\n' "$SUMMARY")"
 
   deploy:
     needs: update

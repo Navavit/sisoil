@@ -1,0 +1,38 @@
+{
+ "cod-ab-tha": {
+  "version": {
+   "modified": "2026-08-14T06:40:23.604903",
+   "latest_file": "2026-01-26T16:23:47.682305",
+   "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
+  },
+  "changed_at": "2026-10-28",
+  "checked_at": "2026-10-28"
+ },
+ "ldd-soilseries": {
+  "version": {
+   "modified": "2026-03-19T06:52:46.253344",
+   "latest_file": "2024-04-25T04:36:49.663215",
+   "license": "Creative Commons Attribution Non-Commercial No-Derivs"
+  },
+  "changed_at": "2026-10-28",
+  "checked_at": "2026-10-28"
+ },
+ "ldd-soilgroup": {
+  "version": {
+   "modified": "2025-10-07T02:26:40.414928",
+   "latest_file": "2024-08-01T02:14:20.805014",
+   "license": "Creative Commons Attribution Non-Commercial No-Derivs"
+  },
+  "changed_at": "2026-10-28",
+  "checked_at": "2026-10-28"
+ },
+ "ldd-landuse": {
+  "version": {
+   "modified": "2025-10-07T02:39:39.223314",
+   "latest_file": "2024-07-03T01:42:14.887016",
+   "license": "Creative Commons Attribution Non-Commercial No-Derivs"
+  },
+  "changed_at": "2026-10-28",
+  "checked_at": "2026-10-28"
+ }
+}

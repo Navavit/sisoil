@@ -7,7 +7,7 @@ const LC_CLASSES = [
   ["#1a5bab", "lcWater"], ["#358221", "lcTrees"], ["#87d19e", "lcFlooded"], ["#ffdb5c", "lcCrops"],
   ["#ed022a", "lcBuilt"], ["#ede9e4", "lcBare"], ["#efcfa8", "lcRange"], ["#c8c8c8", "lcClouds"],
 ];
-const LC_YEARS = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];
+const LC_YEARS = [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017];   // ใช้เมื่ออ่านปีจากบริการไม่ได้
 
 let provinceData = null;
 const provinceFiles = new Map();
@@ -199,6 +199,15 @@ function renderAreasStatic() {
 }
 
 $("lc-year").innerHTML = LC_YEARS.map((y) => `<option>${y}</option>`).join("");
+// ปีที่มีอ่านจาก timeInfo ของบริการ ปีใหม่ที่ Esri เพิ่มจะขึ้นเอง
+fetch(`${LC_URL.replace("/exportImage", "")}?f=json`).then((r) => r.json()).then((info) => {
+  const [start, end] = info.timeInfo.timeExtent.map((ms) => new Date(ms).getUTCFullYear());
+  const years = Array.from({ length: end - start + 1 }, (_, i) => end - i);
+  if (years.length) {
+    $("lc-year").innerHTML = years.map((y) => `<option>${y}</option>`).join("");
+    if ($("l-lc").checked) { landCover.redraw(); rasterLegend(); }
+  }
+}).catch(() => { /* ใช้ LC_YEARS */ });
 $("l-prov").addEventListener("change", () => ($("l-prov").checked ? showProvinces() : map.removeLayer(provinceLayer)));
 $("l-admin").addEventListener("change", () => {
   if ($("l-admin").checked) {
