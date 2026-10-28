@@ -1,0 +1,849 @@
+{
+ "anc": {
+  "name": "อำนาจเจริญ",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_anc.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:45 GMT",
+  "size": 30571211,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "atg": {
+  "name": "อ่างทอง",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_atg.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:52 GMT",
+  "size": 8295539,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "aya": {
+  "name": "พระนครศรีอยุธยา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_aya.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:52 GMT",
+  "size": 11818939,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "bkk": {
+  "name": "กรุงเทพมหานคร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_bkk.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:52 GMT",
+  "size": 5435221,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "bkn": {
+  "name": "บึงกาฬ",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_bkn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:46 GMT",
+  "size": 36131172,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "brm": {
+  "name": "บุรีรัมย์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_brm.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:47 GMT",
+  "size": 55076362,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cbi": {
+  "name": "ชลบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_cbi.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:59 GMT",
+  "size": 34928180,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cco": {
+  "name": "ฉะเชิงเทรา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_cco.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:59 GMT",
+  "size": 28399111,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cmi": {
+  "name": "เชียงใหม่",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_cmi.zip",
+  "last_modified": "Wed, 04 Dec 2024 06:35:36 GMT",
+  "size": 123404530,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cnt": {
+  "name": "ชัยนาท",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_cnt.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:52 GMT",
+  "size": 14685719,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cpm": {
+  "name": "ชัยภูมิ",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_cpm.zip",
+  "last_modified": "Mon, 26 May 2025 07:26:33 GMT",
+  "size": 81190522,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cpn": {
+  "name": "ชุมพร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_cpn.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:03 GMT",
+  "size": 37512321,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cri": {
+  "name": "เชียงราย",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_cri.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:33 GMT",
+  "size": 89625808,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "cti": {
+  "name": "จันทบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_cti.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:59 GMT",
+  "size": 29693875,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "kbi": {
+  "name": "กระบี่",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_kbi.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:03 GMT",
+  "size": 25193270,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "kkn": {
+  "name": "ขอนแก่น",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_kkn.zip",
+  "last_modified": "Thu, 02 Jul 2026 02:42:03 GMT",
+  "size": 73907708,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "kpt": {
+  "name": "กำแพงเพชร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_kpt.zip",
+  "last_modified": "Wed, 04 Dec 2024 06:35:34 GMT",
+  "size": 41403177,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "kri": {
+  "name": "กาญจนบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_kri.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:53 GMT",
+  "size": 80423732,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ksn": {
+  "name": "กาฬสินธุ์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_ksn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:50 GMT",
+  "size": 51424515,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "lei": {
+  "name": "เลย",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_lei.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:52 GMT",
+  "size": 95760046,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "lpg": {
+  "name": "ลำปาง",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_lpg.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:35 GMT",
+  "size": 56262189,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "lpn": {
+  "name": "ลำพูน",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_lpn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:35 GMT",
+  "size": 23385978,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "lri": {
+  "name": "ลพบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_lri.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:53 GMT",
+  "size": 28917981,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "mdh": {
+  "name": "มุกดาหาร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_mdh.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:51 GMT",
+  "size": 30935987,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "mkm": {
+  "name": "มหาสารคาม",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_mkm.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:52 GMT",
+  "size": 31593456,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "msn": {
+  "name": "แม่ฮ่องสอน",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_msn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:36 GMT",
+  "size": 56084204,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nan": {
+  "name": "น่าน",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_nan.zip",
+  "last_modified": "Wed, 04 Dec 2024 06:35:35 GMT",
+  "size": 99000774,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nbl": {
+  "name": "หนองบัวลำภู",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_nbl.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:53 GMT",
+  "size": 29499744,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nki": {
+  "name": "หนองคาย",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_nki.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:53 GMT",
+  "size": 27224779,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nma": {
+  "name": "นครราชสีมา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_nma.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:56 GMT",
+  "size": 129233635,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "npn": {
+  "name": "นครพนม",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_npn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:55 GMT",
+  "size": 43891325,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "npt": {
+  "name": "นครปฐม",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_npt.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:53 GMT",
+  "size": 22046567,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nrt": {
+  "name": "นครศรีธรรมราช",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_nrt.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:04 GMT",
+  "size": 60796518,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nsn": {
+  "name": "นครสวรรค์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_nsn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:38 GMT",
+  "size": 44389023,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ntb": {
+  "name": "นนทบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_ntb.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:53 GMT",
+  "size": 3075562,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nwt": {
+  "name": "นราธิวาส",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_nwt.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:04 GMT",
+  "size": 25118559,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "nyk": {
+  "name": "นครนายก",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_nyk.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:53 GMT",
+  "size": 10147780,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pbi": {
+  "name": "เพชรบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_pbi.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:53 GMT",
+  "size": 32508690,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pbn": {
+  "name": "เพชรบูรณ์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_pbn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:39 GMT",
+  "size": 52678326,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pct": {
+  "name": "พิจิตร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_pct.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:39 GMT",
+  "size": 21672658,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pkn": {
+  "name": "ประจวบคีรีขันธ์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_pkn.zip",
+  "last_modified": "Wed, 27 May 2026 03:48:00 GMT",
+  "size": 35385318,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pkt": {
+  "name": "ภูเก็ต",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_pkt.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:04 GMT",
+  "size": 4631139,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "plg": {
+  "name": "พัทลุง",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_plg.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:05 GMT",
+  "size": 19358359,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "plk": {
+  "name": "พิษณุโลก",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_plk.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:41 GMT",
+  "size": 56148022,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pna": {
+  "name": "พังงา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_pna.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:05 GMT",
+  "size": 26997795,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pre": {
+  "name": "แพร่",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_pre.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:41 GMT",
+  "size": 33931082,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pri": {
+  "name": "ปราจีนบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_pri.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:59 GMT",
+  "size": 21197853,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ptm": {
+  "name": "ปทุมธานี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_ptm.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:54 GMT",
+  "size": 7282057,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ptn": {
+  "name": "ปัตตานี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_ptn.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:05 GMT",
+  "size": 10571316,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "pyo": {
+  "name": "พะเยา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_pyo.zip",
+  "last_modified": "Wed, 04 Dec 2024 06:35:36 GMT",
+  "size": 40478682,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "rbr": {
+  "name": "ราชบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_rbr.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:54 GMT",
+  "size": 31528139,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ret": {
+  "name": "ร้อยเอ็ด",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_ret.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:56 GMT",
+  "size": 32775541,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "rng": {
+  "name": "ระนอง",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_rng.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:05 GMT",
+  "size": 11189420,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ryg": {
+  "name": "ระยอง",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_ryg.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:59 GMT",
+  "size": 23392612,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "sbr": {
+  "name": "สิงห์บุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_sbr.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:54 GMT",
+  "size": 5199803,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ska": {
+  "name": "สงขลา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_ska.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:06 GMT",
+  "size": 30888658,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "skm": {
+  "name": "สมุทรสงคราม",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_skm.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:54 GMT",
+  "size": 4919251,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "skn": {
+  "name": "สมุทรสาคร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_skn.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:54 GMT",
+  "size": 6359392,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "sko": {
+  "name": "สระแก้ว",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_sko.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:41:00 GMT",
+  "size": 33929554,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "smp": {
+  "name": "สมุทรปราการ",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_smp.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:54 GMT",
+  "size": 4396592,
+  "survey_years_be": [
+   2567
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "sni": {
+  "name": "สุราษฎร์ธานี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_sni.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:07 GMT",
+  "size": 67875285,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "snk": {
+  "name": "สกลนคร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_snk.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:58 GMT",
+  "size": 71994550,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "spb": {
+  "name": "สุพรรณบุรี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_spb.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:55 GMT",
+  "size": 28617855,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "sri": {
+  "name": "",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/C/Landuse_sri.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:40:55 GMT",
+  "size": 22586010,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "srn": {
+  "name": "สุรินทร์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_srn.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:58 GMT",
+  "size": 48733963,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ssk": {
+  "name": "ศรีสะเกษ",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_ssk.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:00 GMT",
+  "size": 46415247,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "sti": {
+  "name": "สุโขทัย",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_sti.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:42 GMT",
+  "size": 33103207,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "stn": {
+  "name": "สตูล",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_stn.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:06 GMT",
+  "size": 20876259,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "tak": {
+  "name": "ตาก",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_tak.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:44 GMT",
+  "size": 62269673,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "trg": {
+  "name": "ตรัง",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_trg.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:07 GMT",
+  "size": 30558547,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "trt": {
+  "name": "ตราด",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/E/Landuse_trt.zip",
+  "last_modified": "Fri, 23 Jan 2026 07:41:00 GMT",
+  "size": 27489120,
+  "survey_years_be": [
+   2568
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "ubn": {
+  "name": "อุบลราชธานี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_ubn.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:01 GMT",
+  "size": 126298741,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "udn": {
+  "name": "อุดรธานี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_udn.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:02 GMT",
+  "size": 93208948,
+  "survey_years_be": [
+   2565
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "uti": {
+  "name": "อุทัยธานี",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_uti.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:43 GMT",
+  "size": 25226020,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "utt": {
+  "name": "อุตรดิตถ์",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/N/Landuse_utt.zip",
+  "last_modified": "Thu, 23 May 2024 06:55:45 GMT",
+  "size": 45006142,
+  "survey_years_be": [
+   2563
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "yla": {
+  "name": "ยะลา",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/S/Landuse_yla.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:07 GMT",
+  "size": 18905623,
+  "survey_years_be": [
+   2564
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ },
+ "yst": {
+  "name": "ยโสธร",
+  "url": "https://tswc.ldd.go.th/DownloadGIS/web_LU/DataLu/NE/Landuse_yst.zip",
+  "last_modified": "Thu, 23 May 2024 06:56:02 GMT",
+  "size": 30050548,
+  "survey_years_be": [
+   2566
+  ],
+  "checked_at": "2026-10-28",
+  "changed_at": "2026-10-28"
+ }
+}

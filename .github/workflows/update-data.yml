@@ -76,6 +76,11 @@ jobs:
         continue-on-error: true
         run: python scripts/check_static_sources.py
 
+      - name: ตรวจแผนที่การใช้ที่ดิน LDD รายจังหวัด (ปีสำรวจจากชื่อไฟล์ ไม่ดาวน์โหลดข้อมูล)
+        id: landuse
+        continue-on-error: true
+        run: python scripts/check_landuse.py
+
       # Google Earth Engine: ใช้ Workload Identity Federation ถ้าตั้ง vars.GCP_WIF_PROVIDER (ไม่มีไฟล์ key)
       # ไม่เช่นนั้นใช้ secret EE_SERVICE_ACCOUNT_KEY ถ้ามี ถ้าไม่มีทั้งคู่ = ข้าม
       - name: ยืนยันตัวตน Google Cloud (Workload Identity Federation)
@@ -147,6 +152,16 @@ jobs:
           gh issue create \
             --title "แหล่งข้อมูลอ้างอิงมีฉบับใหม่ $(date -u +%Y-%m-%d)" \
             --body "$(printf 'ระบบตรวจพบว่าชุดข้อมูลต่อไปนี้ถูกแก้ไขที่ต้นทาง (ตรวจจาก metadata ไม่ได้ดาวน์โหลด)\n\n%s\n' "$SUMMARY")"
+
+      - name: แจ้งเตือนเมื่อแผนที่การใช้ที่ดินมีฉบับใหม่
+        if: steps.landuse.outputs.lu_changed != '' && steps.landuse.outputs.lu_changed != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SUMMARY: ${{ steps.landuse.outputs.lu_summary }}
+        run: |
+          gh issue create \
+            --title "แผนที่การใช้ที่ดิน LDD ฉบับใหม่ $(date -u +%Y-%m-%d)" \
+            --body "$(printf 'จังหวัดที่มีปีสำรวจใหม่หรือไฟล์ถูกแก้ไข — ดึงเข้าคลังในเครื่องด้วย fetch_lu.py\n\n%s\n' "$SUMMARY")"
 
   deploy:
     needs: update
