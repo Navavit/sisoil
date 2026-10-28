@@ -206,10 +206,6 @@ function renderLegend() {
   sel.value = cur;
   const items = scaleItems(colorVar);
   $("pt-legend-title").textContent = `${t("pointColors")}: ${t("vars")[colorVar]}`;
-  // แถบสีย่อใน intro: ตามค่าที่เลือกอยู่ (ระดับไม่เกิน 6 แสดงทุกชั้น ไม่เช่นนั้นแสดงแถบไล่สีพร้อมปลายทั้งสองด้าน)
-  $("intro-scale").innerHTML = `<span>${esc(t("introColorNow"))} <b>${esc(t("vars")[colorVar])}</b>:</span>` + (items.length <= 6
-    ? items.map(([c, l]) => `<i style="background:${c}"></i><span>${esc(l)}</span>`).join("")
-    : `<span>${esc(items[0][1])}</span><span class="mini-ramp" style="background:linear-gradient(to right,${items.map((x) => x[0]).join(",")})"></span><span>${esc(items[items.length - 1][1])}</span>`);
   const sources = ["wosis", "osd", "ldd"].filter((s) => def[s]).map((s) => t({ wosis: "layerWosis", osd: "layerOsd", ldd: "layerLdd" }[s]));
   $("legend").innerHTML = items.map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("") +
     `<li><i style="background:${NO_DATA};opacity:.5"></i>${esc(t("noValue"))}</li>` +
