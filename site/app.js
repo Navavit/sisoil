@@ -3,7 +3,6 @@
 const PH_ORDER = [...SCALES.ph.levels.map((l, i) => [l, SCALES.ph.colors[i]]), ["กรดรุนแรงมากที่สุด", SCALES.ph.colors[0]], ["Other", "#9e9e9e"]];
 const PH_COLOR = Object.fromEntries(PH_ORDER);
 const LEVEL_ORDER = ["ต่ำมาก", "ต่ำ", "ปานกลาง", "สูง", "สูงมาก", "Other"];
-const TABLE_LIMIT = 300;
 // ข้อมูลที่ไม่มั่นใจตำแหน่ง ไม่แสดงบนเว็บ (ยังเก็บไว้ในข้อมูลหลังบ้าน) — ต้องตรงกับ HIDE_ON_MAP ใน scripts/admin.py
 const HIDE_ON_MAP = ["no_coords", "outside_thailand", "off_land", "far_from_province", "no_location", "duplicate",
   "shared_coords", "multi_sample", "amphoe_mismatch", "date_future"];
@@ -93,7 +92,7 @@ function filtered() {
     province: $("f-province").value, ph: $("f-ph").value, om: $("f-om").value,
     p: $("f-p").value, k: $("f-k").value,
     from: +$("f-from").value || 0, to: +$("f-to").value || 9999,
-    qa: $("f-qa").value, onlyNew: $("f-new").checked, q: $("q").value.trim().toUpperCase(),
+    qa: $("f-qa").value, onlyNew: $("f-new").checked,
   };
   const latestRun = log.length ? log[log.length - 1].date : null;
   return shown.filter((p) => {
@@ -103,8 +102,7 @@ function filtered() {
       && (!f.p || p.p === f.p) && (!f.k || p.k === f.k)
       && (!y || (y >= f.from && y <= f.to))
       && (!f.onlyNew || p.first_seen === latestRun)
-      && qaMatch(p.qa_flags || [], f.qa)
-      && (!f.q || `${p.location || ""} ${admPlace(p.adm_tambon)}`.toUpperCase().includes(f.q));
+      && qaMatch(p.qa_flags || [], f.qa);
   });
 }
 
@@ -291,26 +289,10 @@ async function loadWosis() {
 function render() {
   const rows = filtered();
   cluster.clearLayers();
-  if (!$("l-ldd").checked) return renderTable(rows);
+  if (!$("l-ldd").checked) return;
   cluster.addLayers(rows.filter((p) => markers.has(p.id)).map((p) => markers.get(p.id)));
-
-  renderTable(rows);
 }
 
-function renderTable(rows) {
-  const withCoord = rows.filter((p) => p.lat != null).length;
-  $("count").textContent = t("count")(num(rows.length), num(withCoord));
-  $("rows").innerHTML = rows.slice(0, TABLE_LIMIT).map((p) => `
-    <tr class="${markers.has(p.id) ? "clickable" : ""}" data-id="${p.id}">
-      <td class="num">${p.id}</td><td>${day(p.date)}</td><td class="muted">${day(p.first_seen)}</td>
-      <td>${esc(admPlace(p.adm_tambon) || p.location)}</td>
-      <td><i class="dot" style="background:${PH_COLOR[p.ph] || "#9e9e9e"}"></i> ${esc(val(p.ph))}</td>
-      <td>${esc(val(p.om))}</td><td>${esc(val(p.p))}</td><td>${esc(val(p.k))}</td>
-      <td>${esc(p.texture_field || "")}</td>
-      <td class="num">${p.lat != null ? `${p.lat.toFixed(4)}, ${p.lon.toFixed(4)}${p.coord_source === "utm" ? "*" : ""}${markers.has(p.id) ? "" : ` <span title="${esc(t("qaFlags").far_from_province)}">⚑</span>`}` : "–"}</td>
-    </tr>`).join("");
-  $("more").textContent = rows.length > TABLE_LIMIT ? t("more")(num(TABLE_LIMIT), num(rows.length)) : "";
-}
 
 function renderStatic() {
   document.documentElement.lang = lang;
@@ -330,7 +312,6 @@ function renderStatic() {
   ];
   $("stats").innerHTML = items.map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
   $("ldd-info").textContent = t("lddInfo")(num(shown.length), num(points.length));
-  $("hidden-note").textContent = hiddenLdd ? t("hiddenNote")(num(hiddenLdd)) : "";
   $("updated").textContent = day([meta.updated_at, osdMeta?.updated_at].filter(Boolean).sort().pop());
 
   fillSelect("f-province", new Set(shown.map((p) => p.provinceName).filter(Boolean)), null, (v) => admName(v) || v);
@@ -402,16 +383,10 @@ async function load() {
 }
 
 for (const id of ["f-province", "f-ph", "f-om", "f-p", "f-k", "f-from", "f-to", "f-qa", "f-new"]) $(id).addEventListener("change", render);
-$("q").addEventListener("input", () => { clearTimeout(window._qt); window._qt = setTimeout(render, 250); });
 $("f-reset").addEventListener("click", () => {
-  for (const id of ["f-province", "f-ph", "f-om", "f-p", "f-k", "f-from", "f-to", "f-qa", "q"]) $(id).value = "";
+  for (const id of ["f-province", "f-ph", "f-om", "f-p", "f-k", "f-from", "f-to", "f-qa"]) $(id).value = "";
   $("f-new").checked = false;
   render();
-});
-$("rows").addEventListener("click", (e) => {
-  const tr = e.target.closest("tr[data-id]");
-  const mk = tr && markers.get(+tr.dataset.id);
-  if (mk) cluster.zoomToShowLayer(mk, () => mk.openPopup());
 });
 document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
 $("l-ldd").addEventListener("change", render);
