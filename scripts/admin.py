@@ -204,7 +204,9 @@ def match_names(province, amphoe=None, tambon=None):
         return None
     amphoes, tambons = children(pc)
     amp = _best(amphoe, amphoes.values()) if amphoe else None
-    if amp is None:
-        return pc
-    tb = _best(tambon, [a for c, a in tambons.items() if c.startswith(amp.code)]) if tambon else None
-    return tb.code if tb else amp.code
+    tb = _best(tambon, [a for c, a in tambons.items() if amp and c.startswith(amp.code)]) if tambon else None
+    if tb is None and tambon:
+        # อำเภอที่ระบุไม่มีตำบลนี้ (เช่น ตำบลถูกย้ายอำเภอ หรือกรอกอำเภอผิด): ใช้ตำบลชื่อตรงกันในจังหวัดเดียวกัน ถ้ามีแห่งเดียว
+        same = [a for a in tambons.values() if name_matches(a.code, tambon)]
+        tb = same[0] if len(same) == 1 else None
+    return tb.code if tb else amp.code if amp else pc
