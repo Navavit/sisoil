@@ -77,7 +77,7 @@ def get(layer, retries=5):
     })
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(f"{WFS}&{q}", headers={"User-Agent": "thai-soil-db/1.0 (open-data mirror)"})
+            req = urllib.request.Request(f"{WFS}&{q}", headers={"User-Agent": "SISoil/1.0 (open-data mirror; https://navavit.github.io/sisoil/)"})
             with urllib.request.urlopen(req, timeout=300) as r:
                 features = json.loads(r.read())["features"]
             time.sleep(1)

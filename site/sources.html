@@ -2,9 +2,10 @@
 <html lang="th">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" href="img/sisoil.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thai Soil Database – Data Sources</title>
-  <meta name="description" content="แหล่งข้อมูลทั้งหมดของฐานข้อมูลดินไทย พร้อมสัญญาอนุญาตและรอบการอัปเดต — All data sources of the Thai Soil Database with licences and update schedules.">
+  <title>SISoil · แหล่งข้อมูล (Data Sources)</title>
+  <meta name="description" content="แหล่งข้อมูลทั้งหมดของ SISoil ฐานข้อมูลดินไทย พร้อมสัญญาอนุญาตและรอบการอัปเดต — All data sources of SISoil with licences and update schedules.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=dev">
@@ -12,14 +13,16 @@
 <body>
   <header class="top">
     <div class="brand">
-      <span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="44" height="56"><img src="img/logo-sis.png" alt="SIS – School of Integrated Science" width="163" height="56"></span>
+      <img class="brand-mark" src="img/sisoil.svg" alt="" width="48" height="48">
       <div>
         <p class="sub"><a href="index.html" data-i18n="backToMap"></a></p>
         <h1 data-i18n="sourcesTitle"></h1>
         <p class="sub" data-i18n="sourcesIntro"></p>
       </div>
     </div>
+    </div>
     <nav class="downloads">
+      <span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="44" height="56"><img src="img/logo-sis.png" alt="วิทยาลัยบูรณาการศาสตร์ (School of Integrated Science)" width="163" height="56"></span>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="th">ไทย</button>
         <button type="button" data-lang="en">EN</button>
@@ -35,7 +38,10 @@
     <p data-i18n="citeText"></p>
   </section>
 
-  <footer class="muted small" data-i18n="footer"></footer>
+  <footer class="muted small">
+    <div class="foot-org"><span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="31" height="40"><img src="img/logo-sis.png" alt="วิทยาลัยบูรณาการศาสตร์ (School of Integrated Science)" width="117" height="40"></span><span data-i18n="madeBy"></span></div>
+    <p data-i18n="footer"></p>
+  </footer>
 
   <script src="i18n.js?v=dev"></script>
   <script src="sources.js?v=dev"></script>
@@ -52,7 +58,7 @@
 
     function render() {
       document.documentElement.lang = lang;
-      document.title = t("sourcesTitle");
+      document.title = `SISoil · ${t("sourcesTitle")}`;
       document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
       document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
       document.querySelector("a[href='index.html']").textContent = "← " + t("backToMap");

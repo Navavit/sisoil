@@ -1,7 +1,9 @@
 // ข้อความสองภาษา (ไทย / English)
 const I18N = {
   th: {
-    title: "ฐานข้อมูลดินไทย",
+    title: "SISoil",
+    brandSub: "ฐานข้อมูลดินไทย",
+    madeBy: "SISoil พัฒนาโดย วิทยาลัยบูรณาการศาสตร์ (SIS) มหาวิทยาลัยเกษตรศาสตร์",
     introLead: "เว็บนี้รวบรวมผลตรวจดินจริงทั่วประเทศไทยไว้บนแผนที่ ให้ทุกคนดูได้ว่าดินในพื้นที่ของตนเป็นอย่างไร — เปรี้ยวหรือด่าง มีอินทรียวัตถุและธาตุอาหารมากน้อยแค่ไหน",
     stdTitle: "ข้อมูลมาจากหลายแหล่ง และเก็บด้วยมาตรฐานต่างกัน",
     stdIntro: "แต่ละแหล่งเก็บตัวอย่างดิน วิเคราะห์ และรายงานผลต่างวิธีกัน ค่าจากต่างแหล่งจึงเทียบกันตรง ๆ ไม่ได้เสมอไป",
@@ -209,7 +211,9 @@ const I18N = {
     citeText: "เมื่อใช้ข้อมูลจากเว็บนี้ โปรดอ้างอิงหน่วยงานเจ้าของข้อมูลต้นทาง (เช่น กรมพัฒนาที่ดิน) และปฏิบัติตามสัญญาอนุญาตของแต่ละแหล่ง",
   },
   en: {
-    title: "Thai Soil Database",
+    title: "SISoil",
+    brandSub: "Thai Soil Database",
+    madeBy: "SISoil is developed by the School of Integrated Science (SIS), Kasetsart University",
     introLead: "This site puts real soil test results from across Thailand on one map, so anyone can see what the soil in their area is like — acidic or alkaline, and how much organic matter and nutrients it holds.",
     stdTitle: "Data come from several sources with different standards",
     stdIntro: "Each source samples, analyses and reports soil differently, so values from different sources are not always directly comparable.",

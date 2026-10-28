@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE = os.path.join(ROOT, "data", "ref", "landuse_state.json")
 BASE = "https://tswc.ldd.go.th/DownloadGIS/"
 PAGE = BASE + "Index_Lu.html"
-UA = {"User-Agent": "thai-soil-db/1.0 (open-data mirror)"}
+UA = {"User-Agent": "SISoil/1.0 (open-data mirror; https://navavit.github.io/sisoil/)"}
 
 # tswc.ldd.go.th ประกาศ IPv6 แต่บางเครือข่ายต่อไม่ได้
 _getaddrinfo = socket.getaddrinfo

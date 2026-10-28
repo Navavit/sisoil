@@ -2,9 +2,10 @@
 <html lang="th">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" href="img/sisoil.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Thai Soil Database</title>
-  <meta name="description" content="ฐานข้อมูลดินไทยจากแหล่งข้อมูลเปิด: soil profile WoSIS, ผลวิเคราะห์ดินจากห้องแล็บและจุดสำรวจของกรมพัฒนาที่ดิน แผนที่ดิน ขอบเขตปกครอง การใช้ที่ดิน และตรวจดินจากพิกัด — Open soil data for Thailand on one map with a soil check for any location.">
+  <title>SISoil · ฐานข้อมูลดินไทย</title>
+  <meta name="description" content="SISoil ฐานข้อมูลดินไทยจากแหล่งข้อมูลเปิด โดยวิทยาลัยบูรณาการศาสตร์ มหาวิทยาลัยเกษตรศาสตร์: soil profile WoSIS, ผลวิเคราะห์ดินจากห้องแล็บและจุดสำรวจของกรมพัฒนาที่ดิน แผนที่ดิน ขอบเขตปกครอง การใช้ที่ดิน และตรวจดินจากพิกัด — Open soil data for Thailand on one map with a soil check for any location.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
@@ -15,13 +16,15 @@
 <body>
   <header class="top">
     <div class="brand">
-      <span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="44" height="56"><img src="img/logo-sis.png" alt="SIS – School of Integrated Science" width="163" height="56"></span>
+      <img class="brand-mark" src="img/sisoil.svg" alt="" width="48" height="48">
       <div>
-        <h1 data-i18n="title"></h1>
+        <h1><span data-i18n="title"></span> <span class="brand-th" data-i18n="brandSub"></span></h1>
         <p class="sub"><span data-i18n="subtitle"></span> · <span data-i18n="updated"></span> <span id="updated">–</span></p>
       </div>
     </div>
+    </div>
     <nav class="downloads">
+      <span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="44" height="56"><img src="img/logo-sis.png" alt="วิทยาลัยบูรณาการศาสตร์ (School of Integrated Science)" width="163" height="56"></span>
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="th">ไทย</button>
         <button type="button" data-lang="en">EN</button>
@@ -199,7 +202,10 @@
     </ul>
   </section>
 
-  <footer class="muted small"><span data-i18n="footer"></span> · <a href="sources.html" data-i18n="sourcesLink"></a></footer>
+  <footer class="muted small">
+    <div class="foot-org"><span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="31" height="40"><img src="img/logo-sis.png" alt="วิทยาลัยบูรณาการศาสตร์ (School of Integrated Science)" width="117" height="40"></span><span data-i18n="madeBy"></span></div>
+    <p><span data-i18n="footer"></span> · <a href="sources.html" data-i18n="sourcesLink"></a></p>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>

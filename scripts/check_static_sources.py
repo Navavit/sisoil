@@ -15,7 +15,7 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATE = os.path.join(ROOT, "data", "ref", "sources_state.json")
-UA = {"User-Agent": "thai-soil-db/1.0 (open-data mirror)"}
+UA = {"User-Agent": "SISoil/1.0 (open-data mirror; https://navavit.github.io/sisoil/)"}
 # (key, ชื่อ, CKAN API, dataset id, สิ่งที่ต้องทำเมื่อเปลี่ยน)
 SOURCES = [
     ("cod-ab-tha", "ขอบเขตจังหวัด/อำเภอ/ตำบล (COD-AB, humdata)", "https://data.humdata.org/api/3/action/package_show",

@@ -257,3 +257,17 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .logos { display: inline-flex; align-items: center; gap: 12px; background: #ffffff; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--border); }
 .logos img { height: 56px; width: auto; display: block; }
 @media (max-width: 600px) { .logos img { height: 40px; } }
+
+/* แบรนด์ SISoil (แบบเดียวกับ BURANA): โลโก้ระบบ + ชื่อ, โลโก้ KU/SIS ด้านขวา; จอแคบย้ายไปท้ายหน้า */
+.brand-mark { flex: none; border-radius: 11px; display: block; }
+.brand h1 { margin: 0; letter-spacing: .01em; }
+.brand-th { font-weight: 500; font-size: .8em; color: var(--muted); margin-left: 4px; }
+.downloads { align-items: center; }
+.downloads .logos img { height: 40px; }
+.foot-org { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+.foot-org .logos img { height: 32px; }
+footer p { margin: 4px 0 0; }
+@media (max-width: 640px) {
+  .downloads .logos { display: none; }
+  .brand-mark { width: 40px; height: 40px; }
+}

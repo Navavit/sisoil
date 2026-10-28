@@ -86,7 +86,7 @@ def call(start, end, delay, page=1, retries=5):
                                 **({"page": page} if page > 1 else {})})
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(f"{API}?{q}", headers={"User-Agent": "thai-soil-db/1.0 (open-data mirror)"})
+            req = urllib.request.Request(f"{API}?{q}", headers={"User-Agent": "SISoil/1.0 (open-data mirror; https://navavit.github.io/sisoil/)"})
             with urllib.request.urlopen(req, timeout=180) as r:
                 body = r.read().decode("utf-8", "replace").strip()
             time.sleep(delay)

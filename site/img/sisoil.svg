@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SISoil">
+  <defs><clipPath id="r"><rect width="64" height="64" rx="14"/></clipPath></defs>
+  <g clip-path="url(#r)">
+    <rect width="64" height="64" fill="#1f6b67"/>
+    <path d="M0 34c10-4 21-4 32 0s22 4 32 0V64H0z" fill="#d6a062"/>
+    <path d="M0 44c10-3 21-3 32 0s22 3 32 0V64H0z" fill="#a96a39"/>
+    <path d="M0 54c10-2 21-2 32 0s22 2 32 0V64H0z" fill="#744622"/>
+    <circle cx="19" cy="49" r="2.4" fill="#fff" opacity=".9"/>
+    <circle cx="45" cy="58" r="2.4" fill="#fff" opacity=".9"/>
+  </g>
+  <path d="M32 34V19" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M31 23c-1.5-6.5-7.5-9.5-14-8.5 1 6.5 7 10 14 8.5z" fill="#d4b03c"/>
+  <path d="M33 20c1.5-6.5 7.5-9.5 14-8.5-1 6.5-7 10-14 8.5z" fill="#e8cb5c"/>
+</svg>
