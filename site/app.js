@@ -196,6 +196,7 @@ function renderLegend() {
   sel.innerHTML = Object.keys(COLOR_VARS).map((k) => `<option value="${k}">${esc(t("vars")[k])}</option>`).join("");
   sel.value = cur;
   const items = scaleItems(colorVar);
+  $("pt-legend-title").textContent = `${t("pointColors")}: ${t("vars")[colorVar]}`;
   const sources = ["wosis", "osd", "ldd"].filter((s) => def[s]).map((s) => t({ wosis: "layerWosis", osd: "layerOsd", ldd: "layerLdd" }[s]));
   $("legend").innerHTML = items.map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("") +
     `<li><i style="background:${NO_DATA};opacity:.5"></i>${esc(t("noValue"))}</li>` +
@@ -298,6 +299,7 @@ function renderStatic() {
   document.title = t("title");
   document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
   document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => { el.title = t(el.dataset.i18nTitle); });
   document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
 
   const hiddenLdd = points.length - shown.length;
@@ -392,7 +394,7 @@ $("rows").addEventListener("click", (e) => {
 });
 document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
 $("l-ldd").addEventListener("change", render);
-$("color-by").addEventListener("change", () => { colorVar = $("color-by").value; restyle(); });
+$("color-by").addEventListener("change", () => { colorVar = $("color-by").value; restyle(); rasterLegend(); });
 $("l-osd").addEventListener("change", async () => {
   if ($("l-osd").checked) {
     if (!osdSites.length) await loadOsdYear($("osd-year").value);

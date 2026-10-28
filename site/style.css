@@ -225,3 +225,30 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .map-legend .sg-legend { display: block; max-height: 240px; }
 .map-legend .legend.lc { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; font-size: 12px; }
 @media (max-width: 800px) { .map-legend { max-width: 190px; max-height: 45vh; } }
+
+/* แถบชั้นข้อมูลแบบกระชับ (สูงไม่เกินแผนที่) */
+.filters { padding: 12px 14px; max-height: 640px; overflow: auto; }
+.filters h2 { margin: 0; }
+.filters h3 { margin: 10px 0 4px; }
+.filters label { margin-bottom: 6px; }
+.filters .info { font-size: .78rem; color: var(--muted); margin: 0 0 0 22px; line-height: 1.35; }
+.filters > .info { margin: 2px 0 8px; }
+.filters label.check { margin-bottom: 2px; }
+.layer { padding: 6px 0; }
+.layer label.check .badge { margin-left: auto; }
+.layer details summary { margin: 4px 0 6px 22px; }
+.row-label { display: flex !important; align-items: center; gap: 8px; }
+.row-label > span { flex: none; }
+.filters .row-label select, .filters .row-label input { margin-top: 0; flex: 1; min-width: 0; }
+.layer-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.filters select.mini { width: auto; display: inline-block; margin: 0; padding: 2px 4px; font-size: .82rem; }
+.grid2, .grid3 { display: grid; gap: 2px 8px; }
+.grid2 { grid-template-columns: 1fr 1fr; }
+.grid3 { grid-template-columns: repeat(3, 1fr); }
+.map-legend .legend { font-size: 12px; }
+@media (max-width: 800px) { .filters { max-height: none; } }
+.legend li.muted { display: block; }
+.layer-row label.check { flex-wrap: nowrap; align-items: flex-start; }
+.layer-row label.check input { margin-top: 4px; }
+.map-legend { max-height: min(420px, 62vh); }
+.row-label[hidden] { display: none !important; }

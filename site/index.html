@@ -67,28 +67,35 @@
   <main class="layout">
     <aside class="filters">
       <h2 data-i18n="layers"></h2>
-      <p class="muted small" data-i18n="layersNote"></p>
+      <p class="info" data-i18n="layersNote"></p>
+      <label class="row-label"><span data-i18n="colorBy"></span><select id="color-by"></select></label>
 
       <div class="layer">
         <label class="check"><input id="l-wosis" type="checkbox" checked> <b data-i18n="layerWosis"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
-        <p class="muted small" id="wosis-info"></p>
+        <p class="info" id="wosis-info"></p>
       </div>
       <div class="layer">
-        <label class="check"><input id="l-osd" type="checkbox" checked> <b data-i18n="layerOsd"></b> <span class="badge badge-used" data-i18n="measured"></span></label>
-        <label><span data-i18n="osdYear"></span><select id="osd-year"></select></label>
-        <p class="muted small" id="osd-info"></p>
+        <div class="layer-row">
+          <label class="check"><input id="l-osd" type="checkbox" checked> <b data-i18n="layerOsd"></b></label>
+          <select id="osd-year" class="mini" data-i18n-title="osdYear"></select>
+        </div>
+        <p class="info" id="osd-info"></p>
       </div>
       <div class="layer">
         <label class="check"><input id="l-ldd" type="checkbox"> <b data-i18n="layerLdd"></b> <span class="badge badge-planned" data-i18n="classesOnly"></span></label>
-        <p class="muted small" id="ldd-info"></p>
+        <p class="info" id="ldd-info"></p>
         <details>
           <summary data-i18n="filters"></summary>
-          <label><span data-i18n="province"></span><select id="f-province"><option value="" data-i18n="all"></option></select></label>
-          <label><span data-i18n="ph"></span><select id="f-ph"><option value="" data-i18n="all"></option></select></label>
-          <label><span data-i18n="om"></span><select id="f-om"><option value="" data-i18n="all"></option></select></label>
-          <label><span data-i18n="p"></span><select id="f-p"><option value="" data-i18n="all"></option></select></label>
-          <label><span data-i18n="k"></span><select id="f-k"><option value="" data-i18n="all"></option></select></label>
-          <div class="row">
+          <div class="grid2">
+            <label><span data-i18n="province"></span><select id="f-province"><option value="" data-i18n="all"></option></select></label>
+            <label><span>pH</span><select id="f-ph"><option value="" data-i18n="all"></option></select></label>
+          </div>
+          <div class="grid3">
+            <label><span>OM</span><select id="f-om"><option value="" data-i18n="all"></option></select></label>
+            <label><span>P</span><select id="f-p"><option value="" data-i18n="all"></option></select></label>
+            <label><span>K</span><select id="f-k"><option value="" data-i18n="all"></option></select></label>
+          </div>
+          <div class="grid2">
             <label><span data-i18n="yearFrom"></span><input id="f-from" type="number" min="1990" max="2100" placeholder="CE"></label>
             <label><span data-i18n="yearTo"></span><input id="f-to" type="number" min="1990" max="2100" placeholder="CE"></label>
           </div>
@@ -99,25 +106,27 @@
       </div>
 
       <h3 data-i18n="areaLayers"></h3>
-      <label class="check"><input id="l-prov" type="checkbox" checked> <span data-i18n="layerProvince"></span></label>
-      <label class="check"><input id="l-admin" type="checkbox"> <span data-i18n="layerAdmin"></span></label>
-      <p class="muted small" id="admin-info"></p>
-      <label><span data-i18n="rasterLayer"></span><select id="raster"></select></label>
-      <div id="raster-opts" hidden>
-        <label><span data-i18n="opacity"></span><input id="raster-opacity" type="range" min="0.2" max="1" step="0.1" value="0.7"></label>
+      <div class="grid2">
+        <label class="check"><input id="l-prov" type="checkbox" checked> <span data-i18n="layerProvince"></span></label>
+        <label class="check"><input id="l-admin" type="checkbox"> <span data-i18n="layerAdmin"></span></label>
       </div>
-      <label class="check"><input id="l-lc" type="checkbox"> <span data-i18n="layerLandcover"></span></label>
-      <p class="muted small" id="lc-status"></p>
-      <div id="lc-opts" hidden>
-        <label><span data-i18n="lcYear"></span><select id="lc-year"></select></label>
-        <p class="muted small" data-i18n="lcNote"></p>
+      <p class="info" id="admin-info"></p>
+      <div class="layer-row">
+        <label class="check"><input id="l-lc" type="checkbox"> <span data-i18n="layerLandcover"></span></label>
+        <span id="lc-opts" hidden><select id="lc-year" class="mini" data-i18n-title="lcYear"></select></span>
       </div>
-
-      <h3 data-i18n="legend"></h3>
-      <label><span data-i18n="colorBy"></span><select id="color-by"></select></label>
-      <ul class="legend" id="legend"></ul>
+      <p class="info" id="lc-status"></p>
+      <label class="row-label"><span data-i18n="rasterLayer"></span><select id="raster"></select></label>
+      <label class="row-label" id="raster-opts" hidden><span data-i18n="opacity"></span><input id="raster-opacity" type="range" min="0.2" max="1" step="0.1" value="0.7"></label>
     </aside>
     <div id="map"></div>
+    <div class="map-legend" id="map-legend">
+      <details id="map-legend-details" open>
+        <summary data-i18n="mapLegend"></summary>
+        <section><b id="pt-legend-title"></b><ul class="legend" id="legend"></ul></section>
+        <div id="ml-extra"></div>
+      </details>
+    </div>
   </main>
 
   <section class="panel" id="check">

@@ -133,16 +133,15 @@ function fillRasterSelect() {
 const MapLegend = L.Control.extend({
   options: { position: "bottomleft" },
   onAdd() {
-    const d = L.DomUtil.create("div", "map-legend");
-    d.id = "map-legend";
-    d.hidden = true;
+    // กล่องอยู่ใน index.html (สีของจุด + ส่วนที่ rasterLegend เติม) ย้ายมาเป็น control บนแผนที่
+    const d = $("map-legend");
     L.DomEvent.disableClickPropagation(d);
     L.DomEvent.disableScrollPropagation(d);
     return d;
   },
 });
 map.addControl(new MapLegend());
-let legendOpen = true;
+if (window.innerWidth < 800) $("map-legend-details").open = false;   // จอเล็ก: พับไว้ก่อน
 
 // สไตล์ SLD ให้ WMS ของ ISRIC วาดด้วยช่วงชั้นและสีเดียวกับจุด (สีของแต่ละรายการใช้ตั้งแต่ค่านั้นถึงรายการถัดไป)
 function sgSld(sg) {
@@ -160,19 +159,16 @@ function rasterLegend() {
   const parts = [];
   if (rasterLayer && sg) {
     parts.push(`<section><b>${esc(lang === "en" ? sg[4] : sg[3])}</b>
-      ${scaleList(sg[5])}<p>ISRIC SoilGrids 2.0 · CC BY 4.0 · ${t("rasterEstimate")}</p></section>`);
+      ${sg[5] === colorVar ? `<p>${t("sameAsPoints")}</p>` : scaleList(sg[5])}<p>ISRIC SoilGrids 2.0 · CC BY 4.0 · ${t("rasterEstimate")}</p></section>`);
   } else if (rasterLayer && im) {
     parts.push(`<section><b>${esc(lang === "en" ? im.en : im.th)}</b>
-      ${scaleList(im.scale)}<p>${esc(im.source)} · ${esc(im.license)} · ${t("rasterEstimate")}</p></section>`);
+      ${im.scale === colorVar ? `<p>${t("sameAsPoints")}</p>` : scaleList(im.scale)}<p>${esc(im.source)} · ${esc(im.license)} · ${t("rasterEstimate")}</p></section>`);
   }
   if ($("l-lc").checked) {
     parts.push(`<section><b>${t("layerLandcover")} · ${$("lc-year").value}</b><ul class="legend lc">
-      ${LC_CLASSES.map(([c, k]) => `<li><i style="background:${c};border-radius:2px"></i>${esc(t(k))}</li>`).join("")}</ul></section>`);
+      ${LC_CLASSES.map(([c, k]) => `<li><i style="background:${c};border-radius:2px"></i>${esc(t(k))}</li>`).join("")}</ul><p>${t("lcNote")}</p></section>`);
   }
-  const box = $("map-legend");
-  box.hidden = !parts.length;
-  box.innerHTML = parts.length ? `<details ${legendOpen ? "open" : ""}><summary>${t("mapLegend")}</summary>${parts.join("")}</details>` : "";
-  box.querySelector("details")?.addEventListener("toggle", (e) => { legendOpen = e.target.open; });
+  $("ml-extra").innerHTML = parts.join("");
 }
 function setRaster() {
   if (rasterLayer) map.removeLayer(rasterLayer);
