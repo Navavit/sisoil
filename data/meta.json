@@ -1,15 +1,15 @@
 {
  "source": "กรมพัฒนาที่ดิน (Land Development Department) – Soil Survey Public",
  "source_url": "https://soilservice.ldd.go.th/soilsurveypublic/",
- "updated_at": "2026-10-28T06:58:53+00:00",
- "total": 26669,
- "with_coordinates": 24584,
+ "updated_at": "2026-10-28T08:10:18+00:00",
+ "total": 26674,
+ "with_coordinates": 24589,
  "provinces": 77,
  "details_pending": 0,
  "last_change": {
   "date": "2026-10-28",
-  "total": 26669,
-  "added": 0,
+  "total": 26674,
+  "added": 5,
   "removed": 0,
   "modified": 0,
   "details_pending": 0
@@ -65,19 +65,19 @@
   },
   "ph_unknown": {
    "description": "pH เป็น Other หรือว่าง",
-   "count": 2380
+   "count": 2382
   },
   "nutrient_unknown": {
    "description": "OM/P/K อย่างน้อยหนึ่งค่าเป็น Other หรือว่าง",
-   "count": 23841
+   "count": 23846
   },
   "duplicate": {
    "description": "พิกัดและวันที่ซ้ำกับจุดอื่น (ไม่แสดงบนแผนที่)",
-   "count": 895
+   "count": 897
   },
   "shared_coords": {
    "description": "พิกัดซ้ำกับจุดอื่นหรือแหล่งอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
-   "count": 2590
+   "count": 2596
   }
  }
 }
