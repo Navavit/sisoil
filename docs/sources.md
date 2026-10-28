@@ -2,13 +2,24 @@
 
 ## ที่ใช้อยู่ในระบบ
 
-| แหล่ง | ประเภท | วิธีดึง | สถานะ |
-|---|---|---|---|
-| กรมพัฒนาที่ดิน – Soil Survey Public<br><https://soilservice.ldd.go.th/soilsurveypublic/> | จุดสำรวจ (pH, OM, P, K, เนื้อดิน, พิกัด) | `scripts/fetch_ldd.py` ผ่าน `POST /SoilSurveyAPI/api/SP` ใช้เฉพาะ procedure สาธารณะแบบอ่านอย่างเดียว | ใช้งาน |
-| กรมพัฒนาที่ดิน – ผลวิเคราะห์ดิน (osd01) | ค่าตัวเลข pH, EC, OM, P, K | `scripts/fetch_osd.py` (รายละเอียดด้านล่าง) | ใช้งาน |
-| ISRIC WoSIS<br><https://www.isric.org/explore/wosis> | soil profile แยกชั้นความลึก + ผลแล็บ | `scripts/fetch_wosis.py` ผ่าน WFS (รายละเอียดด้านล่าง) | ใช้งาน |
-| กรมพัฒนาที่ดิน – บัตรดินดี (osd02) | ผลวิเคราะห์รายตัวอย่าง ระดับตำบล | `scripts/fetch_dindee.py` ดาวน์โหลด CSV เมื่อ ETag เปลี่ยน | ใช้งาน |
-| Google Earth Engine – OpenLandMap, SoilGrids, FAO GSOCmap | ค่าที่จุดสำรวจ | `scripts/sample_gee.py` | ใช้งาน |
+**ข้อมูลดิน** (เรียงตามความน่าเชื่อถือ)
+
+| แหล่ง | ประเภท | วิธีดึง |
+|---|---|---|
+| ISRIC WoSIS<br><https://www.isric.org/explore/wosis> | soil profile แยกชั้นความลึก + ผลแล็บ | `scripts/fetch_wosis.py` ผ่าน WFS |
+| กรมพัฒนาที่ดิน – ผลวิเคราะห์ดิน (osd01) | ค่าตัวเลข pH, EC, OM, P, K | `scripts/fetch_osd.py` |
+| กรมพัฒนาที่ดิน – Soil Survey Public<br><https://soilservice.ldd.go.th/soilsurveypublic/> | จุดสำรวจภาคสนาม (ระดับ pH, OM, P, K, เนื้อดิน) | `scripts/fetch_ldd.py` ผ่าน procedure สาธารณะแบบอ่านอย่างเดียว |
+| กรมพัฒนาที่ดิน – บัตรดินดี (osd02) | ผลตรวจดินของเกษตรกร ระดับตำบล | `scripts/fetch_dindee.py` ดาวน์โหลดเมื่อ ETag เปลี่ยน |
+| Google Earth Engine – OpenLandMap, SoilGrids, FAO GSOCmap | ค่าที่จุดข้อมูล + ภาพแผนที่ดินทั้งประเทศ | `scripts/sample_gee.py`, `scripts/build_rasters.py` |
+| ISRIC SoilGrids WMS | แผนที่ดิน 250 m และค่าที่จุดในฟังก์ชันตรวจดิน | เว็บเรียกตรง (GetMap ผ่าน SLD, GetFeatureInfo) |
+
+**ชั้นพื้นที่**
+
+| แหล่ง | ประเภท | วิธีใช้ |
+|---|---|---|
+| OCHA / กรมแผนที่ทหาร – COD-AB (humdata)<br><https://data.humdata.org/dataset/cod-ab-tha> | ขอบเขตจังหวัด/อำเภอ/ตำบล (CC BY-IGO) | `scripts/build_boundaries.py` — ขอบเขตหลักของทุกชั้น (ตรวจพิกัด ชื่อพื้นที่ ชั้นแผนที่) |
+| Esri / Impact Observatory – Sentinel-2 10 m Land Cover | การใช้ที่ดินรายปี (CC BY 4.0) | เว็บเรียก ImageServer ตรง อ่านปีที่มีจาก timeInfo |
+| กรมพัฒนาที่ดิน – ชุดดิน, กลุ่มชุดดิน, การใช้ที่ดิน | แผนที่ (CC BY-NC-ND) | ให้เฉพาะลิงก์ + เฝ้าดูฉบับใหม่จาก metadata |
 
 ### Procedure ที่ใช้ (อ่านอย่างเดียว)
 
@@ -32,10 +43,13 @@ API: `https://lddcatalog.ldd.go.th/api/3/action/package_search?fq=groups:soil`
 | `ldd_11_01` ข้อมูลชุดดิน 1:25,000 | SHP (.rar) รายจังหวัด 77 ไฟล์ — `tswc.ldd.go.th/DownloadGIS/Index_Soil.html` | **CC BY-NC-ND** |
 | `oss01` กลุ่มชุดดิน 62 กลุ่ม 1:25,000 | SHP (.rar) รายจังหวัด 78 ไฟล์ + พจนานุกรมข้อมูล CSV | **CC BY-NC-ND** |
 | `osd01` การตรวจวิเคราะห์ดิน | JSON API `osd101.ldd.go.th/api/data.php` | CC BY |
-| ชุดอื่น: ความเหมาะสมของที่ดิน, การชะล้างพังทลาย, ดินถล่ม, แล้งซ้ำซาก, การใช้ที่ดิน | SHP | CC BY-NC-ND |
+| `ldd_21_01` การใช้ที่ดิน | ZIP รายจังหวัด 77 ไฟล์ — `tswc.ldd.go.th/DownloadGIS/Index_Lu.html` | **CC BY-NC-ND** |
+| ชุดอื่น: ความเหมาะสมของที่ดิน, การชะล้างพังทลาย, ดินถล่ม, แล้งซ้ำซาก | SHP | CC BY-NC-ND |
 
 - ไฟล์ SHP ให้ `Last-Modified`/`ETag` ผ่าน HEAD จึงตรวจการเปลี่ยนแปลงได้โดยไม่ต้องดาวน์โหลด (เช่น `sr_cmi.rar` 14 MB, แก้ล่าสุด 29 เม.ย. 2024)
-- **ND (No Derivatives)**: ห้ามเผยแพร่ฉบับแปลง/ดัดแปลง จึงไม่ควรนำ SHP หรือฉบับแปลงขึ้น repo สาธารณะ ให้เก็บเฉพาะ metadata และลิงก์ ส่วนตัวไฟล์ดาวน์โหลดมาใช้ในเครื่อง (`raw/` ซึ่งอยู่ใน .gitignore)
+- **ND (No Derivatives)**: ห้ามเผยแพร่ฉบับแปลง/ดัดแปลง จึงไม่นำ SHP หรือฉบับแปลงขึ้น repo สาธารณะ เก็บเฉพาะ metadata และลิงก์ ไฟล์จริงใช้วิเคราะห์ในเครื่องเท่านั้น
+- **การใช้ที่ดิน** สำรวจหมุนเวียนปีละ ~12–16 จังหวัด (ฉบับปัจจุบันปี 2563–2568) และเว็บต้นทางมีเฉพาะฉบับล่าสุด ปีสำรวจอยู่ในชื่อไฟล์ใน ZIP (เช่น `LU_CMI_2567.shp`) อ่านได้จากท้ายไฟล์ด้วย HTTP Range โดยไม่ต้องดาวน์โหลด → `data/ref/landuse_state.json`
+- ไฟล์ของ LDD ไม่สม่ำเสมอ: ชื่อไฟล์ใน ZIP ปน UTF-8/TIS-620, บางไฟล์มี ZIP ซ้อน หรือชุดไฟล์ซ้ำ, `.cpg` ไม่ตรงกับรหัสจริง, ขอบเขตจังหวัดที่แนบมาไม่ตรงกับ humdata
 
 ### ผลวิเคราะห์ดิน (osd101) — ค่าตัวเลขจริง
 
@@ -57,7 +71,8 @@ WFS: `https://maps.isric.org/mapserv?map=/map/wosis_latest.map` ชั้น `wo
 - สัญญาอนุญาตระบุ **ต่อแถว** (`licence`): CC BY 3.0/4.0, CC0, U.S. Public Domain — สคริปต์ตัดชุดที่เป็น NC/ND ออกอัตโนมัติ (ตอนนี้ไม่มี)
 - 216 profile ไม่มีปีที่สำรวจ, ทุก profile มีพิกัด (ความคลาดเคลื่อนระบุใน `positional_uncertainty`)
 - `value_avg` คือค่าเฉลี่ยเมื่อชั้นเดียวมีหลายค่า, วิธีวิเคราะห์อยู่ใน `method_options`
-- ยังไม่ได้ตัดซ้ำกับ LDD (profile ใน WISE บางส่วนมาจาก LDD เดิม)
+- profile ซ้ำข้ามชุดข้อมูล (WISE กับ US-NCSS/ISIS) ถูกติดธง `duplicate`; เทียบกับจุดสำรวจ LDD แล้วไม่พบจุดเดียวกัน (สำรวจคนละยุค)
+- ตำบลจากขอบเขต humdata, พิกัดซ้ำกับ profile หรือแหล่งอื่นติดธง `shared_coords`
 
 ### Google Earth Engine (ตัวแปรร่วม / เทียบค่า)
 
@@ -68,8 +83,9 @@ WFS: `https://maps.isric.org/mapserv?map=/map/wosis_latest.map` ชั้น `wo
 | `OpenLandMap/SOL/SOL_CLAY-WFRACTION_USDA-3A1A1A_M/v02` (+ SAND) | ดินเหนียว / ทราย |
 | `OpenLandMap/SOL/SOL_TEXTURE-CLASS_USDA-TT_M/v02` | ชั้นเนื้อดิน USDA |
 | `projects/soilgrids-isric/*_mean` (community catalog) | SoilGrids 2.0 |
+| `projects/sat-io/open-datasets/FAO/GSOCMAP1-5-0` | FAO GSOCmap v1.5 คาร์บอนสะสม 0–30 cm |
 
-แนวทาง: สุ่มค่าที่จุดสำรวจด้วย `sampleRegions` ต้องใช้บัญชี GEE และ Cloud project
+แนวทาง: สุ่มค่าที่จุดข้อมูลด้วย `reduceRegions` (ผลวิเคราะห์ดินใช้พิกัดเป็น key ที่เดียวกันหลายวันสุ่มครั้งเดียว) และส่งออกภาพทั้งประเทศ ~1 km สำหรับชั้นแผนที่ (จัดชั้นด้วย `site/scales.js`) ใช้ Earth Engine แบบไม่เชิงพาณิชย์
 
 ### data.go.th — ผลการค้นหา (ต.ค. 2026)
 
@@ -84,7 +100,7 @@ WFS: `https://maps.isric.org/mapserv?map=/map/wosis_latest.map` ชั้น `wo
 |---|---|---|
 | FAO HWSD v2.0 | Raster ~1 km | หน่วยแผนที่ดินโลก |
 | FAO GSP (GSASmap, GSNmap) | Raster | ยังไม่มีใน Earth Engine (GSOCmap ใช้แล้ว) |
-| LDD แผนที่กลุ่มชุดดิน / ชุดดิน | Polygon | ต้องตรวจช่องทางดาวน์โหลด/ขอข้อมูล |
+| LDD แผนที่ชุดดิน / กลุ่มชุดดิน / การใช้ที่ดิน บนเว็บ | Polygon | รอการอนุญาตจาก LDD (CC BY-NC-ND) ตอนนี้ให้ลิงก์ |
 | data.go.th ตารางชุดดินรายจังหวัด | CSV/XLSX | ค่าบรรยายของชุดดิน ไม่ใช่ค่าวัด รูปแบบต่างกันทุกจังหวัด |
 | GISTDA ความชื้นในดินรายสัปดาห์ | API | ต้องใช้ API key, เป็นอนุกรมเวลา |
 | Agri-Map Online | แผนที่ความเหมาะสม | ตัวแปรร่วม |

@@ -155,7 +155,7 @@ const SOURCES = [
     access: { th: "ดาวน์โหลดครั้งเดียว แล้วย่อรูป (~50–100 m) เก็บใน data/ref/boundaries", en: "One-off download, simplified (~50–100 m) into data/ref/boundaries" },
     license: { th: "CC BY-IGO", en: "CC BY-IGO" },
     update: { th: "เมื่อแหล่งออกฉบับใหม่", en: "When a new edition is released" },
-    note: { th: "ใช้ตรวจว่าพิกัดอยู่ในจังหวัด/อำเภอที่ระบุ แสดงเป็นชั้นบนแผนที่ และหาตำบลในฟังก์ชันตรวจดิน", en: "Used to check that coordinates fall in the stated province/district, as map layers, and to find the sub-district in the soil check" },
+    note: { th: "ขอบเขตหลักของทุกชั้น: ตรวจพิกัด, ชื่อจังหวัด/อำเภอ/ตำบลที่แสดงบนเว็บ, จับคู่บัตรดินดี, ชั้นแผนที่ และตรวจดินจากพิกัด", en: "Master boundaries for every layer: coordinate checks, place names shown on the site, Din Dee matching, map layers and the soil check" },
   },
   {
     id: "esri-landcover",
@@ -180,8 +180,8 @@ const SOURCES = [
     fields: { th: "ประเภทการใช้ที่ดินละเอียดตามรหัส LDD", en: "Detailed LDD land-use classes" },
     access: { th: "ดาวน์โหลด .rar จาก tswc.ldd.go.th", en: ".rar download from tswc.ldd.go.th" },
     license: { th: "CC BY-NC-ND", en: "CC BY-NC-ND" },
-    update: { th: "", en: "" },
-    note: { th: "สัญญาอนุญาตห้ามดัดแปลง และไม่มีบริการแผนที่ (WMS) — ให้เฉพาะลิงก์", en: "No-derivatives licence and no map service (WMS) — linked only" },
+    update: { th: "ตรวจปีสำรวจรายจังหวัดทุกเดือน (metadata)", en: "Survey year per province checked monthly (metadata)" },
+    note: { th: "สัญญาอนุญาตห้ามดัดแปลง และไม่มีบริการแผนที่ (WMS) — ให้เฉพาะลิงก์ · สำรวจหมุนเวียนปีละ ~12–16 จังหวัด ระบบติดตามปีสำรวจของแต่ละจังหวัดทุกเดือน", en: "No-derivatives licence and no map service (WMS) — linked only · surveyed on a rolling cycle of ~12–16 provinces a year; survey years tracked monthly" },
   },
   {
     id: "osm",
