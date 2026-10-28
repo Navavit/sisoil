@@ -251,3 +251,9 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .map-legend { max-height: min(420px, 62vh); }
 .row-label[hidden] { display: none !important; }
 .dates-help ul { margin: 2px 0 4px; padding-left: 18px; }
+
+/* โลโก้ KU และ SIS (พื้นขาวเสมอ ให้อ่านได้ในโหมดมืด) */
+.brand { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.logos { display: inline-flex; align-items: center; gap: 12px; background: #ffffff; padding: 6px 10px; border-radius: 10px; border: 1px solid var(--border); }
+.logos img { height: 56px; width: auto; display: block; }
+@media (max-width: 600px) { .logos img { height: 40px; } }
