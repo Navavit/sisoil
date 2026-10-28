@@ -124,11 +124,12 @@ def main():
                     row["id"] = osd_id(float(row["lat"]), float(row["lon"]))   # แถวเก่าที่ใช้ id ของ site
                 done[(row["source"], row["id"])] = row
 
-    # จุดเดียวกันพิกัดเปลี่ยน (เช่น แก้โซน UTM) หรือยังไม่มีชั้นที่เพิ่มใหม่ ต้องสุ่มใหม่
+    # จุดเดียวกันพิกัดเปลี่ยน (เช่น แก้โซน UTM) หรือมีชั้นข้อมูลใหม่ ต้องอ่านค่าใหม่
     todo = [p for p in points()
             if (p[0], p[1]) not in done
             or abs(float(done[(p[0], p[1])]["lat"]) - p[2]) > 1e-5 or abs(float(done[(p[0], p[1])]["lon"]) - p[3]) > 1e-5
-            or any(done[(p[0], p[1])].get(c) in (None, "") for c, *_ in LAYERS)]
+            # ชั้นที่เพิ่มใหม่ (คอลัมน์ยังไม่มีในไฟล์) — ค่าว่างคืออ่านแล้วแต่แผนที่ไม่มีค่า (เมือง น้ำ) ไม่ต้องอ่านซ้ำ
+            or any(c not in done[(p[0], p[1])] for c, *_ in LAYERS)]
     todo = todo[: args.max_points]
     print(f"Points to sample: {len(todo)} (already done: {len(done)})")
     if not todo:
