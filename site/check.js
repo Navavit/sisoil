@@ -1,10 +1,6 @@
 // ตรวจดินจากพิกัด: ค่าวัดจริงใกล้เคียง (LDD, ผลวิเคราะห์ดิน, WoSIS), ค่าประมาณจากแผนที่ดินโลก, บัตรดินดีของตำบล
-// ใช้ตัวแปรร่วมจาก app.js: map, t, esc, num, day, val, phColor, $ และ areaAt จาก areas.js
-const PH_CLASSES = [
-  [3.5, "กรดรุนแรงที่สุด"], [4.5, "กรดรุนแรงมาก"], [5.1, "กรดจัดมาก"], [5.6, "กรดจัด"], [6.1, "กรดปานกลาง"],
-  [6.6, "กรดเล็กน้อย"], [7.4, "เป็นกลาง"], [7.9, "ด่างเล็กน้อย"], [8.5, "ด่างปานกลาง"], [9.1, "ด่างจัด"], [99, "ด่างจัดมาก"],
-];
-const phClass = (v) => (v == null ? "" : PH_CLASSES.find(([max]) => v < max)[1]);
+// ใช้ตัวแปรร่วมจาก app.js: map, t, esc, num, day, val, phColor, classIndex, $; SCALES จาก scales.js; areaAt จาก areas.js
+const phClass = (v) => (v == null ? "" : SCALES.ph.levels[classIndex("ph", v)]);
 const SG_PROPS = [["phh2o", "pH"], ["soc", "SOC g/kg"], ["clay", "Clay %"], ["silt", "Silt %"], ["sand", "Sand %"], ["cec", "CEC"]];
 const SG_DEPTHS = ["0-5cm", "5-15cm", "15-30cm"];
 const GEE_LABELS = {
@@ -166,17 +162,10 @@ function pinPopup() {
 const bar = (counts) => {
   const total = Object.values(counts).reduce((a, b) => a + b, 0);
   if (!total) return "–";
-  const order = PH_CLASSES.map((x) => x[1]);
+  const order = SCALES.ph.levels;
   return `<div class="bar">${Object.entries(counts).sort((a, b) => order.indexOf(a[0]) - order.indexOf(b[0]))
-    .map(([c, n]) => `<i style="flex:${n};background:${phColor(phMid(c))}" title="${esc(val(c))}: ${n}"></i>`).join("")}</div>`;
+    .map(([c, n]) => `<i style="flex:${n};background:${SCALES.ph.colors[order.indexOf(c)] || "#9e9e9e"}" title="${esc(val(c))}: ${n}"></i>`).join("")}</div>`;
 };
-// ค่ากลางของระดับ pH ไว้ใช้เลือกสี
-function phMid(c) {
-  const i = PH_CLASSES.findIndex((x) => x[1] === c);
-  if (i < 0) return null;
-  const lo = i ? PH_CLASSES[i - 1][0] : 3;
-  return (lo + Math.min(PH_CLASSES[i][0], 10)) / 2;
-}
 const topClasses = (counts, k = 3) => {
   const total = Object.values(counts).reduce((a, b) => a + b, 0);
   return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, k)

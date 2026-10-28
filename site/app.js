@@ -1,10 +1,6 @@
 // แผนที่และตารางจุดสำรวจดิน (อ่านไฟล์ JSON ที่ระบบอัปเดตอัตโนมัติสร้างไว้)
-const PH_ORDER = [
-  ["กรดรุนแรงมากที่สุด", "#7f0000"], ["กรดรุนแรงมาก", "#b30000"], ["กรดจัดมาก", "#d7301f"],
-  ["กรดจัด", "#ef6548"], ["กรดปานกลาง", "#fc8d59"], ["กรดเล็กน้อย", "#fdbb84"],
-  ["เป็นกลาง", "#9ccc65"], ["ด่างเล็กน้อย", "#6baed6"], ["ด่างปานกลาง", "#3182bd"],
-  ["ด่างจัด", "#08519c"], ["Other", "#9e9e9e"],
-];
+// ระดับ pH ของจุดสำรวจภาคสนามใช้สีเดียวกับ SCALES.ph (scales.js); ต้นทางสะกด "กรดรุนแรงมากที่สุด" = "กรดรุนแรงที่สุด"
+const PH_ORDER = [...SCALES.ph.levels.map((l, i) => [l, SCALES.ph.colors[i]]), ["กรดรุนแรงมากที่สุด", SCALES.ph.colors[0]], ["Other", "#9e9e9e"]];
 const PH_COLOR = Object.fromEntries(PH_ORDER);
 const LEVEL_ORDER = ["ต่ำมาก", "ต่ำ", "ปานกลาง", "สูง", "สูงมาก", "Other"];
 const TABLE_LIMIT = 300;
@@ -12,10 +8,6 @@ const TABLE_LIMIT = 300;
 const HIDE_ON_MAP = ["no_coords", "outside_thailand", "off_land", "far_from_province", "no_location", "duplicate",
   "shared_coords", "multi_sample", "amphoe_mismatch", "date_future"];
 const confident = (flags) => !(flags || []).some((f) => HIDE_ON_MAP.includes(f));
-// สี pH ตามค่าจริง: [ค่าบน, สี, ระดับ]
-const PH_STOPS = [[4.5, "#b30000", "กรดรุนแรงมาก"], [5.1, "#d7301f", "กรดจัดมาก"], [5.6, "#ef6548", "กรดจัด"],
-  [6.1, "#fc8d59", "กรดปานกลาง"], [6.6, "#fdbb84", "กรดเล็กน้อย"], [7.4, "#9ccc65", "เป็นกลาง"],
-  [7.9, "#6baed6", "ด่างเล็กน้อย"], [8.5, "#3182bd", "ด่างปานกลาง"], [99, "#08519c", "ด่างจัด"]];
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -116,34 +108,47 @@ let wosisMeta = null;
 let osdSites = [];
 const OSD_PARAMS = [["ph", "pH", ""], ["ec_ds_m", "EC", "dS/m"], ["om_pct", "OM", "%"], ["p_mg_kg", "P", "mg/kg"], ["k_mg_kg", "K", "mg/kg"]];
 
-function phColor(v) {
-  return v == null ? "#9e9e9e" : PH_STOPS.find(([max]) => v < max)[1];
+// ช่วงชั้นและสีมาจาก SCALES (scales.js) ซึ่งแผนที่ดิน raster ใช้ชุดเดียวกัน
+function classIndex(key, v) {
+  const i = SCALES[key].bins.findIndex((b) => v < b);
+  return i < 0 ? SCALES[key].bins.length : i;
 }
+const scaleColor = (key, v) => (v == null ? null : SCALES[key].colors[classIndex(key, v)]);
+const phColor = (v) => scaleColor("ph", v) || "#9e9e9e";
+// [สี, ข้อความ] ของแต่ละชั้น สำหรับคำอธิบายสี
+function scaleItems(key) {
+  const { bins, colors, levels, unit } = SCALES[key];
+  return colors.map((c, i) => {
+    const lo = bins[i - 1], hi = bins[i];
+    const range = key === "ph"
+      ? (lo == null ? `< ${hi}` : hi == null ? `≥ ${lo}` : `${lo}–${(hi - 0.1).toFixed(1)}`)
+      : (lo == null ? `< ${hi}` : hi == null ? `> ${lo}` : `${lo}–${hi}`);
+    const label = key === "ph" ? `pH ${range}` : `${range} ${unit}`;
+    return [c, levels ? (key === "ph" ? `${label} ${val(levels[i])}` : `${val(levels[i])} ${label}`) : label];
+  });
+}
+const FERT_REF = "http://oss101.ldd.go.th/osr_data%26service/OSR_PDF/TB_SSK_Distribute/D_SSK567.pdf";
+const refNote = (key) => (SCALES[key].ref === "fert"
+  ? `${esc(t("fertRef"))} <a href="${FERT_REF}" target="_blank" rel="noopener">${esc(t("fertRefLink"))}</a>` : "");
 
 // ---------- ระบายสีจุดตามค่าที่เลือก ----------
 const NO_DATA = "#b8b2a7";
-const SEQ = ["#ffffcc", "#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#0c2c84"];
-const SALT = ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#8c2d04", "#4a1500"];
-const TEX = ["#fff7ec", "#fdd49e", "#fc8d59", "#d7301f", "#990000", "#4d0000"];
-// เกณฑ์ความอุดมสมบูรณ์ของดิน 3 ระดับ (ต่ำ / ปานกลาง / สูง) ของกองสำรวจดิน (2523)
-const FERT = ["#d8b365", "#9bc7a4", "#01665e"];
-const FERT_REF = "http://oss101.ldd.go.th/osr_data%26service/OSR_PDF/TB_SSK_Distribute/D_SSK567.pdf";
-// bins = ค่าขอบบนของแต่ละช่วง; แหล่งที่ไม่มีค่านี้คืน null (แสดงเป็นสีจาง)
+// ค่าของแต่ละแหล่งสำหรับแต่ละตัวแปร (ช่วงชั้นอยู่ใน SCALES) — แหล่งที่ไม่มีค่านี้ไม่มี getter (แสดงเป็นสีจาง)
 const COLOR_VARS = {
-  ph: { unit: "", osd: (s) => s.ph, wosis: (s) => s.ph_h2o_0_30, ldd: "ph" },
-  ec: { unit: "dS/m", bins: [0.2, 0.5, 1, 2, 4], colors: SALT, osd: (s) => s.ec_ds_m, wosis: (s) => s.ec_ds_m_0_30 },
-  om: { unit: "%", bins: [1.5, 3.5], colors: FERT, ldd_ref: true, osd: (s) => s.om_pct,
-    wosis: (s) => (s.orgc_g_kg_0_30 == null ? null : s.orgc_g_kg_0_30 * 0.1724), ldd: "om" },   // OM ≈ OC × 1.724
-  n: { unit: "g/kg", bins: [0.5, 1, 1.5, 2, 3], colors: SEQ, wosis: (s) => s.n_g_kg_0_30 },
-  p: { unit: "mg/kg", bins: [10, 25], colors: FERT, ldd_ref: true, osd: (s) => s.p_mg_kg, ldd: "p" },
-  k: { unit: "mg/kg", bins: [60, 90], colors: FERT, ldd_ref: true, osd: (s) => s.k_mg_kg, ldd: "k" },
-  clay: { unit: "%", bins: [10, 20, 30, 40, 60], colors: TEX, wosis: (s) => s.clay_pct_0_30 },
-  silt: { unit: "%", bins: [10, 20, 30, 40, 60], colors: TEX, wosis: (s) => s.silt_pct_0_30 },
-  sand: { unit: "%", bins: [20, 40, 60, 70, 85], colors: TEX, wosis: (s) => s.sand_pct_0_30 },
-  cec: { unit: "cmol/kg", bins: [10, 20], colors: FERT, ldd_ref: true, wosis: (s) => s.cec_cmol_kg_0_30 },
+  ph: { osd: (s) => s.ph, wosis: (s) => s.ph_h2o_0_30, ldd: "ph" },
+  ec: { osd: (s) => s.ec_ds_m, wosis: (s) => s.ec_ds_m_0_30 },
+  om: { osd: (s) => s.om_pct, wosis: (s) => (s.orgc_g_kg_0_30 == null ? null : s.orgc_g_kg_0_30 * 0.1724), ldd: "om" },   // OM ≈ OC × 1.724
+  n: { wosis: (s) => s.n_g_kg_0_30 },
+  p: { osd: (s) => s.p_mg_kg, ldd: "p" },
+  k: { osd: (s) => s.k_mg_kg, ldd: "k" },
+  clay: { wosis: (s) => s.clay_pct_0_30 },
+  silt: { wosis: (s) => s.silt_pct_0_30 },
+  sand: { wosis: (s) => s.sand_pct_0_30 },
+  cec: { wosis: (s) => s.cec_cmol_kg_0_30 },
 };
-// ระดับของจุดสำรวจภาคสนาม (5 ระดับ) รวมเป็น 3 ระดับตามเกณฑ์ข้างบน
-const LEVEL_COLORS = { "ต่ำมาก": FERT[0], "ต่ำ": FERT[0], "ปานกลาง": FERT[1], "สูง": FERT[2], "สูงมาก": FERT[2] };
+// ระดับของจุดสำรวจภาคสนาม (5 ระดับ) รวมเป็น 3 ระดับตามเกณฑ์ความอุดมสมบูรณ์
+const FERT3 = SCALES.om.colors;
+const LEVEL_COLORS = { "ต่ำมาก": FERT3[0], "ต่ำ": FERT3[0], "ปานกลาง": FERT3[1], "สูง": FERT3[2], "สูงมาก": FERT3[2] };
 let colorVar = "ph";
 
 function colorFor(source, rec) {
@@ -152,11 +157,7 @@ function colorFor(source, rec) {
     if (!def.ldd) return null;
     return (def.ldd === "ph" ? PH_COLOR[rec.ph] : LEVEL_COLORS[rec[def.ldd]]) || null;
   }
-  const v = def[source]?.(rec);
-  if (v == null) return null;
-  if (colorVar === "ph") return phColor(v);
-  const i = def.bins.findIndex((b) => v < b);
-  return def.colors[i < 0 ? def.bins.length : i];
+  return scaleColor(colorVar, def[source]?.(rec));
 }
 function styleFor(source, rec) {
   const c = colorFor(source, rec);
@@ -186,25 +187,12 @@ function renderLegend() {
   const sel = $("color-by"), cur = colorVar;
   sel.innerHTML = Object.keys(COLOR_VARS).map((k) => `<option value="${k}">${esc(t("vars")[k])}</option>`).join("");
   sel.value = cur;
-  let items;
-  if (colorVar === "ph") {
-    items = PH_STOPS.map(([max, c, l], i) => {
-      const lo = i ? PH_STOPS[i - 1][0] : null;
-      const range = lo == null ? `< ${max}` : max > 14 ? `≥ ${lo}` : `${lo}–${(max - 0.1).toFixed(1)}`;
-      return [c, `pH ${range} ${val(l)}`];
-    });
-  } else {
-    items = def.colors.slice(0, def.bins.length + 1).map((c, i) => {
-      const lo = def.bins[i - 1], hi = def.bins[i];
-      const range = `${lo == null ? `< ${hi}` : hi == null ? `> ${lo}` : `${lo}–${hi}`} ${def.unit}`;
-      return [c, def.ldd_ref ? `${t("fertLevels")[i]} ${range}` : range];
-    });
-  }
+  const items = scaleItems(colorVar);
   const sources = ["wosis", "osd", "ldd"].filter((s) => def[s]).map((s) => t({ wosis: "layerWosis", osd: "layerOsd", ldd: "layerLdd" }[s]));
   $("legend").innerHTML = items.map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("") +
     `<li><i style="background:${NO_DATA};opacity:.5"></i>${esc(t("noValue"))}</li>` +
     `<li class="muted small">${esc(t("varSources")(sources.join(", ")))}${colorVar === "om" ? ` · ${esc(t("omNote"))}` : ""}</li>` +
-    (def.ldd_ref ? `<li class="muted small">${esc(t("fertRef"))} <a href="${FERT_REF}" target="_blank" rel="noopener">${esc(t("fertRefLink"))}</a></li>` : "");
+    (refNote(colorVar) ? `<li class="muted small">${refNote(colorVar)}</li>` : "");
 }
 
 function osdPopup(s) {
