@@ -253,3 +253,4 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
 .map-legend { max-height: min(420px, 62vh); }
 .row-label[hidden] { display: none !important; }
 .dates-help ul { margin: 2px 0 4px; padding-left: 18px; }
+.ph-scale .mini-ramp { display: inline-block; width: 110px; height: 10px; border-radius: 5px; border: 1px solid var(--border); }
