@@ -6,6 +6,7 @@
   province_code(name)         -> รหัสจังหวัดจากชื่อไทยหรืออังกฤษ
 ขอบเขตถูกย่อรูปไว้ ~50–100 m จึงควรเผื่อระยะ (TOL_KM) ก่อนตัดสินว่าอยู่นอกพื้นที่
 """
+import difflib
 import glob
 import json
 import math
@@ -180,3 +181,30 @@ def name_matches(code, name):
     names = {norm(a.th), norm(a.en)}
     # อำเภอเมือง: บางแหล่งเขียน "เมืองนครศรีธรรมราช" บางแหล่งเขียน "นครศรีธรรมราช"
     return n in names or n.removeprefix("เมือง") in {x.removeprefix("เมือง") for x in names}
+
+
+def _best(name, areas, cutoff=0.85):
+    """พื้นที่ที่ชื่อตรงที่สุด: ตรงทุกตัว (รวม "เมืองX" = "X") ก่อน ไม่เช่นนั้นใกล้เคียง ≥ cutoff (สะกดต่างเล็กน้อย)"""
+    n = norm(name)
+    if not n:
+        return None
+    for a in areas:
+        if name_matches(a.code, name):
+            return a
+    key = n.removeprefix("เมือง")
+    scored = [(difflib.SequenceMatcher(None, key, norm(a.th).removeprefix("เมือง")).ratio(), a) for a in areas]
+    score, a = max(scored, key=lambda x: x[0], default=(0, None))
+    return a if score >= cutoff else None
+
+
+def match_names(province, amphoe=None, tambon=None):
+    """รหัส humdata จากชื่อ (จังหวัด → อำเภอ → ตำบล) คืนรหัสระดับที่ละเอียดที่สุดที่จับคู่ได้ หรือ None"""
+    pc = province_code(province)
+    if not pc:
+        return None
+    amphoes, tambons = children(pc)
+    amp = _best(amphoe, amphoes.values()) if amphoe else None
+    if amp is None:
+        return pc
+    tb = _best(tambon, [a for c, a in tambons.items() if c.startswith(amp.code)]) if tambon else None
+    return tb.code if tb else amp.code

@@ -45,8 +45,17 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const cluster = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 50, iconCreateFunction: (c) => clusterIcon(c) });
 map.addLayer(cluster);
 
+// ชื่อพื้นที่ทุกชั้นมาจาก humdata (COD-AB) ตามรหัสตำบลที่พิกัดตกจริง (adm_tambon) — ไม่ใช้ชื่อจากต้นทาง
+let ADM = {};
+const admName = (code) => (ADM[code] ? ADM[code][lang === "en" ? 1 : 0] : "");
+function admPlace(code) {
+  if (!code || !ADM[code]) return "";
+  const parts = [code, code.slice(0, 4), code.slice(0, 2)].map(admName);
+  return lang === "en" ? parts.join(", ") : `ต.${parts[0]} อ.${parts[1]} จ.${parts[2]}`;
+}
+
 function popup(p) {
-  const place = [p.subdistrict, p.district, p.province].filter(Boolean).join(", ") || p.location;
+  const place = admPlace(p.adm_tambon) || [p.subdistrict, p.district, p.province].filter(Boolean).join(", ") || p.location;
   return `<b>${t("point")} #${p.id}</b><br>${esc(place)}
     <table class="pop">
       <tr><td>${t("surveyDate")}</td><td><b>${day(p.date)}</b></td></tr>
@@ -88,7 +97,7 @@ function filtered() {
       && (!y || (y >= f.from && y <= f.to))
       && (!f.onlyNew || p.first_seen === latestRun)
       && qaMatch(p.qa_flags || [], f.qa)
-      && (!f.q || (p.location || "").toUpperCase().includes(f.q));
+      && (!f.q || `${p.location || ""} ${admPlace(p.adm_tambon)}`.toUpperCase().includes(f.q));
   });
 }
 
@@ -210,7 +219,7 @@ function renderLegend() {
 }
 
 function osdPopup(s) {
-  const place = [s.district, s.amphur, s.province].filter(Boolean).join(", ");
+  const place = admPlace(s.adm_tambon) || [s.district, s.amphur, s.province].filter(Boolean).join(", ");
   const rows = OSD_PARAMS.map(([k, label, unit]) => {
     if (s[k] == null) return `<tr><td>${label}</td><td>–</td></tr>`;
     const range = s[k + "_min"] != null ? ` <span class="muted">(${s[k + "_min"]}–${s[k + "_max"]}, n=${s[k + "_n"]})</span>` : "";
@@ -252,7 +261,7 @@ function wosisPopup(s) {
   const cell = (v) => `<td class="num">${v ?? "–"}</td>`;
   const rows = s.layers.map((ly) => `<tr><td>${ly.u ?? "?"}–${ly.l ?? "?"}${ly.name ? ` <span class="muted">${esc(ly.name)}</span>` : ""}</td>${WOSIS_COLS.map(([k]) => cell(ly[k])).join("")}</tr>`).join("");
   const top = `<tr><td><b>${t("topsoil")}</b></td>${WOSIS_COLS.map(([k]) => cell(s[k + "_0_30"])).join("")}</tr>`;
-  return `<b>${t("wosisProfile")}</b> ${esc(s.code || s.id)}
+  return `<b>${t("wosisProfile")}</b> ${esc(s.code || s.id)}${s.adm_tambon ? `<br>${esc(admPlace(s.adm_tambon))}` : ""}
     <table class="pop">
       <tr><td>${t("surveyYear")}</td><td><b>${esc(s.date || "–")}</b></td></tr>
       <tr><td>${t("dataset")}</td><td>${esc(s.dataset)} · ${esc(s.licence || "")}</td></tr>
@@ -289,7 +298,7 @@ function renderTable(rows) {
   $("rows").innerHTML = rows.slice(0, TABLE_LIMIT).map((p) => `
     <tr class="${markers.has(p.id) ? "clickable" : ""}" data-id="${p.id}">
       <td class="num">${p.id}</td><td>${day(p.date)}</td><td class="muted">${day(p.first_seen)}</td>
-      <td>${esc(p.location)}</td>
+      <td>${esc(admPlace(p.adm_tambon) || p.location)}</td>
       <td><i class="dot" style="background:${PH_COLOR[p.ph] || "#9e9e9e"}"></i> ${esc(val(p.ph))}</td>
       <td>${esc(val(p.om))}</td><td>${esc(val(p.p))}</td><td>${esc(val(p.k))}</td>
       <td>${esc(p.texture_field || "")}</td>
@@ -319,7 +328,7 @@ function renderStatic() {
   $("hidden-note").textContent = hiddenLdd ? t("hiddenNote")(num(hiddenLdd)) : "";
   $("updated").textContent = day([meta.updated_at, osdMeta?.updated_at].filter(Boolean).sort().pop());
 
-  fillSelect("f-province", new Set(shown.map((p) => p.provinceName).filter(Boolean)), null, (v) => v);
+  fillSelect("f-province", new Set(shown.map((p) => p.provinceName).filter(Boolean)), null, (v) => admName(v) || v);
   fillSelect("f-ph", new Set(shown.map((p) => p.ph).filter(Boolean)), PH_ORDER.map((x) => x[0]));
   for (const k of ["om", "p", "k"]) fillSelect(`f-${k}`, new Set(shown.map((p) => p[k]).filter(Boolean)), LEVEL_ORDER);
   const qaSel = $("f-qa"), qaCur = qaSel.value;
@@ -356,13 +365,15 @@ async function load() {
     fetch("data/changelog.json").then((r) => r.json()).catch(() => []),
     fetch("data/osd/meta.json").then((r) => r.json()).catch(() => null),
     fetch("data/wosis/meta.json").then((r) => r.json()).catch(() => null),
+    fetch("data/web/admin_names.json").then((r) => r.json()).then((a) => { ADM = a; }).catch(() => {}),
   ]);
   meta = m;
   log = lg;
   osdMeta = om;
   wosisMeta = wm;
   // ชื่อจังหวัดจากรายละเอียด หรือส่วนท้ายของ location
-  points = pts.map((p) => ({ ...p, provinceName: p.province || (p.location || "").split(",").pop().trim() }));
+  // จังหวัดของตัวกรอง = รหัสจังหวัด humdata (2 หลักแรกของรหัสตำบล)
+  points = pts.map((p) => ({ ...p, provinceName: p.adm_tambon ? p.adm_tambon.slice(0, 2) : p.province || (p.location || "").split(",").pop().trim() }));
   shown = points.filter((p) => confident(p.qa_flags));
   for (const p of shown) {
     const mk = Object.assign(L.circleMarker([p.lat, p.lon], {

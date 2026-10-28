@@ -56,13 +56,14 @@ QA_FLAGS = {
     "duplicate": "profile เดียวกับอีก profile ใน WoSIS (ดู duplicate_of) — ไม่แสดงบนแผนที่ ไม่นับซ้ำ",
     "near_ldd_point": "อยู่ใกล้จุดสำรวจ LDD ในปีเดียวกัน อาจเป็นจุดเดียวกัน (ดู ldd_match)",
     "shared_coords": "พิกัดซ้ำกับ profile อื่นหรือแหล่งอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
+    "off_land": "พิกัดไม่อยู่บนบก (ห่างฝั่งเกิน 1 km, ไม่แสดงบนแผนที่)",
 }
 # ลำดับความน่าเชื่อถือเมื่อ profile เดียวกันอยู่หลายชุด: แหล่งต้นฉบับก่อนชุดที่รวบรวมต่อ
 DATASET_PRIORITY = ["US-NCSS", "WD-ISIS", "WD-WISE"]
 DUP_M = 100        # ข้ามชุดข้อมูล: ห่างไม่เกินนี้ + ปีเดียวกัน + มีชั้นความลึกตรงกัน = profile เดียวกัน
 LDD_NEAR_M = 250   # เทียบ LDD: ห่างไม่เกินนี้ + ปีเดียวกัน (LDD แปลงจาก UTM คลาดได้หลายร้อยเมตร)
 P_COLUMNS = ["id", "code", "dataset", "date", "lat", "lon", "positional_uncertainty", "licence",
-             "wrb_group", "usda_order", "n_layers", "duplicate_of", "ldd_match_id", "ldd_match_m", *[f"{c}_0_{TOP}" for _, c, *_ in PROPS], "first_seen", "qa_flags"]
+             "wrb_group", "usda_order", "n_layers", "adm_tambon", "duplicate_of", "ldd_match_id", "ldd_match_m", *[f"{c}_0_{TOP}" for _, c, *_ in PROPS], "first_seen", "qa_flags"]
 L_COLUMNS = ["profile_id", "layer_id", "layer_name", "upper_depth", "lower_depth", "property", "value",
              "value_raw", "method", "dataset", "licence", "qa_flags"]
 
@@ -268,6 +269,12 @@ def main():
             flags.add("no_coords")
         elif not (5 <= s["lat"] <= 21 and 97 <= s["lon"] <= 106):
             flags.add("outside_thailand")
+        else:
+            # ตำบล/อำเภอ/จังหวัดจากขอบเขต humdata (COD-AB) — ใช้เป็นชื่อพื้นที่หลักทุกชั้น
+            where = admin.locate(s["lat"], s["lon"])
+            s["adm_tambon"] = where and where["tambon"]
+            if where is None and admin.nearest_province(s["lat"], s["lon"])[0] > admin.TOL_KM:
+                flags.add("off_land")
         if not s["date"]:
             flags.add("no_date")
         if any(ly.get("flags") for ly in layers):

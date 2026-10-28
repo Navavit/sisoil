@@ -94,27 +94,26 @@ async function soilGrids(lat, lon) {
   return out;
 }
 
-// จับคู่ตำบลจากขอบเขต (areaAt) กับตำบลในบัตรดินดี (ตำบล → อำเภอ → จังหวัด)
+// บัตรดินดีจับคู่กับรหัสพื้นที่ humdata ไว้แล้วตอนสร้างไฟล์ (build_web.py): ตำบล → อำเภอ → จังหวัด
 function matchDindee(area) {
-  if (!dindee || !area) return null;
-  const clean = (s) => (s || "").replace(/^(เมือง)/, "").replace(/\s/g, "");
-  const prov = clean(area.province.th), amp = clean(area.amphoe?.th), tambon = clean(area.tambon?.th);
+  if (!dindee || !area?.province) return null;
   const keys = Object.keys(dindee);
-  const pick = (pred) => keys.filter((k) => pred(k.split("|").map(clean)));
-  let level = "tambon", hit = tambon ? pick(([p, a, x]) => p === prov && a === amp && x === tambon) : [];
-  if (!hit.length) { level = "amphoe"; hit = pick(([p, a]) => p === prov && a === amp); }
-  if (!hit.length) { level = "province"; hit = pick(([p]) => p === prov); }
-  if (!hit.length) return null;
-  const sum = { n: 0, ph: {}, n_: {}, p: {}, k: {}, from: null, to: null };
-  for (const k of hit) {
-    const x = dindee[k];
-    sum.n += x.n;
-    for (const f of ["ph", "n_", "p", "k"]) for (const [c, n] of Object.entries(x[f])) sum[f][c] = (sum[f][c] || 0) + n;
-    if (x.from && (!sum.from || x.from < sum.from)) sum.from = x.from;
-    if (x.to && (!sum.to || x.to > sum.to)) sum.to = x.to;
+  const levels = [["tambon", area.tambon?.code], ["amphoe", area.amphoe?.code], ["province", area.province.code]];
+  for (const [level, code] of levels) {
+    if (!code) continue;
+    const hit = keys.filter((k) => k.startsWith(code));
+    if (!hit.length) continue;
+    const sum = { n: 0, ph: {}, n_: {}, p: {}, k: {}, from: null, to: null };
+    for (const k of hit) {
+      const x = dindee[k];
+      sum.n += x.n;
+      for (const f of ["ph", "n_", "p", "k"]) for (const [c, n] of Object.entries(x[f])) sum[f][c] = (sum[f][c] || 0) + n;
+      if (x.from && (!sum.from || x.from < sum.from)) sum.from = x.from;
+      if (x.to && (!sum.to || x.to > sum.to)) sum.to = x.to;
+    }
+    return { ...sum, level, name: level === "tambon" ? admPlace(code) : areaName(area[level]) };
   }
-  const [p, a, tb] = hit[0].split("|");
-  return { ...sum, level, name: level === "tambon" ? `${tb}, ${a}, ${p}` : level === "amphoe" ? `${a}, ${p}` : p };
+  return null;
 }
 
 async function checkAt(lat, lon) {

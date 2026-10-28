@@ -10,7 +10,8 @@ data/web/grid/<i>_<j>.json   i = floor(lat*2), j = floor(lon*2)
   osd:   [lat, lon, first_date, last_date, n_dates, ph, ec, om, p, k]   (ค่ากลางข้ามวันที่ ณ พิกัดเดียวกัน)
   wosis: [id, code, lat, lon, date, ph, oc, clay, sand]       (เฉลี่ย 0–30 cm)
   gee:   [lat, lon, *ค่าตาม gee_cols ใน index.json]
-data/web/dindee.json         บัตรดินดีรายตำบล: จำนวนตัวอย่างต่อระดับ pH/N/P/K
+data/web/dindee.json         บัตรดินดีตามรหัสพื้นที่ humdata: จำนวนตัวอย่างต่อระดับ pH/N/P/K
+data/web/admin_names.json    ชื่อจังหวัด/อำเภอ/ตำบล (humdata) ตามรหัส
 data/web/index.json          รายชื่อช่องกริดที่มีข้อมูล และชื่อคอลัมน์ gee
 """
 import collections
@@ -114,10 +115,32 @@ def main():
                         t[k][r[col]] += 1
                 if r["date"]:
                     t["dates"].append(r["date"])
-    write_json(os.path.join(OUT, "dindee.json"), {
-        key: {"n": t["n"], "ph": t["ph"], "n_": t["n_"], "p": t["p"], "k": t["k"],
-              "from": min(t["dates"], default=None), "to": max(t["dates"], default=None)}
-        for key, t in tambons.items()})
+    # บัตรดินดีมีแค่ชื่อพื้นที่ — จับคู่กับรหัส humdata (ตำบล 6 หลัก; จับคู่ไม่ได้ถึงตำบลใช้รหัสอำเภอ/จังหวัด)
+    dindee, levels = {}, collections.Counter()
+    for key, t in tambons.items():
+        code = admin.match_names(*key.split("|")) or ""
+        levels[{6: "tambon", 4: "amphoe", 2: "province"}.get(len(code), "none")] += 1
+        if not code:
+            continue
+        d = dindee.setdefault(code, {"n": 0, "ph": collections.Counter(), "n_": collections.Counter(),
+                                     "p": collections.Counter(), "k": collections.Counter(), "from": None, "to": None})
+        d["n"] += t["n"]
+        for k in ("ph", "n_", "p", "k"):
+            d[k].update(t[k])
+        dates = sorted(t["dates"])
+        if dates:
+            d["from"] = min(filter(None, [d["from"], dates[0]]))
+            d["to"] = max(filter(None, [d["to"], dates[-1]]))
+    write_json(os.path.join(OUT, "dindee.json"), dindee)
+    print(f"dindee จับคู่ชื่อกับ humdata: {dict(levels)}")
+
+    # ชื่อพื้นที่ทุกระดับจาก humdata (COD-AB) — ทุกชั้นบนเว็บแสดงชื่อจากรหัสนี้
+    names = {}
+    for f in [os.path.join(DATA, "ref", "boundaries", "province.geojson"), *glob.glob(os.path.join(DATA, "ref", "boundaries", "[0-9]*.json"))]:
+        for feat in load(f, {}).get("features", []):
+            pr = feat["properties"]
+            names[pr["code"]] = [pr["th"], pr["en"]]
+    write_json(os.path.join(OUT, "admin_names.json"), names)
 
     write_json(os.path.join(OUT, "index.json"), {"cells": sorted(grid), "gee_cols": gee_cols, "cell_deg": 0.5})
     total = {k: sum(len(g[k]) for g in grid.values()) for k in ("ldd", "osd", "wosis", "gee")}
