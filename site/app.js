@@ -125,21 +125,25 @@ const NO_DATA = "#b8b2a7";
 const SEQ = ["#ffffcc", "#c7e9b4", "#7fcdbb", "#41b6c4", "#1d91c0", "#225ea8", "#0c2c84"];
 const SALT = ["#fff5eb", "#fdd0a2", "#fd8d3c", "#d94801", "#8c2d04", "#4a1500"];
 const TEX = ["#fff7ec", "#fdd49e", "#fc8d59", "#d7301f", "#990000", "#4d0000"];
+// เกณฑ์ความอุดมสมบูรณ์ของดิน 3 ระดับ (ต่ำ / ปานกลาง / สูง) ของกองสำรวจดิน (2523)
+const FERT = ["#d8b365", "#9bc7a4", "#01665e"];
+const FERT_REF = "http://oss101.ldd.go.th/osr_data%26service/OSR_PDF/TB_SSK_Distribute/D_SSK567.pdf";
 // bins = ค่าขอบบนของแต่ละช่วง; แหล่งที่ไม่มีค่านี้คืน null (แสดงเป็นสีจาง)
 const COLOR_VARS = {
   ph: { unit: "", osd: (s) => s.ph, wosis: (s) => s.ph_h2o_0_30, ldd: "ph" },
   ec: { unit: "dS/m", bins: [0.2, 0.5, 1, 2, 4], colors: SALT, osd: (s) => s.ec_ds_m, wosis: (s) => s.ec_ds_m_0_30 },
-  om: { unit: "%", bins: [0.5, 1, 1.5, 2.5, 3.5, 4.5], colors: SEQ, osd: (s) => s.om_pct,
+  om: { unit: "%", bins: [1.5, 3.5], colors: FERT, ldd_ref: true, osd: (s) => s.om_pct,
     wosis: (s) => (s.orgc_g_kg_0_30 == null ? null : s.orgc_g_kg_0_30 * 0.1724), ldd: "om" },   // OM ≈ OC × 1.724
   n: { unit: "g/kg", bins: [0.5, 1, 1.5, 2, 3], colors: SEQ, wosis: (s) => s.n_g_kg_0_30 },
-  p: { unit: "mg/kg", bins: [3, 6, 10, 15, 25, 45], colors: SEQ, osd: (s) => s.p_mg_kg, ldd: "p" },
-  k: { unit: "mg/kg", bins: [30, 60, 90, 120, 200], colors: SEQ, osd: (s) => s.k_mg_kg, ldd: "k" },
+  p: { unit: "mg/kg", bins: [10, 25], colors: FERT, ldd_ref: true, osd: (s) => s.p_mg_kg, ldd: "p" },
+  k: { unit: "mg/kg", bins: [60, 90], colors: FERT, ldd_ref: true, osd: (s) => s.k_mg_kg, ldd: "k" },
   clay: { unit: "%", bins: [10, 20, 30, 40, 60], colors: TEX, wosis: (s) => s.clay_pct_0_30 },
   silt: { unit: "%", bins: [10, 20, 30, 40, 60], colors: TEX, wosis: (s) => s.silt_pct_0_30 },
   sand: { unit: "%", bins: [20, 40, 60, 70, 85], colors: TEX, wosis: (s) => s.sand_pct_0_30 },
-  cec: { unit: "cmol/kg", bins: [5, 10, 15, 20, 30], colors: SEQ, wosis: (s) => s.cec_cmol_kg_0_30 },
+  cec: { unit: "cmol/kg", bins: [10, 20], colors: FERT, ldd_ref: true, wosis: (s) => s.cec_cmol_kg_0_30 },
 };
-const LEVEL_COLORS = { "ต่ำมาก": SEQ[0], "ต่ำ": SEQ[2], "ปานกลาง": SEQ[3], "สูง": SEQ[5], "สูงมาก": SEQ[6] };
+// ระดับของจุดสำรวจภาคสนาม (5 ระดับ) รวมเป็น 3 ระดับตามเกณฑ์ข้างบน
+const LEVEL_COLORS = { "ต่ำมาก": FERT[0], "ต่ำ": FERT[0], "ปานกลาง": FERT[1], "สูง": FERT[2], "สูงมาก": FERT[2] };
 let colorVar = "ph";
 
 function colorFor(source, rec) {
@@ -192,13 +196,15 @@ function renderLegend() {
   } else {
     items = def.colors.slice(0, def.bins.length + 1).map((c, i) => {
       const lo = def.bins[i - 1], hi = def.bins[i];
-      return [c, `${lo == null ? `< ${hi}` : hi == null ? `≥ ${lo}` : `${lo}–${hi}`} ${def.unit}`];
+      const range = `${lo == null ? `< ${hi}` : hi == null ? `> ${lo}` : `${lo}–${hi}`} ${def.unit}`;
+      return [c, def.ldd_ref ? `${t("fertLevels")[i]} ${range}` : range];
     });
   }
   const sources = ["wosis", "osd", "ldd"].filter((s) => def[s]).map((s) => t({ wosis: "layerWosis", osd: "layerOsd", ldd: "layerLdd" }[s]));
   $("legend").innerHTML = items.map(([c, l]) => `<li><i style="background:${c}"></i>${esc(l)}</li>`).join("") +
     `<li><i style="background:${NO_DATA};opacity:.5"></i>${esc(t("noValue"))}</li>` +
-    `<li class="muted small">${esc(t("varSources")(sources.join(", ")))}${colorVar === "om" ? ` · ${esc(t("omNote"))}` : ""}</li>`;
+    `<li class="muted small">${esc(t("varSources")(sources.join(", ")))}${colorVar === "om" ? ` · ${esc(t("omNote"))}` : ""}</li>` +
+    (def.ldd_ref ? `<li class="muted small">${esc(t("fertRef"))} <a href="${FERT_REF}" target="_blank" rel="noopener">${esc(t("fertRefLink"))}</a></li>` : "");
 }
 
 function osdPopup(s) {
