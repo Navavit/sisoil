@@ -42,7 +42,14 @@ const map = L.map("map", { preferCanvas: true }).setView([13.2, 101], 6);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18, attribution: "&copy; OpenStreetMap contributors", className: "basemap",   // สีเทาจาง (style.css) ให้จุดและขอบเขตเด่น
 }).addTo(map);
-const cluster = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 50, iconCreateFunction: (c) => clusterIcon(c) });
+// กลุ่มจุด: แยกเป็นจุดเดี่ยวตั้งแต่ซูมระดับอำเภอ; กลุ่มเล็กคลิกแล้วแผ่จุดออกให้คลิกได้ทันที (ไม่ต้องซูม)
+const CLUSTER_OPTS = { chunkedLoading: true, disableClusteringAtZoom: 11, zoomToBoundsOnClick: false,
+  iconCreateFunction: (c) => clusterIcon(c) };
+function clusterClick(e) {
+  if (e.layer.getChildCount() <= 10 || map.getZoom() >= 10) e.layer.spiderfy();
+  else e.layer.zoomToBounds({ padding: [30, 30] });
+}
+const cluster = L.markerClusterGroup({ ...CLUSTER_OPTS, maxClusterRadius: 45 }).on("clusterclick", clusterClick);
 map.addLayer(cluster);
 
 // ชื่อพื้นที่ทุกชั้นมาจาก humdata (COD-AB) ตามรหัสตำบลที่พิกัดตกจริง (adm_tambon) — ไม่ใช้ชื่อจากต้นทาง
@@ -111,7 +118,7 @@ function qaMatch(flags, q) {
 }
 
 // ---------- ชั้นผลวิเคราะห์ดิน (osd) ----------
-const osdLayer = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 40, iconCreateFunction: (c) => clusterIcon(c) });
+const osdLayer = L.markerClusterGroup({ ...CLUSTER_OPTS, maxClusterRadius: 40 }).on("clusterclick", clusterClick);
 let osdMeta = null;
 let wosisMeta = null;
 let osdSites = [];
@@ -235,7 +242,7 @@ async function loadOsdYear(year) {
   osdLayer.clearLayers();
   osdSites = (await fetch(`data/osd/sites_${year}.json`).then((r) => r.json()).catch(() => [])).filter((s) => confident(s.qa_flags));
   osdLayer.addLayers(osdSites.filter((s) => s.lat != null).map((s) => Object.assign(L.circleMarker([s.lat, s.lon], {
-    radius: 5, weight: 1.5, ...styleFor("osd", s),
+    radius: 6, weight: 1.5, ...styleFor("osd", s),
   }).bindPopup(() => osdPopup(s)), { rec: s })));
   $("osd-info").textContent = t("osdInfo")(num(osdSites.length), year);
 }
@@ -249,6 +256,8 @@ async function initOsd() {
 // ---------- ชั้น soil profile (WoSIS) ----------
 const wosisLayer = L.layerGroup();
 map.createPane("wosis").style.zIndex = 650;   // อยู่เหนือกลุ่มจุดของชั้นอื่น
+// SVG (ไม่ใช่ canvas): canvas เต็มจอใน pane บนสุดจะดักการคลิกจุด/กลุ่มจุดของชั้นที่อยู่ข้างใต้ทั้งหมด
+const wosisRenderer = L.svg({ pane: "wosis" });
 let wosisProfiles = [];
 const WOSIS_COLS = [["ph_h2o", "pH"], ["orgc_g_kg", "OC g/kg"], ["clay_pct", "Clay %"], ["sand_pct", "Sand %"], ["cec_cmol_kg", "CEC"]];
 
@@ -274,7 +283,7 @@ async function loadWosis() {
   // profile ที่ซ้ำกับอีก profile ใน WoSIS ไม่วางบนแผนที่ (ดู duplicate_of)
   wosisProfiles = wosisProfiles.filter((s) => s.lat != null && !s.duplicate_of && confident(s.qa_flags));
   wosisProfiles.forEach((s) => Object.assign(L.circleMarker([s.lat, s.lon], {
-    radius: 7, weight: 2, pane: "wosis", ...styleFor("wosis", s),
+    radius: 7, weight: 2, pane: "wosis", renderer: wosisRenderer, ...styleFor("wosis", s),
   }).bindPopup(() => wosisPopup(s), { maxWidth: 420 }), { rec: s }).addTo(wosisLayer));
   $("wosis-info").textContent = t("wosisInfo")(num(wosisProfiles.length));
 }
