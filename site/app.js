@@ -48,7 +48,7 @@ const day = (d) => {
 
 const map = L.map("map", { preferCanvas: true }).setView([13.2, 101], 6);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 18, attribution: "&copy; OpenStreetMap contributors",
+  maxZoom: 18, attribution: "&copy; OpenStreetMap contributors", className: "basemap",   // สีเทาจาง (style.css) ให้จุดและขอบเขตเด่น
 }).addTo(map);
 const cluster = L.markerClusterGroup({ chunkedLoading: true, maxClusterRadius: 50, iconCreateFunction: (c) => clusterIcon(c) });
 map.addLayer(cluster);

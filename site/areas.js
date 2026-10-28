@@ -105,15 +105,17 @@ const landCover = new LandCoverLayer("", {
 });
 
 // ---------- แผนที่ดิน (raster): SoilGrids ผ่าน WMS ของ ISRIC, อื่น ๆ เป็นภาพจาก Earth Engine (build_rasters.py) ----------
-// [id, map, layer, ชื่อ th, ชื่อ en, คำอธิบายหน่วยของแถบสี th, en]
+// [id, map, layer, ชื่อ th, ชื่อ en, ตัวหารเป็นหน่วยจริง, หน่วย]
 const SOILGRIDS = [
-  ["sg_ph", "phh2o", "phh2o_0-5cm_mean", "pH ดินผิว 0–5 cm (SoilGrids 250 m)", "Topsoil pH 0–5 cm (SoilGrids 250 m)", "ค่าในแถบสี ÷ 10 = pH", "legend value ÷ 10 = pH"],
-  ["sg_soc", "soc", "soc_0-5cm_mean", "อินทรีย์คาร์บอน 0–5 cm (SoilGrids)", "Organic carbon 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 10 = g/kg", "legend value ÷ 10 = g/kg"],
-  ["sg_clay", "clay", "clay_0-5cm_mean", "ดินเหนียว 0–5 cm (SoilGrids)", "Clay 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 10 = %", "legend value ÷ 10 = %"],
-  ["sg_n", "nitrogen", "nitrogen_0-5cm_mean", "ไนโตรเจน 0–5 cm (SoilGrids)", "Nitrogen 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 100 = g/kg", "legend value ÷ 100 = g/kg"],
-  ["sg_cec", "cec", "cec_0-5cm_mean", "CEC 0–5 cm (SoilGrids)", "CEC 0–5 cm (SoilGrids)", "ค่าในแถบสี ÷ 10 = cmol/kg", "legend value ÷ 10 = cmol/kg"],
+  ["sg_ph", "phh2o", "phh2o_0-5cm_mean", "pH ดินผิว 0–5 cm (SoilGrids 250 m)", "Topsoil pH 0–5 cm (SoilGrids 250 m)", 10, "pH"],
+  ["sg_soc", "soc", "soc_0-5cm_mean", "อินทรีย์คาร์บอน 0–5 cm (SoilGrids)", "Organic carbon 0–5 cm (SoilGrids)", 10, "g/kg"],
+  ["sg_clay", "clay", "clay_0-5cm_mean", "ดินเหนียว 0–5 cm (SoilGrids)", "Clay 0–5 cm (SoilGrids)", 10, "%"],
+  ["sg_n", "nitrogen", "nitrogen_0-5cm_mean", "ไนโตรเจน 0–5 cm (SoilGrids)", "Nitrogen 0–5 cm (SoilGrids)", 100, "g/kg"],
+  ["sg_cec", "cec", "cec_0-5cm_mean", "CEC 0–5 cm (SoilGrids)", "CEC 0–5 cm (SoilGrids)", 10, "cmol/kg"],
 ];
 const SG_WMS = "https://maps.isric.org/mapserv?map=/map/";
+// สีและค่าขอบจากภาพ legend ของ ISRIC (GetLegendGraphic) — ใช้วาดแถบสีให้อ่านง่าย
+const SG_LEGEND = {"phh2o": {"colors": ["#f0f63d", "#ebe51a", "#a5db36", "#81d255", "#54b93a", "#39b32f", "#359d3b", "#2c9840", "#34b07a", "#28b6b5", "#0fccd9"], "labels": [34, 48, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 64, 65, 67, 68, 70, 72, 73, 75, 76, 77, 79, 79, 80, 81, 82, 83, 92]}, "soc": {"colors": ["#fbf9f9", "#ede7e5", "#dfd4d1", "#d2c2bd", "#c4afa9", "#b69d95", "#a98a82", "#9b786e", "#8d655a", "#7f5246", "#724032"], "labels": [6, 27, 38, 43, 53, 64, 85, 106, 127, 142, 163, 184, 210, 236, 268, 299, 330, 362, 398, 445, 492, 560, 633, 727, 832, 962, 1114, 1312, 1521, 1839, 2174, 4471]}, "clay": {"colors": ["#f2dac1", "#e7c4a0", "#dcae80", "#d19860", "#c5894d", "#b97e44", "#ac743b", "#9f6832", "#935e29", "#875320", "#7a4917", "#764615"], "labels": [7, 32, 58, 83, 109, 134, 160, 185, 211, 236, 262, 288, 313, 339, 364, 390, 415, 441, 466, 492, 517, 543, 569, 594, 620, 645, 671, 696, 722, 747, 773, 799]}, "nitrogen": {"colors": ["#f7fcf5", "#eaf7e6", "#d7f0d1", "#bee6b8", "#a2da9c", "#81ca80", "#5cb96a", "#3aa458", "#248c46", "#14853c", "#057f33", "#007d30"], "labels": [42, 80, 119, 157, 196, 234, 273, 311, 350, 388, 427, 466, 504, 543, 581, 620, 658, 697, 735, 774, 812, 851, 890, 928, 967, 1005, 1044, 1082, 1121, 1159, 1198, 1237]}, "cec": {"colors": ["#edf8fb", "#d7e8f2", "#c0d7e9", "#adc4df", "#9eafd3", "#8f9ac8", "#8b81bc", "#8968b0", "#8e50aa", "#a837b4", "#c11fbe", "#ca17c2"], "labels": [11, 95, 111, 122, 130, 137, 145, 153, 161, 170, 179, 189, 199, 209, 219, 229, 239, 249, 258, 270, 282, 296, 313, 337, 359, 380, 404, 431, 465, 505, 570, 852]}};
 let rasterMeta = [];
 let rasterLayer = null;
 
@@ -129,14 +131,49 @@ function fillRasterSelect() {
   sel.value = cur;
   rasterLegend();
 }
+// ---------- คำอธิบายสีบนแผนที่ (แผนที่ดิน raster และการใช้ที่ดิน) ----------
+const MapLegend = L.Control.extend({
+  options: { position: "bottomleft" },
+  onAdd() {
+    const d = L.DomUtil.create("div", "map-legend");
+    d.id = "map-legend";
+    d.hidden = true;
+    L.DomEvent.disableClickPropagation(d);
+    L.DomEvent.disableScrollPropagation(d);
+    return d;
+  },
+});
+map.addControl(new MapLegend());
+let legendOpen = true;
+
+// แถบสี + ค่า 5 ตำแหน่ง (ช่วงค่าของ SoilGrids ไม่เป็นเส้นตรง จึงอ่านค่าจากตำแหน่งในรายการขอบ)
+function sgRamp(sg) {
+  const { colors, labels } = SG_LEGEND[sg[1]];
+  const ticks = [0, .25, .5, .75, 1].map((f) => +(labels[Math.round(f * (labels.length - 1))] / sg[5]).toFixed(sg[5] >= 100 ? 2 : 1));
+  return `<div class="ramp" style="background:linear-gradient(to right,${colors.join(",")})"></div>
+    <div class="ramp-labels">${ticks.map((v) => `<span>${v}</span>`).join("")}</div><p>${t("unit")}: ${sg[6]}</p>`;
+}
+
 function rasterLegend() {
   const id = $("raster").value, sg = SOILGRIDS.find((r) => r[0] === id), im = rasterMeta.find((r) => r.id === id);
-  $("raster-legend").innerHTML = sg
-    ? `<img alt="" src="${SG_WMS}${sg[1]}.map&SERVICE=WMS&VERSION=1.3.0&REQUEST=GetLegendGraphic&LAYER=${sg[2]}&FORMAT=image/png&SLD_VERSION=1.1.0"><p>${esc(lang === "en" ? sg[6] : sg[5])}</p>
-       <p>ISRIC SoilGrids 2.0 · CC BY 4.0 · ${t("rasterEstimate")}</p>`
-    : im ? `<div class="ramp" style="background:linear-gradient(to right,${im.palette.join(",")})"></div>
-       <div class="ramp-labels"><span>${im.min}</span><span>${im.unit}</span><span>${im.max}+</span></div>
-       <p>${esc(im.source)} · ${esc(im.license)} · ${t("rasterEstimate")}</p>` : "";
+  const parts = [];
+  if (rasterLayer && sg) {
+    parts.push(`<section><b>${esc(lang === "en" ? sg[4] : sg[3])}</b>
+      ${sgRamp(sg)}<p>ISRIC SoilGrids 2.0 · CC BY 4.0 · ${t("rasterEstimate")}</p></section>`);
+  } else if (rasterLayer && im) {
+    parts.push(`<section><b>${esc(lang === "en" ? im.en : im.th)}</b>
+      <div class="ramp" style="background:linear-gradient(to right,${im.palette.join(",")})"></div>
+      <div class="ramp-labels"><span>${im.min}</span><span>${im.unit}</span><span>${im.max}+</span></div>
+      <p>${esc(im.source)} · ${esc(im.license)} · ${t("rasterEstimate")}</p></section>`);
+  }
+  if ($("l-lc").checked) {
+    parts.push(`<section><b>${t("layerLandcover")} · ${$("lc-year").value}</b><ul class="legend lc">
+      ${LC_CLASSES.map(([c, k]) => `<li><i style="background:${c};border-radius:2px"></i>${esc(t(k))}</li>`).join("")}</ul></section>`);
+  }
+  const box = $("map-legend");
+  box.hidden = !parts.length;
+  box.innerHTML = parts.length ? `<details ${legendOpen ? "open" : ""}><summary>${t("mapLegend")}</summary>${parts.join("")}</details>` : "";
+  box.querySelector("details")?.addEventListener("toggle", (e) => { legendOpen = e.target.open; });
 }
 function setRaster() {
   if (rasterLayer) map.removeLayer(rasterLayer);
@@ -160,7 +197,7 @@ $("raster-opacity").addEventListener("input", () => rasterLayer?.setOpacity(+$("
 
 function renderAreasStatic() {
   if (rasterMeta.length || $("raster").options.length) fillRasterSelect();
-  $("lc-legend").innerHTML = LC_CLASSES.map(([c, k]) => `<li><i style="background:${c};border-radius:2px"></i>${esc(t(k))}</li>`).join("");
+  rasterLegend();
   if ($("l-admin").checked && map.getZoom() < ADMIN_MIN_ZOOM) $("admin-info").textContent = t("adminZoom");
 }
 
@@ -179,8 +216,9 @@ map.on("moveend", refreshAdmin);
 $("l-lc").addEventListener("change", () => {
   $("lc-opts").hidden = !$("l-lc").checked;
   if ($("l-lc").checked) map.addLayer(landCover); else map.removeLayer(landCover);
+  rasterLegend();
 });
-$("lc-year").addEventListener("change", () => landCover.redraw());
+$("lc-year").addEventListener("change", () => { landCover.redraw(); rasterLegend(); });
 // สถานะการโหลดภาพการใช้ที่ดิน (บริการภายนอก อาจช้า)
 let lcErrors = 0;
 landCover.on("loading", () => { lcErrors = 0; $("lc-status").textContent = t("loadingLayer"); });

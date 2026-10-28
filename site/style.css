@@ -205,3 +205,23 @@ table.mini th:first-child, table.mini td:first-child { text-align: left; }
   font: 600 12px/1 "IBM Plex Sans Thai", system-ui, sans-serif; color: #1b1b1b;
   background: rgba(255,255,255,.8); border-radius: 8px; padding: 2px 5px;
 }
+
+/* แผนที่ฐานสีเทาจาง ให้จุดข้อมูลและเส้นขอบเขตเด่น */
+.basemap { filter: grayscale(1) contrast(.82) brightness(1.08); }
+#map { background: #eceae6; }
+
+/* คำอธิบายสีบนแผนที่ */
+.map-legend {
+  background: rgba(255,255,255,.94); color: #22201c; border-radius: 8px; padding: 8px 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.3); max-width: 260px; max-height: 60vh; overflow: auto;
+  font: 13px/1.4 "IBM Plex Sans Thai", system-ui, sans-serif;
+}
+.map-legend summary { cursor: pointer; font-weight: 600; }
+.map-legend section { margin-top: 8px; }
+.map-legend section b { display: block; margin-bottom: 4px; }
+.map-legend p { margin: 4px 0 0; font-size: 12px; color: #5c574e; }
+.map-legend .ramp { height: 14px; border-color: #ccc; }
+.map-legend .ramp-labels { color: #5c574e; font-size: 12px; }
+.map-legend .sg-legend { display: block; max-height: 240px; }
+.map-legend .legend.lc { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; font-size: 12px; }
+@media (max-width: 800px) { .map-legend { max-width: 190px; max-height: 45vh; } }
