@@ -165,7 +165,6 @@ function rasterLegend() {
     parts.push(`<section><b>${esc(lang === "en" ? im.en : im.th)}</b>
       ${scaleList(im.scale)}<p>${esc(im.source)} · ${esc(im.license)} · ${t("rasterEstimate")}</p></section>`);
   }
-  if (rasterLayer && rasterScale(id) === colorVar) parts[0] = parts[0].replace("</section>", `<p>${t("rasterLinked")}</p></section>`);
   if ($("l-lc").checked) {
     parts.push(`<section><b>${t("layerLandcover")} · ${$("lc-year").value}</b><ul class="legend lc">
       ${LC_CLASSES.map(([c, k]) => `<li><i style="background:${c};border-radius:2px"></i>${esc(t(k))}</li>`).join("")}</ul></section>`);
@@ -191,24 +190,8 @@ function setRaster() {
   }
   if (rasterLayer) map.addLayer(rasterLayer);
   $("raster-opts").hidden = !rasterLayer;
-  $("raster-note").textContent = "";
-  // สีของจุดใช้ค่าเดียวกับ raster (ถ้าจุดมีค่านั้น) ให้อ่านเทียบกันได้
-  const key = rasterScale(id);
-  if (key && COLOR_VARS[key] && key !== colorVar) setColorVar(key, true);
-  else restyle();
+  restyle();   // ขอบจุดเข้มเมื่อเปิด raster
   rasterLegend();
-}
-const rasterScale = (id) => SOILGRIDS.find((r) => r[0] === id)?.[5] || rasterMeta.find((r) => r.id === id)?.scale;
-
-// เปลี่ยนสีของจุดแล้ว raster ที่เปิดอยู่เปลี่ยนเป็นค่าเดียวกัน (แหล่งเดิมก่อน) ถ้าไม่มีให้ปิด
-function syncRaster(v) {
-  const cur = $("raster").value;
-  if (!rasterLayer || rasterScale(cur) === v) return;
-  const ids = [...SOILGRIDS.map((r) => r[0]), ...rasterMeta.map((r) => r.id)].filter((id) => rasterScale(id) === v);
-  const next = ids.find((id) => id.split("_")[0] === cur.split("_")[0]) || ids[0] || "";
-  $("raster").value = next;
-  setRaster();
-  if (!next) $("raster-note").textContent = t("rasterNoMatch")(t("vars")[v]);
 }
 $("raster").addEventListener("change", setRaster);
 $("raster-opacity").addEventListener("input", () => rasterLayer?.setOpacity(+$("raster-opacity").value));

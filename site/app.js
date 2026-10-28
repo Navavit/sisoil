@@ -170,13 +170,7 @@ function styleFor(source, rec) {
   return { fillColor: c || NO_DATA, fillOpacity: c ? .92 : .25, opacity: c ? 1 : .25,
     color: (onRaster ? OUTLINE_ON_RASTER : OUTLINE)[source] };
 }
-// เปลี่ยนค่าที่ใช้ระบายสีจุด; ถ้าไม่ได้มาจากการเลือก raster ให้ raster เปลี่ยนตาม (syncRaster ใน areas.js)
-function setColorVar(v, fromRaster) {
-  colorVar = v;
-  $("color-by").value = v;
-  restyle();
-  if (!fromRaster) syncRaster(v);
-}
+
 // สีของกลุ่มจุด = สีที่พบมากที่สุดในกลุ่ม (ไม่นับจุดที่ไม่มีค่า)
 function clusterIcon(c) {
   const counts = {};
@@ -398,7 +392,7 @@ $("rows").addEventListener("click", (e) => {
 });
 document.querySelectorAll("[data-lang]").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
 $("l-ldd").addEventListener("change", render);
-$("color-by").addEventListener("change", () => setColorVar($("color-by").value));
+$("color-by").addEventListener("change", () => { colorVar = $("color-by").value; restyle(); });
 $("l-osd").addEventListener("change", async () => {
   if ($("l-osd").checked) {
     if (!osdSites.length) await loadOsdYear($("osd-year").value);
