@@ -69,18 +69,28 @@ function nearby(rows, latIdx, lat, lon, radiusKm) {
     .filter((x) => x.d <= radiusKm).sort((a, b) => a.d - b.d);
 }
 
+// ค่าที่จุดจากบริการแผนที่ (WMS GetFeatureInfo) ของ ISRIC — เร็วกว่า REST API (~0.6 วินาที เทียบกับ 13–40 วินาที)
+// ขอทีละชั้น (หลายชั้นในคำขอเดียวได้ JSON ไม่ถูกรูปแบบ) แล้วยิงพร้อมกัน; ค่าดิบหาร 10 = หน่วยจริง (pH, g/kg, %, cmol/kg)
 async function soilGrids(lat, lon) {
-  const q = new URLSearchParams({ lat, lon, value: "mean" });
-  SG_PROPS.forEach(([p]) => q.append("property", p));
-  SG_DEPTHS.forEach((d) => q.append("depth", d));
-  const r = await fetch(`https://rest.isric.org/soilgrids/v2.0/properties/query?${q}`);
-  if (!r.ok) throw new Error(`SoilGrids ${r.status}`);
-  const j = await r.json();
+  const x = (lon * 20037508.34) / 180;
+  const y = (Math.log(Math.tan(((90 + lat) * Math.PI) / 360)) * 20037508.34) / Math.PI;
+  const value = async (prop, depth) => {
+    const layer = `${prop}_${depth}_mean`;
+    const q = new URLSearchParams({
+      map: `/map/${prop}.map`, SERVICE: "WMS", VERSION: "1.1.1", REQUEST: "GetFeatureInfo", LAYERS: layer, QUERY_LAYERS: layer,
+      STYLES: "", SRS: "EPSG:3857", BBOX: [x - 50, y - 50, x + 50, y + 50].join(","), WIDTH: 3, HEIGHT: 3, X: 1, Y: 1,
+      INFO_FORMAT: "application/geo+json", FEATURE_COUNT: 1,
+    });
+    const r = await fetch(`https://maps.isric.org/mapserv?${q}`);
+    if (!r.ok) throw new Error(`SoilGrids ${r.status}`);
+    const m = (await r.text()).match(/"pixel_value":\s*(-?[\d.]+)/);
+    const v = m ? +m[1] : null;
+    return v == null || v < 0 ? null : v / 10;   // ค่าติดลบ = ไม่มีข้อมูล (เมือง น้ำ)
+  };
   const out = {};
-  for (const layer of j.properties.layers) {
-    const f = layer.unit_measure.d_factor || 1;
-    out[layer.name] = Object.fromEntries(layer.depths.map((d) => [d.label, d.values.mean == null ? null : d.values.mean / f]));
-  }
+  await Promise.all(SG_PROPS.flatMap(([p]) => SG_DEPTHS.map(async (d) => {
+    (out[p] ??= {})[d] = await value(p, d);
+  })));
   return out;
 }
 
