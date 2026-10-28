@@ -1,47 +1,55 @@
 {
  "source": "กรมพัฒนาที่ดิน (Land Development Department) – Soil Survey Public",
  "source_url": "https://soilservice.ldd.go.th/soilsurveypublic/",
- "updated_at": "2026-10-27T16:56:01+00:00",
- "total": 902,
- "with_coordinates": 863,
- "provinces": 1,
- "details_pending": 849,
+ "updated_at": "2026-10-28T06:58:53+00:00",
+ "total": 26669,
+ "with_coordinates": 24584,
+ "provinces": 77,
+ "details_pending": 0,
  "last_change": {
-  "date": "2026-10-27",
-  "total": 902,
+  "date": "2026-10-28",
+  "total": 26669,
   "added": 0,
   "removed": 0,
   "modified": 0,
-  "details_pending": 849
+  "details_pending": 0
  },
  "qa": {
   "no_coords": {
    "description": "ไม่มีพิกัดที่ใช้ได้",
-   "count": 39
+   "count": 2085
   },
   "utm_converted": {
    "description": "พิกัดแปลงจาก UTM",
-   "count": 630
+   "count": 2864
   },
   "utm_zone_fixed": {
    "description": "โซน UTM ที่ระบุไม่ตรงกับค่าพิกัด",
-   "count": 630
+   "count": 2864
   },
   "ldd_coords_fixed": {
    "description": "lat/lon จาก LDD ผิดโซน แก้แล้ว (ค่าเดิมอยู่ใน orig_lat/orig_lon)",
-   "count": 117
+   "count": 472
   },
   "far_from_province": {
-   "description": "พิกัดห่างจากจังหวัดที่ระบุเกิน ~150 km",
-   "count": 4
+   "description": "พิกัดอยู่นอกขอบเขตจังหวัดที่ระบุเกิน 1 km (ไม่แสดงบนแผนที่)",
+   "count": 1003
+  },
+  "off_land": {
+   "description": "พิกัดไม่อยู่บนบก (ห่างฝั่งเกิน 1 km, ไม่แสดงบนแผนที่)",
+   "count": 110
+  },
+  "amphoe_mismatch": {
+   "description": "พิกัดอยู่คนละอำเภอกับที่ระบุ",
+   "count": 861
   },
   "province_mismatch": {
    "description": "จังหวัดใน location ไม่ตรงกับจังหวัดที่ค้นหา",
-   "count": 0
+   "count": 3459
   },
   "no_location": {
-   "description": "ไม่มีชื่อตำแหน่ง",
-   "count": 695
+   "description": "ไม่มีชื่อตำแหน่งและไม่มีตำบล/อำเภอ (ไม่แสดงบนแผนที่)",
+   "count": 11823
   },
   "date_missing": {
    "description": "ไม่มีวันที่หรือรูปแบบผิด",
@@ -53,19 +61,23 @@
   },
   "date_too_old": {
    "description": "วันที่สำรวจก่อนปี 1960",
-   "count": 18
+   "count": 2670
   },
   "ph_unknown": {
    "description": "pH เป็น Other หรือว่าง",
-   "count": 28
+   "count": 2380
   },
   "nutrient_unknown": {
    "description": "OM/P/K อย่างน้อยหนึ่งค่าเป็น Other หรือว่าง",
-   "count": 831
+   "count": 23841
   },
   "duplicate": {
-   "description": "พิกัดและวันที่ซ้ำกับจุดอื่น",
-   "count": 31
+   "description": "พิกัดและวันที่ซ้ำกับจุดอื่น (ไม่แสดงบนแผนที่)",
+   "count": 895
+  },
+  "shared_coords": {
+   "description": "พิกัดซ้ำกับจุดอื่นหรือแหล่งอื่น ระบุตำแหน่งจริงไม่ได้ (ไม่แสดงบนแผนที่)",
+   "count": 2590
   }
  }
 }

@@ -369,7 +369,8 @@ async function load() {
   wosisMeta = wm;
   // ชื่อจังหวัดจากรายละเอียด หรือส่วนท้ายของ location
   // จังหวัดของตัวกรอง = รหัสจังหวัด humdata (2 หลักแรกของรหัสตำบล)
-  points = pts.map((p) => ({ ...p, provinceName: p.adm_tambon ? p.adm_tambon.slice(0, 2) : p.province || (p.location || "").split(",").pop().trim() }));
+  // (รหัสจังหวัดของ LDD ใช้ชุดเดียวกับ humdata จึงใช้แทนได้เมื่อหาตำบลไม่ได้)
+  points = pts.map((p) => ({ ...p, provinceName: p.adm_tambon ? p.adm_tambon.slice(0, 2) : p.province_code }));
   shown = points.filter((p) => confident(p.qa_flags));
   for (const p of shown) {
     const mk = Object.assign(L.circleMarker([p.lat, p.lon], {

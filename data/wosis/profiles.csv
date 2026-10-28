@@ -187,7 +187,7 @@
 1121626,TH0129,WD-WISE,,16.428333,101.139444,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Inceptisol,4,670101,,,,7.05,5.83,16.84,,37.8,48.33,13.87,32.11,,,2026-10-27,no_date
 1121627,TH0164,WD-WISE,,12.7,101.616667,Over 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,4,210303,,,,4.69,,49.13,1.25,2.2,5.8,92.0,13.43,,,2026-10-27,no_date
 1121628,TH0157,WD-WISE,,6.553333,101.691111,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,3,960306,,,,4.94,4.11,17.36,,24.53,33.57,42.47,11.15,,,2026-10-27,no_date
-1121629,TH0158,WD-WISE,,14.150556,100.803333,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Inceptisol,7,130401,,,,3.74,3.09,8.73,0.93,59.73,37.67,2.6,20.14,,,2026-10-27,no_date
+1121629,TH0158,WD-WISE,,14.150556,100.803333,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Inceptisol,7,130401,,9245,199,3.74,3.09,8.73,0.93,59.73,37.67,2.6,20.14,,,2026-10-27,no_date;near_ldd_point
 1121631,TH0190,WD-WISE,,12.923056,102.456389,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,3,220410,,,,6.66,5.68,45.53,3.98,44.6,39.8,15.6,42.15,,,2026-10-27,no_date
 1121632,TH0191,WD-WISE,,16.594167,99.730278,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,5,620703,,,,5.93,4.85,7.3,,11.4,29.47,59.07,7.31,,,2026-10-27,no_date
 1121633,TH0223,WD-WISE,,6.657778,100.085278,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Plinthosol,Ultisol,5,910102,,,,4.86,3.88,21.78,,11.73,39.47,48.8,4.02,,,2026-10-27,no_date
@@ -344,7 +344,7 @@
 1123874,TH0081,WD-WISE,,19.953611,100.007222,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Acrisol,Ultisol,6,571701,,,,4.83,3.73,8.33,,32.0,57.67,9.33,7.4,,,2026-10-27,no_date
 1123875,TH0083,WD-WISE,,6.863889,99.821389,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Plinthosol,Ultisol,5,910502,,,,4.73,3.7,20.71,,30.77,44.17,25.0,9.3,,,2026-10-27,no_date
 1123876,TH0084,WD-WISE,,16.549722,102.713333,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Alisol,Ultisol,4,400108,,,,6.0,5.05,6.1,,14.23,30.47,55.3,6.09,,,2026-10-27,no_date
-1123877,TH0085,WD-WISE,,17.201944,104.134444,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Alisol,Ultisol,2,470120,,,,5.7,4.57,22.27,,17.0,42.0,40.67,16.5,,,2026-10-27,no_date
+1123877,TH0085,WD-WISE,,17.201944,104.134444,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Alisol,Ultisol,2,470120,,25637,29,5.7,4.57,22.27,,17.0,42.0,40.67,16.5,,,2026-10-27,no_date;near_ldd_point
 1123878,TH0086,WD-WISE,,15.531667,101.056944,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Alisol,Alfisol,8,670508,,,,5.86,4.51,2.95,,4.83,8.07,87.1,3.17,,,2026-10-27,no_date
 1123879,TH0087,WD-WISE,,12.980833,102.304722,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Alisol,Alfisol,4,220401,,,,5.73,4.32,20.11,,36.47,35.53,28.0,16.27,,,2026-10-27,no_date
 1123880,TH0088,WD-WISE,,14.797778,105.305278,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Alisol,Ultisol,5,341005,,,,4.98,4.03,3.06,,9.2,6.0,85.8,6.53,,,2026-10-27,no_date
@@ -359,7 +359,7 @@
 1123889,TH0102,WD-WISE,,13.091111,100.887222,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Arenosol,Entisol,3,200703,,,,5.63,4.77,8.0,0.7,1.67,19.0,79.33,0.93,,,2026-10-27,no_date
 1123890,TH0103,WD-WISE,,15.088889,101.069444,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,,4,160418,,,,7.78,6.58,14.45,,52.03,36.0,11.97,84.0,,,2026-10-27,no_date
 1123891,TH0104,WD-WISE,,14.754722,100.758889,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,,5,190904,,,,8.03,7.68,18.9,1.67,31.67,53.67,14.67,40.22,,,2026-10-27,no_date
-1123892,TH0105,WD-WISE,,19.852222,99.894722,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,Inceptisol,4,570202,,,,5.06,3.76,7.41,0.3,20.93,21.6,57.47,7.03,,,2026-10-27,no_date
+1123892,TH0105,WD-WISE,,19.852222,99.894722,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,Inceptisol,4,570202,,16846,222,5.06,3.76,7.41,0.3,20.93,21.6,57.47,7.03,,,2026-10-27,no_date;near_ldd_point
 1123893,TH0106,WD-WISE,,14.000833,99.855,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,Inceptisol,5,730203,,,,5.0,4.16,5.68,0.49,6.0,30.8,63.2,3.76,,,2026-10-27,no_date
 1123894,TH0107,WD-WISE,,12.813611,99.930278,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,Inceptisol,4,760404,,,,6.6,5.9,4.5,0.4,11.0,32.0,57.0,14.6,,,2026-10-27,no_date
 1123895,TH0109,WD-WISE,,15.649444,101.061944,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Cambisol,Mollisol,5,670502,,,,5.42,4.7,16.32,,52.6,30.4,16.4,72.32,,,2026-10-27,no_date
@@ -380,7 +380,7 @@
 1123912,TH0139,WD-WISE,,13.536111,100.240556,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,3,740108,,,,6.8,6.5,22.6,1.9,42.0,52.0,6.0,38.0,,,2026-10-27,no_date
 1123913,TH0140,WD-WISE,,20.443056,99.903333,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,5,570901,,,,6.16,5.15,8.2,0.68,11.0,20.8,68.2,8.62,,,2026-10-27,no_date
 1123914,TH0142,WD-WISE,,16.665278,102.858611,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,4,400703,,,,5.72,4.4,3.04,,18.2,22.2,59.6,11.24,,,2026-10-27,no_date
-1123915,TH0143,WD-WISE,,9.392222,99.211944,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,8,840605,,,,4.79,3.62,5.16,,11.0,29.13,60.17,3.28,,,2026-10-27,no_date
+1123915,TH0143,WD-WISE,,9.392222,99.211944,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Entisol,8,840605,,24555,149,4.79,3.62,5.16,,11.0,29.13,60.17,3.28,,,2026-10-27,no_date;near_ldd_point
 1123916,TH0144,WD-WISE,,10.396667,99.144722,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Inceptisol,4,860114,,,,5.86,4.78,8.0,,25.6,15.2,59.2,13.76,,,2026-10-27,no_date
 1123917,TH0145,WD-WISE,,14.845278,100.357222,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Inceptisol,6,170303,,,,5.5,4.3,10.64,0.92,42.2,54.8,2.0,20.18,,,2026-10-27,no_date
 1123918,TH0146,WD-WISE,,13.645278,99.954722,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Fluvisol,Inceptisol,5,700603,,,,6.44,6.01,17.46,,39.1,46.1,14.1,25.69,,,2026-10-27,no_date
@@ -406,7 +406,7 @@
 1123938,TH0179,WD-WISE,,17.610556,100.134167,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,6,530104,,,,4.91,4.3,12.37,,36.47,50.93,12.6,14.18,,,2026-10-27,no_date
 1123939,TH0181,WD-WISE,,18.351389,100.293611,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,5,540201,,,,6.5,5.59,9.57,,34.7,61.7,3.6,18.66,,,2026-10-27,no_date
 1123940,TH0183,WD-WISE,,16.764444,100.333333,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,6,650805,,,,5.72,4.12,6.38,,8.33,61.0,29.83,5.12,,,2026-10-27,no_date
-1123941,TH0184,WD-WISE,,18.585278,100.744444,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,5,550701,,,,6.28,5.46,6.82,,24.4,70.8,5.4,11.98,,,2026-10-27,no_date
+1123941,TH0184,WD-WISE,,18.585278,100.744444,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,5,550701,,649,185,6.28,5.46,6.82,,24.4,70.8,5.4,11.98,,,2026-10-27,no_date;near_ldd_point
 1123942,TH0185,WD-WISE,,13.685278,99.764722,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,7,700716,,,,5.62,3.97,4.01,0.33,27.47,47.13,25.97,8.23,,,2026-10-27,no_date
 1123943,TH0186,WD-WISE,,16.363056,101.213611,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,5,670111,,,,5.07,4.16,25.13,,50.13,42.07,7.87,40.89,,,2026-10-27,no_date
 1123944,TH0187,WD-WISE,,17.245556,101.785,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Luvisol,Alfisol,4,420913,,,,5.3,4.26,23.38,,31.8,33.6,34.6,21.28,,,2026-10-27,no_date
@@ -421,7 +421,7 @@
 1123953,TH0205,WD-WISE,,16.198889,100.887222,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,5,670201,,,,5.95,4.71,4.12,,6.0,17.47,76.53,3.07,,,2026-10-27,no_date
 1123954,TH0207,WD-WISE,,14.736111,104.456111,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,6,330805,,,,6.23,5.43,16.49,,14.67,28.53,56.8,12.45,,,2026-10-27,no_date
 1123955,TH0208,WD-WISE,,20.296389,99.888333,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,5,570902,,,,5.65,4.57,12.56,,45.5,48.9,5.03,14.09,,,2026-10-27,no_date
-1123956,TH0210,WD-WISE,,13.416389,101.295278,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,6,201102,,,,5.58,4.35,3.45,,6.57,27.13,66.3,1.51,,,2026-10-27,no_date
+1123956,TH0210,WD-WISE,,13.416389,101.295278,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,6,201102,,28068,240,5.58,4.35,3.45,,6.57,27.13,66.3,1.51,,,2026-10-27,no_date;near_ldd_point
 1123957,TH0211,WD-WISE,,18.892778,99.093889,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,5,501406,,,,6.96,6.57,5.09,,2.87,31.4,66.3,2.98,,,2026-10-27,no_date
 1123958,TH0212,WD-WISE,,13.201111,100.943889,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,4,200707,,,,5.99,5.39,15.03,,8.53,23.13,68.33,3.67,,,2026-10-27,no_date
 1123959,TH0213,WD-WISE,,7.796667,100.305556,1 km - 10 km,Attribution 3.0 International (CC BY 3.0),Lixisol,Alfisol,5,900705,,,,5.34,4.24,23.72,,51.7,47.33,1.57,17.37,,,2026-10-27,no_date

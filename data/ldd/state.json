@@ -1,8 +1,464 @@
 {
+ "10": {
+  "name": "BANGKOK",
+  "count": 52,
+  "points": 52,
+  "checked_at": "2026-10-28"
+ },
+ "11": {
+  "name": "SAMUT PRAKAN",
+  "count": 12,
+  "points": 12,
+  "checked_at": "2026-10-28"
+ },
+ "12": {
+  "name": "NONTHABURI",
+  "count": 53,
+  "points": 53,
+  "checked_at": "2026-10-28"
+ },
+ "13": {
+  "name": "PATHUM THANI",
+  "count": 81,
+  "points": 81,
+  "checked_at": "2026-10-28"
+ },
+ "14": {
+  "name": "PHRA NAKHON SI AYUTTHAYA",
+  "count": 54,
+  "points": 53,
+  "checked_at": "2026-10-28"
+ },
+ "15": {
+  "name": "ANG THONG",
+  "count": 112,
+  "points": 112,
+  "checked_at": "2026-10-28"
+ },
+ "16": {
+  "name": "LOP BURI",
+  "count": 285,
+  "points": 280,
+  "checked_at": "2026-10-28"
+ },
+ "17": {
+  "name": "SING BURI",
+  "count": 14,
+  "points": 14,
+  "checked_at": "2026-10-28"
+ },
+ "18": {
+  "name": "CHAI NAT",
+  "count": 217,
+  "points": 217,
+  "checked_at": "2026-10-28"
+ },
+ "19": {
+  "name": "SARABURI",
+  "count": 645,
+  "points": 645,
+  "checked_at": "2026-10-28"
+ },
+ "20": {
+  "name": "CHON BURI",
+  "count": 575,
+  "points": 568,
+  "checked_at": "2026-10-28"
+ },
+ "21": {
+  "name": "RAYONG",
+  "count": 415,
+  "points": 412,
+  "checked_at": "2026-10-28"
+ },
+ "22": {
+  "name": "CHANTHABURI",
+  "count": 206,
+  "points": 202,
+  "checked_at": "2026-10-28"
+ },
+ "23": {
+  "name": "TRAT",
+  "count": 393,
+  "points": 393,
+  "checked_at": "2026-10-28"
+ },
+ "24": {
+  "name": "CHACHOENGSAO",
+  "count": 581,
+  "points": 552,
+  "checked_at": "2026-10-28"
+ },
+ "25": {
+  "name": "PRACHIN BURI",
+  "count": 575,
+  "points": 519,
+  "checked_at": "2026-10-28"
+ },
+ "26": {
+  "name": "NAKHON NAYOK",
+  "count": 117,
+  "points": 115,
+  "checked_at": "2026-10-28"
+ },
+ "27": {
+  "name": "SA KAEO",
+  "count": 200,
+  "points": 169,
+  "checked_at": "2026-10-28"
+ },
+ "30": {
+  "name": "NAKHON RATCHASIMA",
+  "count": 668,
+  "points": 666,
+  "checked_at": "2026-10-28"
+ },
+ "31": {
+  "name": "BURI RAM",
+  "count": 160,
+  "points": 156,
+  "checked_at": "2026-10-28"
+ },
+ "32": {
+  "name": "SURIN",
+  "count": 224,
+  "points": 223,
+  "checked_at": "2026-10-28"
+ },
+ "33": {
+  "name": "SI SA KET",
+  "count": 736,
+  "points": 735,
+  "checked_at": "2026-10-28"
+ },
+ "34": {
+  "name": "UBON RATCHATHANI",
+  "count": 1707,
+  "points": 1706,
+  "checked_at": "2026-10-28"
+ },
+ "35": {
+  "name": "YASOTHON",
+  "count": 97,
+  "points": 97,
+  "checked_at": "2026-10-28"
+ },
+ "36": {
+  "name": "CHAIYAPHUM",
+  "count": 596,
+  "points": 596,
+  "checked_at": "2026-10-28"
+ },
+ "37": {
+  "name": "AMNAT CHAROEN",
+  "count": 130,
+  "points": 130,
+  "checked_at": "2026-10-28"
+ },
+ "38": {
+  "name": "BUENG KAN",
+  "count": 48,
+  "points": 47,
+  "checked_at": "2026-10-28"
+ },
+ "39": {
+  "name": "NONG BUA LAM PHU",
+  "count": 401,
+  "points": 401,
+  "checked_at": "2026-10-28"
+ },
  "40": {
   "name": "KHON KAEN",
   "count": 902,
   "points": 902,
-  "checked_at": "2026-10-27"
+  "checked_at": "2026-10-28"
+ },
+ "41": {
+  "name": "UDON THANI",
+  "count": 1243,
+  "points": 1243,
+  "checked_at": "2026-10-28"
+ },
+ "42": {
+  "name": "LOEI",
+  "count": 440,
+  "points": 438,
+  "checked_at": "2026-10-28"
+ },
+ "43": {
+  "name": "NONG KHAI",
+  "count": 870,
+  "points": 865,
+  "checked_at": "2026-10-28"
+ },
+ "44": {
+  "name": "MAHA SARAKHAM",
+  "count": 347,
+  "points": 340,
+  "checked_at": "2026-10-28"
+ },
+ "45": {
+  "name": "ROI ET",
+  "count": 1121,
+  "points": 1121,
+  "checked_at": "2026-10-28"
+ },
+ "46": {
+  "name": "KALASIN",
+  "count": 933,
+  "points": 932,
+  "checked_at": "2026-10-28"
+ },
+ "47": {
+  "name": "SAKON NAKHON",
+  "count": 296,
+  "points": 296,
+  "checked_at": "2026-10-28"
+ },
+ "48": {
+  "name": "NAKHON PHANOM",
+  "count": 499,
+  "points": 499,
+  "checked_at": "2026-10-28"
+ },
+ "49": {
+  "name": "MUKDAHAN",
+  "count": 641,
+  "points": 641,
+  "checked_at": "2026-10-28"
+ },
+ "50": {
+  "name": "CHIANG MAI",
+  "count": 931,
+  "points": 931,
+  "checked_at": "2026-10-28"
+ },
+ "51": {
+  "name": "LAMPHUN",
+  "count": 242,
+  "points": 242,
+  "checked_at": "2026-10-28"
+ },
+ "52": {
+  "name": "LAMPANG",
+  "count": 554,
+  "points": 551,
+  "checked_at": "2026-10-28"
+ },
+ "53": {
+  "name": "UTTARADIT",
+  "count": 193,
+  "points": 188,
+  "checked_at": "2026-10-28"
+ },
+ "54": {
+  "name": "PHRAE",
+  "count": 336,
+  "points": 336,
+  "checked_at": "2026-10-28"
+ },
+ "55": {
+  "name": "NAN",
+  "count": 537,
+  "points": 535,
+  "checked_at": "2026-10-28"
+ },
+ "56": {
+  "name": "PHAYAO",
+  "count": 348,
+  "points": 337,
+  "checked_at": "2026-10-28"
+ },
+ "57": {
+  "name": "CHIANG RAI",
+  "count": 817,
+  "points": 777,
+  "checked_at": "2026-10-28"
+ },
+ "58": {
+  "name": "MAE HONG SON",
+  "count": 160,
+  "points": 160,
+  "checked_at": "2026-10-28"
+ },
+ "60": {
+  "name": "NAKHON SAWAN",
+  "count": 162,
+  "points": 154,
+  "checked_at": "2026-10-28"
+ },
+ "61": {
+  "name": "UTHAI THANI",
+  "count": 399,
+  "points": 398,
+  "checked_at": "2026-10-28"
+ },
+ "62": {
+  "name": "KAMPHAENG PHET",
+  "count": 509,
+  "points": 500,
+  "checked_at": "2026-10-28"
+ },
+ "63": {
+  "name": "TAK",
+  "count": 734,
+  "points": 734,
+  "checked_at": "2026-10-28"
+ },
+ "64": {
+  "name": "SUKHOTHAI",
+  "count": 153,
+  "points": 151,
+  "checked_at": "2026-10-28"
+ },
+ "65": {
+  "name": "PHITSANULOK",
+  "count": 468,
+  "points": 465,
+  "checked_at": "2026-10-28"
+ },
+ "66": {
+  "name": "PHICHIT",
+  "count": 469,
+  "points": 468,
+  "checked_at": "2026-10-28"
+ },
+ "67": {
+  "name": "PHETCHABUN",
+  "count": 282,
+  "points": 275,
+  "checked_at": "2026-10-28"
+ },
+ "70": {
+  "name": "RATCHABURI",
+  "count": 136,
+  "points": 130,
+  "checked_at": "2026-10-28"
+ },
+ "71": {
+  "name": "KANCHANABURI",
+  "count": 249,
+  "points": 249,
+  "checked_at": "2026-10-28"
+ },
+ "72": {
+  "name": "SUPHAN BURI",
+  "count": 131,
+  "points": 131,
+  "checked_at": "2026-10-28"
+ },
+ "73": {
+  "name": "NAKHON PATHOM",
+  "count": 90,
+  "points": 89,
+  "checked_at": "2026-10-28"
+ },
+ "74": {
+  "name": "SAMUT SAKHON",
+  "count": 42,
+  "points": 42,
+  "checked_at": "2026-10-28"
+ },
+ "75": {
+  "name": "SAMUT SONGKHRAM",
+  "count": 37,
+  "points": 37,
+  "checked_at": "2026-10-28"
+ },
+ "76": {
+  "name": "PHETCHABURI",
+  "count": 222,
+  "points": 218,
+  "checked_at": "2026-10-28"
+ },
+ "77": {
+  "name": "PRACHUAP KHIRI KHAN",
+  "count": 403,
+  "points": 402,
+  "checked_at": "2026-10-28"
+ },
+ "80": {
+  "name": "NAKHON SI THAMMARAT",
+  "count": 371,
+  "points": 369,
+  "checked_at": "2026-10-28"
+ },
+ "81": {
+  "name": "KRABI",
+  "count": 103,
+  "points": 103,
+  "checked_at": "2026-10-28"
+ },
+ "82": {
+  "name": "PHANGNGA",
+  "count": 88,
+  "points": 88,
+  "checked_at": "2026-10-28"
+ },
+ "83": {
+  "name": "PHUKET",
+  "count": 3,
+  "points": 3,
+  "checked_at": "2026-10-28"
+ },
+ "84": {
+  "name": "SURAT THANI",
+  "count": 160,
+  "points": 160,
+  "checked_at": "2026-10-28"
+ },
+ "85": {
+  "name": "RANONG",
+  "count": 107,
+  "points": 105,
+  "checked_at": "2026-10-28"
+ },
+ "86": {
+  "name": "CHUMPHON",
+  "count": 456,
+  "points": 454,
+  "checked_at": "2026-10-28"
+ },
+ "90": {
+  "name": "SONGKHLA",
+  "count": 116,
+  "points": 113,
+  "checked_at": "2026-10-28"
+ },
+ "91": {
+  "name": "SATUN",
+  "count": 37,
+  "points": 37,
+  "checked_at": "2026-10-28"
+ },
+ "92": {
+  "name": "TRANG",
+  "count": 108,
+  "points": 108,
+  "checked_at": "2026-10-28"
+ },
+ "93": {
+  "name": "PHATTHALUNG",
+  "count": 153,
+  "points": 152,
+  "checked_at": "2026-10-28"
+ },
+ "94": {
+  "name": "PATTANI",
+  "count": 1,
+  "points": 1,
+  "checked_at": "2026-10-28"
+ },
+ "95": {
+  "name": "YALA",
+  "count": 1,
+  "points": 1,
+  "checked_at": "2026-10-28"
+ },
+ "96": {
+  "name": "NARATHIWAT",
+  "count": 1,
+  "points": 1,
+  "checked_at": "2026-10-28"
  }
 }
