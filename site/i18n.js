@@ -2,7 +2,8 @@
 const I18N = {
   th: {
     title: "SISoil",
-    brandSub: "ฐานข้อมูลดินไทย",
+    thaiName: "ซิสซอยล์",
+    brandSub: "ฐานข้อมูลดินของประเทศไทย",
     madeBy: "SISoil พัฒนาโดย วิทยาลัยบูรณาการศาสตร์ (SIS) มหาวิทยาลัยเกษตรศาสตร์",
     introLead: "เว็บนี้รวบรวมผลตรวจดินจริงทั่วประเทศไทยไว้บนแผนที่ ให้ทุกคนดูได้ว่าดินในพื้นที่ของตนเป็นอย่างไร — เปรี้ยวหรือด่าง มีอินทรียวัตถุและธาตุอาหารมากน้อยแค่ไหน",
     stdTitle: "ข้อมูลมาจากหลายแหล่ง และเก็บด้วยมาตรฐานต่างกัน",
@@ -40,7 +41,7 @@ const I18N = {
     gTextureTerm: "เนื้อดิน",
     gTexture: "สัดส่วนทราย ทรายแป้ง และดินเหนียว เช่น ดินทรายระบายน้ำเร็วแต่เก็บธาตุอาหารได้น้อย ดินเหนียวอุ้มน้ำดีแต่แน่น",
     introCaution: "ก่อนใส่ปุ๋ยหรือปรับปรุงดิน ควรเก็บตัวอย่างดินส่งตรวจที่สถานีพัฒนาที่ดินในจังหวัดของท่าน",
-    subtitle: "รวมข้อมูลดินแบบเปิดจากกรมพัฒนาที่ดิน ISRIC และแผนที่ดินโลก",
+    subtitle: "ฐานข้อมูลดินของประเทศไทย จากข้อมูลเปิดของกรมพัฒนาที่ดิน ISRIC และแผนที่ดินโลก",
     layersNote: "เรียงจากเชื่อถือได้มากไปน้อย · แสดงเฉพาะจุดที่มั่นใจตำแหน่ง",
     pointColors: "สีของจุด",
     sameAsPoints: "ช่วงชั้นและสีเดียวกับจุด (ด้านบน)",
@@ -207,7 +208,8 @@ const I18N = {
   },
   en: {
     title: "SISoil",
-    brandSub: "Thai Soil Database",
+    thaiName: "ซิสซอยล์",
+    brandSub: "Soil database of Thailand",
     madeBy: "SISoil is developed by the School of Integrated Science (SIS), Kasetsart University",
     introLead: "This site puts real soil test results from across Thailand on one map, so anyone can see what the soil in their area is like — acidic or alkaline, and how much organic matter and nutrients it holds.",
     stdTitle: "Data come from several sources with different standards",
@@ -245,7 +247,7 @@ const I18N = {
     gTextureTerm: "Texture",
     gTexture: "The mix of sand, silt and clay. Sandy soil drains fast but holds few nutrients; clay holds water well but is compact.",
     introCaution: "Before applying fertiliser or soil amendments, have a soil sample tested at your provincial Land Development station.",
-    subtitle: "Open soil data from the Land Development Department, ISRIC and global soil maps",
+    subtitle: "Soil database of Thailand from open data by the Land Development Department, ISRIC and global soil maps",
     layersNote: "Most reliable first · only points with trusted locations",
     pointColors: "Points",
     sameAsPoints: "Same classes and colours as the points (above)",

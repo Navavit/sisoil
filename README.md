@@ -1,6 +1,6 @@
 <img src="site/img/sisoil.svg" width="64" alt="SISoil" align="left">
 
-# SISoil — ฐานข้อมูลดินไทย (Thai Soil Database)
+# SISoil ซิสซอยล์ — ฐานข้อมูลดินของประเทศไทย
 
 พัฒนาโดย วิทยาลัยบูรณาการศาสตร์ (School of Integrated Science, SIS) มหาวิทยาลัยเกษตรศาสตร์
 

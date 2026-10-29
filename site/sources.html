@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="img/sisoil.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SISoil · แหล่งข้อมูล (Data Sources)</title>
+  <title>SISoil ซิสซอยล์ · แหล่งข้อมูล</title>
   <meta name="description" content="แหล่งข้อมูลทั้งหมดของ SISoil ฐานข้อมูลดินไทย พร้อมสัญญาอนุญาตและรอบการอัปเดต — All data sources of SISoil with licences and update schedules.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,11 +15,10 @@
     <div class="brand">
       <img class="brand-mark" src="img/sisoil.svg" alt="" width="48" height="48">
       <div>
-        <p class="sub"><a href="index.html" data-i18n="backToMap"></a></p>
+        <p class="sub"><b>SISoil</b> <span data-i18n="thaiName"></span> · <a href="index.html" data-i18n="backToMap"></a></p>
         <h1 data-i18n="sourcesTitle"></h1>
         <p class="sub" data-i18n="sourcesIntro"></p>
       </div>
-    </div>
     </div>
     <nav class="downloads">
       <span class="logos"><img src="img/logo-ku.png" alt="มหาวิทยาลัยเกษตรศาสตร์ (Kasetsart University)" width="44" height="56"><img src="img/logo-sis.png" alt="วิทยาลัยบูรณาการศาสตร์ (School of Integrated Science)" width="163" height="56"></span>
@@ -58,7 +57,7 @@
 
     function render() {
       document.documentElement.lang = lang;
-      document.title = `SISoil · ${t("sourcesTitle")}`;
+      document.title = `SISoil ${t("thaiName")} · ${t("sourcesTitle")}`;
       document.querySelectorAll("[data-i18n]").forEach((el) => { el.textContent = t(el.dataset.i18n); });
       document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
       document.querySelector("a[href='index.html']").textContent = "← " + t("backToMap");
