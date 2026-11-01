@@ -6,7 +6,7 @@
    "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)"
   },
   "changed_at": "2026-10-28",
-  "checked_at": "2026-10-28"
+  "checked_at": "2026-11-01"
  },
  "ldd-soilseries": {
   "version": {
@@ -15,7 +15,7 @@
    "license": "Creative Commons Attribution Non-Commercial No-Derivs"
   },
   "changed_at": "2026-10-28",
-  "checked_at": "2026-10-28"
+  "checked_at": "2026-11-01"
  },
  "ldd-soilgroup": {
   "version": {
@@ -24,7 +24,7 @@
    "license": "Creative Commons Attribution Non-Commercial No-Derivs"
   },
   "changed_at": "2026-10-28",
-  "checked_at": "2026-10-28"
+  "checked_at": "2026-11-01"
  },
  "ldd-landuse": {
   "version": {
@@ -33,6 +33,6 @@
    "license": "Creative Commons Attribution Non-Commercial No-Derivs"
   },
   "changed_at": "2026-10-28",
-  "checked_at": "2026-10-28"
+  "checked_at": "2026-11-01"
  }
 }
